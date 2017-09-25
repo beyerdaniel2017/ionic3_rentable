@@ -1,0 +1,46 @@
+page-chat {
+  .segment_info{
+    column-width: 50vw;
+    width: 50vw !important;
+  }
+  .more-det{
+    .label-md{
+        margin: 0 !important;
+    }
+	}
+
+	.toolbar-ios-navbarcolor .segment-ios .segment-button.segment-activated {
+    color: white !important;
+  }
+
+  .segment-ios .segment-button{
+    border:0;
+    color: graytext;
+  }
+
+  .segment-ios .segment-button.segment-activated{
+    color: #fff;
+    background-color: transparent;
+    ion-icon {
+      p{
+        color:white;
+      }
+    }
+  }
+
+  .itemimage{
+  	height:10rem !important;
+  	width:10rem !important;
+  }
+
+  .itemtext{
+  	margin-bottom:3px;
+  	font-size: 2.3rem;
+  	color:gray;
+  }
+
+  .like-list.bottomborder{
+    border-bottom: thin solid gainsboro;
+  }
+ 
+}

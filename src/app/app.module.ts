@@ -1,40 +1,56 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 import { MyApp } from './app.component';
+import { HttpModule} from '@angular/http';
 
-import { AboutPage } from '../pages/about/about';
-import { ContactPage } from '../pages/contact/contact';
-import { HomePage } from '../pages/home/home';
-import { TabsPage } from '../pages/tabs/tabs';
+import { allPages } from '../pages/common/declerations';
+import { DirectivesModule } from '../directives/directives.module';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { AuthenticateProvider } from '../providers/authenticate/authenticate';
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDt_BaO5QxQo3mr8XaigDsoVnPtPn05ejg",
+  authDomain: "angular2firebase-e2368.firebaseapp.com",
+  databaseURL: "https://angular2firebase-e2368.firebaseio.com",
+  projectId: "angular2firebase-e2368",
+  storageBucket: "angular2firebase-e2368.appspot.com",
+  messagingSenderId: "678978519421"
+};
+
+var APP_Pages = [];
+  for(let i in allPages){
+    APP_Pages.push(allPages[i]);
+  }
 
 @NgModule({
   declarations: [
     MyApp,
-    AboutPage,
-    ContactPage,
-    HomePage,
-    TabsPage
+    APP_Pages
   ],
   imports: [
     BrowserModule,
+    HttpModule,
+    DirectivesModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireAuthModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    AboutPage,
-    ContactPage,
-    HomePage,
-    TabsPage
+     APP_Pages
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    DirectivesModule,
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AuthenticateProvider
   ]
 })
 export class AppModule {}

@@ -1,0 +1,34 @@
+page-add {
+	.titleheight {
+    margin-top: 0.5rem;
+    font-size: 2rem;
+    border:groove;
+    border-radius:2rem;
+  }
+  .titlefont {
+    font-size: 1.3rem;
+    margin-top: -0.5rem;
+  }
+  .segment_info1{
+    column-width: 60vw;
+    width: 60vw !important;
+  }
+
+  .titleimage{
+  	height: 15vw;
+  }
+  .card-ios {
+    width: calc(100% );
+   }
+
+  .nextbutton{
+  	margin:0px;
+  	font-size:2rem;
+  	color:white;
+  	text-align: right;
+  }
+
+  .label-ios{
+  	margin:0px;
+  }
+}

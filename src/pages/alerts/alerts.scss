@@ -1,0 +1,139 @@
+page-alerts {
+	.segment_info{
+    column-width: 80vw;
+    width: 100% !important;
+  }
+  .more-det{
+    .label-md{
+        margin: 0 !important;
+    }
+	}
+
+	.toolbar-ios-navbarcolor .segment-ios .segment-button.segment-activated {
+    color: white !important;
+  }
+
+  .segment-ios .segment-button{
+    border:0;
+    color: graytext;
+  }
+  .toolbar-ios .segment-button {
+    max-width: 100%;
+    height: 2.6rem;
+    line-height: 2.5rem;
+    font-size: 1.9rem;
+    column-width: 50vw;
+    right: 10vw;
+  }
+
+  .segment-ios .segment-button.segment-activated{
+    color: #fff;
+    background-color: transparent;
+    ion-icon {
+      p{
+        color:white;
+      }
+    }
+  }
+
+  .itemimage{
+  	height:10rem !important;
+  	width:10rem !important;
+  }
+
+  .itemtext{
+  	margin-bottom:3px;
+  	font-size: 2.3rem;
+  	color:gray;
+  }
+
+  .card-ios {
+    padding: 5vw;
+    border-radius: 2px;
+    width: calc(100% );
+    font-size: 1.4rem;
+    background: #2e343e;
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+	}
+
+  .grid-list{
+    width: 45vw;
+    float: left;
+    padding-bottom: 0;
+    padding:0px !important;
+    margin:10px 0 !important;
+    border:0;
+    img{
+        object-fit: cover;
+        -o-object-fit: cover;
+        opacity: .7;
+    }
+    .item-md{
+    	padding-right: 0;
+      padding-left:0;
+      .item-inner{
+          padding-right: 0;
+          padding-left:0;
+      }
+    }
+
+    .label-md{
+      text-transform: capitalize;
+      font-weight: 500;
+      padding:0px !important;
+      margin:0px !important;
+    }
+  }
+
+ .item-ios {
+    padding-left: 0px;
+  }
+
+  .blackcolor{
+  	color: black;
+  	font-size: 1.5rem;
+  }
+
+  .alertstyle{
+    border-bottom: thin solid gainsboro;
+    padding: 3vw 0 5vw 0;
+    margin: 0;
+  }
+
+  .alertname{
+  	color: black;
+    font-size: 2rem;
+    padding-top: 15px;
+    padding-bottom: 4px;
+  }
+
+  .item-ios ion-icon[item-left], .item-ios ion-icon[item-right], .item-ios ion-icon[item-start], .item-ios ion-icon[item-end] {
+    margin-left: 0;
+    margin-top: 9px;
+    margin-bottom: 8px;
+    margin-right: 8px;
+  }
+
+}
+
+.helpfont{
+  font-size: 1rem;
+}
+
+.categoryimage{
+  margin: 7px 0 0 5px;
+  height: 19px;
+  width: auto;
+}
+.categoryimage.dollar{
+  margin:7px 0 0 10px
+}
+
+.imageblackborder{
+  border:1px solid black;
+  border-radius: 50%;
+  width: 35px;
+  height:35px;
+  margin:auto;
+}

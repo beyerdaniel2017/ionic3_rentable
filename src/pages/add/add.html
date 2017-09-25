@@ -1,0 +1,55 @@
+
+<ion-header>
+
+  <ion-toolbar color="navbarcolor" >
+    <ion-row class="headerheight">
+      <ion-col col-1>
+        <ion-icon name="md-close" [navPush]="detail" class="nextbutton"></ion-icon>
+      </ion-col>
+      <ion-col col-8 >
+      </ion-col>
+      <ion-col col-3 class="nextbutton">
+      	<ion-label [navPush]="postdetail">
+      		Next
+      	</ion-label>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content no-padding>
+	<ion-card  no-margin>
+    <ion-row class="titleimage" >
+    	<img src="assets/icon/posttitle.png">
+    </ion-row>
+    <!-- <ion-card-content [ngSwitch]="isavailable" style="color: white;">
+      <div  *ngSwitchCase="'available'" style="color: white;">
+        <ion-card class="grid-list" *ngFor="let item of own_avaiablelist">
+          <div class="image-item" no-lines>
+            <img class="wardrobe" src="{{item.img}}" />
+            <ion-icon name="ios-eye-outline" class="cover_1"><p class="info">{{item.view}}</p></ion-icon>
+            <ion-icon name="md-heart-outline" class="cover_4"><p class="info">{{item.favourity}}</p></ion-icon>
+          </div>
+        </ion-card>
+      </div>
+
+      <div  *ngSwitchCase="'rented'">
+        <ion-card class="grid-list" *ngFor="let item of own_rentedlist">
+          <div class="image-item" [navPush]="details" no-lines>
+            <img class="wardrobe" src="{{item.img}}" />
+            <img class="cover_img" src="{{item.profileimage}}">
+            <div class="cover_2">
+              <img style="height:2rem; width:3rem;" src="assets/icon/sports-car.png">
+            </div>
+            <div class="cover_3">
+              {{item.rentday}}
+              <p class="info">days</p>
+            </div>
+          </div>
+        </ion-card>
+      </div>
+    </ion-card-content> -->
+  </ion-card>
+</ion-content>

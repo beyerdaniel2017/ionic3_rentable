@@ -1,0 +1,24 @@
+
+.like-list{
+    .item-md{
+        margin-top: -2px !important;
+        &.more-det{
+            padding: 0 10px !important;
+        }
+        .info{
+            white-space: normal;
+            height: 28px;
+        }
+        .item-button{
+            width: 80px;
+            white-space: normal;
+            height: 35px;
+        }
+    }
+}
+
+.more-det{
+    .label-md{
+        margin: 0 !important;
+    }
+}

@@ -1,0 +1,32 @@
+<!--
+  Generated template for the FeedbackPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="navbarcolor"  hideBackButton="true">
+    <ion-row class="navetitle">
+      <ion-col [navPush]="profile" col-3>
+        Do it later
+      </ion-col>
+      <ion-col col-10>
+      </ion-col>
+    </ion-row>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="app-content">
+	<div text-center style="margin:4vh 0 8vh;">
+		<h3 style="font-weight: bold;" >Leave Feedback</h3>
+		<img src="assets/icon/star.png"><img src="assets/icon/star.png"><img src="assets/icon/star.png"><img src="assets/icon/star.png"><img src="assets/icon/star.png">
+	</div>
+	<ion-label style="color: gray;">
+		LEAVE A COMMENT BELOW
+	</ion-label>
+	<ion-input class="feedbackinput" type="text" ></ion-input>
+	<button ion-button block color="secondary" class="defaultbutton" >SUBMIT</button>
+</ion-content>

@@ -11,6 +11,27 @@ $font-path: "../assets/fonts";
 // http://ionicframework.com/docs/theming/rtl-support/
 $app-direction: ltr;
 
+%main-bg{
+  background-image: url(../assets/img/bg-head.png) !important;
+}
+
+%cover{
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+}
+
+%box-shadow{
+    -webkit-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.3);
+    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.3);
+}
+
+%overflow{
+    white-space: nowrap !important;
+    text-overflow: ellipsis !important;
+    overflow: hidden !important;
+}
 
 @import "ionic.globals";
 
@@ -34,11 +55,19 @@ $app-direction: ltr;
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary:    #488aff,
-  secondary:  #32db64,
-  danger:     #f53d3d,
-  light:      #f4f4f4,
-  dark:       #222
+  primary:      #f55349,
+  graytext:     #757575,
+  graylight:    #bdbdbd,
+  dark:         #2e343e,
+  darken:       #000,
+  navbarcolor:  #002b42,
+  backwhite:    #ffffff,
+  secondary:    #03a9f4,
+  lightprimary: #ffc107,
+  danger:       #f53d3d,
+  light:        #fbf8fc,
+  none:         transparent,
+  element:      #f55349
 );
 
 
@@ -59,6 +88,39 @@ $colors: (
 // App Windows Variables
 // --------------------------------------------------
 // Windows only Sass variables can go here
+
+$background-color: color($colors , dark);
+
+$button-md-height: 3.4rem;
+$button-md-text-transform: capitalize;
+$button-md-font-size: 1.7rem;
+$button-md-font-weight: normal;
+
+$text-input-md-highlight-color: color($colors , secondary);
+
+$toolbar-md-title-font-size: 1.7rem;
+
+$searchbar-md-input-background-color: transparent;
+$searchbar-md-input-border-radius: 0px;
+$searchbar-md-input-box-shadow: none;
+$searchbar-md-input-search-icon-color: #002b42;
+$searchbar-md-input-placeholder-color: #002b42;
+$searchbar-md-input-text-color: #002b42;
+$searchbar-md-input-search-icon-size: 22px;
+$searchbar-md-input-clear-icon-color: color($colors , light);
+
+$fab-md-background-color: color($colors , secondary);
+$fab-mini-size: 50px;
+
+$card-md-border-radius: 0px;
+$card-md-margin-bottom: 0px;
+$card-md-margin-left: 0px;
+$card-md-margin-right: 0px;
+$card-md-margin-top: 0px;
+
+$item-md-thumbnail-size: 110px;
+
+$datetime-md-placeholder-color: #000;
 
 
 
@@ -86,3 +148,4 @@ $colors: (
 
 @import "roboto";
 @import "noto-sans";
+@import url(//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css);

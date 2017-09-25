@@ -1,0 +1,51 @@
+
+<ion-content class="appcontent">
+	<div class="signupdiv">
+    <ion-row>
+      <ion-col  col-4 >
+        <div [navPush]="register" class="logoborder">
+          <img class="logoimage" src="assets/icon/security.png">
+        </div>
+      </ion-col>
+      <ion-col col-4>
+        <div [navPush]="signup" class="logoborder">
+          <img class="logoimage" src="assets/icon/padlock.png">
+        </div>
+      </ion-col>
+      <ion-col col-4>
+        <div class="logoborder">
+          <img class="logoimage" src="assets/icon/man-user-white.png">
+        </div>
+      </ion-col>
+    </ion-row>
+    <form class="signupform" >
+      <ion-list>
+        <ion-label class="helpstring">
+          ENTER YOUR FIRST NAME
+        </ion-label>
+        <ion-item class="inputmagin" no-padding>
+          <ion-input class="inputstyle" type="text" ></ion-input>
+        </ion-item>
+        <ion-label class="helpstring">
+          ENTER YOUR LAST NAME
+        </ion-label>
+        <ion-item class="inputmagin" no-padding>
+          <ion-input class="inputstyle" type="text" ></ion-input>
+        </ion-item>
+        <ion-label class="helpstring">
+          ENTER YOUR POSTAL CODE
+        </ion-label>
+        <ion-item class="inputmagin" no-padding>
+          <ion-input class="inputstyle" type="Number" ></ion-input>
+        </ion-item>
+        <ion-item class="inputmagin" class="checkstyle">
+        	<ion-label>
+        		Agree to our terms?
+        	</ion-label>
+					<ion-toggle item-right  color="secondary"></ion-toggle>
+				</ion-item>
+      </ion-list>
+      <button ion-button class="signupbutton" [navPush]="home">REGISTER</button>
+    </form>
+  </div>
+</ion-content>

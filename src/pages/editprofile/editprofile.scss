@@ -1,0 +1,63 @@
+page-editprofile {
+	.content-bg{
+    background-color: color($colors , light);
+    p{
+      margin: 0 0 18px 0;
+    }
+  }
+  div {
+  	ion-label{
+  		color:graytext;
+  	}
+  	.item-ios {
+	  	border-top: thin solid gainsboro;
+	  }
+  }
+  .profile-img{
+    z-index:0;
+    position:relative;
+    width: 180px;
+    height: 180px;
+    border-radius: 200px;
+    border: 10px solid white;
+    -webkit-align-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    align: center;
+    object-fit: cover;
+    -o-object-fit: cover;
+    margin-top: -30px;
+  }
+  /* .profileheader{
+    text-align: center;
+    background-image: url(../assets/icon/navbar.png);
+  } */
+
+  .editimage{
+    position: absolute;
+    z-index: 1;
+    margin-left: 61vw;
+    width: 42px !important;
+    height: 21px !important;
+    margin-top: -15vw;
+    background-color: red;
+    border-radius: 50%;
+  }
+
+  .pencil{
+    color: white;
+    text-align: center;
+    /* width: 11px; */
+    font-size: 3rem;
+    margin-left: 9px;
+    top: 15px;
+  }
+
+  .editimage.item-ios{
+    padding:0px
+  } 
+
+  .label-ios {
+    margin: 11px 0 11px 0;
+  }
+}

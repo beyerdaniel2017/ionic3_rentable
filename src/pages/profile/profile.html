@@ -1,0 +1,116 @@
+
+<!-- <ion-header [ngClass]="{'expanded': expanded}">
+
+  <ion-navbar color="navbarcolor" hideBackButton="true">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-row>
+      <ion-col col-10>
+      </ion-col>
+      <ion-col col-2>
+        <ion-icon [navPush]="editprofile" class="icon_size" name="ios-create"></ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-navbar>
+
+</ion-header> -->
+
+<ion-content class="app-content" no-padding>
+  <ion-row class="profileheader">
+    <ion-col col-2>
+      <ion-icon class="whiteicon" [navPush]="home" name="ios-arrow-back-outline"></ion-icon>
+    </ion-col>
+    <ion-col col-8>
+    </ion-col>
+    <ion-col col-2>
+      <ion-icon [navPush]="editprofile" class="whiteicon" name="md-create"></ion-icon>
+    </ion-col>
+  </ion-row>
+  <div no-padding >
+    <ion-list>
+      <div align="center">
+        <img align="center" [navPush]="editprofile" class="profile-img" src="{{profile.img}}" />
+        <ion-label class="label_top font">
+        {{profile.name}}
+        </ion-label>
+        <ion-label class="label_top">
+          {{profile.address}}
+        </ion-label>
+      </div>
+      <br>
+      <br>
+      <ion-item class="bottomborder" [navPush]="addpayment">
+        <ion-label class="helpfont">
+          PAYMENT METHODS
+        </ion-label >
+        <ion-icon item-right class="icon_size" name="ios-add-outline"></ion-icon>
+      </ion-item>
+      <ion-item>
+        <ion-label>Credit Card</ion-label>
+        <ion-icon name="ios-arrow-forward-outline"  item-right ></ion-icon>
+      </ion-item>
+      <ion-item class="bottomborder">
+        <ion-label>PayPal</ion-label>
+        <ion-icon name="ios-arrow-forward-outline" item-right ></ion-icon>
+      </ion-item>
+      <ion-label class="helpfont padding">
+        MORE
+      </ion-label>
+      <ion-item [navPush]="about" class="bottomborder">
+        <ion-label>About Us</ion-label>
+        <ion-icon name="ios-arrow-forward-outline" item-right ></ion-icon>
+      </ion-item>
+      <ion-item>
+        <ion-label>Terms and Conditions</ion-label>
+        <ion-icon name="ios-arrow-forward-outline" item-right ></ion-icon>
+      </ion-item>
+      <ion-item class="bottomborder">
+        <ion-label>Contact Us</ion-label>
+        <ion-icon name="ios-arrow-forward-outline" item-right ></ion-icon>
+      </ion-item>
+      <ion-item class="bottomborder">
+        <ion-label>Help and Support</ion-label>
+        <ion-icon name="ios-arrow-forward-outline" item-right ></ion-icon>
+      </ion-item>
+      <ion-item [navPush]="feedback">
+        <ion-label>App Feedback</ion-label>
+        <ion-icon name="ios-arrow-forward-outline" item-right ></ion-icon>
+      </ion-item>
+      <ion-item class="bottomborder">
+        <ion-label>Rate App</ion-label>
+        <ion-icon name="ios-arrow-forward-outline" item-right ></ion-icon>
+      </ion-item>
+      <br>
+      <button ion-button block class="savebutton" [navPush]="searchresult">LOGOUT</button>
+    </ion-list>
+ </div>
+ <!--   <div class="content-bg" padding>
+      <img class="profile-img" src="{{profile.img}}" />
+      <ion-list no-margin>
+        <ion-item color="none" no-padding>
+          <ion-input class="name-user" type="email" placeholder="Justin Timberlake" disabled="true" (blur)="focusInput(username)" #username></ion-input>
+          <ion-icon name="md-create" color="graytext" (click)="focusInput(username)" item-right small></ion-icon>
+        </ion-item>
+
+        <ion-item color="none" no-padding>
+          <ion-label stacked>Email</ion-label>
+          <ion-input type="email" placeholder="Justin Timberlake@yahoo.com" disabled="true" (blur)="focusInput(email)" #email></ion-input>
+          <ion-icon name="md-create" color="graytext" (click)="focusInput(email)" item-right small></ion-icon>
+        </ion-item>
+
+
+        <ion-item color="none" no-padding>
+          <ion-label stacked>Tel</ion-label>
+          <ion-input type="tel" placeholder="+02 011 1115 115" disabled="true" (blur)="focusInput(tel)" #tel></ion-input>
+          <ion-icon name="md-create" color="graytext" (click)="focusInput(tel)" item-right small></ion-icon>
+        </ion-item>
+
+        <ion-item color="none" no-padding>
+          <ion-label stacked>Password</ion-label>
+          <ion-input type="password"  placeholder="************" disabled="true" (blur)="focusInput(password)" #password></ion-input>
+          <ion-icon name="md-create" color="graytext"  (click)="focusInput(password)"  item-right small></ion-icon>
+        </ion-item>
+      </ion-list>
+   </div> -->
+</ion-content>
