@@ -1,0 +1,43 @@
+page-pickup {
+	.addcontent{
+		background-color:white
+	}
+
+	.returntitle{
+		margin-top: 6vw;
+    font-size: 23px;
+    font-weight: 600;
+	}
+
+	.helptext{
+		padding-top: 3px;
+    padding-bottom: 5px;
+		&.condition{
+			font-size:11px;
+	    opacity: 0.6;
+		}
+		&.suggest{
+			color: #009fde;
+		}
+	}
+
+	.goodstyle{
+		color:red;
+		font-size: 15px;
+    opacity: 0.7;
+    font-weight: bold;
+	}
+
+	.returnstarsize{
+		height:22px;
+		margin: 3px;
+	}
+
+	.commentstyle{
+		color: gray;
+    text-align: left;
+    opacity: 0.9;
+    font-size: 13px;
+	}
+
+}

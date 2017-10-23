@@ -4,6 +4,8 @@ import { NavController, NavParams } from 'ionic-angular';
 import { KeyboardDirective } from '../../directives/keyboard/keyboard';
 
 import { Profile } from '../profile/profile';
+import { ProfileinputPage } from '../profileinput/profileinput';
+
 
 /*
   Generated class for the EditprofilePage page.
@@ -33,9 +35,9 @@ export class EditprofilePage {
   }
 
 
-  onFocus(){
+  focus(){
     console.log('ionViewDidLoad EditprofilePagePage');
-    
+    this.navCtrl.setRoot(ProfileinputPage);
   }
 
 }

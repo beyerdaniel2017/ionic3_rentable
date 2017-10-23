@@ -10,6 +10,16 @@ page-home {
     }
   }
 
+  .image-item{
+    position: relative;
+    display: inline-block;
+    padding:0px !important;
+    margin:0px !important;
+    border:0px;
+  }
+
+  
+
   .wardrobe {
     z-index: 0;
     position: relative;
@@ -18,13 +28,7 @@ page-home {
     padding:0px !important;
     margin:0px !important;
   }
-  .image-item{
-    position: relative;
-    display: inline-block;
-    padding:0px !important;
-    margin:0px !important;
-    border:0px;
-  }
+
   .cover_1 {
     z-index: 1;
     position: absolute;
@@ -38,29 +42,50 @@ page-home {
   .cover_2 {
     z-index: 1;
     position: absolute;
+    right: 1.8vw;
+    top: 0.8vw;
+    font-size: 25px;
+    color: white;
+  }
+
+  .cover_image{
+    z-index: 1;
+    position: absolute;
     right:2vw;
     top: 1vw;
     padding:0px !important;
     margin:0px !important;
-    font-size: 1.8rem;
-    color: white;
+    height: 18px;
+    width:auto;
   }
-  .category_size {
-    font-size: 3.2rem;
-    color:light;
+
+  ion-scroll .scroll-content{
+    padding: 6px 0;
   }
+
   .categorystyle{
     overflow: scroll;
     white-space: nowrap;
     color: gray;
-    height: 50px;
+    height: 60px;
     border-bottom: thin groove white;
     border-top: thin groove white;
     font-size: 1.2rem;
+    background-color: #2e343e;
     .activated{
       color:white;
     }
   }
+
+  .logoblackborder{
+    border:thin solid gray;
+    border-radius: 50%;
+    width: 35px;
+    height:35px;
+    margin:auto;
+    margin-top: 6px;
+  }
+
   .filtericon {
     max-width: 110%;
     margin-top: 1vh;
@@ -93,14 +118,56 @@ page-home {
     }
   }
 
-  .activeColor{
-    color: color($colors , secondary) !important;
+  .segment-ios .segment-button.segment-activated{
+    color: #fff;
+    background-color: transparent;
+    border:0;
+    ion-icon {
+      p{
+        color:white;
+      }
+      div{
+        border-color: white;
+      }
+    }
+  }
+
+  .categoryimg {
+    display: inline-block;
+    height: 35px;
+    margin-top: 5px;
+    text-align: center;
+    border: 0;
+  }
+
+  .segment-ios .segment-button{
+    border: 0;
+    color: graytext;
+    width: 25vw;
+    min-width: 25vw;
+    height: 60px;
+    display: inline-block;
+    text-align:center;
+    ion-icon{
+      margin-top: 8px;
+      font-size: 3.5rem;
+    }
+  }
+
+  .categoryfont{
+    margin-top: -16px;
+    font-size: 10px;
   }
 }
+
 
 .item-ios.item-block .item-inner{
   border:0px;
 }
+
+.grid-list.backcolor{
+    background-color:#2e343e !important;
+  }
 
 .button-ios.activated{
   background-color:#03a9f4;
@@ -115,7 +182,7 @@ page-home {
     padding-left: 40vw;
     padding-bottom: 0;
     color:dark;
-    background-color: light;
+    background-color: white !important;
   }
   input::-webkit-input-placeholder {
       font-size: 1.2rem;
@@ -135,9 +202,40 @@ page-home {
 }
 
 .halfbutton{
-  left:17vw;
-  width: 30vw;
-  height: 20px;
+  width: 40vw;
+  margin:auto;
   text-align: center;
-  border-radius:22px;
+  border-radius: 25px;
+}
+
+.starsize{
+  height:18px;
+  width:auto;
+}
+
+.bottomborder{
+  border-bottom: thin solid gainsboro;
+}
+
+.app-content{
+  background-color:white;
+  padding-bottom:30px;
+  .scroll-content{
+     padding: 4vw;
+  }
+}
+
+.headertitle{
+  color: white;
+  font-size: 24px;
+}
+
+.helpicon{
+  background-color: #f55349;
+  margin-left: 1rem;
+  color: white;
+  border-radius: 2rem;
+  width: 2rem;
+  font-size: 2rem;
+  text-align: center;
 }

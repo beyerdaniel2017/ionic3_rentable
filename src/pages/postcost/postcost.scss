@@ -1,14 +1,4 @@
 page-postcost {
-	.app-content{
-    background-color: white;
-    color:black;
-    .scroll-content{
-    }
-    .content-bg{
-        height: 100%;
-        overflow-y: scroll;
-    }
-  }
 
   .detailscreen{
     padding:3vw;
@@ -40,17 +30,13 @@ page-postcost {
     }
   }
 
-  .label-ios {
-    margin: 10px 8px 0;
-  }
-
   .range-ios .range-knob{
     background:red !important;
   }
 
   .labelhelp{
     color:gray;
-    margin-top: 2vh;
+    margin-top: 25px;
     font-size:1.2rem;
   }
 
@@ -58,12 +44,13 @@ page-postcost {
   	border-top:0;
   	border-left:0;
   	border-right:0;
-  	border-bottom: groove thin;
+    font-size: 2rem;
+  	border-bottom: thin solid gainsboro;
   }
 
   .removeicon{
   	text-align: center;
-  	font-size:2rem;
+  	font-size:3rem;
   	color: gray;
   }
 

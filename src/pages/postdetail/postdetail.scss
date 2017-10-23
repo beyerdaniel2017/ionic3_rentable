@@ -1,14 +1,4 @@
 page-postdetail {
-	.app-content{
-    background-color: white;
-    color:black;
-    .scroll-content{
-    }
-    .content-bg{
-        height: 100%;
-        overflow-y: scroll;
-    }
-  }
 
   .detailscreen{
   	padding:3vw;
@@ -17,6 +7,8 @@ page-postdetail {
 
   .centeralign{
   	text-align:center;
+    font-size: 21px;
+    font-weight: 600;
   }
 
 	.nextbutton{
@@ -34,8 +26,11 @@ page-postdetail {
   	color:gray;
   }
 
-  .graycolor.topbottom{
-    margin-top:3vh;
+  .helpstr{
+    font-size: 1.1rem;
+    color:gray;
+    margin-top: 30px;
+    margin-bottom: 10px;
   }
 
   .titleimage{
@@ -44,12 +39,9 @@ page-postdetail {
   }
 
   .grid-list{
-    width: 47vw;
     float: left;
     padding-bottom: 0;
-    padding:0px !important;
-    margin:0px !important;
-    border:0;
+    border-bottom: thin solid gainsboro;
     img{
         object-fit: cover;
         -o-object-fit: cover;
@@ -68,7 +60,15 @@ page-postdetail {
     }
   }
 
-    // category radio button
+  .detailstyle{
+    font-size: 2rem;
+  }
+
+  .detailabelstyle{
+    height:90px;
+  }
+
+  /*   // category radio button
   .radio-custom {
       opacity: 0;
       position: absolute;
@@ -114,25 +114,25 @@ page-postdetail {
   }
 
   .radio-custom:focus + .radio-custom-label {
-    outline: 1px solid #ddd; /* focus style */
-  }
+    outline: 1px solid #ddd; /* focus style
+  } */
 
-  .conditionstar{
-  	color:red;
-  	display: inline-block; 
-  	font-size:2rem;
-  	text-align: left;
-  }
+  
 
   .card-ios {
-    margin: 0px;
+    margin: 0 0 25px 0;;
     border-radius: 0px;
-    width: calc(100% - 24px);
     font-size: 1.4rem;
     background: white;
-    -webkit-box-shadow: 0;
     box-shadow: 0 0 0;
-    width: calc(47%);
+    width: calc(50%);
 	}
 	//radio category
+}
+.conditionstar{
+  color:red;
+  display: inline-block;
+  font-size:2rem;
+  text-align: left;
+  margin:0px;
 }

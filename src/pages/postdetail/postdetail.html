@@ -24,53 +24,109 @@
 </ion-header>
 
 
-<ion-content class="app-content" >
-  <img class="titleimage" src="assets/icon/postdetail.png">
+<ion-content no-padding class="app-content" >
+  <div class="postitemdiv">
+    <ion-row>
+    	<ion-col co-3>
+    	</ion-col>
+      <ion-col col-2 >
+        <div class="logoblackborder"  [navPush]="addpage">
+          <img class="logoimage" src="assets/icon/photocamera_black.png">
+        </div>
+        <ion-label class="posttitle graycolor">
+          Photos
+        </ion-label>
+      </ion-col>
+      <ion-col [navPush]="signup" col-2>
+        <div class="logoborder">
+          <img class="logoimage" src="assets/icon/postdetail_white.png">
+        </div>
+        <ion-label class="posttitle">
+          Details
+        </ion-label>
+      </ion-col>
+      <ion-col [navPush]="finishsign" col-2>
+        <div class="logoblackborder">
+          <img class="logoimage dollar" src="assets/icon/dollar-symbol.png">
+        </div>
+        <ion-label class="posttitle graycolor">
+          Costs
+        </ion-label>
+      </ion-col>
+      <ion-col col-3>
+      </ion-col>
+    </ion-row>
+  </div>
   <div class="detailscreen">
-  	<h4 class="centeralign">Item Details</h4>
-  	<p class="graycolor topbottom">ITEM TITLE</p>
-	  <ion-item class="topbottom">
+  	<p class="centeralign">Item Details</p>
+    <ion-item>
+      <p item-left class="helpstr">ITEM TITLE</p>
+      <p item-right class="helpstr">50</p>
+    </ion-item>
+  	
+	  <ion-item class="bottomborder">
 	  	<ion-input type="text" item-left value="Predtty cool size"></ion-input>
 	  	<ion-icon item-right name="md-close" class="graycolor"></ion-icon>
 	  </ion-item>
-	  <ion-label class="graycolor topbottom">
+	  <ion-label class="helpstr">
 			CATEGORY
 		</ion-label>
-	  <ion-card class="grid-list" >
-	    <div class="col">
-	    <div>
-	      <input id="radio-1" class="radio-custom" name="radio-group" type="radio" checked>
-	      <label for="radio-1" class="radio-custom-label">CategoryA</label>
-	    </div>
-	    <div>
-	      <input id="radio-2" class="radio-custom"name="radio-group" type="radio">
-	      <label for="radio-2" class="radio-custom-label">CategoryB</label>
-	    </div>
-	    </div>
-	  </ion-card>
-	  <div>
-	    <input id="radio-3" class="radio-custom" name="radio-group" type="radio" >
-	    <label for="radio-3" class="radio-custom-label">CategoryC</label>
-	  </div>
-	  <div>
-	    <input id="radio-4" class="radio-custom"name="radio-group" type="radio">
-	    <label for="radio-4" class="radio-custom-label">CategoryD</label>
-	  </div>
-	  <p class="graycolor topbottom" style="text-align: left;">ITEMS CURRENT CONDITION</p>
+    <ion-card class="grid-list" >
+      <div class="radio-img">
+        <input type="radio" name="radio-group" id="radio-1" class="input-hidden" />
+        <label for="radio-1">
+          <div class="img-container">
+            <ion-icon class="categoryimage" name="ios-home-outline"></ion-icon>
+          </div>
+          Category A
+        </label>
+      </div>
+      <div class="radio-img">
+        <input type="radio" name="radio-group" id="radio-2" class="input-hidden" />
+        <label for="radio-2">
+          <div class="img-container">
+            <ion-icon class="categoryimage" name="ios-car"></ion-icon>
+          </div>
+          Category C
+        </label>
+      </div>
+    </ion-card>
+    <ion-card class="grid-list" >
+      <div class="radio-img">
+        <input type="radio" name="radio-group" id="radio-3" class="input-hidden" />
+        <label for="radio-3">
+          <div class="img-container">
+            <ion-icon class="categoryimage" name="ios-desktop-outline"></ion-icon>
+          </div>
+          Category B
+        </label>
+      </div>
+      <div class="radio-img">
+        <input type="radio" name="radio-group" id="radio-4" class="input-hidden" />
+        <label for="radio-4">
+          <div class="img-container">
+            <ion-icon class="categoryimage" name="ios-musical-notes-outline"></ion-icon>
+          </div>
+          Category D
+        </label>
+      </div>
+    </ion-card>
+	  <p class="helpstr">ITEMS CURRENT CONDITION</p>
 	  <div *ngFor="let i of goodcondition" class="conditionstar">
-      <ion-icon name="ios-star" ></ion-icon>
+      <img class="starsize" src="assets/icon/star-red.png">
     </div>
     <div *ngFor="let i of badcondition" class="conditionstar" >
-      <ion-icon name="ios-star-outline" ></ion-icon>
+      <img class="starsize" src="assets/icon/star.png">
     </div>
-	  <p class="graycolor topbottom">ITEM DETAILS</p>
-	  <ion-row style="font-size: 2rem;">
-	  	<ion-col col-10>
-	  		<ion-item text-wrap>
-	  		I have only worn these shoes for a total of 3 days...
-	  		</ion-item>
+	   <ion-item>
+      <p item-left class="helpstr">ITEM DETAILS</p>
+      <p item-right class="helpstr">200</p>
+    </ion-item>
+	  <ion-row class="detailstyle">
+	  	<ion-col col-11>
+	  		<ion-textarea rows="5" type="text" text-wrap placeholder="I have only worn these shoes for a total of 3 days..." ></ion-textarea >
 	  	</ion-col>
-	  	<ion-col col-2>
+	  	<ion-col col-1>
 	  		<ion-icon name="md-close" class="graycolor"></ion-icon>
 	  	</ion-col>
 	  </ion-row>

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
+import { Details } from '../details/details';
+
 /*
   Generated class for the AcceptPage page.
 
@@ -12,6 +14,8 @@ import { NavController, NavParams } from 'ionic-angular';
   templateUrl: 'accept.html'
 })
 export class AcceptPage {
+
+	details=Details;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {}
 

@@ -6,6 +6,7 @@ import { RejectPage } from '../reject/reject';
 import { AcceptPage } from '../accept/accept';
 import { OtherprofilePage } from '../otherprofile/otherprofile';
 import { Details } from '../details/details';
+import { Filter } from '../filter/filter';
 
 @Component({
   selector: 'page-rent',
@@ -14,6 +15,7 @@ import { Details } from '../details/details';
 export class RentPage {
 
   home = Home;
+  accept = AcceptPage;
   rentreject=RejectPage;
   otherprofile=OtherprofilePage;
   detail=Details;

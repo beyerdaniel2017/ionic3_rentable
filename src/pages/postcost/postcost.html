@@ -23,8 +23,39 @@
 </ion-header>
 
 
-<ion-content class="app-content">
-  <img class="titleimage" src="assets/icon/postcost.png">
+<ion-content no-padding class="app-content">
+  <div class="postitemdiv">
+    <ion-row>
+      <ion-col col-3>
+      </ion-col>
+      <ion-col col-2 [navPush]="addpage" >
+        <div class="logoblackborder" >
+          <img class="logoimage" src="assets/icon/photocamera_black.png">
+        </div>
+        <ion-label no-margin class="posttitle graycolor">
+          Photos
+        </ion-label>
+      </ion-col>
+      <ion-col [navPush]="postdetail" col-2>
+        <div class="logoblackborder">
+          <img class="logoimage" src="assets/icon/postdetail_black.png">
+        </div>
+        <ion-label no-margin class="posttitle graycolor">
+          Details
+        </ion-label>
+      </ion-col>
+      <ion-col [navPush]="finishsign" col-2>
+        <div class="logoborder">
+          <img class="logoimage dollar" src="assets/icon/dollar-symbol-white.png">
+        </div>
+        <ion-label no-margin class="posttitle">
+          Costs
+        </ion-label>
+      </ion-col>
+      <ion-col col-3>
+      </ion-col>
+    </ion-row>
+  </div>
   <div class="detailscreen">
     <ion-label class="postcosttitle">
       Item Rental Cost

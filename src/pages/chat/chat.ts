@@ -17,6 +17,7 @@ export class ChatPage {
 
   list: Array<any>;
 	chatdetails=ChatdetailPage;
+  own_rent:string="own";
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   	this.list =
   	[

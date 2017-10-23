@@ -1,0 +1,48 @@
+<!--
+  Generated template for the PickupPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-toolbar color="navbarcolor">
+  	 <ion-icon [navPush]="details" class="navetitle" name="md-close"></ion-icon>
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content padding align="center" class="addcontent">
+	<p class="returntitle">
+		Picking up your Item
+	</p>
+	<p class="helptext condition">DO YOU AGREE WITH THE CONDITION FO THE IMET SET BELOW?</p>
+	<ion-label >
+    <img class="returnstarsize" src="assets/icon/star-grey.png">
+    <img class="returnstarsize" src="assets/icon/star-grey.png">
+    <img class="returnstarsize" src="assets/icon/star-grey.png">
+    <img class="returnstarsize" src="assets/icon/star-grey.png">
+    <img class="returnstarsize" src="assets/icon/star-grey-outline.png">
+  </ion-label>
+  <p class="goodstyle">VERY GOOD</p>
+	<ion-row >
+		<ion-col col-3 >
+			Yes
+		</ion-col>
+  	<ion-col col-3 >
+			<ion-toggle  [(ngModel)]="yes" color="secondary"></ion-toggle>
+		</ion-col>
+		<ion-col col-3 >
+			No
+		</ion-col>
+		<ion-col col-3 >
+			<ion-toggle  [(ngModel)]="!yes" color="secondary"></ion-toggle>
+		</ion-col>
+	</ion-row>
+	<ion-label class="commentstyle">
+		LEAVE A COMMENT BELOW
+	</ion-label>
+	<ion-textarea rows="5" type="text" class="feedbackinput" text-wrap></ion-textarea >
+  <button ion-button block color="secondary" class="defaultbutton" >SUBMIT</button>
+</ion-content>

@@ -25,7 +25,7 @@
 </ion-header>
 
 
-<ion-content  style="background-color: white;" [ngSwitch]="alert_opportunity">
+<ion-content class="app-content" no-padding [ngSwitch]="alert_opportunity">
   <ion-card *ngSwitchCase="'alert'" style="background-color: white;" no-margin>
   	<div>
       <div *ngFor="let item of list" class="alertstyle">
@@ -75,7 +75,53 @@
       </div>
     </div>
   </ion-card>
-  <ion-card *ngSwitchCase="'opportunity'">
-    <p>opportunities</p>
+  <ion-card *ngSwitchCase="'opportunity'" style="background-color: white;" no-margin>
+    <div>
+      <div *ngFor="let item of list" class="alertstyle">
+        <p class="alertname">Opportunity Name</p>
+        <div class="grid-list" >
+          <ion-item>
+            <div item-left class="imageblackborder">
+              <img class="categoryimage" src="assets/icon/post-it.png">
+            </div>
+            <div >
+              <p class="helpfont">POSTED WITHIN</p>
+              <p class="blackcolor">Last {{item.history}}hours</p>
+            </div>
+          </ion-item>
+          <ion-item>
+            <div item-left class="imageblackborder">
+              <img class="categoryimage" src="assets/icon/sports-black.png">
+            </div>
+            <div>
+              <p class="helpfont">DISTANCE</p>
+              <p class="blackcolor">{{item.distance}}km</p>
+            </div>
+          </ion-item>
+        </div>
+
+        <div class="grid-list">
+          <ion-item>
+            <div item-left class="imageblackborder">
+              <img class="categoryimage dollar" src="assets/icon/dollar-symbol.png">
+            </div>
+            <div>
+              <p class="helpfont">PRICE RANGE</p>
+              <p class="blackcolor">${{item.startprice}}-${{item.lastprice}}</p>
+            </div>
+          </ion-item>
+          <ion-item>
+            <div item-left class="imageblackborder">
+              <img class="categoryimage" src="assets/icon/calendar.png">
+            </div>
+            <div>
+              <p class="helpfont">DATE RANGE</p>
+              <p class="blackcolor">{{item.startduration}}-{{item.lastduration}}</p>
+            </div>
+        </ion-item>
+        </div>
+        <button class="defaultbutton" [navPush]="alertdetail">VIEW OPPORTUNITY</button>
+      </div>
+    </div>
   </ion-card>
 </ion-content>

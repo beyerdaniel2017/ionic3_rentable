@@ -4,6 +4,8 @@ import { Register } from '../register/register';
 import { Home } from '../home/home';
 
 import { MenuPage } from '../menu/menu';
+import { TabPage } from '../tab/tab';
+
 
 
 @Component({
@@ -23,7 +25,7 @@ export class Login {
   }
 
   login(){
-    this.navCtrl.setRoot(MenuPage);
+    this.navCtrl.setRoot(TabPage);
   }
 
   forgotPassword() {

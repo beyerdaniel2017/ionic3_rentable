@@ -64,8 +64,8 @@ var Details = (function () {
         var _this = this;
         if (show) {
             document.querySelector(".detFooter")['style'].display = 'block';
-            document.querySelector("page-details .scroll-content")['style'].marginBottom = '50px';
-            document.querySelector("page-details .fixed-content")['style'].marginBottom = '50px';
+            document.querySelector("page-details .scroll-content")['style'].marginBottom = 0;
+            document.querySelector("page-details .fixed-content")['style'].marginBottom = 0;
             this.zone.run(function () {
                 _this.showFooter = true;
             });

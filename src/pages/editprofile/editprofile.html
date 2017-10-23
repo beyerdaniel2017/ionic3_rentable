@@ -18,57 +18,65 @@
   <div >
     <div align="center">
       <img align="center" class="profile-img" src="{{editprofile.img}}" />
-      <ion-item class="editimage">
+      <div class="editimage">
         <ion-icon class="pencil" name="md-create"></ion-icon>
-      </ion-item>
+      </div>
     </div>
     <br>
-    <ion-item>
+    <ion-item class="itempadding">
     	<div item-left>
     		<ion-label class="helpstring" >
           FIRST NAME
         </ion-label >
-        <ion-input   no-margin type="text" value="John" [(ngModel)]="firstname"></ion-input>
+        <ion-input  (click)="focus()"   no-margin type="text" value="John" [(ngModel)]="firstname"></ion-input>
     	</div>
-      <ion-icon name="ios-arrow-forward-outline" item-right ></ion-icon>
+      <ion-icon class="graycolor" name="ios-arrow-forward-outline" item-right ></ion-icon>
     </ion-item>
-    <ion-item>
+    <ion-item class="itempadding">
     	<div item-left>
     		<ion-label class="helpstring">
           LAST NAME
         </ion-label >
         <ion-input no-margin type="text" value="Doe" [(ngModel)]="lastname"></ion-input>
     	</div>
-      <ion-icon name="ios-arrow-forward-outline" item-right ></ion-icon>
+      <ion-icon class="graycolor" name="ios-arrow-forward-outline" item-right ></ion-icon>
     </ion-item>
-    <ion-item>
+    <ion-item class="itempadding">
     	<div item-left>
     		<ion-label class="helpstring">
           MOBILE
         </ion-label >
         <ion-input no-margin type="Number" value="0211234567" [(ngModel)]="mobilenumber"></ion-input>
     	</div>
-      <ion-icon name="ios-arrow-forward-outline" item-right ></ion-icon>
+      <ion-icon class="graycolor" name="ios-arrow-forward-outline" item-right ></ion-icon>
     </ion-item>
-    <ion-item>
+    <ion-item class="itempadding">
+      <div item-left>
+        <ion-label class="helpstring">
+          EMAIL
+        </ion-label >
+        <ion-input no-margin type="email" value="John@example.com" [(ngModel)]="email"></ion-input>
+      </div>
+      <ion-icon class="graycolor" name="ios-arrow-forward-outline" item-right ></ion-icon>
+    </ion-item>
+    <ion-item class="itempadding">
     	<div item-left>
     		<ion-label class="helpstring">
           PASSWORD
         </ion-label >
         <ion-input no-margin type="Password" value="0211234567" [(ngModel)]="password"></ion-input>
     	</div>
-      <ion-icon name="ios-arrow-forward-outline" item-right ></ion-icon>
+      <ion-icon class="graycolor" name="ios-arrow-forward-outline" item-right ></ion-icon>
     </ion-item>
-    <ion-item style="border-bottom: thin solid gainsboro;">
+    <ion-item class="itempadding" style="border-bottom: thin solid gainsboro;">
     	<div item-left>
     		<ion-label class="helpstring">
           POSTAL CODE
         </ion-label >
         <ion-input no-margin type="text" value="0000" [(ngModel)]="Postalcode"></ion-input>
     	</div>
-      <ion-icon name="ios-arrow-forward-outline" item-right ></ion-icon>
+      <ion-icon class="graycolor" name="ios-arrow-forward-outline" item-right ></ion-icon>
     </ion-item>
-    <br>
-     <button ion-button block color="secondary" class="savebutton" >SAVE</button>
   </div>
+  <br>
 </ion-content>

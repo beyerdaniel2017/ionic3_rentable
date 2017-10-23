@@ -19,10 +19,13 @@ export class RejectPage {
   isremove:boolean;
 	tracks: Array<{name: string, isChecked: boolean}> = [];
   rejectreason:Array<any>;
+  rejectimage:Array<any>;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.isremove=false;
     this.rejectreason = [{reason: 'Item is broken', icon: 'ios-bug-outline'}, {reason: 'I am away', icon: 'ios-plane-outline'}, {reason: 'Item is broken', icon: 'ios-plane-outline'}, {reason: 'I am away', icon: 'ios-plane-outline'}, {reason: 'I am away', icon: 'ios-plane-outline'}, {reason: 'I am away', icon: 'ios-plane-outline'}]
+    this.rejectimage = [{img: 'assets/icon/reject-imaway.png', activeimg: 'assets/icon/reject-imaway-active.png'}, {img: 'assets/icon/reject-itembroken.png', activeimg: 'assets/icon/reject-itembroken-active.png'}, {img: 'assets/icon/reject-itemfixed.png', activeimg: 'assets/icon/reject-itemfixed-active.png'}, {img: 'assets/icon/reject-itemunavailable.png', activeimg: 'assets/icon/reject-itemunavailable-active.png'}]
+
   }
 
   ionViewDidLoad() {
@@ -31,6 +34,33 @@ export class RejectPage {
 
   toggle(){
 
+  }
+
+  myFunction(event){
+    var target = event.target || event.srcElement || event.currentTarget;
+    var element = event.srcElement;
+    console.log(element);
+    var parent = event.srcElement.parentElement;
+    console.log(parent);
+    var preparent = parent.parentElement;
+    console.log(preparent);
+    var children = preparent.children;
+    var count = children.length;
+    console.log(count + element);
+    for (var i = 0; i < count; ++i) {
+      if(parent==children[i]){
+        var image=this.rejectimage[i].activeimg;
+        console.log(children[i]);
+        console.log(i+ "i");
+        children[i].getElementsByTagName('img')[0].setAttribute("src", image);
+      }
+      else{
+
+        var inactiveimage=this.rejectimage[i].img;
+        console.log(children[i].getElementsByTagName('img')[0] + "children");
+        children[i].getElementsByTagName('img')[0].setAttribute("src", inactiveimage);
+      }
+    }
   }
 
 }

@@ -1,3 +1,109 @@
 page-myitem {
 
+	.segment_info{
+    column-width: 70vw;
+    width: 70vw !important;
+    min-height: 44px !important;
+    height: 44px !important;
+    padding-top: 0 !important;
+  }
+
+
+  .toolbar-ios-navbar .segment-ios .segment-button.segment-activated {
+    color: white;
+    .ion-segment-button{
+      color:white !important;
+      div{
+	    	border-color:white;
+	    }
+    }
+    div{
+    	border-color:white;
+    }
+  }
+
+  .toolbar-ios-navbarcolor .segment-ios .segment-button.segment-activated {
+    color: white !important;
+    div{
+    	border-color:white;
+    }
+  }
+
+  .segment-ios .segment-button{
+    border:0;
+    color: graytext;
+    ion-icon{
+      margin-top: 8px;
+      font-size: 3.5rem;
+    }
+  }
+
+  .categoryimg{
+    height: 29px;
+    margin-top: 5px;
+  }
+
+  .logoblackborder{
+  	border:thin solid gray;
+	  border-radius: 50%;
+	 	width: 27px;
+    height: 27px;
+	  margin:auto;
+  }
+
+  .itemstyle{
+  	color: black;
+    font-size: 21px;
+    font-weight: bold;
+    margin: 11px 0px;
+  }
+
+  .itemimg{
+    margin-left: 7px;
+    margin-top: 8px;
+    height: 19px;
+    width: auto;
+  }
+
+  .bottomborder.bottompadding{
+    padding-bottom: 17px;
+    margin: 0 0 21px;
+  }
+
+  .titlefont {
+    font-size: 1.1rem;
+    margin-top: -14px;
+  }
+  .pricetext{
+  	color:red;
+  	font-size:20px;
+  }
+
+  .segment-ios .segment-button.segment-activated{
+    color: #fff;
+    background-color: transparent;
+    div{
+    	border-color: white;
+    }
+    ion-icon {
+      p{
+        color:white;
+      }
+      div{
+	    	border-color: white;
+	    }
+    }
+  }
+
+  .segment_info1{
+   	padding-top: 5px;
+    height: 5rem;
+  }
+
+  .toolbar-ios .segment-button {
+    max-width: 40vw;
+    height: 2.6rem;
+    font-size: 1.2rem;
+    line-height: 2.5rem;
+	}
 }

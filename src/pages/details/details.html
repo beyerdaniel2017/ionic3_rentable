@@ -1,22 +1,5 @@
-
-<!-- <ion-header [ngClass]="{'colorOfHeader': detect_position()}">
-  <ion-navbar >
-    <ion-row>
-      <ion-col col-8>
-      </ion-col>
-      <ion-col col-2>
-        <ion-icon name="md-return-right" class="icon_size"></ion-icon>
-      </ion-col>
-      <ion-col col-2>
-        <ion-icon name="md-heart" class="icon_size" (click)="ActiveLike()" [ngClass]="{'activeColor':like}"></ion-icon>
-      </ion-col>
-    </ion-row>
-  </ion-navbar>
-</ion-header>
- -->
-
 <ion-content #contentRef (ionScroll)="scrollingFun($event)">
-  <ion-slides  loop="true" speed="3000">
+  <!-- <ion-slides  loop="true" speed="3000">
     <ion-slide >
       <img src="assets/img/01.png">
     </ion-slide>
@@ -26,9 +9,9 @@
     <ion-slide >
       <img src="assets/img/03.png">
     </ion-slide>
-  </ion-slides>
-  <div style="z-index: 0; position: relative;">
-    <img src="{{Product.img}}" style="display: inline-block; height: 50vh; width: 100vw">
+  </ion-slides> -->
+  <div style="z-index: 0; position: relative; background-color: #c6c6c7;">
+    <img src="{{Product.img}}" class="my-overlay" >
     <ion-icon name="ios-arrow-back" class="cover_header0" [navPush]="home"></ion-icon>
     <ion-icon name="shareicon" class="cover_header1"></ion-icon>
     <ion-icon name="ios-heart-outline" class="cover_header2" (click)="ActiveLike()" [ngClass]="{'activeColor':like}"></ion-icon>
@@ -37,13 +20,17 @@
     <ion-col col-3 align="right">
       <img src="{{Product.ownerimage}}" class="profileimg">
     </ion-col>
-    <ion-col col-2>
-      <p class="cover_1">
+    <ion-col col-6 style="padding-top: 17px;">
+      <p class="cover_name">
         {{Product.ownername}}
       </p>
-      <img class="cover_2" src="assets/icon/star.png">
-    </ion-col>
-    <ion-col col-4>
+      <div>
+        <img class="starsize" src="assets/icon/star-red.png">
+        <img class="starsize" src="assets/icon/star-red.png">
+        <img class="starsize" src="assets/icon/star-red.png">
+        <img class="starsize" src="assets/icon/star-red.png">
+        <img class="starsize" src="assets/icon/star.png">
+      </div>
     </ion-col>
     <ion-col col-3 class="wardrobe">
       <img src="assets/icon/CTA-bounds.png" style="width:8rem;left: 1.4rem;">
@@ -57,10 +44,19 @@
   </ion-row>
   <div style="padding-bottom: 5rem;" padding>
     <h4 >
-      Pretty Cool Size
+      Pretty Cool Size 9 shoes
     </h4>
-    <ion-row>
-      <ion-col col-4>
+    <div style="opacity: 0.7;">
+      <div *ngFor="let i of goodcondition" class="conditionstar">
+        <img class="starsize" src="assets/icon/star-red.png">
+      </div>
+      <div *ngFor="let i of badcondition" class="conditionstar" >
+        <img class="starsize" src="assets/icon/star.png">
+      </div>
+      Item Condition = GOOD
+    </div>
+    <ion-row class="border" >
+      <ion-col class="graycolor" col-4>
         <ion-label>
           DESCRIPTION
         </ion-label>
@@ -71,14 +67,16 @@
         <ion-icon *ngIf="!descriptionstatus" name="md-add" (click)="stopPlayback()"></ion-icon>
         <ion-icon *ngIf="descriptionstatus"  name="md-remove" (click)="itemSelected()"></ion-icon>
       </ion-col>
+      <ion-row>
+        <ion-item *ngIf="descriptionstatus">
+          <ion-label class="graycolor" align="center">
+            {{Product.description}}
+          </ion-label>
+        </ion-item>
+      </ion-row>
     </ion-row>
-    <ion-item *ngIf="descriptionstatus">
-      <ion-label align="center">
-        {{Product.description}}
-      </ion-label>
-    </ion-item>
     <ion-row>
-      <ion-col col-6>
+      <ion-col class="graycolor" col-6>
         <ion-label>
           RENTAL DETAILS
         </ion-label>
@@ -94,36 +92,51 @@
       <ion-label>
         DATES
       </ion-label>
-      <ion-item color="none" no-padding>
-        <ion-datetime displayFormat="DD MMM YYYY" placeholder="01 Jan 2017" [(ngModel)]="myDate"><ion-icon name="md-calendar" color="secondary"></ion-icon></ion-datetime>
-      </ion-item>
-      <ion-label >
-        Total Rental Cost - ${{Product.total_cost}}
+      <ion-row class="locationstyle">
+        <ion-col col-1  >
+          <img class="locationicon" src="assets/icon/calendar_red.png">
+        </ion-col>
+        <ion-col col-6 class="middletext ">
+          Select Dates
+        </ion-col>
+        <ion-col col-4>
+        </ion-col>
+        <ion-col col-1 class="rightposition middletext">
+          <ion-icon name="ios-arrow-forward-outline"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-label  style="font-weight: 600; padding-bottom: 10px;" class="bottomborder">
+        <span  style="font-weight: 500"> Total Rental Cost:</span>
+         ${{Product.total_cost}}
+        <ion-icon name="ios-help-outline" class="helpicon" style="margin-left: 40vw;"></ion-icon>
       </ion-label>
-      <button ion-button block [navPush]="rent" color="secondary" class="defaultbutton">Send Rental Request</button>
+      <button ion-button block [navPush]="rent" class="defaultbutton send">Send Rental Request</button>
       <ion-item style="color: black;">
         <ion-row align="center">
           <ion-col col-4>
-            <ion-icon class="icon_size" name="ios-backspace"></ion-icon>
+            <img [navPush]="pickup" class="pickborder" src="assets/icon/pickup.png">
+            <p>Pick Up</p>
           </ion-col>
           <ion-col col-4>
-            <ion-icon [navPush]="retrun" class="icon_size" name="ios-return-left"></ion-icon>
+            <img [navPush]="retrun" class="sendborder" src="assets/icon/back-arrow.png">
+            <p>Return</p>
           </ion-col>
           <ion-col col-4>
-            <ion-icon class="icon_size" name="md-close"></ion-icon>
+            <img [navPush]="claim" class="sendborder" src="assets/icon/cancel.png">
+            <p>Cancel</p>
           </ion-col>
         </ion-row>
       </ion-item>
-      <ion-label>
-        Message
+      <ion-label class="bottomborder padding" >
+        SEND MESSAGE
       </ion-label>
-      <ion-item>
+      <ion-item class="bottomborder">
         <ion-input item-left type="text" placeholder="input generate text"></ion-input>
-        <button item-right padding="10vh" color="primary">Send</button>
+        <img  class="sendbutton" item-right src="assets/icon/ico_send.png">
       </ion-item>
     </div>
     <ion-row>
-      <ion-col col-4>
+      <ion-col class="graycolor" col-4>
         <ion-label>
           LOCATION
         </ion-label>

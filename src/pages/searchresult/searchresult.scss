@@ -4,24 +4,28 @@ page-searchresult {
     float: left;
     padding-bottom: 0;
     padding:0px !important;
-    margin:0px !important;
+    margin-top: 0px;
+    margin-bottom: -5px;
+    margin-left: 0px;
+    margin-right: 0px;
     img{
-      object-fit: cover;
-      -o-object-fit: cover;
-      opacity: .7;
+        object-fit: cover;
+        -o-object-fit: cover;
+        opacity: .7;
     }
     .item-md{
-      .item-inner{
-          padding-right: 0;
-      }
+        .item-inner{
+            padding-right: 0;
+        }
     }
     .label-md{
-      text-transform: capitalize;
-      font-weight: 500;
-      padding:0px !important;
-      margin:0px !important;
+        text-transform: capitalize;
+        font-weight: 500;
+        padding:0px !important;
+        margin:0px !important;
     }
   }
+
   .image-item{
     position: relative;
     display: inline-block;
@@ -29,6 +33,16 @@ page-searchresult {
     margin:0px !important;
     border:0px;
   }
+
+  .wardrobe {
+    z-index: 0;
+    position: relative;
+    width:50vw;
+    height:50vw;
+    padding:0px !important;
+    margin:0px !important;
+  }
+
   .cover_1 {
     z-index: 1;
     position: absolute;
@@ -39,6 +53,7 @@ page-searchresult {
     font-size: 1.8rem;
     color: white;
   }
+
   .cover_2 {
     z-index: 1;
     position: absolute;
@@ -46,28 +61,39 @@ page-searchresult {
     top: 1vw;
     padding:0px !important;
     margin:0px !important;
-    font-size: 1.8rem;
+    font-size: 31px;
     color: white;
+    font-weight: 100;
   }
-  .wardrobe {
-    z-index: 0;
-    position: relative;
-    width:50vw;
-    height:50vw;
-    padding:0px !important;
-    margin:0px !important;
-  }
-  .category_size {
-    font-size: 3.2rem;
-    color:light;
-  }
+
   .categorystyle{
     overflow: scroll;
     white-space: nowrap;
-    height: 50px;
-    margin-bottom:0.3v h;
-    margin-top:0.5vh;
+    height: 58px;
+    border: thin solid white;
     font-size: 1.2rem;
+  }
+
+  ion-scroll.scroll-x .scroll-content {
+    overflow-x: auto;
+    margin: 5px 0;
+  }
+
+  .deleteicon{
+    color: white;
+    position: absolute;
+    height: 16px;
+    font-size: 16px;
+    width: 15px;
+    border-radius: 50%;
+    background-color: red;
+  }
+
+  .searchresult{
+    display: inline-block;
+    width: 25vw;
+    text-align: center;
+    color: white !important
   }
  
 }

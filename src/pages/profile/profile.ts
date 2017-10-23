@@ -7,6 +7,8 @@ import { EditprofilePage } from '../editprofile/editprofile';
 import { Home } from '../home/home';
 import { About } from '../about/about';
 import { FeedbackPage } from '../feedback/feedback';
+import { LandingPage } from '../landing/landing';
+import { MyStats } from '../myitem/myitem';
 
 
 @Component({
@@ -21,6 +23,8 @@ export class Profile {
   home=Home;
   about=About;
   feedback=FeedbackPage;
+  logout=LandingPage;
+  mystats=MyStats;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.profile ={

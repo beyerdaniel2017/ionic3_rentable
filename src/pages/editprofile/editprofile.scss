@@ -16,9 +16,9 @@ page-editprofile {
   .profile-img{
     z-index:0;
     position:relative;
-    width: 180px;
-    height: 180px;
-    border-radius: 200px;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
     border: 10px solid white;
     -webkit-align-content: center;
     -ms-flex-line-pack: center;
@@ -28,29 +28,23 @@ page-editprofile {
     -o-object-fit: cover;
     margin-top: -30px;
   }
-  /* .profileheader{
-    text-align: center;
-    background-image: url(../assets/icon/navbar.png);
-  } */
 
   .editimage{
     position: absolute;
     z-index: 1;
-    margin-left: 61vw;
-    width: 42px !important;
-    height: 21px !important;
-    margin-top: -15vw;
-    background-color: red;
+    margin-left: 55vw;
+    width: 29px !important;
+    height: 29px !important;
+    margin-top: -10vw;
+    background-color: #f55349;
     border-radius: 50%;
   }
 
   .pencil{
     color: white;
-    text-align: center;
-    /* width: 11px; */
-    font-size: 3rem;
-    margin-left: 9px;
-    top: 15px;
+    font-size: 2rem;
+    margin-left: 2px;
+    margin-top: 5px;
   }
 
   .editimage.item-ios{
@@ -59,5 +53,9 @@ page-editprofile {
 
   .label-ios {
     margin: 11px 0 11px 0;
+  }
+
+  .itempadding{
+    padding-left:20px;
   }
 }

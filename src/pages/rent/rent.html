@@ -1,5 +1,5 @@
 
-<ion-content class="app-content">
+<ion-content no-padding no-margin class="app-content">
   <ion-row class="rentheader">
     <ion-icon name="md-close" [navPush]="detail" style="font-size: 2.6rem;"></ion-icon>
   </ion-row>
@@ -9,22 +9,23 @@
       REQUESTED BY
     </ion-label>
     <ion-row>
-      <ion-col col-5 >
+      <ion-col col-5>
         <img src="{{renter.img}}" [navPush]="otherprofile" class="otherphoto">
       </ion-col>
       <ion-col col-7 >
-        <h5 >
+        <h5 style="font-weight: bold;">
           {{renter.name}}
         </h5>
         <ion-label class="graytext">
           {{renter.address}}
         </ion-label>
         <ion-label >
-          <ion-icon name="ios-star" style="color: #f55349;"></ion-icon>
-          <ion-icon name="ios-star" style="color: #f55349;"></ion-icon>
-          <ion-icon name="ios-star" style="color: #f55349;"></ion-icon>
-          <ion-icon name="ios-star" style="color: #f55349;"></ion-icon>
-          <ion-icon name="ios-star-outline" style="color: #f55349;" ></ion-icon>
+          <div *ngFor="let i of goodcondition" class="conditionstar">
+            <img class="starsize" src="assets/icon/star-red.png">
+          </div>
+          <div *ngFor="let i of badcondition" class="conditionstar" >
+            <img class="starsize" src="assets/icon/star.png">
+          </div>
         </ion-label>
       </ion-col>
     </ion-row>
@@ -35,11 +36,11 @@
       <ion-col col-4 >
         <img src="{{renter.img}}" [navPush]="otherprofile" class="itemphoto">
       </ion-col>
-      <ion-col col-8 >
+      <ion-col col-8 class="itemtext">
         <ion-label>
           Item title
         </ion-label>
-        <ion-label >
+        <ion-label style="font-size: 13px;">
           <span style="color: #f55349">Dates:</span>  {{Product.selectdate}} to {{Product.selectdate}}
         </ion-label>
         <ion-label>
@@ -49,10 +50,11 @@
         </ion-label>
       </ion-col>
     </ion-row>
-    <ion-item no-padding>
+    <div style="text-align: center;">
       <button ion-button [navPush]="rentreject" class="halfbutton rejectbutton" >REJECT</button>
-      <button ion-button color="secondary" class="halfbutton acceptbutton">ACCEPT</button>
-    </ion-item>
+      <button ion-button [navPush]="accept" color="secondary" class="halfbutton acceptbutton">ACCEPT</button>
+    </div>
+      
   </div>
 
 

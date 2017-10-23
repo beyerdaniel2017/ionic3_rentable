@@ -7,6 +7,9 @@ import { Home } from '../home/home';
 
 import { Geolocation} from 'ionic-native';
 import { AcceptPage } from '../accept/accept';
+import { PickupPage } from '../pickup/pickup';
+import { ClaimrenterPage } from '../claimrenter/claimrenter';
+import { ClaimownerPage } from '../claimowner/claimowner';
 
 declare var google;
 
@@ -22,6 +25,8 @@ export class Details implements OnInit {
   showFooter= false;
   rentPage = RentPage;
   home=Home;
+  claim=ClaimrenterPage;
+  pickup=PickupPage;
   private topOrBottom: String;
   private contentBox;
   private tabBarHeight;
@@ -32,6 +37,9 @@ export class Details implements OnInit {
   locationstatus: boolean = false;
   rent=RentPage;
   retrun=AcceptPage;  //return process
+
+  goodcondition:number[] = [1, 2, 3];
+  badcondition:number[] = [1, 2];
 
   @ViewChild('map') mapElement: ElementRef;
   map: any;
@@ -74,10 +82,11 @@ export class Details implements OnInit {
     this.toggle_footer(false);
   }
   toggle_footer(show){
+    console.log('toggling');
     if(show){
     document.querySelector(".detFooter")['style'].display = 'block';
-    document.querySelector("page-details .scroll-content")['style'].marginBottom = '50px';
-    document.querySelector("page-details .fixed-content")['style'].marginBottom = '50px';
+    document.querySelector("page-details .scroll-content")['style'].marginBottom = 0;
+    document.querySelector("page-details .fixed-content")['style'].marginBottom = 0;
     this.zone.run(()=>{
       this.showFooter = true;
     })

@@ -6,124 +6,210 @@
 -->
 <ion-header>
 
-  <ion-navbar color="navbarcolor">
-    <div style="align:right;"><button item-right>Reset</button></div>
-  </ion-navbar>
+  <ion-toolbar color="navbarcolor">
+    <ion-row class="headerheight">
+      <ion-col col-1>
+        <ion-icon [navPush]="alert" class="backicon" name="ios-arrow-back-outline"></ion-icon>
+      </ion-col>
+      <ion-col col-8>
+      </ion-col>
+      <ion-col col-3 >
+        <p  style="text-align: right; margin: 0;">Reset</p>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
 </ion-header>
 
 
-<ion-content padding>
-	<ion-card>
-	  <ion-card-header >
-	    <ion-input type="text" value="" style="align:center;" color="secondary" placeholder="Set your alert name"></ion-input>
-	  </ion-card-header>
-	  <ion-card-content>
-	    <ion-item>
-	    	<div><p>Location</p></div>
-				<button (click)="presentModal()">Change Location</button>
-			</ion-item>
-				<ion-label>
-					<p>Categories</p>
-				</ion-label>
-			  <ion-list *ngFor="let item of categorylist">
-			    <div class="col">
-	          <label class="item item-icon-left item-radio" style="border: none">
-	            <input type="radio" name="group" >
-	              {{item.title}}
-	            <ion-icon [name]="item.icon"></ion-icon>
-	          </label>
-	        </div>
-			  </ion-list>
-			<ion-item>
-				<ion-label>
-					Select Dates
-				</ion-label>
-				<ion-row>
-					<ion-col class="icon-col" col-1>
-		          <ion-icon name="md-calendar" color="secondary"></ion-icon>
-		      </ion-col>
-		      <ion-col col-5>
-						<ion-item color="none" no-padding>
-		          <ion-datetime displayFormat="DD MMM YYYY" placeholder="01 Jan 2017" [(ngModel)]="myDate"></ion-datetime>
-		        </ion-item>
-		      </ion-col>
-		    </ion-row>
-			</ion-item>
-			<ion-item >
-				<ion-label >
-					Distance{{saturation}}
-				</ion-label>
-		    <ion-range min="0" max="1000" [(ngModel)]="saturation" step="100"color="secondary">
-		      <ion-icon small range-left name="ios-home"></ion-icon>
-					<ion-icon range-right name="ios-car"></ion-icon>
-		    </ion-range>
-		  </ion-item>
-		  <ion-item>
-		  	<ion-label item-start>
-		  		Price Range
-		  	</ion-label>
-		  </ion-item>
-		  <ion-item >
-	  		<ion-select item-left (ionChange)="fromprice($event)">
-	        <ion-option value="01">0</ion-option>
-	        <ion-option value="02">5</ion-option>
-	        <ion-option value="03" selected="true">10</ion-option>
-	        <ion-option value="04">50</ion-option>
-	        <ion-option value="05">100</ion-option>
-	        <ion-option value="06">200</ion-option>
-	        <ion-option value="07">500</ion-option>
-	        <ion-option value="08">1000</ion-option>
-	        <ion-option value="09">2000</ion-option>
-	        <ion-option value="10">5000</ion-option>
-	        <ion-option value="11">10000</ion-option>
-	        <ion-option value="12">50000</ion-option>
-	      </ion-select>
-					<!-- 	      <ion-select item-right (ionChange)="toprice($event)">
-					 -->
-			  <ion-select item-right (ionChange)="toprice($event)">
- 	        <ion-option value="01">0</ion-option>
-	        <ion-option value="02">5</ion-option>
-	        <ion-option value="03" >10</ion-option>
-	        <ion-option value="04">50</ion-option>
-	        <ion-option value="05" selected="true">100</ion-option>
-	        <ion-option value="06">200</ion-option>
-	        <ion-option value="07">500</ion-option>
-	        <ion-option value="08">1000</ion-option>
-	        <ion-option value="09">2000</ion-option>
-	        <ion-option value="10" >5000</ion-option>
-	        <ion-option value="11">10000</ion-option>
-	        <ion-option value="12">50000</ion-option>
-	      </ion-select>
-		  </ion-item>
-		  <ion-item>
-		  	<ion-label>
-		  		Posted Within
-		  	</ion-label>
-	  	</ion-item>
-	  	<form (submit)="doSubmit($event)" [formGroup]="langForm">
-		    <ion-list radio-group formControlName="langs">
-		      <ion-item>
-		        <ion-label>The last 24 hrs</ion-label>
-		        <ion-radio value="24" checked="true"></ion-radio>
-		      </ion-item>
-		      <ion-item>
-		        <ion-label>The last 7 days</ion-label>
-		        <ion-radio value="7"></ion-radio>
-		      </ion-item>
-		      <ion-item>
-		        <ion-label>The last 30 days</ion-label>
-		        <ion-radio value="30"></ion-radio>
-		      </ion-item>
-		      <ion-item>
-		        <ion-label>Show all</ion-label>
-		        <ion-radio value="all"></ion-radio>
-		      </ion-item>
-		    </ion-list>
-		  </form>
-		  <ion-item>
-		  	<button>Search</button>
-		  </ion-item>
+<ion-content padding >
+	<ion-input placeholder="set your alert name"></ion-input>
+	<ion-label style=" font-weight: bold;">
+    LOCATION
+  </ion-label>
+  <ion-row style="border: 1px solid #c6c6c7;">
+  	<ion-col col-1>
+  		<img  src="assets/icon/location-place.png">
+  	</ion-col>
+  	<ion-col col-6 style="margin-top:1.3vw;">
+      <h6 >Change Location</h6>
+    </ion-col>
+  	<ion-col col-4>
+  	</ion-col>
+  	<ion-col col-1 class="rightposition" style="margin-top:1.3vw;">
+  		<ion-icon (click)="presentModal()" name="ios-arrow-forward-outline"></ion-icon>
+  	</ion-col>
+	</ion-row>
+	<ion-label style=" font-weight: bold;">
+    CATEGORIES
+  </ion-label>
+  <ion-card class="grid-list" >
+    <div class="radio-img">
+      <input type="radio" name="radio-group" id="radio-1" class="input-hidden" />
+      <label for="radio-1">
+        <div class="img-container">
+          <ion-icon class="categoryimage" name="ios-home-outline"></ion-icon>
+        </div>
+        Category A
+      </label>
+    </div>
+    <div class="radio-img">
+      <input type="radio" name="radio-group" id="radio-2" class="input-hidden" />
+      <label for="radio-2">
+        <div class="img-container">
+          <ion-icon class="categoryimage" name="ios-car"></ion-icon>
+        </div>
+        Category C
+      </label>
+    </div>
+  </ion-card>
+  <ion-card class="grid-list" >
+    <div class="radio-img">
+      <input type="radio" name="radio-group" id="radio-3" class="input-hidden" />
+      <label for="radio-3">
+        <div class="img-container">
+          <ion-icon class="categoryimage" name="ios-desktop-outline"></ion-icon>
+        </div>
+        Category B
+      </label>
+    </div>
+    <div class="radio-img">
+      <input type="radio" name="radio-group" id="radio-4" class="input-hidden" />
+      <label for="radio-4">
+        <div class="img-container">
+          <ion-icon class="categoryimage" name="ios-musical-notes-outline"></ion-icon>
+        </div>
+        Category D
+      </label>
+    </div>
+  </ion-card>
+  <ion-label style=" font-weight: bold;">
+    DATES
+  </ion-label>
+  <ion-item style="border: 1px solid #c6c6c7; height: 3.5rem;">
+    <ion-row>
+      <ion-col col-1>
+        <ion-icon name="md-calendar" color="element"></ion-icon>
+      </ion-col>
+      <ion-col col-4>
+        Select Dates
+      </ion-col>
+      <ion-col col-6>
+      </ion-col>
+      <ion-col col-1 class="rightposition">
+        <ion-icon name="ios-arrow-forward-outline"></ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-item>
+	<ion-item class="wardrobe">
+    <ion-datetime [(ngModel)]="myDate"></ion-datetime>
+  </ion-item>
+  <ion-row >
+    <ion-col col-3>
+       <ion-label no-padding no-margin style=" font-weight: bold;">
+         DISTANCE
+       </ion-label>
+    </ion-col>
+    <ion-col col-6>
+    </ion-col>
+    <ion-col col-3 style="text-align: right;">
+      {{saturation}}km
+    </ion-col>
+  </ion-row>
+	<ion-item>
+    <ion-range min="0" max="30"  [(ngModel)]="saturation" step="1"color="element">
+      <img class="distancesize" range-left src="assets/icon/house.png">
+      <img class="distancesize" range-right src="assets/icon/sports-small.png">
+    </ion-range>
+  </ion-item>
+  <ion-label style=" font-weight: bold;">
+    PRICE
+  </ion-label>
+  <ion-row>
+    <ion-col col-6>
+      <ion-select (ngModelChange)="fromprice($event)" >
+        <ion-option value="00" selected="true">From</ion-option>
+        <ion-option value="01">0</ion-option>
+        <ion-option value="02">5</ion-option>
+        <ion-option value="03">10</ion-option>
+        <ion-option value="04" >50</ion-option>
+        <ion-option value="05">100</ion-option>
+        <ion-option value="06">200</ion-option>
+        <ion-option value="07">500</ion-option>
+        <ion-option value="08">1000</ion-option>
+        <ion-option value="09">2000</ion-option>
+        <ion-option value="10">5000</ion-option>
+        <ion-option value="11">10000</ion-option>
+        <ion-option value="12" >50000</ion-option>
+      </ion-select>
+    </ion-col>
+    <ion-col col-6>
+      <ion-select   (ionChange)="toprice($event)" >
+        <ion-option value="00" selected="true">To</ion-option>
+        <ion-option value="01" >0</ion-option>
+        <ion-option value="02">5</ion-option>
+        <ion-option value="03">10</ion-option>
+        <ion-option value="04">50</ion-option>
+        <ion-option value="05">100</ion-option>
+        <ion-option value="06">200</ion-option>
+        <ion-option value="07">500</ion-option>
+        <ion-option value="08">1000</ion-option>
+        <ion-option value="09">2000</ion-option>
+        <ion-option value="10" >5000</ion-option>
+        <ion-option value="11">10000</ion-option>
+        <ion-option value="12">50000</ion-option>
+      </ion-select>
+    </ion-col>
+  </ion-row>
+	<ion-label style=" font-weight: bold;">
+		POSTED WITHIN
+	</ion-label>
+	<form (submit)="doSubmit($event)" [formGroup]="langForm">
+    <ion-list radio-group formControlName="langs">
+      <ion-item>
+        <ion-label>The last 24 hrs</ion-label>
+        <ion-radio value="24" checked="true"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>The last 7 days</ion-label>
+        <ion-radio value="7"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>The last 30 days</ion-label>
+        <ion-radio value="30"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Show all</ion-label>
+        <ion-radio value="all"></ion-radio>
+      </ion-item>
+    </ion-list>
+  </form>
+  <ion-label style=" font-weight: bold;">
+    SORT BY
+  </ion-label>
+  <form (submit)="dosort($event)" [formGroup]="langForm">
+    <ion-list radio-group formControlName="langs">
+      <ion-item>
+        <ion-label>Newest First</ion-label>
+        <ion-radio value="newset" checked="true"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Closest First</ion-label>
+        <ion-radio value="closest"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Delivery First</ion-label>
+        <ion-radio value="delivery"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Price: low to high</ion-label>
+        <ion-radio value="lowtohigh"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Price: high to low</ion-label>
+        <ion-radio value="hightolow"></ion-radio>
+      </ion-item>
+    </ion-list>
+  </form>
 
- 	  </ion-card-content>
-	</ion-card>
+  <button ion-button block color="primary" class="defaultbutton" [navPush]="searchresult">Save Alert</button>
 </ion-content>

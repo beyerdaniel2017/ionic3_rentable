@@ -24,6 +24,77 @@ page-details {
       margin: 5px 0 4px 7px;
     }
   }
+
+  .locationstyle{
+    border: 1px solid #c6c6c7;
+    margin-bottom: 35px;
+  }
+
+  .locationicon{
+    height: 22px;
+    width: auto;
+  }
+
+
+  .border{
+    border-bottom: thin solid gainsboro;
+    border-top: thin solid gainsboro;
+    margin-top: 10px;
+  }
+
+  .sendbutton{
+    height: 20px;
+    padding: 0px;
+  }
+
+  .defaultbutton.send{
+    background-color: #599edb;
+    margin-top: 33px;
+    margin-bottom: 15px;
+  }
+
+  .bottomborder.padding{
+    padding-bottom:12px;
+    margin: 20px 10px 0 10px;
+  }
+
+  .sendborder{
+    border: thin solid gainsboro;
+    padding: 7px;
+    height: 33px;
+    width: 33px;
+    border-radius: 50%;
+  }
+
+  .pickborder{
+    border: thin solid gainsboro;
+    padding: 9px 5px;
+    height: 33px;
+    width: 33px;
+    border-radius: 50%;
+  }
+
+   .rightposition{
+    right:-1rem;
+  }
+
+  .middletext{
+    margin-top:6px;
+  }
+ 
+
+
+  .my-overlay {
+    position: relative;
+    display: inline-block;
+    height: 60vw;
+    width: 70vw;
+    margin: 15vw;
+    background: rgba(0,0,0,0.7);
+    top: 0;
+    left: 0;
+  }
+
   .card-md{
     box-shadow: none;
   }
@@ -58,6 +129,14 @@ page-details {
     margin:0px !important;
     text-align:center;
   }
+
+  .cover_name{
+    top: 2vh;
+    padding:0px !important;
+    margin:0px !important;
+    font-size: 2rem;
+    color: white;
+  }
   .cover_1 {
     z-index: 1;
     position: absolute;
@@ -74,7 +153,7 @@ page-details {
     left:4vw;
     padding:0px !important;
     margin:0px !important;
-    font-size: 2rem;
+    font-size: 2.5rem;
     color:white;
   }
   .cover_header1 {
@@ -145,7 +224,7 @@ page-details {
 
 .whiteicon{
   color:white;
-  font-size: 2em;
+  font-size: 1.6em;;
   align: center;
 }
 

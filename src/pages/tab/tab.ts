@@ -6,7 +6,6 @@ import { Home } from '../home/home';
 import { Myrent } from '../myrent/myrent';
 import { AddPage } from '../add/add';
 import { AlertsPage } from '../alerts/alerts';
-import { MyitemPage } from '../myitem/myitem';
 
 
 /*
@@ -28,6 +27,7 @@ export class TabPage {
   tab5Root = AlertsPage;
   myIndex:number;
 
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   	this.myIndex = navParams.data.tabIndex || 0;
   }
@@ -35,5 +35,7 @@ export class TabPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad TabPagePage');
   }
+
+  
 
 }

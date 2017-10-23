@@ -1,0 +1,69 @@
+<!--
+  Generated template for the ClaimownerPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-toolbar color="navbarcolor">
+  	 <ion-icon [navPush]="details" class="navetitle" name="md-close"></ion-icon>
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content padding align="center" class="addcontent">
+	<p class="returntitle">
+		Entering your claim
+	</p>
+	<P class="helptext suggest">You may submit a claim for all, or Part, of the items bond if the item you rented out was returned in a worse condition than when it was rented</P>
+	<p class="helptext condition">THIS IS THE ITEMS CONDITION WHEN RENTED</p>
+	<ion-label >
+    <img class="returnstarsize" src="assets/icon/star-grey.png">
+    <img class="returnstarsize" src="assets/icon/star-grey.png">
+    <img class="returnstarsize" src="assets/icon/star-grey.png">
+    <img class="returnstarsize" src="assets/icon/star-grey.png">
+    <img class="returnstarsize" src="assets/icon/star-grey-outline.png">
+  </ion-label>
+  <p class="goodstyle">VERY GOOD</p>
+  <p class="helptext condition">THIS IS THE ITEMS CONDITION WHEN RETURNED</p>
+	<ion-label >
+    <img class="returnstarsize" src="assets/icon/star-grey.png">
+    <img class="returnstarsize" src="assets/icon/star-grey.png">
+    <img class="returnstarsize" src="assets/icon/star-grey-outline.png">
+	  <img class="returnstarsize" src="assets/icon/star-grey-outline.png">
+    <img class="returnstarsize" src="assets/icon/star-grey-outline.png">
+  </ion-label>
+  <p class="goodstyle">FAIR</p>
+	<ion-item class="commentstyle" no-margin >
+		<ion-label item-left >
+			AMOUNT OF BOND TO CLAIM
+		</ion-label>
+		<ion-label item-right >
+			TOTAL VALUE OF BOND
+		</ion-label>
+	</ion-item>
+	<ion-row class="borderbottom">
+		<ion-col col-5>
+			<ion-input type="" name="text" ngModel ></ion-input>
+		</ion-col>
+		<ion-col col-1 style="text-align: center; font-size:3rem;">
+			<ion-icon name="close" (click)="remove()"></ion-icon>
+		</ion-col>
+		<ion-col col-6 style="text-align: right;">
+	    <ion-input type="text" name="text" ></ion-input>
+	  </ion-col>
+	</ion-row>
+	<ion-item>
+		<ion-label item-left class="commentstyle">
+			ADDITIONAL COMMENTS
+		</ion-label>
+		<ion-label item-right class="commentstyle" style="text-align: right;">
+			400
+		</ion-label>
+	</ion-item>
+	<ion-textarea rows="5" type="text" class="feedbackinput" text-wrap></ion-textarea >
+
+  <button ion-button block color="secondary" class="defaultbutton paddingbottom" >SUBMIT</button>
+</ion-content>

@@ -9,7 +9,7 @@
   <ion-navbar color="navbarcolor"  hideBackButton="true">
   	<ion-row style="color: white;">
       <ion-col col-1>
-        <ion-icon [navPush]="addpayment" style="text-align: left; font-size: 3rem;" name="ios-arrow-back-outline"></ion-icon>
+        <ion-icon [navPush]="addpayment" class="whiteicon" style="padding: 13px 0 0 10px;;" name="md-close"></ion-icon>
       </ion-col>
       <ion-col col-10>
         <h4  style="text-align: center;">ADD CREDIT CARD</h4>
@@ -23,7 +23,7 @@
 
 
 <ion-content padding style="background-color: white;">
-	<ion-label>
+	<ion-label class="helpstr">
 		NAME ON CARD
 	</ion-label>
 	<ion-row class="borderbottom">
@@ -34,39 +34,32 @@
 			<ion-icon name="close" (click)="removename()"></ion-icon>
 		</ion-col>
 	</ion-row>
-	<ion-label>
+	<ion-label class="helpstr">
 		CARD NUMBER
 	</ion-label>
 	<ion-row class="borderbottom">
-		<ion-col col-8>
+		<ion-col col-9>
 			<ion-input type="Number" [(ngModel)]="cardnumber" value="4749 3854 3587 3465"></ion-input>
 		</ion-col>
-		<ion-col col-3>
-			<form style="position: relative;">
-	      <input type="checkbox" value="None" id="checkbox-toggle" class="checkbox-toggle" name="checkbox" />
-	      <label class="checkbox-toggle-label" for="checkbox-toggle"><span>Mastercard</span></label>
-	    </form>
+		<ion-col col-2>
+	    <img class="mastersize" src="assets/icon/mastercard.png">
 		</ion-col>
 		<ion-col col-1 style="text-align: center; font-size:3rem;">
 			<ion-icon name="close" (click)="removenumber()"></ion-icon>
 		</ion-col>
 	</ion-row>
-	<ion-item>
-		<div item-left>
-			<ion-label>
-				EXPIRY DATE
-			</ion-label>
-		</div>
-		<div item-right>
-			<ion-label>
-				SECURITY CODE
-			</ion-label>
-		</div>
+	<ion-item class="helpstr" no-margin >
+		<ion-label item-left >
+			EXPIRY DATE
+		</ion-label>
+		<ion-label item-right >
+			SECURITY CODE
+		</ion-label>
 	</ion-item>
 	<ion-row class="borderbottom">
 		<ion-col col-5>
 			<ion-item color="none" no-padding>
-        <ion-datetime displayFormat="MM YYYY" placeholder="01 Jan 2017" [(ngModel)]="myDate"></ion-datetime>
+        <ion-datetime displayFormat="MM YYYY" [(ngModel)]="myDate"></ion-datetime>{{myDate}}
        </ion-item>
 		</ion-col>
 		<ion-col col-1 style="text-align: center; font-size:3rem;">
@@ -80,14 +73,13 @@
 			<ion-icon *ngIf="showPass" (click)="showPassword()" name="ios-eye-outline"></ion-icon>
 		</ion-col>
 	</ion-row>
-	<br>
-	<ion-label>
+	<ion-label class="helpstr">
 		Country
 	</ion-label>
 	<select (ionChange)="selectcountry($event)" class="selectwidth">
-		<option value="01">Australia</option>
+		<option value="01" selected="true">Australia</option>
     <option value="02">France</option>
-    <option value="03" selected="true">Germany</option>
+    <option value="03" >Germany</option>
     <option value="04">China</option>
     <option value="05">Russia</option>
     <option value="06">Spain</option>
@@ -98,7 +90,6 @@
     <option value="11">Poland</option>
     <option value="12">Hungary</option>
   </select>
-  <br><br>
   <button ion-button block class="savebutton" (click)="save()">SAVE</button>
 <script>
 $(document).ready(function(){

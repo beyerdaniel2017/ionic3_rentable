@@ -3,6 +3,7 @@ import { NavController, NavParams, ModalController } from 'ionic-angular';
 
 import { FormGroup, FormControl } from '@angular/forms';
 import { MapModal } from '../modal-page/modal-page';
+import { AlertsPage } from '../alerts/alerts';
 /*
   Generated class for the AlertdetailPage page.
 
@@ -20,6 +21,7 @@ export class AlertdetailPage {
 	datePeriod:any;
   langs:any;
   langForm:any;
+  alert=AlertsPage;
 
   constructor(public navCtrl: NavController, public modalCtrl: ModalController, public navParams: NavParams) {
   	this.categorylist =
