@@ -1,28 +1,23 @@
 page-searchresult {
-	.grid-list{
-    width: 50%;
-    float: left;
-    padding-bottom: 0;
-    padding:0px !important;
-    margin-top: 0px;
-    margin-bottom: -5px;
-    margin-left: 0px;
-    margin-right: 0px;
-    img{
-        object-fit: cover;
-        -o-object-fit: cover;
-        opacity: .7;
-    }
-    .item-md{
-        .item-inner{
-            padding-right: 0;
-        }
-    }
-    .label-md{
-        text-transform: capitalize;
-        font-weight: 500;
-        padding:0px !important;
-        margin:0px !important;
+  [menuToggle]{
+      display: inline-block !important;
+  }
+  .deleteicon{
+    color: white;
+    position: absolute;
+    height: 14px;
+    font-size: 14px !important;
+    width: 13px;
+    margin-left: -7px;
+    line-height: 17px !important;
+    border-radius: 50%;
+    background-color: red;
+  }
+  .icon-col{
+    font-size: 1.4rem;
+    color:white;
+    ion-icon{
+      line-height: 10vw;
     }
   }
 
@@ -53,47 +48,123 @@ page-searchresult {
     font-size: 1.8rem;
     color: white;
   }
-
   .cover_2 {
+    z-index: 1;
+    position: absolute;
+    right: 1.8vw;
+    top: 0.8vw;
+    font-size: 25px;
+    color: white;
+  }
+
+  .cover_image{
     z-index: 1;
     position: absolute;
     right:2vw;
     top: 1vw;
     padding:0px !important;
     margin:0px !important;
-    font-size: 31px;
-    color: white;
-    font-weight: 100;
+    height: 18px;
+    width:auto;
+  }
+
+  ion-scroll .scroll-content{
+    padding: 6px 0;
   }
 
   .categorystyle{
     overflow: scroll;
     white-space: nowrap;
-    height: 58px;
-    border: thin solid white;
+    color: gray;
+    height: 60px;
+    border-bottom: thin groove white;
+    border-top: thin groove white;
     font-size: 1.2rem;
+    background-color: #2e343e;
+    .activated{
+      color:white;
+    }
   }
 
-  ion-scroll.scroll-x .scroll-content {
-    overflow-x: auto;
-    margin: 5px 0;
-  }
-
-  .deleteicon{
-    color: white;
-    position: absolute;
-    height: 16px;
-    font-size: 16px;
-    width: 15px;
+  .logoblackborder{
+    border:thin solid gray;
     border-radius: 50%;
-    background-color: red;
+    width: 35px;
+    height:35px;
+    margin:auto;
+    margin-top: 6px;
   }
 
-  .searchresult{
-    display: inline-block;
-    width: 25vw;
-    text-align: center;
-    color: white !important
+  .filtericon {
+    max-width: 110%;
+    margin-top: 1vh;
+    right:1vw;
   }
- 
+  .grid-list{
+    width: 50%;
+    float: left;
+    padding-bottom: 0;
+    padding:0px !important;
+    margin-top: 0px;
+    margin-bottom: -5px;
+    margin-left: 0px;
+    margin-right: 0px;
+    img{
+        object-fit: cover;
+        -o-object-fit: cover;
+        opacity: .7;
+    }
+    .item-md{
+        .item-inner{
+            padding-right: 0;
+        }
+    }
+    .label-md{
+        text-transform: capitalize;
+        font-weight: 500;
+        padding:0px !important;
+        margin:0px !important;
+    }
+  }
+
+  .segment-ios .segment-button.segment-activated{
+    color: #fff;
+    background-color: transparent;
+    border:0;
+    ion-icon {
+      p{
+        color:white;
+      }
+      div{
+        border-color: white;
+      }
+    }
+  }
+
+  .categoryimg {
+    display: inline-block;
+    height: 35px;
+    margin-top: 5px;
+    text-align: center;
+    border: 0;
+  }
+
+  .segment-ios .segment-button{
+    border: 0;
+    color: graytext;
+    width: 25vw;
+    min-width: 25vw;
+    height: 60px;
+    display: inline-block;
+    text-align:center;
+    ion-icon{
+      margin-top: 8px;
+      font-size: 3.5rem;
+    }
+  }
+
+  .categoryfont{
+    margin-top: -16px;
+    font-size: 10px;
+  }
 }

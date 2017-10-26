@@ -16,8 +16,11 @@ import { Details } from '../details/details';
 export class AcceptPage {
 
 	details=Details;
+  agree:any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.agree="yes";
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AcceptPagePage');

@@ -19,7 +19,8 @@ export class RentPage {
   rentreject=RejectPage;
   otherprofile=OtherprofilePage;
   detail=Details;
-
+   goodcondition:number[] = [1, 2, 3,4];
+  badcondition:number[] = [1];
   Product: any;
   renter:any;
 

@@ -19,8 +19,10 @@ import { Details } from '../details/details';
 export class PickupPage {
 
 	details=Details;
+	agree:any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+  	this.agree="yes";
   }
 
   ionViewDidLoad() {

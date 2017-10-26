@@ -64,6 +64,10 @@ page-search {
       border:0;
     }
   }
+  .inputborder{
+    border: thin solid gainsboro;
+    color:black;
+  }
 
   .showbutton{
     margin: auto;
@@ -158,10 +162,6 @@ page-search {
     width:auto;
   }
 
-  .range-ios {
-    padding: 0px;
-  }
-
   .categorytitle{
     font-weight: bold;
     border-top: thin solid gainsboro;
@@ -215,7 +215,7 @@ page-search {
   }
 }
 
- .radio-img {
+  .radio-img {
     margin: 25px 0;
     input[type=radio] {
       & + label {

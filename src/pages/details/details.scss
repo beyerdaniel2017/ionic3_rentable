@@ -132,7 +132,7 @@ page-details {
 
   .cover_name{
     top: 2vh;
-    padding:0px !important;
+    padding:0px 0 0 5px !important;
     margin:0px !important;
     font-size: 2rem;
     color: white;
@@ -153,7 +153,7 @@ page-details {
     left:4vw;
     padding:0px !important;
     margin:0px !important;
-    font-size: 2.5rem;
+    font-size:24px;
     color:white;
   }
   .cover_header1 {
@@ -163,7 +163,7 @@ page-details {
     right:12vw;
     padding:0px !important;
     margin:0px !important;
-    font-size: 2rem;
+    font-size: 24px;
     color:white;
   }
   .cover_header2 {
@@ -173,7 +173,7 @@ page-details {
     right:4vw;
     padding:0px !important;
     margin:0px !important;
-    font-size: 2rem;
+    font-size: 24px;
     color:white
   }
   .cover_2 {
@@ -186,6 +186,7 @@ page-details {
     color: white;
     height:2rem;
   }
+
   .content-ios{
     background-color:white;
   }
@@ -224,7 +225,7 @@ page-details {
 
 .whiteicon{
   color:white;
-  font-size: 1.6em;;
+  font-size: 24px;
   align: center;
 }
 

@@ -71,6 +71,18 @@ page-myrent {
  
 
   .info{
+    z-index: 1;
+    position: absolute;
+    right:2.7vw;
+    top: 2.7rem;
+    padding:0px !important;
+    margin:0px !important;
+    white-space: normal;
+    height: 28px;
+    color:white;
+  }
+
+  .info2{
     white-space: normal;
     height: 28px;
     color:white;
@@ -145,9 +157,20 @@ page-myrent {
     top: 1rem;
     padding:0px !important;
     margin:0px !important;
-    font-size:24px;
-    color: white;
+    height: 18px;
+     width:auto;
   }
+
+ /*  z-index: 1;
+    position: absolute;
+    right:2vw;
+    top: 1vw;
+    padding:0px !important;
+    margin:0px !important;
+    height: 18px;
+    width:auto; */
+
+
   .cover_2 {
     z-index: 1;
     position: absolute;

@@ -23,15 +23,17 @@ import { SearchresultPage } from '../searchresult/searchresult';
 })
 export class SearchPage {
 
-  home=Home;
-
-	categorylist:Array<any>;
+  categorylist:Array<any>;
   newcategorylist:Array<any>;
 	map=MapModal;
   searchresult=SearchresultPage;
+  home=Home;
 	datePeriod:any;
   langs:any;
   langForm:any;
+  deliversort:any;
+  postwithin:any;
+  within:any;
 
   showfromprice: boolean = false;
   showtoprice: boolean=false;
@@ -55,7 +57,10 @@ export class SearchPage {
     ]
 
     this.langForm = new FormGroup({
-      "langs": new FormControl({value: 'rust', disabled: false})
+      "langs": new FormControl({value: 'newset', disabled: false})
+    });
+    this.postwithin = new FormGroup({
+      "within": new FormControl({value: 'all', disabled: false})
     });
   }
 

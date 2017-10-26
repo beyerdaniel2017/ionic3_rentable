@@ -18,8 +18,6 @@ page-home {
     border:0px;
   }
 
-  
-
   .wardrobe {
     z-index: 0;
     position: relative;
@@ -160,7 +158,9 @@ page-home {
   }
 }
 
-
+.searchbar-ios.searchbar-left-aligned .searchbar-search-icon {
+  margin-left: 7px;
+}
 .item-ios.item-block .item-inner{
   border:0px;
 }
@@ -183,6 +183,7 @@ page-home {
     padding-bottom: 0;
     color:dark;
     background-color: white !important;
+    height:25px;
   }
   input::-webkit-input-placeholder {
       font-size: 1.2rem;
@@ -221,7 +222,7 @@ page-home {
   background-color:white;
   padding-bottom:30px;
   .scroll-content{
-     padding: 4vw;
+     padding: 16px 16px 40px 16px;
   }
 }
 

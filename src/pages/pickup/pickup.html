@@ -18,7 +18,14 @@
 		Picking up your Item
 	</p>
 	<p class="helptext condition">DO YOU AGREE WITH THE CONDITION FO THE IMET SET BELOW?</p>
-	<ion-label >
+	<ion-label *ngIf="agree=='no'" >
+    <img class="returnstarsize" src="assets/icon/star-red.png">
+    <img class="returnstarsize" src="assets/icon/star-red.png">
+    <img class="returnstarsize" src="assets/icon/star-red.png">
+    <img class="returnstarsize" src="assets/icon/star-red.png">
+    <img class="returnstarsize" src="assets/icon/star.png">
+  </ion-label>
+	<ion-label *ngIf="agree=='yes'" >
     <img class="returnstarsize" src="assets/icon/star-grey.png">
     <img class="returnstarsize" src="assets/icon/star-grey.png">
     <img class="returnstarsize" src="assets/icon/star-grey.png">
@@ -26,18 +33,26 @@
     <img class="returnstarsize" src="assets/icon/star-grey-outline.png">
   </ion-label>
   <p class="goodstyle">VERY GOOD</p>
-	<ion-row >
-		<ion-col col-3 >
+	<ion-row radio-group [(ngModel)]="agree">
+		<ion-col col-2>
+		
+		</ion-col>
+		<ion-col col-2 >
 			Yes
 		</ion-col>
-  	<ion-col col-3 >
-			<ion-toggle  [(ngModel)]="yes" color="secondary"></ion-toggle>
+  	<ion-col col-2 >
+			<ion-radio value="yes" ></ion-radio>
+			<ion-icon class="agreestyle" *ngIf="agree=='no'" name="checkmark"></ion-icon>
 		</ion-col>
-		<ion-col col-3 >
+		<ion-col col-2 >
 			No
 		</ion-col>
-		<ion-col col-3 >
-			<ion-toggle  [(ngModel)]="!yes" color="secondary"></ion-toggle>
+		<ion-col col-2 >
+			<ion-radio value="no" ></ion-radio>
+			<ion-icon class="agreestyle" *ngIf="agree=='yes'" name="checkmark"></ion-icon>
+		</ion-col>
+		<ion-col col-2>
+		
 		</ion-col>
 	</ion-row>
 	<ion-label class="commentstyle">

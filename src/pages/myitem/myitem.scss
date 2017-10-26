@@ -9,17 +9,9 @@ page-myitem {
   }
 
 
-  .toolbar-ios-navbar .segment-ios .segment-button.segment-activated {
-    color: white;
-    .ion-segment-button{
-      color:white !important;
-      div{
-	    	border-color:white;
-	    }
-    }
-    div{
-    	border-color:white;
-    }
+  .toolbar-ios-navbarcolor .segment-ios .segment-button.segment-activated {
+    border-bottom: solid #0cb5f3;
+    color:white !important;
   }
 
   .toolbar-ios-navbarcolor .segment-ios .segment-button.segment-activated {
@@ -32,10 +24,16 @@ page-myitem {
   .segment-ios .segment-button{
     border:0;
     color: graytext;
+    margin:0 10px;
     ion-icon{
       margin-top: 8px;
       font-size: 3.5rem;
     }
+  }
+  
+  .itemtext{
+    font-size:15px;
+    color:gray;
   }
 
   .categoryimg{
@@ -97,7 +95,7 @@ page-myitem {
 
   .segment_info1{
    	padding-top: 5px;
-    height: 5rem;
+    height: 60px;
   }
 
   .toolbar-ios .segment-button {

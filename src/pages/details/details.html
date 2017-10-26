@@ -1,17 +1,6 @@
 <ion-content #contentRef (ionScroll)="scrollingFun($event)">
-  <!-- <ion-slides  loop="true" speed="3000">
-    <ion-slide >
-      <img src="assets/img/01.png">
-    </ion-slide>
-    <ion-slide >
-      <img src="assets/img/02.png">
-    </ion-slide>
-    <ion-slide >
-      <img src="assets/img/03.png">
-    </ion-slide>
-  </ion-slides> -->
   <div style="z-index: 0; position: relative; background-color: #c6c6c7;">
-    <img src="{{Product.img}}" class="my-overlay" >
+    <img src="{{Product.img}}" style="display: inline-block; height: 50vh; width: 100vw; margin-bottom: -4px;">
     <ion-icon name="ios-arrow-back" class="cover_header0" [navPush]="home"></ion-icon>
     <ion-icon name="shareicon" class="cover_header1"></ion-icon>
     <ion-icon name="ios-heart-outline" class="cover_header2" (click)="ActiveLike()" [ngClass]="{'activeColor':like}"></ion-icon>
@@ -88,7 +77,7 @@
         <ion-icon *ngIf="rentalstatus"  name="md-remove" (click)="rentalhide()"></ion-icon>
       </ion-col>
     </ion-row>
-    <div *ngIf="rentalstatus">
+    <div *ngIf="rentalstatus" class="bottomborder">
       <ion-label>
         DATES
       </ion-label>
@@ -130,7 +119,7 @@
       <ion-label class="bottomborder padding" >
         SEND MESSAGE
       </ion-label>
-      <ion-item class="bottomborder">
+      <ion-item >
         <ion-input item-left type="text" placeholder="input generate text"></ion-input>
         <img  class="sendbutton" item-right src="assets/icon/ico_send.png">
       </ion-item>

@@ -1,9 +1,6 @@
 page-postcost {
 
-  .detailscreen{
-    padding:3vw;
-    color: black;
-  }
+  
 
   .titleimage{
     height: 15vw;
@@ -28,10 +25,6 @@ page-postcost {
     .label-ios{
     	margin:0px;
     }
-  }
-
-  .range-ios .range-knob{
-    background:red !important;
   }
 
   .labelhelp{
@@ -59,3 +52,11 @@ page-postcost {
   }
 
 }
+
+  .range-ios .range-knob{
+    background:red !important;
+  }
+  .detailscreen{
+    padding: 3vw 3vw 11vw 3vw;
+    color: black;
+  }

@@ -6,40 +6,39 @@
 -->
 <ion-header >
 
-  <ion-navbar color="navbarcolor" hideBackButton="true">
-    <ion-row>
+  <ion-toolbar  no-padding no-margin >
+    <ion-row class="profileheader">
       <ion-col  col-1 class="icon-col">
         <img src="assets/icon/avatar.png" style="margin-top: 10px;" [navPush]="profile">
       </ion-col>
       <ion-col class="icon-col" col-10>
-        <ion-searchbar  class="searchbar" placeholder="Find items near you"></ion-searchbar>
+      <ion-searchbar class="searchbar" placeholder="Find items near you" (ionInput)="filterItems($event)"></ion-searchbar>
       </ion-col>
       <ion-col class="icon-col" col-1>
-        </ion-col>
+        <img src="assets/icon/filter.png" style="margin-top: 10px;" [navPush]="search">
+       </ion-col>
     </ion-row>
-  </ion-navbar>
-
+  </ion-toolbar>
 </ion-header>
 
-<ion-content no-padding>
-  <ion-scroll scrollX="true" class="categorystyle" >
-    <div *ngFor="let item of categorylist" class="searchresult" >
-      <div class="logoblackborder">
-        <ion-icon name="{{item.icon}}" class="categoryimg"></ion-icon>
+<ion-content no-padding class="app-content ">
+  <ion-scroll  scrollX="true" class="categorystyle" >
+    <ion-segment [(ngModel)]="timeline" style="justify-content: left;">
+      <ion-segment-button *ngFor="let item of categorylist" (click)="myFunction($event)"  value="{{item.value}}" >
+        <img src="{{item.inactive_img}}" class="categoryimg">
         <ion-icon name="md-close" class="deleteicon"></ion-icon>
-      </div>
-      <div > {{item.title}} </div>
-    </div>
+        <p class="categoryfont">{{item.title}}</p>
+      </ion-segment-button>
+    </ion-segment>
   </ion-scroll>
-  <ion-card class="grid-list" *ngFor="let item of categorylist">
+  <ion-card  class="grid-list backcolor" *ngFor="let item of itemlist">
     <div class="image-item" no-lines>
       <img [navPush]="details" class="wardrobe" src="{{item.img}}" />
       <ion-label class="cover_1" >
         ${{item.price}}
       </ion-label>
-      <ion-icon name="md-heart-outline" class="cover_2" (click)="ActiveLike()" [ngClass]="{'activeColor':like}" ></ion-icon>
-      <ion-icon *ngIf="!showwhite" class="cover_2" (click)="showheart()" name="md-heart-outline"></ion-icon>
-      <ion-icon *ngIf="showwhite" class="cover_2" (click)="showheart()" name="md-heart"></ion-icon>
+      <img *ngIf="!showwhite" class="cover_image" src="assets/icon/like.png">
+      <!-- <ion-icon *ngIf="showwhite" class="cover_2" (click)="showheart()" name="md-heart"></ion-icon> -->
     </div>
   </ion-card>
 </ion-content>

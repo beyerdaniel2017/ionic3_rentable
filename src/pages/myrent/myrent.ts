@@ -34,9 +34,9 @@ export class Myrent {
     this.own_avaiablelist =
     [
       {img: 'assets/img/11.png', title: 'John', view:'10', favourity:'20'},
-      {img: 'assets/img/22.png', title: 'John', view:'10', favourity:'20'},
-      {img: 'assets/img/33.png', title: 'John', view:'10', favourity:'20'},
-      {img: 'assets/img/11.png', title: 'John', view:'10', favourity:'20'},
+      {img: 'assets/img/22.png', title: 'alex', view:'10', favourity:'20'},
+      {img: 'assets/img/33.png', title: 'eric', view:'10', favourity:'20'},
+      {img: 'assets/img/11.png', title: 'kevin', view:'10', favourity:'20'},
     ]
 
     this.own_rentedlist =
@@ -48,16 +48,17 @@ export class Myrent {
 
     this.rent_currentlist =
     [
-      {img: 'assets/img/11.png', title: 'apartment', profileimage:'assets/img/profile-img.png', profilename:'John', delete:'yes', },
-      {img: 'assets/img/22.png', title: 'wedding', profileimage:'assets/img/profile-img.png', profilename:'rascal', delete:'yes', },
-      {img: 'assets/img/33.png', title: 'shop', profileimage:'assets/img/profile-img.png', profilename:'sizza', delete:'yes', }
+      {img: 'assets/img/11.png', title: 'John', view:'43', favourity:'40'},
+      {img: 'assets/img/22.png', title: 'jens', view:'234', favourity:'50'},
+      {img: 'assets/img/33.png', title: 'eric', view:'12', favourity:'26'},
+      {img: 'assets/img/11.png', title: 'daniel', view:'52', favourity:'23'},
     ]
 
     this.rent_historylist =
     [
-      {img: 'assets/img/11.png', title: 'apartment', profileimage:'assets/img/profile-img.png', profilename:'John', delete:'yes', },
-      {img: 'assets/img/22.png', title: 'wedding', profileimage:'assets/img/profile-img.png', profilename:'rascal', delete:'yes', },
-      {img: 'assets/img/33.png', title: 'shop', profileimage:'assets/img/profile-img.png', profilename:'sizza', delete:'yes', }
+      {img: 'assets/img/11.png', title: 'apartment', profileimage:'assets/img/profile-img.png', profilename:'John', delete:'yes', rentday:'5' },
+      {img: 'assets/img/22.png', title: 'wedding', profileimage:'assets/img/profile-img.png', profilename:'rascal', delete:'yes',  rentday:'3'},
+      {img: 'assets/img/33.png', title: 'shop', profileimage:'assets/img/profile-img.png', profilename:'sizza', delete:'yes', rentday:'2' }
     ]
   }
 

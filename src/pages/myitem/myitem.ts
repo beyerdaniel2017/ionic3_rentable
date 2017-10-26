@@ -30,35 +30,34 @@ export class MyStats {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.individlist =
     [
-      { title: 'Cool sizes 9 shoes', price:'100', history:'2 days ago'},
+      { title: 'Cool sizes 9 shoes', price:'10', history:'2 days ago'},
       { title: 'Ride snowboard', price:'130', history:'3 days ago'},
-      { title: '3 room tent', price:'200', history:'4 days ago'},
+      { title: '3 room tent', price:'20', history:'4 days ago'},
       { title: 'good watch', price:'250', history:'5 days ago'},
-      { title: 'snow car', price:'310', history:'2 days ago'}
+      { title: 'snow car', price:'31', history:'2 days ago'}
     ]
     this.monthlylsit =
     [
-      { month: 'July, 2017', price:'100', history:'2 days ago'},
-      { month: 'June, 2017', price:'130', history:'3 days ago'},
-      { month: 'May, 2017', price:'200', history:'4 days ago'},
-      { month: 'April, 2017', price:'250', history:'5 days ago'},
-      { month: 'March, 2017', price:'310', history:'2 days ago'}
+      { month: 'July', price:'100', year:'2017',enddate:'31'},
+      { month: 'June', price:'130', year:'2017',enddate:'3'},
+      { month: 'May', price:'200', year:'2017',enddate:'31'},
+      { month: 'April', price:'250', year:'2017',enddate:'30'},
+      { month: 'March', price:'310', year:'2017',enddate:'31'}
     ]
     this.quarterlylsit =
     [
-      { month: 'July, 2017', price:'100', history:'2 days ago'},
-      { month: 'June, 2017', price:'130', history:'3 days ago'},
-      { month: 'May, 2017', price:'200', history:'4 days ago'},
-      { month: 'April, 2017', price:'250', history:'5 days ago'},
-      { month: 'March, 2017', price:'310', history:'2 days ago'}
+      { quarterstart: 'January ',quarterend:'March', price:'400', year:'2017',enddate:'31'},
+      { quarterstart: 'April',quarterend:'June', price:'437', year:'2017',enddate:'30'},
+      { quarterstart: 'July',quarterend:'September', price:'600', year:'2017',enddate:'30'},
+      { quarterstart: 'October',quarterend:'December', price:'2436', year:'2017',enddate:'31'}
     ]
     this.yearlylsit =
     [
-      { month: 'July, 2017', price:'100', history:'2 days ago'},
-      { month: 'June, 2017', price:'130', history:'3 days ago'},
-      { month: 'May, 2017', price:'200', history:'4 days ago'},
-      { month: 'April, 2017', price:'250', history:'5 days ago'},
-      { month: 'March, 2017', price:'310', history:'2 days ago'}
+      { year: '2017', price:'1000' },
+      { year: '2016', price:'1300'},
+      { year: '2015', price:'2000'},
+      { year: '2014', price:'2500'},
+      { year: '2013', price:'3100'}
     ]
   }
 

@@ -65,13 +65,13 @@
 
       <div  *ngSwitchCase="'monthly'">
         <ion-list class="bottomborder bottompadding" *ngFor="let item of monthlylsit">
-          <p class="itemstyle">{{item.month}}</p>
+          <p class="itemstyle">{{item.month}},{{item.year}}</p>
           <ion-item no-lines paddings>
             <div class="imageblackborder" item-left >
               <img class="itemimg" src="assets/icon/calendar.png" />
             </div>
             <p class="itemtext">DATE RANGE</p>
-            <p class="itemtext">{{item.history}}</p>
+            <p class="itemtext">{{item.month}} 1-{{item.month}} {{item.enddate}} </p>
             <p item-right class="pricetext"  item-right>${{item.price}}</p>
           </ion-item>
         </ion-list>
@@ -79,13 +79,13 @@
 
       <div  *ngSwitchCase="'quartly'">
         <ion-list class="bottomborder bottompadding" *ngFor="let item of quarterlylsit">
-          <p class="itemstyle">{{item.month}}</p>
+          <p class="itemstyle">{{item.quarterstart}}-{{item.quarterend}},{{item.year}}</p>
           <ion-item no-lines paddings>
             <div class="imageblackborder" item-left >
               <img class="itemimg" src="assets/icon/calendar.png" />
             </div>
             <p class="itemtext">DATE RANGE</p>
-            <p class="itemtext">{{item.history}}</p>
+            <p class="itemtext">{{item.quarterstart}}1-{{item.quarterend}}{{item.enddate}}</p>
             <p item-right class="pricetext"  item-right>${{item.price}}</p>
           </ion-item>
         </ion-list>
@@ -93,13 +93,13 @@
 
       <div  *ngSwitchCase="'yearly'">
         <ion-list class="bottomborder bottompadding" *ngFor="let item of yearlylsit">
-          <p class="itemstyle">{{item.month}}</p>
+          <p class="itemstyle">{{item.year}}</p>
           <ion-item no-lines paddings>
             <div class="imageblackborder" item-left >
               <img class="itemimg" src="assets/icon/calendar.png" />
             </div>
             <p class="itemtext">DATE RANGE</p>
-            <p class="itemtext">{{item.history}}</p>
+            <p class="itemtext">January 1-December31</p>
             <p item-right class="pricetext"  item-right>${{item.price}}</p>
           </ion-item>
         </ion-list>
@@ -107,7 +107,7 @@
 
     </ion-card-content>
   </div>
-  <div *ngSwitchCase="'in'" style="height: 5rem; margin-bottom: 7px; background-color: #2e343e">
+  <div *ngSwitchCase="'in'" style="height:60px;background-color: #2e343e">
      <ion-segment [(ngModel)]="timeline" class="segment_info1">
       <ion-segment-button (click)="myFunction($event)"  value="individual" style="height: 5rem;">
         <img src="assets/icon/stats-individual.png" data-active="assets/icon/stats-individual.png" data-inactive="assets/icon/stats-individual-grey.png" class="categoryimg">
@@ -143,13 +143,13 @@
 
       <div  *ngSwitchCase="'monthly'">
         <ion-list class="bottomborder bottompadding" *ngFor="let item of monthlylsit">
-          <p class="itemstyle">{{item.month}}</p>
+          <p class="itemstyle">{{item.month}},{{item.year}}</p>
           <ion-item no-lines paddings>
             <div class="imageblackborder" item-left >
               <img class="itemimg" src="assets/icon/calendar.png" />
             </div>
             <p class="itemtext">DATE RANGE</p>
-            <p class="itemtext">{{item.history}}</p>
+            <p class="itemtext">{{item.month}} 1-{{item.month}} {{item.enddate}} </p>
             <p item-right class="pricetext"  item-right>${{item.price}}</p>
           </ion-item>
         </ion-list>
@@ -157,13 +157,13 @@
 
       <div  *ngSwitchCase="'quartly'">
         <ion-list class="bottomborder bottompadding" *ngFor="let item of quarterlylsit">
-          <p class="itemstyle">{{item.month}}</p>
+          <p class="itemstyle">{{item.quarterstart}}-{{item.quarterend}},{{item.year}}</p>
           <ion-item no-lines paddings>
             <div class="imageblackborder" item-left >
               <img class="itemimg" src="assets/icon/calendar.png" />
             </div>
             <p class="itemtext">DATE RANGE</p>
-            <p class="itemtext">{{item.history}}</p>
+            <p class="itemtext">{{item.quarterstart}}1-{{item.quarterend}}{{item.enddate}}</p>
             <p item-right class="pricetext"  item-right>${{item.price}}</p>
           </ion-item>
         </ion-list>
@@ -171,13 +171,13 @@
 
       <div  *ngSwitchCase="'yearly'">
         <ion-list class="bottomborder bottompadding" *ngFor="let item of yearlylsit">
-          <p class="itemstyle">{{item.month}}</p>
+          <p class="itemstyle">{{item.year}}</p>
           <ion-item no-lines paddings>
             <div class="imageblackborder" item-left >
               <img class="itemimg" src="assets/icon/calendar.png" />
             </div>
             <p class="itemtext">DATE RANGE</p>
-            <p class="itemtext">{{item.history}}</p>
+            <p class="itemtext">January 1-December31</p>
             <p item-right class="pricetext"  item-right>${{item.price}}</p>
           </ion-item>
         </ion-list>

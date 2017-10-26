@@ -1,7 +1,7 @@
 
 <ion-header >
 
-  <ion-toolbar no-padding no-margin >
+  <ion-toolbar  no-padding no-margin >
     <ion-row class="profileheader">
       <ion-col  col-1 class="icon-col">
         <img src="assets/icon/avatar.png" style="margin-top: 10px;" [navPush]="profile">
@@ -25,11 +25,6 @@
         <p class="categoryfont">{{item.title}}</p>
       </ion-segment-button>
     </ion-segment>
-    <!--   <div class="logoblackborder" [ngStyle]="{'border-color': hexColor}">
-        <ion-icon name="{{item.icon}}" class="categoryimg"></ion-icon>
-      </div>
-      <div style="font-size: 10px;"> {{item.title}} </div>
-     -->
   </ion-scroll>
   <ion-card  class="grid-list backcolor" *ngFor="let item of categorygrid">
     <div class="image-item" no-lines>
