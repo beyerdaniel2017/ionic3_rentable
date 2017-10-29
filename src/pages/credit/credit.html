@@ -39,7 +39,7 @@
 	</ion-label>
 	<ion-row class="borderbottom">
 		<ion-col col-9>
-			<ion-input type="Number" [(ngModel)]="cardnumber" value="4749 3854 3587 3465"></ion-input>
+			<ion-input (ionChange)='f()' type="Number" [(ngModel)]="cardnumber" value="4749 3854 3587 3465"></ion-input>
 		</ion-col>
 		<ion-col col-2>
 	    <img class="mastersize" src="assets/icon/mastercard.png">

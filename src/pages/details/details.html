@@ -1,6 +1,17 @@
 <ion-content #contentRef (ionScroll)="scrollingFun($event)">
-  <div class="home" style="">
-    <img src="{{Product.img}}"  style="display: inline-block; height: 50vh; width: 100vw; margin-bottom: -4px;border: 0;">
+  <div class="home" >
+    <ion-slides style="display: inline-block; height: 50vh; width: 100vw; margin-bottom: -4px;border: 0;"  loop="true" speed="3000">
+      <ion-slide >
+        <img src="assets/img/01.png">
+      </ion-slide>
+      <ion-slide >
+        <img src="assets/img/02.png">
+      </ion-slide>
+      <ion-slide >
+        <img src="assets/img/03.png">
+      </ion-slide>
+    </ion-slides>
+<!--     <img src="{{Product.img}}"  style="display: inline-block; height: 50vh; width: 100vw; margin-bottom: -4px;border: 0;"> -->
     <ion-icon name="ios-arrow-back" class="cover_header0" [navPush]="home"></ion-icon>
     <ion-icon name="shareicon" class="cover_header1"></ion-icon>
     <img class="cover_header2" src="assets/icon/like.png">

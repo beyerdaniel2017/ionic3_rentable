@@ -42,6 +42,10 @@ export class CreditPage {
 
   }
 
+  f(){
+    console.log(this.cardnumber+ "cardnumber");
+  }
+
   removename(){
     this.name="";
   }
