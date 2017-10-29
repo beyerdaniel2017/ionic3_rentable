@@ -49,6 +49,8 @@ page-profile {
     }
   }
 
+  
+
   .profile-img{
     width: 94px;
     height: 94px;
@@ -97,18 +99,25 @@ page-profile {
   .helpfont.padding{
     padding-bottom:15px;
   }
+  .list-ios {
+    margin: -1px 0 55px;
+}
 
   .ion-ios-addpay-outline,
   .ion-ios-addpay,.ion-md-addpay,.ion-md-addpay-outline {
     width: 2px !important;
     content: url(../assets/icon/add.png);
   }
+  
 }
 
 .profileheader{
   text-align: center;
-  padding-top: 20px;
+  padding: 8px 10px 20px 10px;
   background-color: #002b42;
   height: 66px;
 }
 
+.profileheader.topheight{
+    padding-top:20px;
+  }

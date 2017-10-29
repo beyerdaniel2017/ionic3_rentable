@@ -21,6 +21,8 @@ export class MyStats {
 
   own_rent:any;
   money:String="out";
+  intimeline:String="individual";
+  outtimeline:String="individual";
   individlist: Array<any>;
   monthlylsit: Array<any>;
   quarterlylsit:Array<any>;

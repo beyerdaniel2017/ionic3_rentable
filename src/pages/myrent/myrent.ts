@@ -15,28 +15,39 @@ export class Myrent {
   own_rentedlist: Array<any>;
   rent_currentlist: Array<any>;
   rent_historylist: Array<any>;
-  list:Array<any>;
+  own_like:any;
+  rent_like:any;
 
   own_rent:string="own";
   date:string="current";
   isavailable:string="available";
   showdeleteicon:boolean;
+  public ownshowwhite = false;
+  public rentshowwhite = false;
 
   favourites=Likes;
   details=Details;
   
   constructor(public navCtrl: NavController, public navParams: NavParams) {
 
-    this.list=[{img: 'assets/img/11.png', title: 'Stylish house'}, {img: 'assets/img/22.png', title: 'Big Houses'}, {img: 'assets/img/33.png', title: 'Big Houses'}, {img: 'assets/img/11.png', title: 'Stylish house'},{img: 'assets/img/11.png', title: 'Stylish house'}, {img: 'assets/img/22.png', title: 'Big Houses'}, {img: 'assets/img/33.png', title: 'Big Houses'}, {img: 'assets/img/11.png', title: 'Stylish house'}]
-
     this.showdeleteicon=true;
+
+    this.rent_like = [];
+    for (var i = 0; i < 4; ++i) {
+      this.rent_like[i]=false;
+    }
+
+    this.own_like = [];
+    for (var i = 0; i < 4; ++i) {
+      this.own_like[i]=false;
+    }
 
     this.own_avaiablelist =
     [
-      {img: 'assets/img/11.png', title: 'John', view:'10', favourity:'20'},
-      {img: 'assets/img/22.png', title: 'alex', view:'10', favourity:'20'},
-      {img: 'assets/img/33.png', title: 'eric', view:'10', favourity:'20'},
-      {img: 'assets/img/11.png', title: 'kevin', view:'10', favourity:'20'},
+      {img: 'assets/img/11.png', title: 'John', view:'10', favourity:'20', id:'0'},
+      {img: 'assets/img/22.png', title: 'alex', view:'10', favourity:'20', id:'1'},
+      {img: 'assets/img/33.png', title: 'eric', view:'10', favourity:'20', id:'2'},
+      {img: 'assets/img/11.png', title: 'kevin', view:'10', favourity:'20' ,id:'3'},
     ]
 
     this.own_rentedlist =
@@ -48,10 +59,10 @@ export class Myrent {
 
     this.rent_currentlist =
     [
-      {img: 'assets/img/11.png', title: 'John', view:'43', favourity:'40'},
-      {img: 'assets/img/22.png', title: 'jens', view:'234', favourity:'50'},
-      {img: 'assets/img/33.png', title: 'eric', view:'12', favourity:'26'},
-      {img: 'assets/img/11.png', title: 'daniel', view:'52', favourity:'23'},
+      {img: 'assets/img/11.png', title: 'John', view:'43', favourity:'40',unlike:'assets/icon/like.png',like:'assets/icon/like-full.png',islike:'false', id:'0'},
+      {img: 'assets/img/22.png', title: 'jens', view:'234', favourity:'50',unlike:'assets/icon/like.png',like:'assets/icon/like-full.png',islike:'false', id:'1'},
+      {img: 'assets/img/33.png', title: 'eric', view:'12', favourity:'26',unlike:'assets/icon/like.png',like:'assets/icon/like-full.png',islike:'false', id:'2'},
+      {img: 'assets/img/11.png', title: 'daniel', view:'52', favourity:'23',unlike:'assets/icon/like.png',like:'assets/icon/like-full.png',islike:'false', id:'3'},
     ]
 
     this.rent_historylist =
@@ -74,5 +85,12 @@ export class Myrent {
 
   showdelete(){
     this.showdeleteicon=!this.showdeleteicon;
+  }
+
+  ownshowheart(i) {
+   this.own_like[i]=!this.own_like[i];
+  }
+  rentshowheart(i) {
+    this.rent_like[i] = !this.rent_like[i];
   }
 }

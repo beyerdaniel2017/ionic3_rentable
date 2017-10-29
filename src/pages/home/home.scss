@@ -37,14 +37,6 @@ page-home {
     font-size: 1.8rem;
     color: white;
   }
-  .cover_2 {
-    z-index: 1;
-    position: absolute;
-    right: 1.8vw;
-    top: 0.8vw;
-    font-size: 25px;
-    color: white;
-  }
 
   .cover_image{
     z-index: 1;
@@ -160,6 +152,7 @@ page-home {
 
 .searchbar-ios.searchbar-left-aligned .searchbar-search-icon {
   margin-left: 7px;
+  top:6px;
 }
 .item-ios.item-block .item-inner{
   border:0px;

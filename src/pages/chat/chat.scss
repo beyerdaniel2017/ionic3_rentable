@@ -12,9 +12,7 @@ page-chat {
     }
 	}
 
-	.toolbar-ios-navbarcolor .segment-ios .segment-button.segment-activated {
-    color: white !important;
-  }
+
 
   .segment-ios .segment-button{
     border:0;
@@ -45,5 +43,9 @@ page-chat {
   .like-list.bottomborder{
     border-bottom: thin solid gainsboro;
   }
- 
+}
+
+.toolbar-ios-navbarcolor .segment-ios .segment-button.segment-activated {
+  color: white !important;
+  border-bottom:solid #0cb5f3;
 }

@@ -6,15 +6,9 @@
 -->
 <ion-header>
 
-  <ion-navbar color="navbarcolor"  hideBackButton="true">
-    <ion-row class="navetitle">
-      <ion-col [navPush]="profile" col-3 class="inputborder">
-        Do it later
-      </ion-col>
-      <ion-col col-10>
-      </ion-col>
-    </ion-row>
-  </ion-navbar>
+    <ion-toolbar color="navbarcolor" style="text-align: left;" class="profileheader">
+     <ion-label [navPush]="profile"  class="headertitle" >Do it later</ion-label>
+  </ion-toolbar>
 
 </ion-header>
 

@@ -1,8 +1,18 @@
+<ion-header>
+
+  <ion-toolbar no-padding color="navbarcolor">
+    <ion-row class="profileheader topheight" no-margin>
+      <ion-col col-1>
+        <ion-icon name="md-close" [navPush]="detail" class="headertitle"></ion-icon>
+      </ion-col>
+      <ion-col col-11 >
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+
+</ion-header>
 
 <ion-content no-padding no-margin class="app-content">
-  <ion-row class="rentheader">
-    <ion-icon name="md-close" [navPush]="detail" style="font-size: 2.6rem;"></ion-icon>
-  </ion-row>
   <div style="padding-left: 2vw; padding-right: 2vw;">
     <h3 color="darken" class="rentalreview" align="center">Review your rental request</h3>
     <ion-label class="requesttitle">

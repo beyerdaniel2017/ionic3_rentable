@@ -131,9 +131,8 @@ page-details {
   }
 
   .cover_name{
-    top: 2vh;
-    padding:0px 0 0 5px !important;
-    margin:0px !important;
+    padding: 0px 0 6px 8px !important;
+    margin: 0px !important;
     font-size: 2rem;
     color: white;
   }
@@ -153,7 +152,7 @@ page-details {
     left:4vw;
     padding:0px !important;
     margin:0px !important;
-    font-size:24px;
+    font-size:28px;
     color:white;
   }
   .cover_header1 {
@@ -163,7 +162,7 @@ page-details {
     right:12vw;
     padding:0px !important;
     margin:0px !important;
-    font-size: 24px;
+    font-size: 28px;
     color:white;
   }
   .cover_header2 {
@@ -173,7 +172,7 @@ page-details {
     right:4vw;
     padding:0px !important;
     margin:0px !important;
-    font-size: 24px;
+    height: 20px;
     color:white
   }
   .cover_2 {
@@ -185,6 +184,16 @@ page-details {
     font-size: 1rem;
     color: white;
     height:2rem;
+  }
+
+  .home{
+    left:0; top:0;
+    width:100%; height:10%;
+    display:inline-block;
+    z-index: 0;
+    position: relative;
+    background: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 0.65) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
   }
 
   .content-ios{
@@ -201,6 +210,11 @@ page-details {
     font-size:1.6rem;
   }
 
+  .costsize{
+    font-weight: 600;
+    font-size:18px;
+  }
+
 }
 
 .colorOfHeader{
@@ -215,7 +229,7 @@ page-details {
 }
 
 .activeColor{
-  color: color($colors , secondary) !important;
+  color: white;
 }
 .icon_size{
   font-size: 2em;
@@ -225,7 +239,7 @@ page-details {
 
 .whiteicon{
   color:white;
-  font-size: 24px;
+  font-size: 28px;
   align: center;
 }
 

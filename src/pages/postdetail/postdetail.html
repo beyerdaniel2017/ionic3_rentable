@@ -6,10 +6,10 @@
 -->
 <ion-header>
 
-  <ion-toolbar color="navbarcolor" >
+  <ion-toolbar class="profileheader" color="navbarcolor">
     <ion-row >
     	<ion-col col-1>
-    		<ion-icon name="md-close" [navPush]="addpage" class="nextbutton"></ion-icon>
+    		<ion-icon name="md-close" [navPush]="addpage" class="headertitle"></ion-icon>
     	</ion-col>
       <ion-col col-8 >
       </ion-col>
@@ -71,46 +71,15 @@
 	  <ion-label class="helpstr">
 			CATEGORY
 		</ion-label>
-    <ion-card class="grid-list" >
-      <div class="radio-img">
-        <input type="radio" name="radio-group" id="radio-1" class="input-hidden" />
-        <label for="radio-1">
-          <div class="img-container">
-            <ion-icon class="categoryimage" name="ios-home-outline"></ion-icon>
-          </div>
-          Category A
+    <div>
+      <div  class="radio-img grid-list" *ngFor="let item of categorylist" >
+        <input type="radio" name="radio-group" id="{{item.radionumber}}" class="input-hidden" />
+        <label (click)="myFunction($event)" for="{{item.radionumber}}" >
+          <img class="categoryimage" src="{{item.inactive_img}}">
+          <span class="categoryname">{{item.title}}</span>
         </label>
       </div>
-      <div class="radio-img">
-        <input type="radio" name="radio-group" id="radio-2" class="input-hidden" />
-        <label for="radio-2">
-          <div class="img-container">
-            <ion-icon class="categoryimage" name="ios-car"></ion-icon>
-          </div>
-          Category C
-        </label>
-      </div>
-    </ion-card>
-    <ion-card class="grid-list" >
-      <div class="radio-img">
-        <input type="radio" name="radio-group" id="radio-3" class="input-hidden" />
-        <label for="radio-3">
-          <div class="img-container">
-            <ion-icon class="categoryimage" name="ios-desktop-outline"></ion-icon>
-          </div>
-          Category B
-        </label>
-      </div>
-      <div class="radio-img">
-        <input type="radio" name="radio-group" id="radio-4" class="input-hidden" />
-        <label for="radio-4">
-          <div class="img-container">
-            <ion-icon class="categoryimage" name="ios-musical-notes-outline"></ion-icon>
-          </div>
-          Category D
-        </label>
-      </div>
-    </ion-card>
+    </div>
 	  <p class="helpstr">ITEMS CURRENT CONDITION</p>
 	  <div *ngFor="let i of goodcondition" class="conditionstar">
       <img class="starsize" src="assets/icon/star-red.png">

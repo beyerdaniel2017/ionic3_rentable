@@ -1,40 +1,75 @@
 page-alertdetail {
-	ion-app.ios [padding] .scroll-content {
-    padding: 0px;
-  }
-  ion-app.ios [padding], ion-app.ios [padding] .scroll-content {
-    padding: 0 !important;
-  }
-  .content-md{
-      background-color: white;
-  }
-  .scroll-content{
-    background-color: white;
-  }
-  .grid-list{
-    float: left;
-    padding-bottom: 0;
-    border:0;
-    img{
-        object-fit: cover;
-        -o-object-fit: cover;
-        opacity: .7;
-    }
-    .item-md{
-        .item-inner{
-            padding-right: 0;
-        }
-    }
-    .label-md{
-        text-transform: capitalize;
-        font-weight: 500;
-        padding:0px !important;
-        margin:0px !important;
-    }
-  }
+ 
   .rightposition{
     right:-1rem;
   }
+
+  .middletext{
+    margin-top:6px
+  }
+
+  .pricestyle{
+    margin-bottom:16px;
+  }
+
+  .pricerange{
+    padding-top: 20px;
+    padding-bottom: 24px;
+  }
+
+  .liststyle{
+    font-weight: bold;
+    border-top: thin solid gainsboro;
+    padding-top: 30px;
+    font-size:15px;
+    margin: 0;
+    padding-bottom:22px;
+  }
+
+  .list-ios{
+    margin: -1px 0 22px;
+    &> .item-block:first-child {
+      border:0;
+    }
+    &> .item-block:last-child {
+      border:0;
+    }
+  }
+  .inputborder{
+    border: thin solid gainsboro;
+    color:black;
+  }
+
+  .showbutton{
+    margin: auto;
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
+    color: white;
+    height: 5rem;
+    border-radius: 27px;
+    margin-bottom:40px !important;
+    background-color: #f55349;
+  }
+
+  .borderstyle{
+    font-weight: bold;
+    border-top: thin solid gainsboro;
+    width: 100%;
+    font-size: 17px;
+    padding-top: 20px;
+    padding-bottom: 15px;
+    &.datestyle{
+      display: inline-grid;
+    }
+  }
+
+  .dateimage{
+    border: 1px solid #c6c6c7;
+    height: 3.5rem;
+  }
+
   .wardrobe {
     z-index: 0;
     position: relative;
@@ -51,99 +86,24 @@ page-alertdetail {
     font-size: 2rem;
     color: white;
   }
-  .card-ios{
-    background-color:white;
-    border-radius: 0px;
-    margin:0;
-    width: calc(100% - 24px);
-    font-size: 1.4rem;
-    box-shadow: 0 0 0;
-    width: calc(49%);
-  }
   ion-app.ios [padding], ion-app.ios [padding] .scroll-content {
     padding: 0px;
   }
-  .headertitle{
-    color: white; 
-    margin:0px;
-  }
 
-  .headertitle.size{
-    font-size:3rem;
+  .size{
+    margin:0;
+    color:white;
+    font-size:20px;
+    &.backicon{
+      font-size:30px;
+    }
   }
 
   .select-ios {
-    padding: 7px 3px 7px 6px;
+    padding: 13px 3px 7px 6px;
     border: thin solid gainsboro;
-    height: 3rem;
-    width: 30vw;
-  }
-
-
-  .radio-custom + .radio-custom-label:before {
-      border-radius: 50%;
-  }
-  input[type=checkbox].with-font:focus ~ label
-  {
-      color: red;
-  }
-  item item-block item-ios item-radio +.item-radio-checked{
-    color:red;
-  }
-  .radio-custom:checked + .radio-custom-label:before {
-      content: "\f00c";
-      font-family: 'FontAwesome';
-      color: #fff;
-      background-color: #e51111;
-      font-color: #e51111;
-  }
-
-  .radio-custom:focus + .radio-custom-label {
-    outline: 1px solid #ddd; /* focus style */
-  }
-
-  .input-hidden {
-    position: absolute;
-    left: -9999px;
-  }
-
-  .categoryimage{
-    margin-left: 2px;
-    margin-top: auto;
-    height: 17px;
-    width: auto;
-  }
-
-  .radio-img {
-    margin: 13px 0;
-    input[type=radio] {
-      & + label {
-        & > .img-container {
-          display: inline-block;
-          margin: 0 0;
-          padding: 5px;
-          width:30px;
-          height:30px;
-          border: 1px solid black;
-          border-radius: 50%;
-          vertical-align: middle;
-        }
-      }
-
-      &:checked {
-        color: #f55349;
-        & + label {
-          color: #f55349;
-
-          & > .img-container {
-            background-color: #f55349;
-            color:white;
-            width:30px;
-            height:30px;
-          }
-        }
-      }
-    }
+    min-height: 4.5rem;
+    min-width: 40vw !important;
   }
 
   .distancesize{
@@ -151,38 +111,32 @@ page-alertdetail {
     width:auto;
   }
 
-  .range-ios {
-	    padding: 0px;
-	}
-
-	}
-	.item-ios {
-	  background-color:transparent;
-	  padding:0px;
-	}
-	.radio-icon{  visibility: visible!important;}
-	.radio-wrapper {
-	  display: inline-flex;
-	  padding: 0 5px;
-	  .item-radio {
-      border: medium none;
-      width: 24px;
-      .radio-icon {
-        padding: 0;
-      }
-      .radio-icon:before{
-          content: "";
-          border:1px solid black;
-          width: 24px;
-          height: 24px;
-          border-radius: 50%;
-          overflow:hidden;
-      }
+  .categorytitle{
+    font-weight: bold;
+    border-top: thin solid gainsboro;
+    padding-top: 30px;
+    font-size:15px;
+    margin: 0;
   }
-  .item-radio input:checked + .radio-content .radio-icon:before{
-    color: #fff;
-    background-color: blue;
-    content: "\F122";
+
+  .locationstyle{
+    border: 1px solid #c6c6c7;
+    margin-bottom: 35px;
+  }
+
+  .locationicon{
+    height: 22px;
+    width: auto;
+  }
+
+  .locationimage{
+    height: 19px;
+    padding-left: 5px;
+    padding-top: 2px;
+  }
+
+  .app-content.paddingbottom{
+    margin-bottom:40px;
   }
 
 }

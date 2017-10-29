@@ -1,15 +1,15 @@
 <ion-content #contentRef (ionScroll)="scrollingFun($event)">
-  <div style="z-index: 0; position: relative; background-color: #c6c6c7;">
-    <img src="{{Product.img}}" style="display: inline-block; height: 50vh; width: 100vw; margin-bottom: -4px;">
+  <div class="home" style="">
+    <img src="{{Product.img}}"  style="display: inline-block; height: 50vh; width: 100vw; margin-bottom: -4px;border: 0;">
     <ion-icon name="ios-arrow-back" class="cover_header0" [navPush]="home"></ion-icon>
     <ion-icon name="shareicon" class="cover_header1"></ion-icon>
-    <ion-icon name="ios-heart-outline" class="cover_header2" (click)="ActiveLike()" [ngClass]="{'activeColor':like}"></ion-icon>
+    <img class="cover_header2" src="assets/icon/like.png">
   </div>
   <ion-row style="margin-top: -4rem;" no-padding>
     <ion-col col-3 align="right">
       <img src="{{Product.ownerimage}}" class="profileimg">
     </ion-col>
-    <ion-col col-6 style="padding-top: 17px;">
+    <ion-col col-6 style="padding-top: 14px;">
       <p class="cover_name">
         {{Product.ownername}}
       </p>
@@ -36,13 +36,18 @@
       Pretty Cool Size 9 shoes
     </h4>
     <div style="opacity: 0.7;">
-      <div *ngFor="let i of goodcondition" class="conditionstar">
-        <img class="starsize" src="assets/icon/star-red.png">
-      </div>
-      <div *ngFor="let i of badcondition" class="conditionstar" >
-        <img class="starsize" src="assets/icon/star.png">
-      </div>
-      Item Condition = GOOD
+      <img class="starsize" src="assets/icon/star-red.png">
+      <img class="starsize" src="assets/icon/star-red.png">
+      <img class="starsize" src="assets/icon/star-red.png">
+      <img class="starsize" src="assets/icon/star.png">
+      <img class="starsize" src="assets/icon/star.png">
+<!--         <div *ngFor="let i of goodcondition" class="conditionstar">
+          <img class="starsize" src="assets/icon/star-red.png">
+        </div>
+        <div *ngFor="let i of badcondition" class="conditionstar" >
+          <img class="starsize" src="assets/icon/star.png">
+        </div> -->
+        <span style="margin-left:15px;">Item Condition = GOOD</span>
     </div>
     <ion-row class="border" >
       <ion-col class="graycolor" col-4>
@@ -64,7 +69,7 @@
         </ion-item>
       </ion-row>
     </ion-row>
-    <ion-row>
+    <ion-row class="bottomborder">
       <ion-col class="graycolor" col-6>
         <ion-label>
           RENTAL DETAILS
@@ -76,8 +81,7 @@
         <ion-icon *ngIf="!rentalstatus" name="md-add" (click)="rentalshow()"></ion-icon>
         <ion-icon *ngIf="rentalstatus"  name="md-remove" (click)="rentalhide()"></ion-icon>
       </ion-col>
-    </ion-row>
-    <div *ngIf="rentalstatus" class="bottomborder">
+          <div *ngIf="rentalstatus" >
       <ion-label>
         DATES
       </ion-label>
@@ -94,9 +98,9 @@
           <ion-icon name="ios-arrow-forward-outline"></ion-icon>
         </ion-col>
       </ion-row>
-      <ion-label  style="font-weight: 600; padding-bottom: 10px;" class="bottomborder">
-        <span  style="font-weight: 500"> Total Rental Cost:</span>
-         ${{Product.total_cost}}
+      <ion-label  style="padding-bottom: 10px;" class="bottomborder">
+        <span > Total Rental Cost:</span>
+        <span class="costsize">${{Product.total_cost}}</span>
         <ion-icon name="ios-help-outline" class="helpicon" style="margin-left: 40vw;"></ion-icon>
       </ion-label>
       <button ion-button block [navPush]="rent" class="defaultbutton send">Send Rental Request</button>
@@ -124,6 +128,8 @@
         <img  class="sendbutton" item-right src="assets/icon/ico_send.png">
       </ion-item>
     </div>
+    </ion-row>
+
     <ion-row>
       <ion-col class="graycolor" col-4>
         <ion-label>

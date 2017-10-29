@@ -57,23 +57,28 @@ page-myrent {
     padding:0px;
   }
 
-  .toolbar-ios-navbar .segment-ios .segment-button.segment-activated {
-    color: white;
-    .ion-segment-button{
-      color:white !important;
-    }
-  }
-
   .toolbar-ios-navbarcolor .segment-ios .segment-button.segment-activated {
     color: white !important;
+    border-bottom:solid #0cb5f3;
+
   }
 
- 
+  .info_1{
+    z-index: 1;
+    position: absolute;
+    right:2.7vw;
+    top: 2.7rem;
+    padding:0px !important;
+    margin:0px !important;
+    white-space: normal;
+    height: 27px;
+    color:white;
+  }
 
   .info{
     z-index: 1;
     position: absolute;
-    right:2.7vw;
+    left:2vw;
     top: 2.7rem;
     padding:0px !important;
     margin:0px !important;
@@ -132,10 +137,10 @@ page-myrent {
     z-index: 1;
     position: absolute;
     left:2vw;
-    top: 0.4rem;
+    top: 0.5rem;
     padding:0px !important;
     margin:0px !important;
-    font-size:26px;
+    width:22px;
     color: white;
   }
   .cover_img {
@@ -154,7 +159,7 @@ page-myrent {
     z-index: 1;
     position: absolute;
     right:2vw;
-    top: 1rem;
+    top: 0.5rem;
     padding:0px !important;
     margin:0px !important;
     height: 18px;
@@ -217,4 +222,9 @@ page-myrent {
     padding-top: 20px;
     height: calc(44px + 20px);
     min-height: calc(44px + 20px);
+}
+
+.itemtitle{
+  font-size: 20px !important;
+  max-width: 70px !important;
 }

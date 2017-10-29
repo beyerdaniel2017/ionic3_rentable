@@ -1,34 +1,5 @@
 page-search {
-  :root {
-    --slide-1: url(../assets/icon/ico-home_1.png) ;
-    --slide-2: url(../assets/icon/ico-home_1.png) ;
-    --slide-3: url(../assets/icon/ico-home_1.png) ;
-    --slide-4: url(../assets/icon/ico-home_1.png) ;
-    --slide-5: url(../assets/icon/ico-home_1.png) ;
-  }
-
-  .grid-list{
-    float: left;
-    padding-bottom: 0;
-    border:0;
-    width: calc(43vw);
-    img{
-        object-fit: cover;
-        -o-object-fit: cover;
-        opacity: .7;
-    }
-    .item-md{
-        .item-inner{
-            padding-right: 0;
-        }
-    }
-    .label-md{
-        text-transform: capitalize;
-        font-weight: 500;
-        padding:0px !important;
-        margin:0px !important;
-    }
-  }
+ 
   .rightposition{
     right:-1rem;
   }
@@ -123,6 +94,7 @@ page-search {
     margin:0;
     color:white;
     font-size:20px;
+    text-align: center;
     &.backicon{
       font-size:30px;
     }
@@ -133,28 +105,6 @@ page-search {
     border: thin solid gainsboro;
     min-height: 4.5rem;
     min-width: 40vw !important;
-  }
-
-  .radio-custom + .radio-custom-label:before {
-      border-radius: 50%;
-  }
-  input[type=checkbox].with-font:focus ~ label
-  {
-      color: red;
-  }
-  item item-block item-ios item-radio +.item-radio-checked{
-    color:red;
-  }
-  .radio-custom:checked + .radio-custom-label:before {
-      content: "\f00c";
-      font-family: 'FontAwesome';
-      color: #fff;
-      background-color: #e51111;
-      font-color: #e51111;
-  }
-
-  .radio-custom:focus + .radio-custom-label {
-    outline: 1px solid #ddd; /* focus style */
   }
 
   .distancesize{
@@ -180,72 +130,71 @@ page-search {
     width: auto;
   }
 
+  .locationimage{
+    height: 19px;
+    padding-left: 5px;
+    padding-top: 2px;
+  }
+
   .app-content.paddingbottom{
     margin-bottom:40px;
   }
 
+
+
+
 }
+
+.categoryname{
+  display: inline-block;
+  margin: 0 0;
+  vertical-align: middle;
+  width: auto;
+  height: 35px;
+  padding-bottom:12px;
+}
+
+.radio-img {
+  margin: 10px 0;
+  input[type=radio] {
+    &:checked {
+      & + label {
+        color: #f55349;
+      }
+    }
+  }
+}
+
+.radio-img.grid-list{
+  float: left;
+  padding-bottom: 0;
+  border:0;
+  width: calc(42vw);
+  font-size: 11px;
+
+  img{
+      object-fit: cover;
+      -o-object-fit: cover;
+      opacity: .7;
+  }
+  .item-md{
+      .item-inner{
+          padding-right: 0;
+      }
+  }
+  .label-md{
+      text-transform: capitalize;
+      font-weight: 500;
+      padding:0px !important;
+      margin:0px !important;
+  }
+}
+
+
 .item-ios {
   background-color:transparent;
   padding:0px;
 }
-.radio-icon{  visibility: visible!important;}
-.radio-wrapper {
-  display: inline-flex;
-  padding: 0 5px;
-  .item-radio {
-    border: medium none;
-    width: 24px;
-    .radio-icon {
-      padding: 0;
-    }
-    .radio-icon:before{
-        content: "";
-        border: 1px solid gainsboro;
-        width: 24px;
-        height: 24px;
-        border-radius: 50%;
-        overflow:hidden;
-    }
-  }
-  .item-radio input:checked + .radio-content .radio-icon:before{
-    color: #fff;
-    background-color: blue;
-    content: "\F122";
-  }
-}
-
-  .radio-img {
-    margin: 25px 0;
-    input[type=radio] {
-      & + label {
-        & > .img-container {
-          display: inline-block;
-          margin: 0 0;
-          padding: 5px;
-          width:30px;
-          height:30px;
-          border: 1px solid gainsboro;
-          border-radius: 50%;
-          vertical-align: middle;
-        }
-      }
-
-      &:checked {
-        color: #f55349;
-        & + label {
-          color: #f55349;
-
-          & > .img-container {
-            background-color: #f55349;
-            color:white;
-            width:30px;
-            height:30px;
-          }
-        }
-      }
-    }
-  }
 
   .input-hidden {
     position: absolute;
@@ -253,8 +202,8 @@ page-search {
   }
 
   .categoryimage{
-    margin-left: 2px;
+    margin-right: 2px;
     margin-top: auto;
-    height: 17px;
+    height: 30px;
     width: auto;
   }

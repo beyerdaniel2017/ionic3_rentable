@@ -15,7 +15,8 @@
       <ion-searchbar class="searchbar" placeholder="Find items near you" (ionInput)="filterItems($event)"></ion-searchbar>
       </ion-col>
       <ion-col class="icon-col" col-1>
-      </ion-col>
+        <img src="assets/icon/filter.png" style="margin-top: 10px;" [navPush]="search">
+       </ion-col>
     </ion-row>
   </ion-toolbar>
 </ion-header>

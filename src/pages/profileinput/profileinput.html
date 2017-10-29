@@ -6,21 +6,21 @@
 -->
 <ion-header>
 
-  <ion-toolbar color="navbarcolor">
-    <ion-row class="profileheader">
-    </ion-row>
+  <ion-toolbar color="navbarcolor" class="profileheader"  style="text-align: left;">
+     <ion-icon [navPush]="editprofile" class="navetitle" name="md-close"></ion-icon>
   </ion-toolbar>
+
 </ion-header>
 
 
-<ion-content padding>
-  <ion-item class="itempadding">
-  	<div item-left>
-  		<ion-label class="helpstring" >
-        FIRST NAME
-      </ion-label >
-      <ion-input  (click)="focus()"   no-margin type="text" value="John" [(ngModel)]="firstname"></ion-input>
-  	</div>
-    <ion-icon class="graycolor" name="ios-arrow-forward-outline" item-right ></ion-icon>
+
+<ion-content  class="app-content">
+  <ion-label class="helpstring" >
+      FIRST NAME
+    </ion-label >
+  <ion-item class="bottomborder">
+    <ion-input item-left placeholder="john"  no-margin type="text" [(ngModel)]="data"></ion-input>
+    <ion-icon class="graycolor" name="md-close" (click)="removetext()" item-right ></ion-icon>
   </ion-item>
+  <button ion-button block class="savebutton padding" (click)="update()">UPDATE</button>
 </ion-content>

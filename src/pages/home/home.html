@@ -1,8 +1,8 @@
 
 <ion-header >
 
-  <ion-toolbar  no-padding no-margin >
-    <ion-row class="profileheader">
+  <ion-toolbar no-padding   >
+    <ion-row class="profileheader" >
       <ion-col  col-1 class="icon-col">
         <img src="assets/icon/avatar.png" style="margin-top: 10px;" [navPush]="profile">
       </ion-col>
@@ -32,8 +32,8 @@
       <ion-label class="cover_1" >
         ${{item.price}}
       </ion-label>
-      <img *ngIf="!showwhite" class="cover_image" (click)="showheart()" src="assets/icon/like.png">
-      <ion-icon *ngIf="showwhite" class="cover_2" (click)="showheart()" name="md-heart"></ion-icon>
+      <img *ngIf="!like[item.id]" class="cover_image" (click)="ActiveLike(item.id)" src="assets/icon/like.png">
+      <img *ngIf="like[item.id]" class="cover_image" (click)="ActiveLike(item.id)" src="assets/icon/like-full.png">
     </div>
   </ion-card>
 

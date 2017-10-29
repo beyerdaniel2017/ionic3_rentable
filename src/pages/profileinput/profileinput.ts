@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+import { EditprofilePage } from '../editprofile/editprofile';
+
 /**
  * Generated class for the ProfileinputPage page.
  *
@@ -15,11 +17,22 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ProfileinputPage {
 
+	editprofile=EditprofilePage;
+	data:any;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProfileinputPage');
+  }
+
+  removetext(){
+  	this.data="";
+  }
+
+  update(){
+  	
   }
 
 }

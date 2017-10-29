@@ -1,23 +1,25 @@
 
 <ion-header>
 
-  <ion-toolbar color="navbarcolor">
-    <ion-row class="headerheight">
-      <ion-col col-2 >
-        <ion-icon [navPush]="alertdetail" name="md-add"></ion-icon>
+  <ion-toolbar no-padding color="navbarcolor">
+    <ion-row class="profileheader">
+      <ion-col col-1 >
+        <ion-icon class="headertitle" [navPush]="alertdetail" name="md-add"></ion-icon>
+      </ion-col>
+      <ion-col col-1>
       </ion-col>
       <ion-col col-9>
         <ion-segment [(ngModel)]="alert_opportunity"  class="segment_info" >
-          <ion-segment-button class="alerttitle" value="alert">
+          <ion-segment-button class="alerttitle alertwidth" value="alert">
             Alerts
           </ion-segment-button>
-          <ion-segment-button class="alerttitle" value="opportunity">
+          <ion-segment-button class="alerttitle opportunitywidth" value="opportunity">
             Opportunities
           </ion-segment-button>
         </ion-segment>
       </ion-col>
        <ion-col col-1>
-        <ion-icon  name="ios-trash-outline"></ion-icon>
+        <ion-icon class="headertitle"  name="ios-trash-outline"></ion-icon>
       </ion-col>
     </ion-row>
   </ion-toolbar>
@@ -82,7 +84,7 @@
         <div class="grid-list" >
           <ion-item>
             <div item-left class="imageblackborder">
-              <img class="categoryimage" src="assets/icon/post-it.png">
+              <img class="categoryimage data" src="assets/icon/post-it.png">
             </div>
             <div >
               <p class="helpfont">POSTED WITHIN</p>
@@ -112,7 +114,7 @@
           </ion-item>
           <ion-item>
             <div item-left class="imageblackborder">
-              <img class="categoryimage" src="assets/icon/calendar.png">
+              <img class="categoryimage data" src="assets/icon/calendar.png">
             </div>
             <div>
               <p class="helpfont">DATE RANGE</p>

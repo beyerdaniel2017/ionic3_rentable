@@ -13,8 +13,6 @@ import { Details } from '../details/details';
 })
 export class Home {
 
-  public showwhite = false;
-
   expanded: Boolean;
   grid: Array<any>;
   neargrid: Array<any>;
@@ -26,13 +24,16 @@ export class Home {
 
   profile=Profile;
   search=SearchPage;
-  list = List;
   details=Details;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController) {
     this.expanded = true;
 
-    this.grid = [{img: 'assets/img/01.png', title: 'apartment', icon: 'ios-home-outline'}, {img: 'assets/img/02.png', title: 'wedding hall', icon: 'ios-bowtie-outline'}, {img: 'assets/img/03.png', title: 'shop', icon: 'ios-shirt-outline'}, {img: 'assets/img/04.png', title: 'rent', icon: 'ios-headset-outline'},{img: 'assets/img/01.png', title: 'apartment', icon: 'ios-home'}, {img: 'assets/img/02.png', title: 'wedding hall', icon: 'ios-bowtie'}, {img: 'assets/img/03.png', title: 'shop', icon: 'md-cart'}, {img: 'assets/img/04.png', title: 'rent', icon: 'md-headset'},{img: 'assets/img/01.png', title: 'apartment', icon: 'ios-home'}, {img: 'assets/img/02.png', title: 'wedding hall', icon: 'ios-bowtie'}, {img: 'assets/img/03.png', title: 'shop', icon: 'md-cart'}, {img: 'assets/img/04.png', title: 'rent', icon: 'md-headset'}]
+    this.like = [];
+    for (var i = 0; i < 12; ++i) {
+      this.like[i]=false;
+    }
+
     this.categorylist = [
       {active_img: 'assets/icon/cat-nearyou.png', title: 'Nearby', inactive_img: 'assets/icon/cat-nearyou-grey.png', value:'nearby'},
       {active_img: 'assets/icon/cat-electronics.png', title: 'Electronics', inactive_img: 'assets/icon/cat-electronics-grey.png', value:'electronics'},
@@ -47,11 +48,20 @@ export class Home {
       {active_img: 'assets/icon/cat-other.png', title: 'Other', inactive_img: 'assets/icon/cat-other-grey.png', value:'other'},
     ]
     this.neargrid = [{img: 'assets/img/01.png', title: 'apartment', icon: 'ios-home-outline'}, {img: 'assets/img/02.png', title: 'wedding hall', icon: 'ios-bowtie-outline'}, {img: 'assets/img/03.png', title: 'shop', icon: 'ios-shirt-outline'}, {img: 'assets/img/04.png', title: 'rent', icon: 'ios-headset-outline'},{img: 'assets/img/01.png', title: 'apartment', icon: 'ios-home'}, {img: 'assets/img/02.png', title: 'wedding hall', icon: 'ios-bowtie'}, {img: 'assets/img/03.png', title: 'shop', icon: 'md-cart'}, {img: 'assets/img/04.png', title: 'rent', icon: 'md-headset'},{img: 'assets/img/01.png', title: 'apartment', icon: 'ios-home'}, {img: 'assets/img/02.png', title: 'wedding hall', icon: 'ios-bowtie'}, {img: 'assets/img/03.png', title: 'shop', icon: 'md-cart'}, {img: 'assets/img/04.png', title: 'rent', icon: 'md-headset'}]
-    this.categorygrid = [{img: 'assets/img/01.png', title: 'apartment', icon: 'ios-home-outline', price:'20', favourity:'21'}, {img: 'assets/img/02.png', title: 'wedding hall', icon: 'ios-bowtie-outline',price:'12', favourity:'11'}, {img: 'assets/img/03.png', title: 'shop', icon: 'ios-shirt-outline',price:'12', favourity:'34'}, {img: 'assets/img/04.png', title: 'rent', icon: 'ios-headset-outline', price:'32', favourity:'21'},{img: 'assets/img/01.png', title: 'apartment', icon: 'ios-home',price:'31', favourity:'15'}, {img: 'assets/img/02.png', title: 'wedding hall', icon: 'ios-bowtie',price:'34', favourity:'65'}, {img: 'assets/img/03.png', title: 'shop', icon: 'md-cart',price:'42', favourity:'23'}, {img: 'assets/img/04.png', title: 'rent', icon: 'md-headset',price:'20', favourity:'21'},{img: 'assets/img/01.png', title: 'apartment', icon: 'ios-home',price:'20', favourity:'21'}, {img: 'assets/img/02.png', title: 'wedding hall', icon: 'ios-bowtie',price:'20', favourity:'21'}, {img: 'assets/img/03.png', title: 'shop', icon: 'md-cart',price:'20', favourity:'21'}, {img: 'assets/img/04.png', title: 'rent', icon: 'md-headset',price:'20', favourity:'21'}]
-  }
-
-  showheart() {
-    this.showwhite = !this.showwhite;
+    this.categorygrid = [
+      {img: 'assets/img/01.png', price:'21',id:'0'},
+      {img: 'assets/img/02.png', price:'56',id:'1'},
+      {img: 'assets/img/03.png', price:'34',id:'2'},
+      {img: 'assets/img/04.png', price:'21',id:'3'},
+      {img: 'assets/img/01.png', price:'15',id:'4'},
+      {img: 'assets/img/02.png', price:'65',id:'5'},
+      {img: 'assets/img/03.png', price:'64',id:'6'},
+      {img: 'assets/img/04.png', price:'123',id:'7'},
+      {img: 'assets/img/01.png', price:'21',id:'8'},
+      {img: 'assets/img/02.png', price:'12',id:'9'},
+      {img: 'assets/img/03.png', price:'52',id:'10'},
+      {img: 'assets/img/04.png', price:'212',id:'11'}
+    ]
   }
 
   presentModal() {
@@ -59,8 +69,8 @@ export class Home {
     modal.present();
   }
 
-  ActiveLike(){
-    this.like = !this.like;
+  ActiveLike(i){
+    this.like[i] = !this.like[i];
   }
 
   changecolor(){
@@ -79,10 +89,8 @@ export class Home {
     var idAttr = target.attributes.id;
     var parent = event.srcElement.parentElement;
     var preparent = parent.parentElement;
-    console.log(preparent);
     var children = preparent.children;
     var count = children.length;
-    console.log(count);
     for (var i = 0; i < count; ++i) {
       if(parent==children[i]){
         var image=this.categorylist[i].active_img;

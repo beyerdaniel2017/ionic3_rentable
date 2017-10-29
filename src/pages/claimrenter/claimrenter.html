@@ -14,7 +14,7 @@
 
 <ion-content padding align="center" class="addcontent">
 	<p class="returntitle">
-		Respoinding to a Claim
+		Responding to a Claim
 	</p>
 	<P class="helptext suggest">A claim has been submitted for an item you rented, the full details are below. You may respond to the claim my either accepting or rejecting this claim at the bottom of this screen</P>
   <ion-label class="requesttitle">
@@ -38,7 +38,7 @@
   </ion-label>
   <ion-row style="text-align: left;">
     <ion-col col-4 >
-      <img src="{{renter.img}}" [navPush]="otherprofile" class="itemphoto">
+      <img src="{{renter.img}}" class="itemphoto">
     </ion-col>
     <ion-col col-8 class="itemtext">
       <ion-label>
@@ -85,25 +85,25 @@
 	</ion-label>
 	<ion-textarea rows="5" type="text" class="feedbackinput" text-wrap></ion-textarea >
 	<p class="helptext condition">DO YOU AGREE WITH THE DETAILS THIS CLAIM?</p>
-	<ion-row >
-		<ion-col col-2>
-		</ion-col>
-		<ion-col col-2 class="otherstyle" >
-			Yes
-		</ion-col>
-  	<ion-col col-2 >
-			<ion-toggle  [(ngModel)]="yes" color="secondary"></ion-toggle>
-		</ion-col>
-		<ion-col col-2 class="otherstyle" >
-			No
-		</ion-col>
-		<ion-col col-2 >
-			<ion-toggle  [(ngModel)]="!yes" color="secondary"></ion-toggle>
-		</ion-col>
-		<ion-col col-2>
-		</ion-col>
-	</ion-row>
-
-	
-  <button ion-button block color="secondary" class="defaultbutton paddingbottom" >SUBMIT</button>
+	 <ion-row radio-group [(ngModel)]="agree">
+    <ion-col col-2>
+    </ion-col>
+    <ion-col col-2 >
+      Yes
+    </ion-col>
+    <ion-col col-2 >
+      <ion-radio value="yes" ></ion-radio>
+      <ion-icon class="agreestyle" *ngIf="agree=='no'" name="checkmark"></ion-icon>
+    </ion-col>
+    <ion-col col-2 >
+      No
+    </ion-col>
+    <ion-col col-2 >
+      <ion-radio value="no" ></ion-radio>
+      <ion-icon class="agreestyle" *ngIf="agree=='yes'" name="checkmark"></ion-icon>
+    </ion-col>
+    <ion-col col-2>
+    </ion-col>
+  </ion-row>
+	<button ion-button block [navPush]="claimowner" color="secondary" class="defaultbutton paddingbottom" >SUBMIT</button>
 </ion-content>

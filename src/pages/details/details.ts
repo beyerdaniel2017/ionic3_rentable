@@ -46,7 +46,7 @@ export class Details implements OnInit {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public myElement: ElementRef, public modalCtrl: ModalController, public zone:NgZone, public viewCtrl: ViewController)  {
     this.Product ={
-      img: 'assets/img/04.png', ownerimage:'assets/img/profile-img.png', ownername: 'John', item_title:'house', price:'25', description:'this is good rentalable book please use this', selectdate:'', total_cost:'100'}
+      img: 'assets/img/11.png', ownerimage:'assets/img/profile-img.png', ownername: 'John', item_title:'house', price:'25', description:'this is good rentalable book please use this', selectdate:'', total_cost:'100'}
 
     this.ionViewLoaded();
   }

@@ -50,6 +50,16 @@ page-alerts {
   	color:gray;
   }
 
+  .alerttitle{
+    font-size:20px !important;
+    &.alertwidth{
+      max-width:80px;
+    }
+     &.opportunitywidth{
+      max-width:160px;
+    }
+  }
+
   .card-ios {
     padding: 5vw;
     border-radius: 2px;

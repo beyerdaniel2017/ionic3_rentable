@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+import {ClaimownerPage } from '../claimowner/claimowner';
+import { OtherprofilePage } from '../otherprofile/otherprofile';
+
 /**
  * Generated class for the ClaimrenterPage page.
  *
@@ -17,7 +20,9 @@ export class ClaimrenterPage {
 
   renter:any;
   Product:any;
-
+  agree:any;
+  claimowner=ClaimownerPage;
+  otherprofile=OtherprofilePage;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
 
@@ -28,6 +33,7 @@ export class ClaimrenterPage {
   	this.renter = {
       img: 'assets/img/profile-img.png', name: 'John', address:'Sydney Australia', rate:'4.5', rent_nuber: '10', owner_number: '20'
     }
+    this.agree="yes";
   }
 
   ionViewDidLoad() {

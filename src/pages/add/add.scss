@@ -21,12 +21,7 @@ page-add {
     width: calc(100% );
    }
 
-  .nextbutton{
-  	margin:0px;
-  	font-size:24px;
-  	color:white;
-  	text-align: right;
-  }
+  
 
   .label-ios{
   	margin:0px;
@@ -107,4 +102,11 @@ page-add {
   margin: 6px 0 0 2px;
   height: 23px;
   width: auto;
+}
+
+.nextbutton{
+  margin:0px;
+  font-size:20px;
+  color:white;
+  text-align: right;
 }
