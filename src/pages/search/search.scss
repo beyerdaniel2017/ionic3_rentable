@@ -154,17 +154,49 @@ page-search {
   padding-bottom:12px;
 }
 
-.radio-img {
+/* .radio-img {
   margin: 10px 0;
   input[type=radio] {
     &:checked {
+      color: #f55349;
       & + label {
         color: #f55349;
+
       }
     }
   }
-}
+} */
+.radio-img {
+    margin: 13px 0;
+    input[type=radio] {
+      & + label {
+        & > .img-container {
+          display: inline-block;
+          margin: 0 0;
+          padding: 5px;
+          width:30px;
+          height:30px;
+          border: 1px solid black;
+          border-radius: 50%;
+          vertical-align: middle;
+        }
+      }
 
+      &:checked {
+        color: #f55349;
+        & + label {
+          color: #f55349;
+
+          & > .img-container {
+            background-color: #f55349;
+            color:white;
+            width:30px;
+            height:30px;
+          }
+        }
+      }
+    }
+}
 .radio-img.grid-list{
   float: left;
   padding-bottom: 0;

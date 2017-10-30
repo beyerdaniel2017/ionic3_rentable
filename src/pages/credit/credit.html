@@ -6,8 +6,8 @@
 -->
 <ion-header>
 
-  <ion-navbar color="navbarcolor"  hideBackButton="true">
-  	<ion-row style="color: white;">
+  <ion-toolbar class="profileheader" color="navbarcolor">
+    <ion-row >
       <ion-col col-1>
         <ion-icon [navPush]="addpayment" class="whiteicon" style="padding: 13px 0 0 10px;;" name="md-close"></ion-icon>
       </ion-col>
@@ -17,7 +17,7 @@
       <ion-col col-1>
       </ion-col>
     </ion-row>
-  </ion-navbar>
+  </ion-toolbar>
 
 </ion-header>
 
@@ -42,7 +42,8 @@
 			<ion-input (ionChange)='f()' type="Number" [(ngModel)]="cardnumber" value="4749 3854 3587 3465"></ion-input>
 		</ion-col>
 		<ion-col col-2>
-	    <img class="mastersize" src="assets/icon/mastercard.png">
+	    <img *ngIf="iscard" class="mastersize" src="assets/icon/mastercard.png">
+	    <img *ngIf="!iscard" class="mastersize" src="assets/icon/visa.png">
 		</ion-col>
 		<ion-col col-1 style="text-align: center; font-size:3rem;">
 			<ion-icon name="close" (click)="removenumber()"></ion-icon>

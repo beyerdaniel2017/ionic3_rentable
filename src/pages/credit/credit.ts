@@ -21,8 +21,11 @@ export class CreditPage {
   name: String;
   cardnumber: String;
   addpayment=AddpaymentPage;
+  iscard:any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.iscard=false;
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CreditPagePage');
@@ -44,6 +47,12 @@ export class CreditPage {
 
   f(){
     console.log(this.cardnumber+ "cardnumber");
+    if(this.cardnumber=="4"){
+      this.iscard=true;
+    }
+    if(this.cardnumber=="51" || this.cardnumber=="55"){
+      this.iscard=false;
+    }
   }
 
   removename(){
