@@ -20,7 +20,7 @@ import { AlertsPage } from '../alerts/alerts';
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 */
-var TabPage = (function () {
+var TabPage = /** @class */ (function () {
     function TabPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
@@ -34,14 +34,14 @@ var TabPage = (function () {
     TabPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad TabPagePage');
     };
+    TabPage = __decorate([
+        Component({
+            selector: 'page-tab',
+            templateUrl: 'tab.html'
+        }),
+        __metadata("design:paramtypes", [NavController, NavParams])
+    ], TabPage);
     return TabPage;
 }());
-TabPage = __decorate([
-    Component({
-        selector: 'page-tab',
-        templateUrl: 'tab.html'
-    }),
-    __metadata("design:paramtypes", [NavController, NavParams])
-], TabPage);
 export { TabPage };
 //# sourceMappingURL=tab.js.map

@@ -11,7 +11,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams, ModalController } from 'ionic-angular';
 import { Filter } from '../filter/filter';
 import { Details } from '../details/details';
-var List = (function () {
+var List = /** @class */ (function () {
     function List(navCtrl, navParams, modalCtrl) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
@@ -23,14 +23,14 @@ var List = (function () {
         var FilterModal = this.modalCtrl.create(Filter, { userId: 8675309 });
         FilterModal.present();
     };
+    List = __decorate([
+        Component({
+            selector: 'page-list',
+            templateUrl: 'list.html'
+        }),
+        __metadata("design:paramtypes", [NavController, NavParams, ModalController])
+    ], List);
     return List;
 }());
-List = __decorate([
-    Component({
-        selector: 'page-list',
-        templateUrl: 'list.html'
-    }),
-    __metadata("design:paramtypes", [NavController, NavParams, ModalController])
-], List);
 export { List };
 //# sourceMappingURL=list.js.map

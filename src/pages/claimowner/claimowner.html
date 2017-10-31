@@ -6,11 +6,17 @@
 -->
 <ion-header>
 
-  <ion-toolbar color="navbarcolor">
-  	<ion-icon [navPush]="details" class="navetitle" name="md-close"></ion-icon>
+  <ion-toolbar no-padding color="navbarcolor">
+    <ion-row class="profileheader topheight" no-margin>
+      <ion-col col-1>
+        <ion-icon name="md-close" [navPush]="detail" class="headertitle"></ion-icon>
+      </ion-col>
+      <ion-col col-11 >
+      </ion-col>
+    </ion-row>
   </ion-toolbar>
-</ion-header>
 
+</ion-header>
 
 <ion-content padding align="center" class="addcontent">
 	<p class="returntitle">

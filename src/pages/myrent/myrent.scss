@@ -14,7 +14,6 @@ page-myrent {
     }
   }
   .segment_info{
-    column-width: 50vw;
     min-height: 44px !important;
     height: 44px !important;
     padding-top: 0 !important;
@@ -226,5 +225,7 @@ page-myrent {
 
 .itemtitle{
   font-size: 20px !important;
-  max-width: 70px !important;
+  max-width: 57px !important;
+  margin: 0 18px !important;
+  padding-bottom: 30px;
 }

@@ -16,7 +16,7 @@ import { PaymentsPage } from '../payments/payments';
 import { About } from '../about/about';
 import { ContactPage } from '../contact/contact';
 import { TcPage } from '../tc/tc';
-var MenuPage = (function () {
+var MenuPage = /** @class */ (function () {
     function MenuPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
@@ -58,18 +58,18 @@ var MenuPage = (function () {
     };
     MenuPage.prototype.isActive = function (page) {
     };
+    __decorate([
+        ViewChild(Nav),
+        __metadata("design:type", Nav)
+    ], MenuPage.prototype, "nav", void 0);
+    MenuPage = __decorate([
+        Component({
+            selector: 'page-menu',
+            templateUrl: 'menu.html'
+        }),
+        __metadata("design:paramtypes", [NavController, NavParams])
+    ], MenuPage);
     return MenuPage;
 }());
-__decorate([
-    ViewChild(Nav),
-    __metadata("design:type", Nav)
-], MenuPage.prototype, "nav", void 0);
-MenuPage = __decorate([
-    Component({
-        selector: 'page-menu',
-        templateUrl: 'menu.html'
-    }),
-    __metadata("design:paramtypes", [NavController, NavParams])
-], MenuPage);
 export { MenuPage };
 //# sourceMappingURL=menu.js.map

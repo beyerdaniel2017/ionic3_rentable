@@ -22,7 +22,7 @@ import { ContactPage } from '../contact/contact';
 import { PaymentsPage } from '../payments/payments';
 import { TcPage } from '../tc/tc';
 import { LandingPage } from '../landing/landing';
-import { MyitemPage } from '../myitem/myitem';
+import { MyStats } from '../myitem/myitem';
 import { AlertdetailPage } from '../alertdetail/alertdetail';
 import { ChatdetailPage } from '../chatdetail/chatdetail';
 import { SearchPage } from '../search/search';
@@ -38,6 +38,11 @@ import { EditprofilePage } from '../editprofile/editprofile';
 import { FinishsignPage } from '../finishsign/finishsign';
 import { PostcostPage } from '../postcost/postcost';
 import { PostdetailPage } from '../postdetail/postdetail';
+import { FeedbackPage } from '../feedback/feedback';
+import { ProfileinputPage } from '../profileinput/profileinput';
+import { ClaimrenterPage } from '../claimrenter/claimrenter';
+import { ClaimownerPage } from '../claimowner/claimowner';
+import { PickupPage } from '../pickup/pickup';
 export var allPages = {
     Login: Login,
     Register: Register,
@@ -63,7 +68,7 @@ export var allPages = {
     PaymentsPage: PaymentsPage,
     TcPage: TcPage,
     LandingPage: LandingPage,
-    MyitemPage: MyitemPage,
+    MyStats: MyStats,
     AlertdetailPage: AlertdetailPage,
     ChatdetailPage: ChatdetailPage,
     SearchPage: SearchPage,
@@ -78,6 +83,11 @@ export var allPages = {
     EditprofilePage: EditprofilePage,
     FinishsignPage: FinishsignPage,
     PostcostPage: PostcostPage,
-    PostdetailPage: PostdetailPage
+    PostdetailPage: PostdetailPage,
+    FeedbackPage: FeedbackPage,
+    ProfileinputPage: ProfileinputPage,
+    ClaimownerPage: ClaimownerPage,
+    ClaimrenterPage: ClaimrenterPage,
+    PickupPage: PickupPage
 };
 //# sourceMappingURL=declerations.js.map

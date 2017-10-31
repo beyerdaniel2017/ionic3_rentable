@@ -10,11 +10,6 @@ page-myitem {
 
 
   .toolbar-ios-navbarcolor .segment-ios .segment-button.segment-activated {
-    border-bottom: solid #0cb5f3;
-    color:white !important;
-  }
-
-  .toolbar-ios-navbarcolor .segment-ios .segment-button.segment-activated {
     color: white !important;
     div{
     	border-color:white;
@@ -23,7 +18,15 @@ page-myitem {
 
   .moneytitle{
     font-size: 20px !important;
-    max-width: 110px !important;
+    padding-bottom: 30px;
+    &.moneyout{
+      max-width: 103px !important;
+      margin-right:10px !important;
+    }
+    &.moneyin{
+      max-width: 86px !important;
+      margin-left:10px !important;
+    }
   }
 
   .segment-ios .segment-button{
@@ -32,10 +35,8 @@ page-myitem {
     margin:0 10px;
     ion-icon{
       margin-top: 8px;
-      font-size: 3.5rem;
     }
   }
-  
   .itemtext{
     font-size:15px;
     color:gray;
@@ -103,10 +104,4 @@ page-myitem {
     height: 60px;
   }
 
-  .toolbar-ios .segment-button {
-    max-width: 40vw;
-    height: 2.6rem;
-    font-size: 1.2rem;
-    line-height: 2.5rem;
-	}
 }

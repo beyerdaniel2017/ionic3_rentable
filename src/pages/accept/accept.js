@@ -9,28 +9,31 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { Details } from '../details/details';
 /*
   Generated class for the AcceptPage page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 */
-var AcceptPage = (function () {
+var AcceptPage = /** @class */ (function () {
     function AcceptPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.details = Details;
+        this.agree = "yes";
     }
     AcceptPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad AcceptPagePage');
     };
+    AcceptPage = __decorate([
+        Component({
+            selector: 'page-accept',
+            templateUrl: 'accept.html'
+        }),
+        __metadata("design:paramtypes", [NavController, NavParams])
+    ], AcceptPage);
     return AcceptPage;
 }());
-AcceptPage = __decorate([
-    Component({
-        selector: 'page-accept',
-        templateUrl: 'accept.html'
-    }),
-    __metadata("design:paramtypes", [NavController, NavParams])
-], AcceptPage);
 export { AcceptPage };
 //# sourceMappingURL=accept.js.map

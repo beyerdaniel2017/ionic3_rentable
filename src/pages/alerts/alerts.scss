@@ -52,11 +52,14 @@ page-alerts {
 
   .alerttitle{
     font-size:20px !important;
+    padding-bottom: 30px;
     &.alertwidth{
-      max-width:80px;
+      max-width: 60px;
+      margin: 0 20px !important;
     }
      &.opportunitywidth{
-      max-width:160px;
+      max-width: 130px;
+      margin: 0 11px !important;
     }
   }
 

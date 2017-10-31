@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { Component } from '@angular/core';
 import { NavController, NavParams, ViewController } from 'ionic-angular';
-var Filter = (function () {
+var Filter = /** @class */ (function () {
     function Filter(navCtrl, navParams, viewCtrl) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
@@ -19,14 +19,14 @@ var Filter = (function () {
         var data = { 'foo': 'bar' };
         this.viewCtrl.dismiss(data);
     };
+    Filter = __decorate([
+        Component({
+            selector: 'page-filter',
+            templateUrl: 'filter.html'
+        }),
+        __metadata("design:paramtypes", [NavController, NavParams, ViewController])
+    ], Filter);
     return Filter;
 }());
-Filter = __decorate([
-    Component({
-        selector: 'page-filter',
-        templateUrl: 'filter.html'
-    }),
-    __metadata("design:paramtypes", [NavController, NavParams, ViewController])
-], Filter);
 export { Filter };
 //# sourceMappingURL=filter.js.map

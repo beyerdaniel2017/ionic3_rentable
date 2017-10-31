@@ -19,12 +19,22 @@ export class RentPage {
   rentreject=RejectPage;
   otherprofile=OtherprofilePage;
   detail=Details;
-   goodcondition:number[] = [1, 2, 3,4];
-  badcondition:number[] = [1];
+  condition:number[] = [0, 1, 2, 3, 4];
+  goodcondition:any;
   Product: any;
   renter:any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+
+    this.goodcondition=[];
+    for (var i = 0; i < 3; ++i) {
+      this.goodcondition[i]=true;
+    }
+    for (var i = 3; i < 5; ++i) {
+      this.goodcondition[i]=false;
+    }
+
+
   	this.Product ={
       img: 'assets/img/11.png', ownerimage:'assets/img/profile-img.png', ownername: 'John', item_title:'house', price:'25', description:'this is good rentalable book', selectdate:'19/7/2017', total_cost:'100'
     }

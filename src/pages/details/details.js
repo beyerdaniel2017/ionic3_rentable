@@ -12,9 +12,12 @@ import { NavController, ModalController, NavParams, Content, ViewController } fr
 import { RentPage } from '../rent/rent';
 import { MapModal } from '../modal-page/modal-page';
 import { ShareModal } from '../share-modal/share-modal';
+import { Home } from '../home/home';
 import { Geolocation } from 'ionic-native';
 import { AcceptPage } from '../accept/accept';
-var Details = (function () {
+import { PickupPage } from '../pickup/pickup';
+import { ClaimrenterPage } from '../claimrenter/claimrenter';
+var Details = /** @class */ (function () {
     function Details(navCtrl, navParams, myElement, modalCtrl, zone, viewCtrl) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
@@ -24,13 +27,18 @@ var Details = (function () {
         this.viewCtrl = viewCtrl;
         this.showFooter = false;
         this.rentPage = RentPage;
-        this.descriptionstatus = false;
+        this.home = Home;
+        this.claim = ClaimrenterPage;
+        this.pickup = PickupPage;
+        this.descriptionstatus = true;
         this.rentalstatus = false;
         this.locationstatus = false;
         this.rent = RentPage;
         this.retrun = AcceptPage; //return process
+        this.goodcondition = [1, 2, 3];
+        this.badcondition = [1, 2];
         this.Product = {
-            img: 'assets/img/04.png', ownerimage: 'assets/img/profile-img.png', ownername: 'John', item_title: 'house', price: '25', description: 'this is good rentalable book please use this', selectdate: '', total_cost: '100'
+            img: 'assets/img/11.png', ownerimage: 'assets/img/profile-img.png', ownername: 'John', item_title: 'house', price: '25', description: 'this is good rentalable book please use this Thanks', selectdate: '', total_cost: '100'
         };
         this.ionViewLoaded();
     }
@@ -62,6 +70,7 @@ var Details = (function () {
     };
     Details.prototype.toggle_footer = function (show) {
         var _this = this;
+        console.log('toggling');
         if (show) {
             document.querySelector(".detFooter")['style'].display = 'block';
             document.querySelector("page-details .scroll-content")['style'].marginBottom = 0;
@@ -144,26 +153,26 @@ var Details = (function () {
             console.log(err);
         });
     };
+    __decorate([
+        ViewChild(Content),
+        __metadata("design:type", Content)
+    ], Details.prototype, "content", void 0);
+    __decorate([
+        ViewChild("contentRef"),
+        __metadata("design:type", Content)
+    ], Details.prototype, "contentHandle", void 0);
+    __decorate([
+        ViewChild('map'),
+        __metadata("design:type", ElementRef)
+    ], Details.prototype, "mapElement", void 0);
+    Details = __decorate([
+        Component({
+            selector: 'page-details',
+            templateUrl: 'details.html'
+        }),
+        __metadata("design:paramtypes", [NavController, NavParams, ElementRef, ModalController, NgZone, ViewController])
+    ], Details);
     return Details;
 }());
-__decorate([
-    ViewChild(Content),
-    __metadata("design:type", Content)
-], Details.prototype, "content", void 0);
-__decorate([
-    ViewChild("contentRef"),
-    __metadata("design:type", Content)
-], Details.prototype, "contentHandle", void 0);
-__decorate([
-    ViewChild('map'),
-    __metadata("design:type", ElementRef)
-], Details.prototype, "mapElement", void 0);
-Details = __decorate([
-    Component({
-        selector: 'page-details',
-        templateUrl: 'details.html'
-    }),
-    __metadata("design:paramtypes", [NavController, NavParams, ElementRef, ModalController, NgZone, ViewController])
-], Details);
 export { Details };
 //# sourceMappingURL=details.js.map

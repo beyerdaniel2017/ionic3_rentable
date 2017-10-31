@@ -16,7 +16,7 @@ import { AlertdetailPage } from '../alertdetail/alertdetail';
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 */
-var AlertsPage = (function () {
+var AlertsPage = /** @class */ (function () {
     function AlertsPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
@@ -24,21 +24,22 @@ var AlertsPage = (function () {
         this.list =
             [
                 { alertname: 'John', history: '24', startprice: '20', lastprice: '30', distance: '10', startduration: 'July 1', lastduration: 'July 10' },
-                { alertname: 'name 2', history: 'last 2day', price: '40-50', range: '20 km', duration: 'July 12 - July 15' },
-                { alertname: 'name 3', history: 'last 24hr', price: '20-30', range: '30 km', duration: 'July 16 - July 20' },
+                { alertname: 'name 2', history: '2', startprice: '40', lastprice: '50', distance: '20', startduration: 'July 6', lastduration: 'July 14' },
+                { alertname: 'name 3', history: '24', startprice: '24', lastprice: '32', distance: '30', startduration: 'July 14', lastduration: 'July 23' },
             ];
+        this.alert_opportunity = "alert";
     }
     AlertsPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad AlertsPagePage');
     };
+    AlertsPage = __decorate([
+        Component({
+            selector: 'page-alerts',
+            templateUrl: 'alerts.html'
+        }),
+        __metadata("design:paramtypes", [NavController, NavParams])
+    ], AlertsPage);
     return AlertsPage;
 }());
-AlertsPage = __decorate([
-    Component({
-        selector: 'page-alerts',
-        templateUrl: 'alerts.html'
-    }),
-    __metadata("design:paramtypes", [NavController, NavParams])
-], AlertsPage);
 export { AlertsPage };
 //# sourceMappingURL=alerts.js.map

@@ -11,7 +11,8 @@ import { Component } from '@angular/core';
 import { NavController, AlertController } from 'ionic-angular';
 import { Register } from '../register/register';
 import { MenuPage } from '../menu/menu';
-var Login = (function () {
+import { TabPage } from '../tab/tab';
+var Login = /** @class */ (function () {
     function Login(navCtrl, alertCtrl) {
         this.navCtrl = navCtrl;
         this.alertCtrl = alertCtrl;
@@ -20,6 +21,9 @@ var Login = (function () {
         this.expanded = true;
         this.name = "Matias";
     }
+    Login.prototype.login = function () {
+        this.navCtrl.setRoot(TabPage);
+    };
     Login.prototype.forgotPassword = function () {
         var prompt = this.alertCtrl.create({
             title: 'Forgot Password',
@@ -47,14 +51,14 @@ var Login = (function () {
         });
         prompt.present();
     };
+    Login = __decorate([
+        Component({
+            selector: 'page-login',
+            templateUrl: 'login.html'
+        }),
+        __metadata("design:paramtypes", [NavController, AlertController])
+    ], Login);
     return Login;
 }());
-Login = __decorate([
-    Component({
-        selector: 'page-login',
-        templateUrl: 'login.html'
-    }),
-    __metadata("design:paramtypes", [NavController, AlertController])
-], Login);
 export { Login };
 //# sourceMappingURL=login.js.map

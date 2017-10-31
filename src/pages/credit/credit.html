@@ -42,8 +42,8 @@
 			<ion-input (ionChange)='f()' type="Number" [(ngModel)]="cardnumber" value="4749 3854 3587 3465"></ion-input>
 		</ion-col>
 		<ion-col col-2>
-	    <img *ngIf="iscard" class="mastersize" src="assets/icon/mastercard.png">
-	    <img *ngIf="!iscard" class="mastersize" src="assets/icon/visa.png">
+	    <img *ngIf="iscard" class="mastersize" src="assets/icon/visa.png">
+	    <img *ngIf="!iscard" class="mastersize" src="assets/icon/mastercard.png">
 		</ion-col>
 		<ion-col col-1 style="text-align: center; font-size:3rem;">
 			<ion-icon name="close" (click)="removenumber()"></ion-icon>

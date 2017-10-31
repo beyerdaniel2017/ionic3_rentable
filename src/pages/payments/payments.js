@@ -15,7 +15,7 @@ import { NavController, NavParams } from 'ionic-angular';
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 */
-var PaymentsPage = (function () {
+var PaymentsPage = /** @class */ (function () {
     function PaymentsPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
@@ -23,14 +23,14 @@ var PaymentsPage = (function () {
     PaymentsPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad PaymentsPagePage');
     };
+    PaymentsPage = __decorate([
+        Component({
+            selector: 'page-payments',
+            templateUrl: 'payments.html'
+        }),
+        __metadata("design:paramtypes", [NavController, NavParams])
+    ], PaymentsPage);
     return PaymentsPage;
 }());
-PaymentsPage = __decorate([
-    Component({
-        selector: 'page-payments',
-        templateUrl: 'payments.html'
-    }),
-    __metadata("design:paramtypes", [NavController, NavParams])
-], PaymentsPage);
 export { PaymentsPage };
 //# sourceMappingURL=payments.js.map

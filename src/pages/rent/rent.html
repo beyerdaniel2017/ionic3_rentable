@@ -29,14 +29,10 @@
         <ion-label class="graytext">
           {{renter.address}}
         </ion-label>
-        <ion-label >
-          <div *ngFor="let i of goodcondition" class="conditionstar">
-            <img class="starsize" src="assets/icon/star-red.png">
-          </div>
-          <div *ngFor="let i of badcondition" class="conditionstar" >
-            <img class="starsize" src="assets/icon/star.png">
-          </div>
-        </ion-label>
+        <div *ngFor="let i of condition" class="conditionstar">
+          <img *ngIf="goodcondition[i]" class="starsize" src="assets/icon/star-red.png">
+          <img *ngIf="!goodcondition[i]" class="starsize" src="assets/icon/star.png">
+        </div>
       </ion-col>
     </ion-row>
     <ion-label class="requesttitle">

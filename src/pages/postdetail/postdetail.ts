@@ -20,9 +20,14 @@ export class PostdetailPage {
 
 	postcost=PostcostPage;
 	addpage=AddPage;
-  goodcondition:number[] = [1, 2, 3, 4];
-  badcondition:number[] = [1];
+  condition:number[] = [0,1, 2, 3, 4];
+  badcondition:any;
+  goodcondition:any;
   categorylist:Array<any>;
+  itemtitle:any;
+  titlenumber:any;
+  conditionnumber:any;
+  conditiontitle:any;
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
@@ -39,7 +44,18 @@ export class PostdetailPage {
       {active_img: 'assets/icon/cat-tools-red.png', title: 'Tools and machines', inactive_img: 'assets/icon/cat-tools-grey.png', value:'tools',radionumber:'radio9'},
       {active_img: 'assets/icon/cat-party-red.png', title: 'Party and Events', inactive_img: 'assets/icon/cat-party-grey.png', value:'party',radionumber:'radio10'}
     ]
+
+    this.itemtitle="";
+    this.titlenumber=50;
+    this.conditiontitle="";
+    this.conditionnumber=200;
+    this.goodcondition=[];
+    for (var i = 0; i < 5; ++i) {
+      this.goodcondition[i]=false;
+    }
   }
+
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PostdetailPage');
@@ -67,6 +83,21 @@ export class PostdetailPage {
         children[i].getElementsByTagName('label')[0].getElementsByTagName('img')[0].setAttribute("src", inactiveimage);
       }
     }
+  }
+
+  number(){
+    var n=this.itemtitle.length;
+    this.titlenumber=50-n;
+  }
+
+  conditionnum(){
+    var n=this.conditiontitle.length;
+    this.conditionnumber=200-n;
+  }
+
+  changecondition(i){
+    console.log(i, "id");
+    this.goodcondition[i]=!this.goodcondition[i];
   }
 
 }

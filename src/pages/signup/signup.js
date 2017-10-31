@@ -9,8 +9,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { Component } from '@angular/core';
 import { NavController, NavParams, AlertController, LoadingController } from 'ionic-angular';
-import { FinishsignPage } from '../finishsign/finishsign';
 import { FormBuilder, Validators } from '@angular/forms';
+import { FinishsignPage } from '../finishsign/finishsign';
+import { Register } from '../register/register';
 import { AuthenticateProvider } from '../../providers/authenticate/authenticate';
 /*
   Generated class for the SignupPage page.
@@ -18,7 +19,7 @@ import { AuthenticateProvider } from '../../providers/authenticate/authenticate'
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 */
-var SignupPage = (function () {
+var SignupPage = /** @class */ (function () {
     function SignupPage(navCtrl, navParams, Authprovider, formBuilder, alertCtrl, loadingCtrl) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
@@ -27,6 +28,7 @@ var SignupPage = (function () {
         this.alertCtrl = alertCtrl;
         this.loadingCtrl = loadingCtrl;
         this.finishsign = FinishsignPage;
+        this.register = Register;
         this.emailChanged = false;
         this.passwordChanged = false;
         this.fullnameChanged = false;
@@ -76,19 +78,19 @@ var SignupPage = (function () {
             this.loading.present();
         }
     };
+    SignupPage = __decorate([
+        Component({
+            selector: 'page-signup',
+            templateUrl: 'signup.html'
+        }),
+        __metadata("design:paramtypes", [NavController,
+            NavParams,
+            AuthenticateProvider,
+            FormBuilder,
+            AlertController,
+            LoadingController])
+    ], SignupPage);
     return SignupPage;
 }());
-SignupPage = __decorate([
-    Component({
-        selector: 'page-signup',
-        templateUrl: 'signup.html'
-    }),
-    __metadata("design:paramtypes", [NavController,
-        NavParams,
-        AuthenticateProvider,
-        FormBuilder,
-        AlertController,
-        LoadingController])
-], SignupPage);
 export { SignupPage };
 //# sourceMappingURL=signup.js.map
