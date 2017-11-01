@@ -101,6 +101,12 @@ export class Details implements OnInit {
     }
   }
 
+  MyCtrl($scope, $ionicSlideBoxDelegate) {
+    $scope.nextSlide = function() {
+      $ionicSlideBoxDelegate.next();
+    }
+  }
+
   goto(){
     this.content.scrollToBottom(300);//300ms animation speed
   }

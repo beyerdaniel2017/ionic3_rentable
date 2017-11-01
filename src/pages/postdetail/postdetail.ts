@@ -97,7 +97,12 @@ export class PostdetailPage {
 
   changecondition(i){
     console.log(i, "id");
-    this.goodcondition[i]=!this.goodcondition[i];
+    for (var j = 0; j <= i; ++j) {
+      this.goodcondition[j]=true;
+    }
+    for (var l = i+1; l <= 5; ++l) {
+      this.goodcondition[l]=false;
+    }
   }
 
 }

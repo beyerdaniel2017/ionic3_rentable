@@ -3,6 +3,8 @@ import { NavController, NavParams } from 'ionic-angular';
 
 
 import { AlertdetailPage } from '../alertdetail/alertdetail';
+import { OpportunityPage } from '../opportunity/opportunity';
+
 
 /*
   Generated class for the AlertsPage page.
@@ -18,6 +20,7 @@ export class AlertsPage {
 
 	list: Array<any>;
 	alertdetail=AlertdetailPage;
+  opportunity=OpportunityPage;
   alertlist:Array<any>;
   alert_opportunity:String;
 
