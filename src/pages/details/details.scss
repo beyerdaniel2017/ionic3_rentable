@@ -25,6 +25,17 @@ page-details {
     }
   }
 
+  .backoverlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 10vh;
+    width: 100vw;
+    background-image: url(../assets/icon/image-overlay.png);
+    background-size: cover;
+    z-index: 4;
+  }
+
   .locationstyle{
     border: 1px solid #c6c6c7;
     margin-bottom: 35px;
@@ -150,7 +161,7 @@ page-details {
     color: white;
   }
   .cover_header0{
-    z-index: 1;
+    z-index: 10;
     position: absolute;
     top:2rem;
     left:4vw;
@@ -160,7 +171,7 @@ page-details {
     color:white;
   }
   .cover_header1 {
-    z-index: 1;
+    z-index: 10;
     position: absolute;
     top:2rem;
     right:12vw;
@@ -170,7 +181,7 @@ page-details {
     color:white;
   }
   .cover_header2 {
-    z-index: 1;
+    z-index: 10;
     position: absolute;
     top:2rem;
     right:4vw;
@@ -196,8 +207,6 @@ page-details {
     display:inline-block;
     z-index: 0;
     position: relative;
-    background: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 0.65) 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
   }
 
   .content-ios{

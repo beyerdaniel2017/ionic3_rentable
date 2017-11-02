@@ -29,6 +29,11 @@ page-editprofile {
     margin-top: -30px;
   }
 
+  .profileinfo{
+    margin: 0 !important;
+    color: black;
+  }
+
   .editimage{
     position: absolute;
     z-index: 1;
@@ -57,5 +62,6 @@ page-editprofile {
 
   .itempadding{
     padding-left:20px;
+    color:black;
   }
 }
