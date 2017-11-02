@@ -166,62 +166,34 @@ page-search {
       }
     }
   }
-}
-/* .radio-img {
-    margin: 13px 0;
-    input[type=radio] {
-      & + label {
-        & > .img-container {
-          display: inline-block;
-          margin: 0 0;
-          padding: 5px;
-          width:30px;
-          height:30px;
-          border: 1px solid black;
-          border-radius: 50%;
-          vertical-align: middle;
-        }
-      }
 
-      &:checked {
-        color: #f55349;
-        & + label {
-          color: #f55349;
+  .radio-img.grid-list{
+    float: left;
+    padding-bottom: 0;
+    border:0;
+    width: calc(43.6vw);
+    font-size: 11px;
 
-          & > .img-container {
-            background-color: #f55349;
-            color:white;
-            width:30px;
-            height:30px;
-          }
-        }
-      }
+    img{
+        object-fit: cover;
+        -o-object-fit: cover;
+        opacity: .7;
     }
-} */
-.radio-img.grid-list{
-  float: left;
-  padding-bottom: 0;
-  border:0;
-  width: calc(43.6vw);
-  font-size: 11px;
-
-  img{
-      object-fit: cover;
-      -o-object-fit: cover;
-      opacity: .7;
-  }
-  .item-md{
-      .item-inner{
-          padding-right: 0;
-      }
-  }
-  .label-md{
-      text-transform: capitalize;
-      font-weight: 500;
-      padding:0px !important;
-      margin:0px !important;
+    .item-md{
+        .item-inner{
+            padding-right: 0;
+        }
+    }
+    .label-md{
+        text-transform: capitalize;
+        font-weight: 500;
+        padding:0px !important;
+        margin:0px !important;
+    }
   }
 }
+
+
 
 
 .item-ios {

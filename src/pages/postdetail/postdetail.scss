@@ -26,7 +26,7 @@ page-postdetail {
     width:100%;
   }
 
-  .radio-img {
+  .radio-postimg {
     margin: 10px 0;
     input[type=radio] {
       &:checked {
@@ -39,7 +39,9 @@ page-postdetail {
     }
   }
 
-  .radio-img.grid-list{
+
+
+  .radio-postimg.grid-list{
     float: left;
     padding-bottom: 0;
     width: calc(44.9vw);

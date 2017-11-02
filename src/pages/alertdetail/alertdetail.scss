@@ -17,16 +17,50 @@ page-alertdetail {
     padding-bottom: 24px;
   }
 
-  .radio-img {
+  .radio-alertimg {
     margin: 10px 0;
     input[type=radio] {
       &:checked {
         color: #f55349;
         & + label {
           color: #f55349;
+          &+ span{
+            color: #f55349;
+          }
 
         }
       }
+    }
+  }
+  .radio-alertimg input[type=radio]:checked + label {
+    color: #f55349;
+  }
+
+  .radio-alertimg input[type=radio].testclass + label {
+    color: #f55349;
+  }
+  .radio-alertimg.grid-list{
+    float: left;
+    padding-bottom: 0;
+    border:0;
+    width: calc(43.6vw);
+    font-size: 11px;
+
+    img{
+        object-fit: cover;
+        -o-object-fit: cover;
+        opacity: .7;
+    }
+    .item-md{
+        .item-inner{
+            padding-right: 0;
+        }
+    }
+    .label-md{
+        text-transform: capitalize;
+        font-weight: 500;
+        padding:0px !important;
+        margin:0px !important;
     }
   }
 
