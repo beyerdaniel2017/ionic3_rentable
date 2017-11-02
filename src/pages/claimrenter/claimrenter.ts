@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import {ClaimownerPage } from '../claimowner/claimowner';
 import { OtherprofilePage } from '../otherprofile/otherprofile';
+import { Details } from '../details/details';
 
 /**
  * Generated class for the ClaimrenterPage page.
@@ -23,6 +24,7 @@ export class ClaimrenterPage {
   agree:any;
   claimowner=ClaimownerPage;
   otherprofile=OtherprofilePage;
+  detail=Details;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
 

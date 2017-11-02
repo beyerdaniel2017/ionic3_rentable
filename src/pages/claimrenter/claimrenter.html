@@ -89,7 +89,8 @@
   <ion-label class="commentstyle">
 		LEAVE A COMMENT BELOW
 	</ion-label>
-	<ion-textarea rows="5" type="text" class="feedbackinput" text-wrap></ion-textarea >
+	<ion-label rows="5" type="text" class="feedbackinput" text-wrap>this is owner submit.
+   please check it.</ion-label >
 	<p class="helptext condition">DO YOU AGREE WITH THE DETAILS THIS CLAIM?</p>
 	 <ion-row radio-group [(ngModel)]="agree">
     <ion-col col-2>
@@ -111,5 +112,5 @@
     <ion-col col-2>
     </ion-col>
   </ion-row>
-	<button ion-button block [navPush]="claimowner" color="secondary" class="defaultbutton paddingbottom" >SUBMIT</button>
+	<button ion-button block  color="secondary" class="defaultbutton paddingbottom" >SUBMIT</button>
 </ion-content>

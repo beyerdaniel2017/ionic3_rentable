@@ -20,7 +20,10 @@ export class PostcostPage {
 
 	postdetail=PostdetailPage;
   addpage=AddPage;
+  deliver:any;
+  fee:any;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.deliver=false;
   }
 
   ionViewDidLoad() {

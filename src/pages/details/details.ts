@@ -25,7 +25,7 @@ export class Details implements OnInit {
   showFooter= false;
   rentPage = RentPage;
   home=Home;
-  claim=ClaimrenterPage;
+  claim=ClaimownerPage;
   pickup=PickupPage;
   private topOrBottom: String;
   private contentBox;

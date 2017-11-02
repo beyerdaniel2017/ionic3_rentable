@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+import { ClaimrenterPage } from '../claimrenter/claimrenter';
+import { Details } from '../details/details';
+
+
 /**
  * Generated class for the ClaimownerPage page.
  *
@@ -15,11 +19,24 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ClaimownerPage {
 
+	itemtitle:any;
+	titlenumber:any;
+	detail=Details;
+  claimrenter=ClaimrenterPage;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+
+  	this.titlenumber=400;
+
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ClaimownerPage');
+  }
+
+  number(){
+    var n=this.itemtitle.length;
+    this.titlenumber=400-n;
   }
 
 }

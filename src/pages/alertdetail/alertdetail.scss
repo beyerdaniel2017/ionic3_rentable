@@ -17,6 +17,19 @@ page-alertdetail {
     padding-bottom: 24px;
   }
 
+  .radio-img {
+    margin: 10px 0;
+    input[type=radio] {
+      &:checked {
+        color: #f55349;
+        & + label {
+          color: #f55349;
+
+        }
+      }
+    }
+  }
+
   .liststyle{
     font-weight: bold;
     border-top: thin solid gainsboro;

@@ -1,5 +1,4 @@
 page-search {
- 
   .rightposition{
     right:-1rem;
   }
@@ -156,7 +155,7 @@ page-search {
   padding-bottom:12px;
 }
 
-/* .radio-img {
+.radio-img {
   margin: 10px 0;
   input[type=radio] {
     &:checked {
@@ -167,8 +166,8 @@ page-search {
       }
     }
   }
-} */
-.radio-img {
+}
+/* .radio-img {
     margin: 13px 0;
     input[type=radio] {
       & + label {
@@ -198,12 +197,12 @@ page-search {
         }
       }
     }
-}
+} */
 .radio-img.grid-list{
   float: left;
   padding-bottom: 0;
   border:0;
-  width: calc(42vw);
+  width: calc(43.6vw);
   font-size: 11px;
 
   img{

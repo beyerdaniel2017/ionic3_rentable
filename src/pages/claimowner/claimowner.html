@@ -65,10 +65,10 @@
 			ADDITIONAL COMMENTS
 		</ion-label>
 		<ion-label item-right class="commentstyle" style="text-align: right;">
-			400
+			{{titlenumber}}
 		</ion-label>
 	</ion-item>
-	<ion-textarea rows="5" type="text" class="feedbackinput" text-wrap></ion-textarea >
+	<ion-textarea rows="5" (ionChange)='number()' type="text" class="feedbackinput" [(ngModel)]="itemtitle" text-wrap></ion-textarea >
 
-  <button ion-button block color="secondary" class="defaultbutton paddingbottom" >SUBMIT</button>
+  <button [navPush]="claimrenter" ion-button block color="secondary" class="defaultbutton paddingbottom" >SUBMIT</button>
 </ion-content>
