@@ -38,14 +38,26 @@
         <ion-item class="inputmagin" no-padding>
           <ion-input class="inputstyle" type="Number" ></ion-input>
         </ion-item>
-        <ion-item class="inputmagin" class="checkstyle">
-        	<ion-label>
+       <!--  <ion-item class="checkstyle">
+        	<ion-label >
         		<a style="color: white" href="#" onclick="window.open('http://www.nraboy.com/contact', '_system', 'location=yes'); return false;">
                 Agree to our terms
             </a>
         	</ion-label>
-					<ion-toggle item-right  color="secondary"></ion-toggle>
-				</ion-item>
+					<ion-toggle  item-right  color="secondary"></ion-toggle>
+				</ion-item> -->
+        <ion-row>
+          <ion-col col-10>
+            <ion-label >
+              <a style="color: white" href="#" onclick="window.open('http://www.nraboy.com/contact', '_system', 'location=yes'); return false;">
+                  Agree to our terms
+              </a>
+            </ion-label>
+          </ion-col>
+          <ion-col col-2 class="checkstyle">
+            <ion-checkbox  color="secondary"></ion-checkbox>
+          </ion-col>
+        </ion-row>
       </ion-list>
       <button ion-button class="signupbutton" [navPush]="home">REGISTER</button>
     </form>

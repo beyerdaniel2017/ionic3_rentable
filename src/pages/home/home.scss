@@ -25,6 +25,7 @@ page-home {
     height:50vw;
     padding:0px !important;
     margin:0px !important;
+    border: 1px solid white;
   }
 
   .cover_1 {
@@ -45,13 +46,14 @@ page-home {
     top: 1vw;
     padding:0px !important;
     margin:0px !important;
-    height: 18px;
+    height: 2.5rem;
     width:auto;
   }
 
   ion-scroll .scroll-content{
     padding: 6px 0;
   }
+
 
   .categorystyle{
     overflow: scroll;
@@ -142,6 +144,9 @@ page-home {
       margin-top: 8px;
       font-size: 3.5rem;
     }
+  }
+  ion-segment-button:hover{
+    background-color: transparent !important;
   }
 
   .categoryfont{
