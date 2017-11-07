@@ -54,8 +54,7 @@
           <div class="image-item" no-lines>
             <img [navPush]="details" class="wardrobe" src="{{item.img}}" />
             <img src="assets/icon/eye-white.png" class="cover_1"><p class="info_1">{{item.view}}</p>
-            <img *ngIf="!own_like[item.id]" class="cover_4" (click)="ownshowheart(item.id)" src="assets/icon/like.png">
-            <img *ngIf="own_like[item.id]" class="cover_4" (click)="ownshowheart(item.id)" src="assets/icon/like-full.png">
+            <img  class="cover_4" (click)="ownshowheart(item.id)" src="assets/icon/like.png">
             <p class="info">{{item.favourity}}</p>
           </div>
         </ion-card>
@@ -103,7 +102,6 @@
             <img [navPush]="details" class="wardrobe" src="{{item.img}}" />
             <img src="assets/icon/eye-white.png" class="cover_1"><p class="info_1">{{item.view}}</p>
             <img *ngIf="!rent_like[item.id]" class="cover_4" (click)="rentshowheart(item.id)" src="assets/icon/like.png">
-            <img *ngIf="rent_like[item.id]" class="cover_4" (click)="rentshowheart(item.id)" src="assets/icon/like-full.png">
             <p class="info">{{item.favourity}}</p>
           </div>
         </ion-card>
