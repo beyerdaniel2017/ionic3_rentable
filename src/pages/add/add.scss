@@ -32,7 +32,7 @@ page-add {
     display: inline-block;
     padding:0px !important;
     margin:0px !important;
-    border:0px;
+    border:1px solid white;;
   }
 
   .grid-list{
@@ -79,6 +79,8 @@ page-add {
   width: 100%;
   font-size: 1rem;
   background-color: #2e343e;
+  border-top: thin groove white;
+  border-bottom: thin groove white;
   height: 60px;
 }
 

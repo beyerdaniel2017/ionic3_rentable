@@ -10,10 +10,10 @@
       </ion-col>
       <ion-col col-6>
         <ion-segment [(ngModel)]="own_rent"  class="segment_info" >
-          <ion-segment-button class="itemtitle" value="own" >
+          <ion-segment-button (click)="showdelete()" class="itemtitle" value="own" >
             I Own
           </ion-segment-button>
-          <ion-segment-button class="itemtitle" value="rent" >
+          <ion-segment-button (click)="showdelete()" class="itemtitle" value="rent" >
             I Rent
           </ion-segment-button>
         </ion-segment>
@@ -96,18 +96,18 @@
       </ion-col>
     </ion-row>
     <ion-card-content [ngSwitch]="date">
-      <div  *ngSwitchCase="'current'">
+      <div  *ngSwitchCase="'history'">
        <ion-card class="grid-list backcolor" *ngFor="let item of rent_currentlist" >
           <div class="image-item" no-lines>
             <img [navPush]="details" class="wardrobe" src="{{item.img}}" />
-            <img src="assets/icon/eye-white.png" class="cover_1"><p class="info_1">{{item.view}}</p>
+<!--             <img src="assets/icon/eye-white.png" class="cover_1"><p class="info_1">{{item.view}}</p>
             <img *ngIf="!rent_like[item.id]" class="cover_4" (click)="rentshowheart(item.id)" src="assets/icon/like.png">
-            <p class="info">{{item.favourity}}</p>
+            <p class="info">{{item.favourity}}</p> -->
           </div>
         </ion-card>
       </div>
 
-      <div  *ngSwitchCase="'history'">
+      <div  *ngSwitchCase="'current'">
          <ion-card class="grid-list backcolor" *ngFor="let item of rent_historylist">
           <div class="image-item" [navPush]="details" no-lines>
             <img class="wardrobe" src="{{item.img}}" />

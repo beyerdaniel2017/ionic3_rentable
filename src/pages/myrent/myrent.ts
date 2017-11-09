@@ -54,6 +54,8 @@ export class Myrent {
     [
       {img: 'assets/img/11.png', title: 'apartment', profileimage:'assets/img/profile-img.png', profilename:'John', delete:'yes', rentday:'5'},
       {img: 'assets/img/22.png', title: 'wedding', profileimage:'assets/img/profile-img.png', profilename:'rascal', delete:'yes',  rentday:'2'},
+      {img: 'assets/img/33.png', title: 'shop', profileimage:'assets/img/profile-img.png', profilename:'sizza', delete:'yes', rentday:'3' },
+      {img: 'assets/img/22.png', title: 'wedding', profileimage:'assets/img/profile-img.png', profilename:'rascal', delete:'yes',  rentday:'2'},
       {img: 'assets/img/33.png', title: 'shop', profileimage:'assets/img/profile-img.png', profilename:'sizza', delete:'yes', rentday:'3' }
     ]
 
@@ -73,18 +75,28 @@ export class Myrent {
     ]
   }
 
-  /*removeItem(item){
-    for(var i = 0; i < this.list.length; i++) {
- 
-      if(this.list[i] == item){
-        this.list.splice(i, 1);
-      }
- 
-    }
-  }*/
 
   showdelete(){
-    this.showdeleteicon=!this.showdeleteicon;
+    if (this.own_rent=="own") {
+      if (this.isavailable=="available") {
+        console.log("own_available");
+        this.showdeleteicon=true;
+      }
+      if(this.isavailable=="rented"){
+        console.log("own_history");
+        this.showdeleteicon=false;
+      }
+    }
+    if(this.own_rent=="rent"){
+      if (this.date=="history") {
+        console.log("rent_history");
+        this.showdeleteicon=false;
+      }
+      if (this.date=="current"){
+        console.log("rent_rented");
+        this.showdeleteicon=true;
+      }
+    }
   }
 
   ownshowheart(i) {
