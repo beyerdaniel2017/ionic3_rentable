@@ -132,37 +132,21 @@ page-search {
     margin-bottom:40px;
   }
 
-
-
-
-}
-
-.categoryname{
-  display: inline-block;
-  margin: 0 0;
-  vertical-align: middle;
-  width: auto;
-  height: 35px;
-  padding-bottom:12px;
-}
-
-.radio-img {
-  margin: 10px 0;
-  input[type=radio] {
-    &:checked {
-      color: #f55349;
-      & + label {
+  .radio-img {
+    margin: 10px 0;
+    input[type=radio] {
+      &:checked {
         color: #f55349;
-
       }
     }
   }
+
 
   .radio-img.grid-list{
     float: left;
     padding-bottom: 0;
     border:0;
-    width: calc(43.6vw);
+    width: calc(43vw);
     font-size: 11px;
 
     img{
@@ -182,7 +166,19 @@ page-search {
         margin:0px !important;
     }
   }
+
+
 }
+
+.categoryname{
+  display: inline-block;
+  margin: 0 0;
+  vertical-align: middle;
+  width: auto;
+  height: 35px;
+  padding-bottom:12px;
+}
+
 
 
 
