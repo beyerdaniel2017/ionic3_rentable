@@ -34,7 +34,7 @@
     <img class="returnstarsize" src="assets/icon/star-grey-outline.png">
   </ion-label>
   <p class="goodstyle">VERY GOOD</p>
-	<ion-row radio-group [(ngModel)]="agree">
+	<ion-row radio-group *ngIf="!agreewith" [(ngModel)]="agree">
 		<ion-col col-2>
 		
 		</ion-col>
@@ -61,7 +61,7 @@
 	</ion-label>
 	<ion-textarea rows="5" type="text" class="feedbackinput" text-wrap></ion-textarea >
 	<ion-item class="toggleheight">
-		<ion-toggle item-left [(ngModel)]="agree" color="secondary"></ion-toggle>
+		<ion-toggle item-left [(ngModel)]="agreewith" color="secondary"></ion-toggle>
 		<p item-right class="helptext agree">BOTH PARTIES WERE UNABLE TO AGREE ON THE ITEHMS CONDITION</p>
 	</ion-item>
   <button ion-button block color="secondary" class="defaultbutton paddingbottom" >SUBMIT</button>

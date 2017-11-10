@@ -108,12 +108,16 @@ page-profile {
     width: 2px !important;
     content: url(../assets/icon/add.png);
   }
-  
 }
 
 .profileheader{
   text-align: center;
-  padding: 8px 10px 20px 10px;
+  background-color: #002b42;
+  height: 66px;
+}
+.profileheader1{
+  text-align: center;
+  padding: 15px 10px 0px 10px;
   background-color: #002b42;
   height: 66px;
 }

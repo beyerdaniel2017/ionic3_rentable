@@ -6,19 +6,19 @@
 -->
 <ion-header >
 
-  <ion-toolbar  no-padding  >
-    <ion-row class="profileheader">
-      <ion-col  col-1 class="icon-col">
-        <img src="assets/icon/avatar.png" style="margin-top: 10px;" [navPush]="profile">
+  <ion-navbar class="profileheader" color="navbarcolor">
+    <ion-row style="text-align: center; color: white">
+      <ion-col col-1>
       </ion-col>
-      <ion-col class="icon-col" col-10>
-      <ion-searchbar class="searchbar" placeholder="Find items near you" (ionInput)="filterItems($event)"></ion-searchbar>
+      <ion-col col-2>
       </ion-col>
-      <ion-col class="icon-col" col-1>
-        <img src="assets/icon/filter.png" style="margin-top: 10px;" [navPush]="search">
-       </ion-col>
+      <ion-col col-6>
+        <h4 class="size" >View Opputunity</h4>
+      </ion-col>
+      <ion-col col-3 >
+      </ion-col>
     </ion-row>
-  </ion-toolbar>
+  </ion-navbar>
 </ion-header>
 
 <ion-content *ngIf="!oneopp" no-padding class="app-content ">

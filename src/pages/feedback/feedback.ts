@@ -19,12 +19,39 @@ import { Profile } from '../profile/profile';
 export class FeedbackPage {
 
 	profile=Profile;
+  goodcondition:any;
+  condition:number[] = [0,1, 2, 3, 4];
+  titlenumber:any;
+  itemtitle:any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+
+		this.goodcondition=[];
+	  for (var i = 0; i < 5; ++i) {
+	    this.goodcondition[i]=false;
+	  }
+
+	  this.titlenumber=300;
+
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad FeedbackPage');
+  }
+
+  changecondition(i){
+    console.log(i, "id");
+    for (var j = 0; j <= i; ++j) {
+      this.goodcondition[j]=true;
+    }
+    for (var l = i+1; l <= 5; ++l) {
+      this.goodcondition[l]=false;
+    }
+  }
+
+  number(){
+    var n=this.itemtitle.length;
+    this.titlenumber=400-n;
   }
 
 }

@@ -67,6 +67,10 @@ export class CreditPage {
 
   }
 
+  selectyear($event){
+    
+  }
+
   save(){
     
   }

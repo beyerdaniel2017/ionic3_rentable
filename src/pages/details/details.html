@@ -1,7 +1,6 @@
 <ion-content #contentRef (ionScroll)="scrollingFun($event)">
   <div class="home" >
     <div class="backoverlay">
-      
     </div>
     <ion-slides style="display: inline-block; height: 50vh; width: 100vw; margin-bottom: -4px;border: 0;"  loop="true" speed="3000">
       <ion-slide >
@@ -21,7 +20,7 @@
   </div>
   <ion-row style="margin-top: -4rem;" no-padding>
     <ion-col col-3 align="right">
-      <img src="{{Product.ownerimage}}" class="profileimg">
+      <img [navPush]="otherprofile" src="{{Product.ownerimage}}" class="profileimg">
     </ion-col>
     <ion-col col-6 style="padding-top: 10px;">
       <p class="cover_name">

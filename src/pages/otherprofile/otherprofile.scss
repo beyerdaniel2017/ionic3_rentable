@@ -25,6 +25,17 @@ page-otherprofile {
       }
     }
   }
+
+  .cover_image{
+    z-index: 1;
+    position: absolute;
+    right:2vw;
+    top: 3.5vw;
+    padding:0px !important;
+    margin:0px !important;
+    height: 2.2rem;
+    width:auto;
+  }
   .segment-ios .segment-button{
     border:0px;
     background-color: transparent;

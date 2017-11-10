@@ -23,6 +23,7 @@ export class AlertsPage {
   opportunity=OpportunityPage;
   alertlist:Array<any>;
   alert_opportunity:String;
+  alertview:any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   	this.list =
@@ -32,10 +33,15 @@ export class AlertsPage {
 			{alertname: 'name 3', history:'24',startprice:'24',lastprice:'32', distance: '30', startduration: 'July 14', lastduration:'July 23'},
   	]
     this.alert_opportunity="alert";
+    this.alertview=true;
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AlertsPagePage');
+  }
+
+  showalert(){
+    this.alertview=!this.alertview;
   }
 
 }

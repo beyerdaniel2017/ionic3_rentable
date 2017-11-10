@@ -60,7 +60,22 @@
 	<ion-row class="borderbottom">
 		<ion-col col-5>
 			<ion-item color="none" no-padding>
-        <ion-datetime displayFormat="MM YYYY" [(ngModel)]="myDate"></ion-datetime>{{myDate}}
+        <select (ionChange)="selectyear($event)" class="selectyear">
+					<option value="01" selected="true">2017</option>
+			    <option value="02">2018</option>
+			    <option value="03">2019</option>
+			    <option value="04">2020</option>
+			    <option value="05">2021</option>
+			    <option value="06">2022</option>
+			    <option value="07">2023</option>
+			    <option value="08">2024</option>
+			    <option value="09">2025</option>
+			    <option value="10">2026</option>
+			    <option value="11">2027</option>
+			    <option value="12">2028</option>
+			    <option value="13">2029</option>
+			    <option value="14">2030</option>
+			  </select>
        </ion-item>
 		</ion-col>
 		<ion-col col-1 style="text-align: center; font-size:3rem;">

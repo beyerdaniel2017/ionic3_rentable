@@ -35,7 +35,7 @@ page-search {
     }
   }
   .inputborder{
-    border: thin solid gainsboro;
+    border-bottom: thin solid gainsboro;
     color:black;
   }
 
@@ -89,16 +89,6 @@ page-search {
     padding: 0px;
   }
 
-  .size{
-    margin:0;
-    color:white;
-    font-size:20px;
-    text-align: center;
-    &.backicon{
-      font-size:30px;
-    }
-  }
-
   .select-ios {
     padding: 13px 3px 7px 6px;
     border: thin solid gainsboro;
@@ -123,6 +113,7 @@ page-search {
     border: 1px solid #c6c6c7;
     margin-bottom: 35px;
     height:40px;
+    border-radius:20px;
   }
 
   .locationicon{

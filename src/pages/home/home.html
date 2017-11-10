@@ -2,7 +2,7 @@
 <ion-header >
 
   <ion-toolbar no-padding   >
-    <ion-row class="profileheader" >
+    <ion-row class="profileheader1" >
       <ion-col  col-1 class="icon-col">
         <img src="assets/icon/avatar.png" style="margin-top: 10px;" [navPush]="profile">
       </ion-col>
@@ -20,7 +20,7 @@
 <ion-content no-padding class="app-content "  >
   <ion-scroll  scrollX="true" class="categorystyle" >
     <ion-segment [(ngModel)]="timeline" style="justify-content: left;">
-      <ion-segment-button id="segmenthover" *ngFor="let item of categorylist" (click)="myFunction($event)"  value="{{item.value}}" >
+      <ion-segment-button class="segmenthover" *ngFor="let item of categorylist" (click)="myFunction($event)"  value="{{item.value}}" >
         <img src="{{item.inactive_img}}" class="categoryimg">
         <p class="categoryfont">{{item.title}}</p>
       </ion-segment-button>

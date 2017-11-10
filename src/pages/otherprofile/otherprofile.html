@@ -57,20 +57,22 @@
   	  <ion-card-content [ngSwitch]="isavailable" no-padding>
         <div  *ngSwitchCase="'available'" >
           <ion-list class="grid-list backcolor" *ngFor="let item of avaiablelist">
-            <div class="image-item" no-lines no-padding>
-              <img class="wardrobe" src="{{item.img}}" />
+            <div class="image-item"  no-lines no-padding>
+              <img class="wardrobe" [navPush]="productdetail" src="{{item.img}}" />
               <ion-icon name="ios-eye-outline" class="cover_2"><p class="info">{{item.view}}</p></ion-icon>
-              <ion-icon name="md-heart-outline" class="cover_4"><p class="info">{{item.favourity}}</p></ion-icon>
+              <img *ngIf="!like[item.id]" class="cover_image" (click)="ActiveLike(item.id)" src="assets/icon/like.png">
+              <img *ngIf="like[item.id]" class="cover_image" (click)="ActiveLike(item.id)" src="assets/icon/like-full.png">
             </div>
           </ion-list>
         </div>
 
         <div  *ngSwitchCase="'post'">
           <ion-list class="grid-list backcolor"  *ngFor="let item of postlist">
-            <div class="image-item" no-lines no-padding>
-              <img class="wardrobe" src="{{item.img}}" />
+            <div class="image-item"  no-lines no-padding>
+              <img class="wardrobe" [navPush]="productdetail" src="{{item.img}}" />
               <ion-icon name="ios-eye-outline" class="cover_2"><p class="info">{{item.view}}</p></ion-icon>
-              <ion-icon name="md-heart-outline" class="cover_4"><p class="info">{{item.favourity}}</p></ion-icon>
+              <img *ngIf="!like[item.id]" class="cover_image" (click)="ActiveLike(item.id)" src="assets/icon/like.png">
+              <img *ngIf="like[item.id]" class="cover_image" (click)="ActiveLike(item.id)" src="assets/icon/like-full.png">
             </div>
           </ion-list>
         </div>

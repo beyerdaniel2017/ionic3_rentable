@@ -10,6 +10,7 @@ import { AcceptPage } from '../accept/accept';
 import { PickupPage } from '../pickup/pickup';
 import { ClaimrenterPage } from '../claimrenter/claimrenter';
 import { ClaimownerPage } from '../claimowner/claimowner';
+import { OtherprofilePage } from '../otherprofile/otherprofile';
 
 declare var google;
 
@@ -27,6 +28,7 @@ export class Details implements OnInit {
   home=Home;
   claim=ClaimownerPage;
   pickup=PickupPage;
+  otherprofile=OtherprofilePage;
   private topOrBottom: String;
   private contentBox;
   private tabBarHeight;

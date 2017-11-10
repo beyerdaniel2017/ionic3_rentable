@@ -6,10 +6,9 @@
 -->
 <ion-header>
 
-  <ion-toolbar class="profileheader" color="navbarcolor">
+  <ion-navbar class="profileheader" color="navbarcolor">
     <ion-row >
       <ion-col col-1>
-    		<ion-icon name="md-close" [navPush]="postdetail" class="headertitle"></ion-icon>
     	</ion-col>
       <ion-col col-7 >
       </ion-col>
@@ -19,7 +18,7 @@
       	</ion-label>
       </ion-col>
     </ion-row>
-  </ion-toolbar>
+  </ion-navbar>
 </ion-header>
 
 
@@ -61,17 +60,6 @@
       Item Rental Cost
     </ion-label>
     <ion-label class="labelhelp">
-      FAIR VALUE PRICE
-    </ion-label>
-    <ion-row class="borderbottom">
-      <ion-col col-11>
-        <ion-input type="text" [(ngModel)]="fairprice" value="$25"></ion-input>
-      </ion-col>
-      <ion-col col-1 class="removeicon">
-        <ion-icon name="close" (click)="removefairprice()"></ion-icon>
-      </ion-col>
-    </ion-row>
-    <ion-label class="labelhelp">
       DAILY RENTAL PRICE
     </ion-label>
     <ion-row class="borderbottom">
@@ -91,6 +79,17 @@
       </ion-col>
       <ion-col col-1 class="removeicon">
         <ion-icon name="close" (click)="removeweeklyprice()"></ion-icon>
+      </ion-col>
+    </ion-row>
+    <ion-label class="labelhelp">
+      BOND PRICE
+    </ion-label>
+    <ion-row class="borderbottom">
+      <ion-col col-11>
+        <ion-input type="text" [(ngModel)]="fairprice" value="$25"></ion-input>
+      </ion-col>
+      <ion-col col-1 class="removeicon">
+        <ion-icon name="close" (click)="removefairprice()"></ion-icon>
       </ion-col>
     </ion-row>
     <ion-label class="labelhelp">

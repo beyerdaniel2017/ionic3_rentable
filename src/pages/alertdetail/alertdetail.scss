@@ -1,5 +1,4 @@
 page-alertdetail {
- 
   .rightposition{
     right:-1rem;
   }
@@ -83,7 +82,7 @@ page-alertdetail {
     }
   }
   .inputborder{
-    border: thin solid gainsboro;
+    border-bottom: thin solid gainsboro;
     color:black;
   }
 
@@ -137,14 +136,7 @@ page-alertdetail {
     padding: 0px;
   }
 
-  .size{
-    margin:0;
-    color:white;
-    font-size:20px;
-    &.backicon{
-      font-size:30px;
-    }
-  }
+  
 
   .select-ios {
     padding: 13px 3px 7px 6px;
@@ -160,14 +152,14 @@ page-alertdetail {
 
   .categorytitle{
     font-weight: bold;
-    border-top: thin solid gainsboro;
-    padding-top: 30px;
+    border-bottom: thin solid gainsboro;
+    padding-bottom: 1rem;
     font-size:15px;
     margin: 0;
   }
 
   .locationstyle{
-    border: 1px solid #c6c6c7;
+    border-bottom: 1px solid #c6c6c7;
     margin-bottom: 35px;
   }
 
@@ -186,4 +178,13 @@ page-alertdetail {
     margin-bottom:40px;
   }
 
+}
+.size{
+  margin:0;
+  color:white;
+  font-size:20px;
+  text-align: center;
+  &.backicon{
+    font-size:2.6rem;
+  }
 }

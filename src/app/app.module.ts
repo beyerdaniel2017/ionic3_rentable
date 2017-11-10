@@ -38,7 +38,10 @@ var APP_Pages = [];
     DirectivesModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
-    IonicModule.forRoot(MyApp)
+     IonicModule.forRoot(MyApp, {
+      backButtonText: ''
+    }
+  )
   ],
   bootstrap: [IonicApp],
   entryComponents: [

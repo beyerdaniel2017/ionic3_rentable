@@ -47,7 +47,20 @@ export class Home {
       {active_img: 'assets/icon/cat-party.png', title: 'Party and Events', inactive_img: 'assets/icon/cat-party-grey.png', value:'party'},
       {active_img: 'assets/icon/cat-other.png', title: 'Other', inactive_img: 'assets/icon/cat-other-grey.png', value:'other'},
     ]
-    this.neargrid = [{img: 'assets/img/01.png', title: 'apartment', icon: 'ios-home-outline'}, {img: 'assets/img/02.png', title: 'wedding hall', icon: 'ios-bowtie-outline'}, {img: 'assets/img/03.png', title: 'shop', icon: 'ios-shirt-outline'}, {img: 'assets/img/04.png', title: 'rent', icon: 'ios-headset-outline'},{img: 'assets/img/01.png', title: 'apartment', icon: 'ios-home'}, {img: 'assets/img/02.png', title: 'wedding hall', icon: 'ios-bowtie'}, {img: 'assets/img/03.png', title: 'shop', icon: 'md-cart'}, {img: 'assets/img/04.png', title: 'rent', icon: 'md-headset'},{img: 'assets/img/01.png', title: 'apartment', icon: 'ios-home'}, {img: 'assets/img/02.png', title: 'wedding hall', icon: 'ios-bowtie'}, {img: 'assets/img/03.png', title: 'shop', icon: 'md-cart'}, {img: 'assets/img/04.png', title: 'rent', icon: 'md-headset'}]
+    this.neargrid = [
+      {img: 'assets/img/01.png', title: 'apartment', icon: 'ios-home-outline'},
+      {img: 'assets/img/02.png', title: 'wedding hall', icon: 'ios-bowtie-outline'},
+      {img: 'assets/img/03.png', title: 'shop', icon: 'ios-shirt-outline'},
+      {img: 'assets/img/04.png', title: 'rent', icon: 'ios-headset-outline'},
+      {img: 'assets/img/01.png', title: 'apartment', icon: 'ios-home'},
+      {img: 'assets/img/02.png', title: 'wedding hall', icon: 'ios-bowtie'},
+      {img: 'assets/img/03.png', title: 'shop', icon: 'md-cart'},
+      {img: 'assets/img/04.png', title: 'rent', icon: 'md-headset'},
+      {img: 'assets/img/01.png', title: 'apartment', icon: 'ios-home'},
+      {img: 'assets/img/02.png', title: 'wedding hall', icon: 'ios-bowtie'},
+      {img: 'assets/img/03.png', title: 'shop', icon: 'md-cart'},
+      {img: 'assets/img/04.png', title: 'rent', icon: 'md-headset'}
+    ]
     this.categorygrid = [
       {img: 'assets/img/01.png', price:'21',id:'0'},
       {img: 'assets/img/02.png', price:'56',id:'1'},

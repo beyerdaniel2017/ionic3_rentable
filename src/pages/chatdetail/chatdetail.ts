@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
-import { Profile } from '../profile/profile';
+import { OtherprofilePage } from '../otherprofile/otherprofile';
 import { Details } from '../details/details';
 
 
@@ -18,8 +18,7 @@ import { Details } from '../details/details';
 export class ChatdetailPage {
 
 	Chatdetail: any;
-
-	profile=Profile;
+	otherprofile=OtherprofilePage;
 	details=Details;
 	
   constructor(public navCtrl: NavController, public navParams: NavParams) {

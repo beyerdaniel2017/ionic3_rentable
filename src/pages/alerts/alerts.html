@@ -4,16 +4,14 @@
   <ion-toolbar class="profileheader" color="navbarcolor">
     <ion-row >
       <ion-col col-1 >
-        <ion-icon class="headertitle" [navPush]="alertdetail" name="md-add"></ion-icon>
+        <ion-icon *ngIf="alertview" class="headertitle" [navPush]="alertdetail" name="md-add"></ion-icon>
       </ion-col>
-      <ion-col col-1>
-      </ion-col>
-      <ion-col col-9>
+      <ion-col col-10>
         <ion-segment [(ngModel)]="alert_opportunity"  class="segment_info" >
-          <ion-segment-button class="alerttitle alertwidth" value="alert">
+          <ion-segment-button (click)="showalert()" class="alerttitle alertwidth" value="alert">
             Alerts
           </ion-segment-button>
-          <ion-segment-button class="alerttitle opportunitywidth" value="opportunity">
+          <ion-segment-button (click)="showalert()" class="alerttitle opportunitywidth" value="opportunity">
             Opportunities
           </ion-segment-button>
         </ion-segment>

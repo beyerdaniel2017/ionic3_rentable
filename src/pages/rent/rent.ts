@@ -4,7 +4,6 @@ import { NavController, NavParams } from 'ionic-angular';
 import { Home } from '../home/home';
 import { RejectPage } from '../reject/reject';
 import { AcceptPage } from '../accept/accept';
-import { OtherprofilePage } from '../otherprofile/otherprofile';
 import { Details } from '../details/details';
 import { Filter } from '../filter/filter';
 
@@ -17,7 +16,6 @@ export class RentPage {
   home = Home;
   accept = AcceptPage;
   rentreject=RejectPage;
-  otherprofile=OtherprofilePage;
   detail=Details;
   condition:number[] = [0, 1, 2, 3, 4];
   goodcondition:any;
