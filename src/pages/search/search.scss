@@ -137,6 +137,9 @@ page-search {
     input[type=radio] {
       &:checked {
         color: #f55349;
+        & + label {
+          color: #f55349;
+        }
       }
     }
   }
