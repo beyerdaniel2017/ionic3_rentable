@@ -53,9 +53,9 @@
         <ion-card class="grid-list backcolor" *ngFor="let item of own_avaiablelist " >
           <div class="image-item" no-lines>
             <img [navPush]="details" class="wardrobe" src="{{item.img}}" />
-            <img src="assets/icon/eye-white.png" class="cover_1"><p class="info_1">{{item.view}}</p>
+            <img src="assets/icon/eye-white.png" class="cover_1"><p class="info">{{item.favourity}}</p>
             <img  class="cover_4" (click)="ownshowheart(item.id)" src="assets/icon/like.png">
-            <p class="info">{{item.favourity}}</p>
+            <p class="info_1">{{item.view}}</p>
           </div>
         </ion-card>
       </div>
@@ -97,10 +97,11 @@
     </ion-row>
     <ion-card-content [ngSwitch]="date">
       <div  *ngSwitchCase="'history'">
-       <ion-card class="grid-list backcolor" *ngFor="let item of rent_currentlist" >
+       <ion-card class="grid-list backcolor" *ngFor="let item of rent_historylist" >
           <div class="image-item" no-lines>
             <img [navPush]="details" class="wardrobe" src="{{item.img}}" />
-<!--             <img src="assets/icon/eye-white.png" class="cover_1"><p class="info_1">{{item.view}}</p>
+            <img class="cover_img" src="{{item.profileimage}}">
+            <!--             <img src="assets/icon/eye-white.png" class="cover_1"><p class="info_1">{{item.view}}</p>
             <img *ngIf="!rent_like[item.id]" class="cover_4" (click)="rentshowheart(item.id)" src="assets/icon/like.png">
             <p class="info">{{item.favourity}}</p> -->
           </div>
