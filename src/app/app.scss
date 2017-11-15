@@ -147,13 +147,17 @@ ion-menu{
         }
     }
 }
-
+.back-button-icon-ios {
+  margin: 0;
+  display: inherit;
+  min-width: 18px;
+  font-size: 28px;
+}
 
 @font-face{
   font-family: Lato;
   src: url('../assets/fonts/Lato-Regular.woff2') format('woff2');
 }
- 
 *{
   font-family: Lato;
 }

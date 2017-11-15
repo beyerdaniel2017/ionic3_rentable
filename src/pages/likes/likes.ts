@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { Component,ViewChild } from '@angular/core';
+import { NavController, NavParams, Navbar } from 'ionic-angular';
 import { FormGroup, FormControl } from '@angular/forms';
 
 import { Details } from '../details/details';
@@ -16,6 +16,8 @@ import { Myrent } from '../myrent/myrent';
 })
 export class Likes {
 
+  @ViewChild(Navbar) navBar: Navbar;
+
   categorylist:Array<any>;
   newcategorylist:Array<any>;
   profile=Profile;
@@ -30,6 +32,10 @@ export class Likes {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LikesPage');
+    this.navBar.backButtonClick = () => {
+      ///here you can do wathever you want to replace the backbutton event
+      this.navCtrl.setRoot(Myrent);
+    }
   }
 
   filterItems(){

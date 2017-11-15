@@ -63,4 +63,8 @@ export class RejectPage {
     }
   }
 
+  gorequest(){
+    this.navCtrl.pop();
+  }
+
 }

@@ -13,8 +13,7 @@
         <img src="assets/img/03.png">
       </ion-slide>
     </ion-slides>
-<!--     <img src="{{Product.img}}"  style="display: inline-block; height: 50vh; width: 100vw; margin-bottom: -4px;border: 0;"> -->
-    <ion-icon name="ios-arrow-back" class="cover_header0" [navPush]="home"></ion-icon>
+    <ion-icon name="ios-arrow-back" class="cover_header0" (click)="backicon()"></ion-icon>
     <ion-icon name="shareicon" class="cover_header1"></ion-icon>
     <img ng-click="nextSlide()" class="cover_header2" src="assets/icon/like.png">
   </div>
@@ -27,11 +26,11 @@
         {{Product.ownername}}
       </p>
       <div>
-        <img class="starsize" src="assets/icon/star-red.png">
-        <img class="starsize" src="assets/icon/star-red.png">
-        <img class="starsize" src="assets/icon/star-red.png">
-        <img class="starsize" src="assets/icon/star-red.png">
-        <img class="starsize" src="assets/icon/star.png">
+        <img class="returnstarsize" src="assets/icon/star-red.png">
+        <img class="returnstarsize" src="assets/icon/star-red.png">
+        <img class="returnstarsize" src="assets/icon/star-red.png">
+        <img class="returnstarsize" src="assets/icon/star-red.png">
+        <img class="returnstarsize" src="assets/icon/star.png">
       </div>
     </ion-col>
     <ion-col col-3 class="wardrobe">
@@ -49,11 +48,11 @@
       Pretty Cool Size 9 shoes
     </h4>
     <div style="opacity: 0.7;">
-      <img class="starsize" src="assets/icon/star-red.png">
-      <img class="starsize" src="assets/icon/star-red.png">
-      <img class="starsize" src="assets/icon/star-red.png">
-      <img class="starsize" src="assets/icon/star.png">
-      <img class="starsize" src="assets/icon/star.png">
+      <img class="returnstarsize" src="assets/icon/star-red.png">
+      <img class="returnstarsize" src="assets/icon/star-red.png">
+      <img class="returnstarsize" src="assets/icon/star-red.png">
+      <img class="returnstarsize" src="assets/icon/star.png">
+      <img class="returnstarsize" src="assets/icon/star.png">
       <span style="margin-left:15px;">Item Condition = GOOD</span>
     </div>
     <ion-row class="border" >

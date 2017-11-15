@@ -29,4 +29,8 @@ export class PickupPage {
     console.log('ionViewDidLoad PickupPage');
   }
 
+  godetail(){
+    this.navCtrl.pop();
+  }
+
 }

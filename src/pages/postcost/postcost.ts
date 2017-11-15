@@ -46,4 +46,12 @@ export class PostcostPage {
   	
   }
 
+  backadd(){
+    this.navCtrl.setRoot(AddPage);
+  }
+
+  backdetail(){
+    this.navCtrl.setRoot(PostdetailPage);
+  }
+
 }

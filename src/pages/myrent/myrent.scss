@@ -61,11 +61,7 @@ page-myrent {
     padding:0px;
   }
 
-  .toolbar-ios-navbarcolor .segment-ios .segment-button.segment-activated {
-    color: white !important;
-    border-bottom:solid #0cb5f3;
 
-  }
 
   .info_1{
     z-index: 1;
@@ -224,3 +220,9 @@ page-myrent {
   margin: 0 18px !important;
   padding-bottom: 30px;
 }
+
+  ion-navbar .segment-ios .segment-button.segment-activated {
+    color: white !important;
+    border-bottom:solid #0cb5f3;
+
+  }

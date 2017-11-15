@@ -27,23 +27,23 @@
     <ion-row>
       <ion-col col-3>
       </ion-col>
-      <ion-col col-2 [navPush]="addpage" >
+      <ion-col col-2 >
         <div class="logoblackborder" >
-          <img class="logoimagephoto" src="assets/icon/photocamera_black.png">
+          <img (click)="backadd()" class="logoimagephoto" src="assets/icon/photocamera_black.png">
         </div>
         <ion-label no-margin class="posttitle graycolor">
           Photos
         </ion-label>
       </ion-col>
-      <ion-col [navPush]="postdetail" col-2>
+      <ion-col col-2>
         <div class="logoblackborder">
-          <img class="logoimage" src="assets/icon/postdetail_black.png">
+          <img (click)="backdetail()" class="logoimage" src="assets/icon/postdetail_black.png">
         </div>
         <ion-label no-margin class="posttitle graycolor">
           Details
         </ion-label>
       </ion-col>
-      <ion-col [navPush]="finishsign" col-2>
+      <ion-col col-2>
         <div class="logoborder">
           <img class="logoimage dollar" src="assets/icon/dollar-symbol-white.png">
         </div>

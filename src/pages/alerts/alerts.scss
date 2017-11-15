@@ -1,18 +1,7 @@
 page-alerts {
 
-  ion-header{
-    ion-navbar{
-      div.toolbar-background{
-         background-image:  url(../assets/icon/navbar.png);
-         background-repeat: no-repeat;
-         background-size:cover;
-         text-align: center;
-      }
-    }
-  }
 
 	.segment_info{
-    column-width: 80vw;
     width: 100% !important;
     min-height: 44px !important;
     height: 44px !important;
@@ -65,11 +54,11 @@ page-alerts {
     font-size:20px !important;
     padding-bottom: 30px;
     &.alertwidth{
-      max-width: 60px;
+      max-width: 80px;
       margin: 0 20px !important;
     }
      &.opportunitywidth{
-      max-width: 100px;
+      max-width: 120px;
     }
   }
 
