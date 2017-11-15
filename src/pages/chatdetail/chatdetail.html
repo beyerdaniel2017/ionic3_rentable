@@ -6,11 +6,9 @@
 -->
 <ion-header>
 
-  <ion-navbar class="profileheader"  hideBackButton="true" >
+  <ion-navbar  class="profileheader" >
     <ion-row>
-    	<ion-col col-1>
-    		<ion-icon name="md-close" [navPush]="chat"></ion-icon>
-    	</ion-col>
+
     	<ion-col col-2>
     		<img src="{{Chatdetail.img}}" [navPush]="details" class="itemimage">
     	</ion-col>
@@ -22,7 +20,7 @@
 	    		${{Chatdetail.price}} per day
 	    	</ion-label>
 	    </ion-col>
-	    <ion-col col-3>
+	    <ion-col col-4>
 	    </ion-col>
 	    <ion-col col-2>
 	    	<img [navPush]="otherprofile"  item-right src="{{Chatdetail.ownerimage}}" class="profileimage">

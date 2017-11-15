@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Component,ViewChild } from '@angular/core';
+import { IonicPage, NavController, NavParams, Navbar } from 'ionic-angular';
 
 import { Profile } from '../profile/profile';
 import { SearchPage } from '../search/search';
@@ -20,6 +20,9 @@ import { AlertsPage } from '../alerts/alerts';
   templateUrl: 'opportunity.html',
 })
 export class OpportunityPage {
+
+  @ViewChild(Navbar) navBar: Navbar;
+
 
 	profile=Profile;
 	search=SearchPage;
@@ -49,6 +52,10 @@ export class OpportunityPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SearchresultPagePage');
+    this.navBar.backButtonClick = () => {
+      ///here you can do wathever you want to replace the backbutton event
+      this.navCtrl.setRoot(AlertsPage);
+    };
   }
 
    myFunction(event){

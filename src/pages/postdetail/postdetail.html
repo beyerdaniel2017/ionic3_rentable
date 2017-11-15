@@ -29,14 +29,14 @@
     	<ion-col co-3>
     	</ion-col>
       <ion-col col-2 >
-        <div class="logoblackborder"  [navPush]="addpage">
-          <img class="logoimagephoto" src="assets/icon/photocamera_black.png">
+        <div class="logoblackborder"  >
+          <img (click)="goaddpage()" class="logoimagephoto" src="assets/icon/photocamera_black.png">
         </div>
         <ion-label class="posttitle graycolor">
           Photos
         </ion-label>
       </ion-col>
-      <ion-col [navPush]="signup" col-2>
+      <ion-col  col-2>
         <div class="logoborder">
           <img class="logoimage" src="assets/icon/postdetail_white.png">
         </div>
@@ -44,7 +44,7 @@
           Details
         </ion-label>
       </ion-col>
-      <ion-col [navPush]="finishsign" col-2>
+      <ion-col  col-2>
         <div class="logoblackborder">
           <img class="logoimage dollar" src="assets/icon/dollar-symbol.png">
         </div>

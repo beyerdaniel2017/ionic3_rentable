@@ -105,4 +105,8 @@ export class PostdetailPage {
     }
   }
 
+  goaddpage(){
+    this.navCtrl.setRoot(AddPage);
+  }
+
 }

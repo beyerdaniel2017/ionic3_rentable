@@ -6,17 +6,17 @@
 -->
 <ion-header>
 
-  <ion-toolbar class="profileheader" color="navbarcolor">
+  <ion-navbar class="profileheader" hideBackButton="true">
     <ion-row >
       <ion-col col-1>
-        <ion-icon name="md-close" [navPush]="rent" class="headertitle"></ion-icon>
+        <ion-icon name="md-close" (click)="gorequest()" class="headertitle"></ion-icon>
       </ion-col>
       <ion-col col-8 >
       </ion-col>
       <ion-col col-3 class="nextbutton">
       </ion-col>
     </ion-row>
-  </ion-toolbar>
+  </ion-navbar>
 
 </ion-header>
 

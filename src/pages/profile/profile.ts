@@ -40,4 +40,8 @@ export class Profile {
     }
   }
 
+  gohome(){
+    this.navCtrl.setRoot(Home);
+  }
+
 }

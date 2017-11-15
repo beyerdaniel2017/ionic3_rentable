@@ -26,4 +26,8 @@ export class AcceptPage {
     console.log('ionViewDidLoad AcceptPagePage');
   }
 
+  godetail(){
+    this.navCtrl.pop();
+  }
+
 }

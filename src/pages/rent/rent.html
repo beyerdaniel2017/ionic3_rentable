@@ -1,9 +1,9 @@
 <ion-header>
 
-  <ion-toolbar no-padding color="navbarcolor">
+  <ion-toolbar no-padding >
     <ion-row class="profileheader topheight" no-margin>
       <ion-col col-1>
-        <ion-icon name="md-close" [navPush]="detail" class="headertitle"></ion-icon>
+        <ion-icon name="md-close" (click)="backdetail()" class="headertitle"></ion-icon>
       </ion-col>
       <ion-col col-11 >
       </ion-col>

@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { NavController, NavParams, ModalController } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { NavController, NavParams, ModalController, Navbar } from 'ionic-angular';
 
 import { FormGroup, FormControl } from '@angular/forms';
 import { MapModal } from '../modal-page/modal-page';
@@ -15,7 +15,8 @@ import { AlertsPage } from '../alerts/alerts';
   templateUrl: 'alertdetail.html'
 })
 export class AlertdetailPage {
-
+  @ViewChild(Navbar) navBar: Navbar;
+  
   alertlist:Array<any>;
 	map=MapModal;
 	datePeriod:any;
@@ -52,6 +53,10 @@ export class AlertdetailPage {
 
 	ionViewDidLoad() {
     console.log('ionViewDidLoad SearchPagePage');
+    this.navBar.backButtonClick = () => {
+      ///here you can do wathever you want to replace the backbutton event
+      this.navCtrl.setRoot(AlertsPage);
+    };
   }
 
   presentModal() {

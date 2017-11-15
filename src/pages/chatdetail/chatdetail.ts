@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { NavController, NavParams, Navbar } from 'ionic-angular';
 
 import { OtherprofilePage } from '../otherprofile/otherprofile';
 import { Details } from '../details/details';
@@ -17,6 +17,8 @@ import { ChatPage } from '../chat/chat';
 })
 export class ChatdetailPage {
 
+  @ViewChild(Navbar) navBar: Navbar;
+
 	Chatdetail: any;
 	otherprofile=OtherprofilePage;
 	details=Details;
@@ -30,6 +32,10 @@ export class ChatdetailPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ChatdetailPagePage');
+    this.navBar.backButtonClick = () => {
+      ///here you can do wathever you want to replace the backbutton event
+      this.navCtrl.setRoot(ChatPage);
+    };
   }
 
 }

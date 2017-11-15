@@ -12,6 +12,7 @@ import { ValidatorsModule } from '../validators/validators.module';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { NativePageTransitions } from '@ionic-native/native-page-transitions';
 import { AuthenticateProvider } from '../providers/authenticate/authenticate';
 
 const firebaseConfig = {
@@ -41,7 +42,8 @@ var APP_Pages = [];
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
      IonicModule.forRoot(MyApp, {
-      backButtonText: ''
+      backButtonText: '',
+      pageTransition: '',
     }
   )
   ],
@@ -54,6 +56,7 @@ var APP_Pages = [];
     StatusBar,
     SplashScreen,
     DirectivesModule,
+    NativePageTransitions,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthenticateProvider
   ]

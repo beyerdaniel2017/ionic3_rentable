@@ -58,7 +58,10 @@ export class Details implements OnInit {
   }
 
   loadMap(){
-    
+  }
+
+  backicon(){
+    this.navCtrl.pop();
   }
 
   addMarker(){
