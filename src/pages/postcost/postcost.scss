@@ -1,5 +1,4 @@
 page-postcost {
-
   
 
   .titleimage{
@@ -52,4 +51,14 @@ page-postcost {
   .detailscreen{
     padding: 3vw 3vw 11vw 3vw;
     color: black;
+  }
+  ion-header{
+    ion-navbar{
+      div.toolbar-background{
+         background-image:  url(../assets/icon/navbar.png);
+         background-repeat: no-repeat;
+         background-size:cover;
+         text-align: center;
+      }
+    }
   }

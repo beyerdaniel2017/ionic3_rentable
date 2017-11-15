@@ -1,4 +1,16 @@
 page-alertdetail {
+
+  ion-header{
+    ion-navbar{
+      div.toolbar-background{
+         background-image:  url(../assets/icon/navbar.png);
+         background-repeat: no-repeat;
+         background-size:cover;
+         text-align: center;
+      }
+    }
+  }
+
   .rightposition{
     right:-1rem;
   }
@@ -161,6 +173,7 @@ page-alertdetail {
   .locationstyle{
     border-bottom: 1px solid #c6c6c7;
     margin-bottom: 35px;
+    padding-bottom: 0.6rem;
   }
 
   .locationicon{

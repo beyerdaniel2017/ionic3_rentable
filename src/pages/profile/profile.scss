@@ -112,14 +112,23 @@ page-profile {
 
 .profileheader{
   text-align: center;
-  background-color: #002b42;
-  padding:10px 1rem !important;
+  padding:20px 1rem !important;
   height: 66px;
+  color:white;
 }
+
+.bar-button-default-ios {
+  color: white;
+  background-color: transparent;
+}
+
 .profileheader1{
   text-align: center;
-  padding: 10px 9px !important;
-  background-color: #002b42;
+  color:white;
+  padding: 10px 1rem !important;
+  background-image: url(../assets/icon/navbar.png);
+  background-repeat: no-repeat;
+  background-size:cover; 
   height: 66px;
 }
 

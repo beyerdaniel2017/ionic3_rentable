@@ -1,4 +1,16 @@
 page-alerts {
+
+  ion-header{
+    ion-navbar{
+      div.toolbar-background{
+         background-image:  url(../assets/icon/navbar.png);
+         background-repeat: no-repeat;
+         background-size:cover;
+         text-align: center;
+      }
+    }
+  }
+
 	.segment_info{
     column-width: 80vw;
     width: 100% !important;

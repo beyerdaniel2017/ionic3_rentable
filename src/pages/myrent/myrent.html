@@ -1,7 +1,7 @@
 
 <ion-header >
 
-  <ion-toolbar class="profileheader" color="navbarcolor">
+  <ion-navbar class="profileheader"  hideBackButton="true" >
     <ion-row >
       <ion-col col-1 >
         <img [navPush]="favourites" class="headertitle" src="assets/icon/like.png">
@@ -24,7 +24,7 @@
         <ion-icon *ngIf="showdeleteicon"  class="headertitle" name="ios-trash-outline"></ion-icon>
       </ion-col>
     </ion-row>
-  </ion-toolbar>
+  </ion-navbar>
 
 </ion-header>
 

@@ -3,7 +3,6 @@ import { NavController, AlertController } from 'ionic-angular';
 import { Register } from '../register/register';
 import { Home } from '../home/home';
 
-import { MenuPage } from '../menu/menu';
 import { TabPage } from '../tab/tab';
 
 
@@ -16,7 +15,6 @@ export class Login {
 
   expanded: Boolean;
   register = Register ;
-  home = MenuPage;
   name:String;
 
   constructor(public navCtrl: NavController, public alertCtrl: AlertController) {

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
-import { MenuPage } from '../menu/menu';
+import { TabPage } from '../tab/tab';
 import { SignupPage } from '../signup/signup';
 import { Register } from '../register/register';
 
@@ -18,7 +18,7 @@ import { Register } from '../register/register';
 })
 export class FinishsignPage {
 
-	home=MenuPage;
+	home=TabPage;
   signup=SignupPage;
   register=Register;
 

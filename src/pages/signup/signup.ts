@@ -60,7 +60,6 @@ export class SignupPage {
 
   doRegister(){
     this.submitAttempt = true;
-    this.navCtrl.setRoot(FinishsignPage);
     if (!this.registerForm.valid){
       console.log(this.registerForm.value);
     } else {

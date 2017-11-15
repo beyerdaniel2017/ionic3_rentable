@@ -88,14 +88,7 @@ export class Myrent {
       }
     }
     if(this.own_rent=="rent"){
-      if (this.date=="history") {
-        console.log("rent_history");
-        this.showdeleteicon=false;
-      }
-      if (this.date=="current"){
-        console.log("rent_rented");
-        this.showdeleteicon=true;
-      }
+      this.showdeleteicon=false;
     }
   }
 

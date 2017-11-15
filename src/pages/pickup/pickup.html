@@ -17,7 +17,7 @@
 	<p class="returntitle">
 		Picking up your Item
 	</p>
-	<p class="helptext condition">DO YOU AGREE WITH THE CONDITION FO THE IMET SET BELOW?</p>
+	<p class="helptext condition">DO YOU AGREE WITH THE CONDITION OF THE ITEM SET BELOW?</p>
 	<ion-label *ngIf="agree=='no'" >
     <img class="returnstarsize" src="assets/icon/star-red.png">
     <img class="returnstarsize" src="assets/icon/star-red.png">
@@ -35,7 +35,6 @@
   <p class="goodstyle">VERY GOOD</p>
 	<ion-row radio-group [(ngModel)]="agree">
 		<ion-col col-2>
-		
 		</ion-col>
 		<ion-col col-2 >
 			Yes
@@ -52,7 +51,6 @@
 			<ion-icon class="agreestyle" *ngIf="agree=='yes'" name="checkmark"></ion-icon>
 		</ion-col>
 		<ion-col col-2>
-		
 		</ion-col>
 	</ion-row>
 	<ion-label class="commentstyle">

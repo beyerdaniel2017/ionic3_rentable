@@ -21,22 +21,24 @@
 </ion-header>
 
 <ion-content class="app-content paddingbottom" >
-	<ion-label style=" font-weight: bold;">
-    LOCATION
-  </ion-label>
+  <div class="datestyle">
+    <ion-label >
+      LOCATION
+    </ion-label>
+  </div>
   <ion-row class="locationstyle">
-  	<ion-col col-1 class="locationicon">
-  		<img class="locationimage"  src="assets/icon/location-place.png">
-  	</ion-col>
-  	<ion-col col-6 class="middletext">
+    <ion-col col-1 class="locationicon">
+      <img  src="assets/icon/location-place.png">
+    </ion-col>
+    <ion-col col-6 class="middletext">
       Change Location
     </ion-col>
-  	<ion-col col-4>
-  	</ion-col>
-  	<ion-col col-1 class="rightposition middletext">
-  		<ion-icon (click)="presentModal()" name="ios-arrow-forward-outline"></ion-icon>
-  	</ion-col>
-	</ion-row>
+    <ion-col col-4>
+    </ion-col>
+    <ion-col col-1 class="rightposition middletext">
+      <ion-icon name="ios-arrow-forward-outline"></ion-icon>
+    </ion-col>
+  </ion-row>
 	<ion-label class="categorytitle">
     CATEGORIES
   </ion-label>
@@ -49,7 +51,7 @@
       </label>
     </div>
   </div>
-  <div class="borderstyle datestyle">
+   <div class="borderstyle datestyle">
     <ion-label >
       DATES
     </ion-label>
@@ -67,10 +69,7 @@
       <ion-icon name="ios-arrow-forward-outline"></ion-icon>
     </ion-col>
   </ion-row>
-  <!--   <ion-item class="wardrobe">
-      <ion-datetime [(ngModel)]="myDate"></ion-datetime>
-    </ion-item> -->
-  <ion-row class="borderstyle" >
+  <ion-row >
     <ion-col col-6>
        <ion-label no-padding no-margin >
          DISTANCE

@@ -8,6 +8,7 @@ import { HttpModule} from '@angular/http';
 
 import { allPages } from '../pages/common/declerations';
 import { DirectivesModule } from '../directives/directives.module';
+import { ValidatorsModule } from '../validators/validators.module';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -36,6 +37,7 @@ var APP_Pages = [];
     BrowserModule,
     HttpModule,
     DirectivesModule,
+    ValidatorsModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
      IonicModule.forRoot(MyApp, {

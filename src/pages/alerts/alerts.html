@@ -1,7 +1,7 @@
 
 <ion-header>
 
-  <ion-toolbar class="profileheader" color="navbarcolor">
+  <ion-navbar class="profileheader"  hideBackButton="true" >
     <ion-row >
       <ion-col col-1 >
         <ion-icon *ngIf="alertview" class="headertitle" [navPush]="alertdetail" name="md-add"></ion-icon>
@@ -20,7 +20,7 @@
         <ion-icon class="headertitle"  name="ios-trash-outline"></ion-icon>
       </ion-col>
     </ion-row>
-  </ion-toolbar>
+  </ion-navbar>
 
 </ion-header>
 
