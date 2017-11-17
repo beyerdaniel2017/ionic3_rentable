@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams,AlertController, LoadingController } from 'ionic-angular';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, Validators,FormGroup } from '@angular/forms';
 
 import { FinishsignPage } from '../finishsign/finishsign';
 import { Register } from '../register/register';
@@ -23,7 +23,8 @@ export class SignupPage {
   register=Register;
   email: any;
   password: any;
-  public registerForm;
+  confirmpassword:any;
+  registerForm:FormGroup;
   emailChanged: boolean = false;
   passwordChanged: boolean = false;
   fullnameChanged: boolean = false;
@@ -40,8 +41,9 @@ export class SignupPage {
   ) {
     let EMAIL_REGEXP = /^[a-z0-9!#$%&'*+\/=?^_`{|}~.-]+@[a-z0-9]([a-z0-9-]*[a-z0-9])?(\.[a-z0-9]([a-z0-9-]*[a-z0-9])?)*$/i;
     this.registerForm = formBuilder.group({
-      email: ['', Validators.compose([Validators.required, Validators.pattern(EMAIL_REGEXP)])],
-      password: ['', Validators.compose([Validators.minLength(6), Validators.required])]
+      email: ['', Validators.compose([Validators.required, Validators.pattern(EMAIL_REGEXP),Validators.maxLength(80)])],
+      password: ['', Validators.compose([Validators.maxLength(50),Validators.minLength(10), Validators.required])],
+      confirmpassword: ['', Validators.compose([Validators.minLength(10), Validators.required,Validators.maxLength(50)])]
     });
   }
 
@@ -59,7 +61,8 @@ export class SignupPage {
   }
 
   doRegister(){
-    this.submitAttempt = true;
+    this.navCtrl.setRoot(FinishsignPage);
+    /*this.submitAttempt = true;
     if (!this.registerForm.valid){
       console.log(this.registerForm.value);
     } else {
@@ -84,7 +87,7 @@ export class SignupPage {
         dismissOnPageChange: true,
       });
       this.loading.present();
-    }
+    }*/
   }
 
 }

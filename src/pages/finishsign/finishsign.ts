@@ -1,17 +1,11 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { FormBuilder, Validators,FormGroup } from '@angular/forms';
 
 import { TabPage } from '../tab/tab';
 import { SignupPage } from '../signup/signup';
 import { Register } from '../register/register';
 
-
-/*
-  Generated class for the FinishsignPage page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'page-finishsign',
   templateUrl: 'finishsign.html'
@@ -22,7 +16,19 @@ export class FinishsignPage {
   signup=SignupPage;
   register=Register;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  finishsignupform:FormGroup;
+
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public formBuilder: FormBuilder,
+  ) {
+    this.finishsignupform = formBuilder.group({
+      firstname: ['', Validators.compose([Validators.maxLength(50), Validators.minLength(10), Validators.required])],
+      lastname: ['', Validators.compose([Validators.maxLength(50), Validators.minLength(10), Validators.required])],
+      postalcode: ['', Validators.compose([Validators.minLength(5), Validators.maxLength(10), Validators.required])]
+    });
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad FinishsignPagePage');

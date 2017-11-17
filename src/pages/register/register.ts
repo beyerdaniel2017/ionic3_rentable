@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { Validators, FormBuilder, FormGroup  } from '@angular/forms';
+import { Validators, FormBuilder, FormGroup, AbstractControl  } from '@angular/forms';
 
 import { Home } from '../home/home';
 import { SignupPage } from '../signup/signup';
@@ -16,20 +16,17 @@ export class Register {
 
   signup = SignupPage;
   finishsign=FinishsignPage;
-  digitcode:any;
+  digitcode:AbstractControl;
 
-  slideOneForm: FormGroup;
+  formgroup: FormGroup;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public formBuilder: FormBuilder) {
-  	this.digitcode="";
 
-  	this.slideOneForm = formBuilder.group({
-        digitcode: ['']
+  	this.formgroup = formBuilder.group({
+        digitcode: ['', Validators.compose([Validators.required, Validators.minLength(5) ])]
     });
-  }
 
-  codelimit(){
-  	
+    this.digitcode=this.formgroup.controls['digitcode'];
   }
 
 }
