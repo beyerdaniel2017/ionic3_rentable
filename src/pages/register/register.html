@@ -22,14 +22,20 @@
     </ion-row>
     <p class="signupfont">Sign Up</p>
     <p >You will receive a 4 digit code</p>
-    <form  class="signupform">
+    <form  class="signupform" [formGroup]="formgroup">
       <ion-list >
         <p class="helpstring">ENTER YOUR 4 DIGIT CODE</p>
         <ion-item  no-padding>
-          <ion-input type="number" class="inputstyle" (ionChange)='codelimit()'></ion-input>
+          <ion-input type="number" class="inputstyle" formControlName="digitcode"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="digitcode.hasError('required') && digitcode.touched">
+          <p> *digitcode is required</p>
+        </ion-item>
+        <ion-item *ngIf="formgroup.controls['digitcode'].hasError('minlength') && formgroup.controls['digitcode'].touched">
+          <p> *Minimum code length is 4</p>
         </ion-item>
       </ion-list>
-      <button ion-button class="signupbutton" style="width: 100%;" [navPush]="signup">CONTINUE</button>
+      <button ion-button class="signupbutton" style="width: 100%;" [navPush]="signup" [disabled]="!formgroup.valid">CONTINUE</button>
     </form>
   </div>
 </ion-content>

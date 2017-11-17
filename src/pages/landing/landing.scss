@@ -16,6 +16,12 @@
       margin:auto;
       display:block;
     }
+    &.landingform{
+      &>button:disabled{
+        background-color:gray;
+        color:black;
+      }
+    }
   }
   .grayborder.width{
     max-width:15vw !important;
