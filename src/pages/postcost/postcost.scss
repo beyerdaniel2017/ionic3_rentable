@@ -25,13 +25,7 @@ page-postcost {
     font-size:1.2rem;
   }
 
-	.borderbottom{
-  	border-top:0;
-  	border-left:0;
-  	border-right:0;
-    font-size: 2rem;
-  	border-bottom: thin solid gainsboro;
-  }
+	
 
   .removeicon{
   	text-align: center;
@@ -51,4 +45,12 @@ page-postcost {
   .detailscreen{
     padding: 3vw 3vw 11vw 3vw;
     color: black;
+  }
+
+  .borderbottom{
+    border-top:0;
+    border-left:0;
+    border-right:0;
+    font-size: 2rem;
+    border-bottom: thin solid gainsboro;
   }
