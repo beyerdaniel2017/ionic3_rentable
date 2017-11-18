@@ -24,9 +24,28 @@ export class Likes {
   search=SearchPage;
   details=Details;
   myrent=Myrent;
+  like:any;
   
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-   this.categorylist = [{img: 'assets/img/01.png', title: 'apartment', icon: 'ios-home-outline', price:'20'}, {img: 'assets/img/02.png', title: 'wedding hall', icon: 'ios-bowtie-outline',price:'22'}, {img: 'assets/img/03.png', title: 'shop', icon: 'ios-shirt-outline', price:'30'}, {img: 'assets/img/04.png', title: 'rent', icon: 'ios-headset-outline', price:'20'},{img: 'assets/img/01.png', title: 'apartment', icon: 'ios-home', price:'27'}, {img: 'assets/img/02.png', title: 'wedding hall', icon: 'ios-bowtie', price:'60'}, {img: 'assets/img/03.png', title: 'shop', icon: 'md-cart', price:'39'}, {img: 'assets/img/04.png', title: 'rent', icon: 'md-headset', price:'43'},{img: 'assets/img/01.png', title: 'apartment', icon: 'ios-home', price:'31'}, {img: 'assets/img/02.png', title: 'wedding hall', icon: 'ios-bowtie', price:'34'}, {img: 'assets/img/03.png', title: 'shop', icon: 'md-cart', price:'13'}, {img: 'assets/img/04.png', title: 'rent', icon: 'md-headset', price:'20'}]
+
+    this.like = [];
+    for (var i = 0; i < 12; ++i) {
+      this.like[i]=false;
+    }
+   this.categorylist = [
+      {img: 'assets/img/01.png', price:'21',id:'0'},
+      {img: 'assets/img/02.png', price:'56',id:'1'},
+      {img: 'assets/img/03.png', price:'34',id:'2'},
+      {img: 'assets/img/04.png', price:'21',id:'3'},
+      {img: 'assets/img/01.png', price:'15',id:'4'},
+      {img: 'assets/img/02.png', price:'65',id:'5'},
+      {img: 'assets/img/03.png', price:'64',id:'6'},
+      {img: 'assets/img/04.png', price:'123',id:'7'},
+      {img: 'assets/img/01.png', price:'21',id:'8'},
+      {img: 'assets/img/02.png', price:'12',id:'9'},
+      {img: 'assets/img/03.png', price:'52',id:'10'},
+      {img: 'assets/img/04.png', price:'212',id:'11'}
+   ]
 
   }
 
@@ -36,6 +55,10 @@ export class Likes {
       ///here you can do wathever you want to replace the backbutton event
       this.navCtrl.setRoot(Myrent);
     }
+  }
+
+  ActiveLike(i){
+    this.like[i] = !this.like[i];
   }
 
   filterItems(){
