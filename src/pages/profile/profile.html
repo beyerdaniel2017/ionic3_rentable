@@ -1,5 +1,5 @@
 <ion-content no-padding class="app-content">
-  <ion-row class="profileheader">
+  <ion-row class="profileheader1">
     <ion-col col-1>
       <ion-icon class="whiteicon" (click)="gohome()" name="ios-arrow-back-outline"></ion-icon>
     </ion-col>
@@ -66,7 +66,7 @@
         <ion-icon name="ios-arrow-forward-outline" item-right ></ion-icon>
       </ion-item>
       <br>
-      <button ion-button block class="savebutton" [navPush]="logout">LOGOUT</button>
+      <button ion-button block class="savebutton" (click)="gologout()">LOGOUT</button>
     </ion-list>
  </div>
 </ion-content>

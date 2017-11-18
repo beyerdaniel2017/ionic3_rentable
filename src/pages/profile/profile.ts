@@ -44,4 +44,8 @@ export class Profile {
     this.navCtrl.setRoot(Home);
   }
 
+  gologout(){
+    this.navCtrl.setRoot(LandingPage);
+  }
+
 }

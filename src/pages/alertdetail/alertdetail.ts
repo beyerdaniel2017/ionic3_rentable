@@ -26,6 +26,8 @@ export class AlertdetailPage {
   deliversort:any;
   postwithin:any;
   within:any;
+  alerttitle:any;
+  titlenumber:any;
   showfromprice: boolean = false;
   showtoprice: boolean=false;
 
@@ -49,6 +51,9 @@ export class AlertdetailPage {
     this.postwithin = new FormGroup({
       "within": new FormControl({value: 'all', disabled: false})
     });
+
+    this.alerttitle="";
+    this.titlenumber=50;
 	}
 
 	ionViewDidLoad() {
@@ -74,6 +79,11 @@ export class AlertdetailPage {
 
   doSubmit(){
 
+  }
+
+  number(){
+    var n=this.alerttitle.length;
+    this.titlenumber=50-n;
   }
 
  myFunction(event){

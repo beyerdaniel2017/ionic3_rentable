@@ -159,12 +159,6 @@ page-alertdetail {
     margin: 0;
   }
 
-  .locationstyle{
-    border-bottom: 1px solid #c6c6c7;
-    margin-bottom: 35px;
-    padding-bottom: 0.6rem;
-  }
-
   .locationicon{
     height: 22px;
     width: auto;
@@ -189,4 +183,9 @@ page-alertdetail {
   &.backicon{
     font-size:2.6rem;
   }
+}
+.locationstyle{
+  border-bottom: 1px solid #c6c6c7;
+  margin-bottom: 35px;
+  padding-bottom: 1rem;
 }

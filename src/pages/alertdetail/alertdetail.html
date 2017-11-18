@@ -11,7 +11,18 @@
 </ion-header>
 
 <ion-content class="app-content paddingbottom" >
-  <ion-input placeholder="SET YOUR ALERT NAME" class="bottomborder"></ion-input>
+  <ion-item>
+    <p item-left class="helpstr">Alert Name</p>
+    <p item-right class="helpstr">{{titlenumber}}</p>
+  </ion-item>
+  <ion-row class="bottomborder">
+    <ion-col col-11>
+      <ion-input (ionChange)='number()' type="text" value="Predtty cool size" [(ngModel)]="alerttitle"></ion-input>
+    </ion-col>
+    <ion-col col-1>
+      <ion-icon name="md-close" class="graycolor"></ion-icon>
+    </ion-col>
+  </ion-row>
   <div class="borderstyle datestyle">
     <ion-label >
       LOCATION
