@@ -30,4 +30,8 @@ export class AcceptPage {
     this.navCtrl.pop();
   }
 
+  toggleNotification(){
+    this.agree=!this.agree;
+  }
+
 }

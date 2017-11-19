@@ -20,13 +20,20 @@ export class PickupPage {
 
 	details=Details;
 	agree:any;
+  togglevalue:any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-  	this.agree="yes";
+    this.togglevalue=false;
+  	this.agree=true;
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PickupPage');
+  }
+
+  toggleNotification(){
+    console.log()
+    this.agree=!this.agree;
   }
 
   godetail(){

@@ -18,14 +18,14 @@
 		Picking up your Item
 	</p>
 	<p class="helptext condition">DO YOU AGREE WITH THE CONDITION OF THE ITEM SET BELOW?</p>
-	<ion-label *ngIf="agree=='no'" >
+	<ion-label *ngIf="agree" >
     <img class="returnstarsize" src="assets/icon/star-red.png">
     <img class="returnstarsize" src="assets/icon/star-red.png">
     <img class="returnstarsize" src="assets/icon/star-red.png">
     <img class="returnstarsize" src="assets/icon/star-red.png">
     <img class="returnstarsize" src="assets/icon/star.png">
   </ion-label>
-	<ion-label *ngIf="agree=='yes'" >
+	<ion-label *ngIf="!agree" >
     <img class="returnstarsize" src="assets/icon/star-grey.png">
     <img class="returnstarsize" src="assets/icon/star-grey.png">
     <img class="returnstarsize" src="assets/icon/star-grey.png">
@@ -33,7 +33,7 @@
     <img class="returnstarsize" src="assets/icon/star-grey-outline.png">
   </ion-label>
   <p class="goodstyle">VERY GOOD</p>
-	<ion-row radio-group [(ngModel)]="agree">
+	<!-- <ion-row radio-group [(ngModel)]="agree">
 		<ion-col col-2>
 		</ion-col>
 		<ion-col col-2 >
@@ -52,7 +52,13 @@
 		</ion-col>
 		<ion-col col-2>
 		</ion-col>
-	</ion-row>
+	</ion-row> -->
+	<ion-item class="toggleheight">
+		<ion-label class="helptext">
+			Yes / No
+		</ion-label>
+		<ion-toggle  color="secondary" (ionChange)="toggleNotification()"></ion-toggle>
+	</ion-item>
 	<ion-label class="commentstyle">
 		LEAVE A COMMENT BELOW
 	</ion-label>

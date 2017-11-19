@@ -25,13 +25,14 @@ export class Likes {
   details=Details;
   myrent=Myrent;
   like:any;
-  
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
 
     this.like = [];
     for (var i = 0; i < 12; ++i) {
       this.like[i]=false;
     }
+
    this.categorylist = [
       {img: 'assets/img/01.png', price:'21',id:'0'},
       {img: 'assets/img/02.png', price:'56',id:'1'},

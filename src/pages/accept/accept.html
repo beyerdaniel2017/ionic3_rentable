@@ -34,7 +34,7 @@
     <img class="returnstarsize" src="assets/icon/star-grey-outline.png">
   </ion-label>
   <p class="goodstyle">VERY GOOD</p>
-	<ion-row radio-group *ngIf="!agreewith" [(ngModel)]="agree">
+	<!-- 	<ion-row radio-group *ngIf="!agreewith" [(ngModel)]="agree">
 		<ion-col col-2>
 		
 		</ion-col>
@@ -55,7 +55,13 @@
 		<ion-col col-2>
 		
 		</ion-col>
-	</ion-row>
+	</ion-row> -->
+	<ion-item class="toggleheight">
+		<ion-label class="helptext">
+			Yes / No
+		</ion-label>
+		<ion-toggle   color="secondary" (ionChange)="toggleNotification()"></ion-toggle>
+	</ion-item>
 	<ion-label class="commentstyle">
 		LEAVE A COMMENT BELOW
 	</ion-label>
