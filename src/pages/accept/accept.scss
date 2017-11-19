@@ -12,7 +12,7 @@ page-accept {
 
 	.helptext{
 		padding-top: 3px;
-    padding-bottom: 5px;
+    	padding-bottom: 5px;
 		&.condition{
 			font-size:11px;
 	    opacity: 0.6;
@@ -29,12 +29,6 @@ page-accept {
 
 	.defaultbutton.paddingbottom{
 		margin-bottom:40px;
-	}
-
-	.toggleheight{
-		margin-bottom:17px;
-		text-align:center;
-		font-size:2rem;
 	}
 
 	.goodstyle{
@@ -57,4 +51,10 @@ page-accept {
 	font-size: 26px;
   margin-left: -15px;
   margin-top: -5px;
+}
+
+.toggleheight{
+	margin-bottom:17px;
+	text-align:center;
+	font-size:2rem;
 }

@@ -35,7 +35,7 @@ export class ClaimrenterPage {
   	this.renter = {
       img: 'assets/img/profile-img.png', name: 'John', address:'Sydney Australia', rate:'4.5', rent_nuber: '10', owner_number: '20'
     }
-    this.agree="yes";
+    this.agree=true;
   }
 
   ionViewDidLoad() {

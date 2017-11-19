@@ -46,7 +46,7 @@ export class PostdetailPage {
     ]
 
     this.itemtitle="";
-    this.titlenumber=50;
+    this.titlenumber=80;
     this.conditiontitle="";
     this.conditionnumber=200;
     this.goodcondition=[];

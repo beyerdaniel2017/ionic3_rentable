@@ -18,14 +18,14 @@
 		Picking up your Item
 	</p>
 	<p class="helptext condition">DO YOU AGREE WITH THE CONDITION OF THE ITEM SET BELOW?</p>
-	<ion-label *ngIf="agree" >
+	<ion-label *ngIf="togglevalue" >
     <img class="returnstarsize" src="assets/icon/star-red.png">
     <img class="returnstarsize" src="assets/icon/star-red.png">
     <img class="returnstarsize" src="assets/icon/star-red.png">
     <img class="returnstarsize" src="assets/icon/star-red.png">
     <img class="returnstarsize" src="assets/icon/star.png">
   </ion-label>
-	<ion-label *ngIf="!agree" >
+	<ion-label *ngIf="!togglevalue" >
     <img class="returnstarsize" src="assets/icon/star-grey.png">
     <img class="returnstarsize" src="assets/icon/star-grey.png">
     <img class="returnstarsize" src="assets/icon/star-grey.png">
@@ -57,7 +57,7 @@
 		<ion-label class="helptext">
 			Yes / No
 		</ion-label>
-		<ion-toggle  color="secondary" (ionChange)="toggleNotification()"></ion-toggle>
+		<ion-toggle [(ngModel)]="togglevalue"  color="secondary"></ion-toggle>
 	</ion-item>
 	<ion-label class="commentstyle">
 		LEAVE A COMMENT BELOW

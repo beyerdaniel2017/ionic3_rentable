@@ -83,28 +83,13 @@
   <ion-label class="commentstyle">
 		OWNERS COMMENTS BELOW
 	</ion-label>
-	<ion-label rows="5" type="text" class="feedbackinput" text-wrap>this is owner submit.
-   please check it.</ion-label >
+	<ion-label rows="5" type="text" class="feedbackinput" text-wrap></ion-label >
 	<p class="helptext condition">DO YOU AGREE WITH THIS CLAIM?</p>
-	 <ion-row radio-group [(ngModel)]="agree">
-    <ion-col col-2>
-    </ion-col>
-    <ion-col col-2 >
-      Yes
-    </ion-col>
-    <ion-col col-2 >
-      <ion-radio value="yes" ></ion-radio>
-      <ion-icon class="agreestyle" *ngIf="agree=='no'" name="checkmark"></ion-icon>
-    </ion-col>
-    <ion-col col-2 >
-      No
-    </ion-col>
-    <ion-col col-2 >
-      <ion-radio value="no" ></ion-radio>
-      <ion-icon class="agreestyle" *ngIf="agree=='yes'" name="checkmark"></ion-icon>
-    </ion-col>
-    <ion-col col-2>
-    </ion-col>
-  </ion-row>
+  <ion-item class="toggleheight">
+    <ion-label class="helptext">
+      Yes / No
+    </ion-label>
+    <ion-toggle [(ngModel)]="agree" color="secondary"></ion-toggle>
+  </ion-item>
 	<button ion-button block  color="secondary" class="defaultbutton paddingbottom" >SUBMIT</button>
 </ion-content>

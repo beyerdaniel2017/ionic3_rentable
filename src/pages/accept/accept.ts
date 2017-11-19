@@ -19,7 +19,7 @@ export class AcceptPage {
   agree:any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.agree="yes";
+    this.agree=true;
   }
 
   ionViewDidLoad() {
@@ -30,8 +30,5 @@ export class AcceptPage {
     this.navCtrl.pop();
   }
 
-  toggleNotification(){
-    this.agree=!this.agree;
-  }
 
 }
