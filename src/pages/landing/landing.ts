@@ -1026,7 +1026,7 @@ export class LandingPage {
 
   numberfill(){
     var n=this.phonenumber.length;
-    if (n>9) {
+    if (n>7) {
       console.log(n + "  n");
       document.getElementById("button").style.backgroundColor = "#03a9f4";
       document.getElementById("button").style.color = "white";

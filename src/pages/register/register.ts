@@ -23,7 +23,7 @@ export class Register {
   constructor(public navCtrl: NavController, public navParams: NavParams,public formBuilder: FormBuilder) {
 
   	this.formgroup = formBuilder.group({
-        digitcode: ['', Validators.compose([Validators.required, Validators.minLength(5) ])]
+        digitcode: ['', Validators.compose([Validators.required, Validators.minLength(4) ])]
     });
 
     this.digitcode=this.formgroup.controls['digitcode'];

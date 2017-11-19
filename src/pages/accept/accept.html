@@ -34,34 +34,20 @@
     <img class="returnstarsize" src="assets/icon/star-grey-outline.png">
   </ion-label>
   <p class="goodstyle">VERY GOOD</p>
-	<!-- 	<ion-row radio-group *ngIf="!agreewith" [(ngModel)]="agree">
-		<ion-col col-2>
-		
-		</ion-col>
-		<ion-col col-2 >
-			Yes
-		</ion-col>
-  	<ion-col col-2 >
-			<ion-radio value="yes" ></ion-radio>
-			<ion-icon class="agreestyle" *ngIf="agree=='no'" name="checkmark"></ion-icon>
-		</ion-col>
-		<ion-col col-2 >
-			No
-		</ion-col>
-		<ion-col col-2 >
-			<ion-radio value="no" ></ion-radio>
-			<ion-icon class="agreestyle" *ngIf="agree=='yes'" name="checkmark"></ion-icon>
-		</ion-col>
-		<ion-col col-2>
-		
-		</ion-col>
-	</ion-row> -->
-	<ion-item class="toggleheight">
+<!-- 	<ion-item class="toggleheight">
 		<ion-label class="helptext">
 			Yes / No
 		</ion-label>
 		<ion-toggle [(ngModel)]="agree" color="secondary"></ion-toggle>
-	</ion-item>
+	</ion-item> -->
+	<ion-row class="toggleheight">
+    <ion-col col-10>
+      <ion-label text-wrap style="font-size: 1.7rem;" >Yes / No</ion-label>
+    </ion-col>
+    <ion-col col-2 class="removeicon">
+      <ion-checkbox color="secondary" [(ngModel)]="agree"></ion-checkbox>
+    </ion-col>
+  </ion-row>
 	<ion-label class="commentstyle">
 		LEAVE A COMMENT BELOW
 	</ion-label>
