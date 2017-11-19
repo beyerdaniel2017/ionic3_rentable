@@ -87,7 +87,7 @@ export class PostdetailPage {
 
   number(){
     var n=this.itemtitle.length;
-    this.titlenumber=50-n;
+    this.titlenumber=80-n;
   }
 
   conditionnum(){

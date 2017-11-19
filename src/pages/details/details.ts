@@ -39,6 +39,8 @@ export class Details implements OnInit {
   locationstatus: boolean = false;
   rent=RentPage;
   retrun=AcceptPage;  //return process
+  messagenumber:any;
+  messagetext:any;
 
   goodcondition:number[] = [1, 2, 3];
   badcondition:number[] = [1, 2];
@@ -51,6 +53,8 @@ export class Details implements OnInit {
       img: 'assets/img/11.png', ownerimage:'assets/img/profile-img.png', ownername: 'John', item_title:'house', price:'25', description:'this is good rentalable book please use this Thanks', selectdate:'', total_cost:'100'}
 
     this.ionViewLoaded();
+    this.messagetext="";
+    this.messagenumber=350;
   }
 
   ionViewLoaded(){
@@ -58,6 +62,11 @@ export class Details implements OnInit {
   }
 
   loadMap(){
+  }
+
+  number(){
+    var n=this.messagetext.length;
+    this.messagenumber=350-n;
   }
 
   backicon(){

@@ -126,12 +126,13 @@
           </ion-col>
         </ion-row>
       </ion-item>
-      <ion-label class="bottomborder padding" >
-        SEND MESSAGE
-      </ion-label>
+      <ion-item class="bottomborder">
+        <p item-left class="helpstr">SEND MESSAGE</p>
+        <p item-right class="helpstr">{{messagenumber}}</p>
+      </ion-item>
       <ion-item >
-        <ion-input item-left type="text" placeholder="input generate text"></ion-input>
-        <img  class="sendbutton" item-right src="assets/icon/ico_send.png">
+        <ion-input  style="width: 80vw;" [(ngModel)]="messagetext" (ionChange)="number()" type="text" placeholder="input generate text"></ion-input>
+        <img item-right class="sendbutton" src="assets/icon/ico_send.png">
       </ion-item>
     </div>
     </ion-row>

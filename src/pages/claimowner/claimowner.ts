@@ -26,7 +26,7 @@ export class ClaimownerPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
 
-  	this.titlenumber=400;
+  	this.titlenumber=350;
 
   }
 
@@ -36,7 +36,7 @@ export class ClaimownerPage {
 
   number(){
     var n=this.itemtitle.length;
-    this.titlenumber=400-n;
+    this.titlenumber=350-n;
   }
 
 }
