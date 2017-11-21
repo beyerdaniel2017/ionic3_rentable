@@ -19,10 +19,11 @@ import { Details } from '../details/details';
 export class PickupPage {
 
 	details=Details;
-  togglevalue:any;
-
+  agree:any;
+  togglevalue1:any;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.togglevalue=false;
+    this.agree="yes";
+    this.togglevalue1=true;
   }
 
   ionViewDidLoad() {

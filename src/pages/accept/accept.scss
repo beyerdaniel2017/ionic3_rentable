@@ -31,6 +31,10 @@ page-accept {
 		margin-bottom:40px;
 	}
 
+	.radio-inner{
+		top: 1px !important;
+	}
+
 	.goodstyle{
 		color:red;
 		font-size: 16px;
@@ -45,6 +49,15 @@ page-accept {
     font-size: 13px;
 	}
 
+
+}
+
+.radioclass{
+	border: 1px solid black;
+  border-radius: 17px;
+  height: 19px;
+  color: white;
+  background-color: #03a9f4;
 }
 
 .agreestyle{

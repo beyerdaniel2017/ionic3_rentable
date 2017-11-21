@@ -89,4 +89,5 @@
     <plugin name="cordova-plugin-geolocation" spec="^2.4.3" />
     <plugin name="ionic-plugin-keyboard" spec="^2.2.1" />
     <plugin name="com.telerik.plugins.nativepagetransitions" spec="^0.6.5" />
+    <plugin name="cordova-plugin-advanced-http" spec="^1.8.1" />
 </widget>
