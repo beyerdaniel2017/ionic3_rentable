@@ -19,7 +19,7 @@ export class AcceptPage {
   agree:any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.agree=true;
+    this.agree="yes";
   }
 
   ionViewDidLoad() {

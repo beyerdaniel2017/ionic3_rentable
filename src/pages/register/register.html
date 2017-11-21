@@ -35,7 +35,7 @@
           <p> *Minimum code length is 4</p>
         </ion-item>
       </ion-list>
-      <button ion-button class="signupbutton" style="width: 100%;" [navPush]="signup" [disabled]="!formgroup.valid">CONTINUE</button>
+      <button ion-button class="signupbutton" style="width: 100%;" (click)="gosignup()" [disabled]="!formgroup.valid">CONTINUE</button>
     </form>
   </div>
 </ion-content>

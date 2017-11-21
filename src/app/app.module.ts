@@ -5,6 +5,7 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { MyApp } from './app.component';
 import { HttpModule} from '@angular/http';
+import { HTTP } from '@ionic-native/http';
 
 import { allPages } from '../pages/common/declerations';
 import { DirectivesModule } from '../directives/directives.module';
@@ -14,6 +15,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { NativePageTransitions } from '@ionic-native/native-page-transitions';
 import { AuthenticateProvider } from '../providers/authenticate/authenticate';
+import { AppSetting } from '../providers/api_route';
 
 const firebaseConfig = {
   apiKey: "AIzaSyDt_BaO5QxQo3mr8XaigDsoVnPtPn05ejg",
@@ -58,7 +60,8 @@ var APP_Pages = [];
     DirectivesModule,
     NativePageTransitions,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AuthenticateProvider
+    AuthenticateProvider,
+    AppSetting
   ]
 })
 export class AppModule {}

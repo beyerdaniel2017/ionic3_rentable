@@ -96,7 +96,7 @@
     </ion-item>
 	  <ion-row class="detailstyle">
 	  	<ion-col col-11>
-	  		<ion-textarea (ionChange)='conditionnum()' style="margin-bottom:30px;" rows="5" type="text" text-wrap placeholder="I have only worn these shoes for a total of 3 days..." [(ngModel)]="conditiontitle"></ion-textarea >
+	  		<ion-textarea id="conditiontitle" (click)="focus()" (ionChange)='conditionnum()' style="margin-bottom:30px;" rows="5" type="text" text-wrap placeholder="I have only worn these shoes for a total of 3 days..." [(ngModel)]="conditiontitle"></ion-textarea >
 	  	</ion-col>
 	  	<ion-col col-1>
 	  		<ion-icon name="md-close" class="graycolor"></ion-icon>

@@ -90,7 +90,14 @@ export class PostdetailPage {
     this.titlenumber=80-n;
   }
 
+  focus(){
+        document.getElementById("conditiontitle").style.marginBottom="40px";
+
+  }
+
   conditionnum(){
+    document.getElementById("conditiontitle").style.marginBottom="40px";
+    
     var n=this.conditiontitle.length;
     this.conditionnumber=200-n;
   }
