@@ -5,7 +5,6 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { MyApp } from './app.component';
 import { HttpModule} from '@angular/http';
-import { HTTP } from '@ionic-native/http';
 
 import { allPages } from '../pages/common/declerations';
 import { DirectivesModule } from '../directives/directives.module';
