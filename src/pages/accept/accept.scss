@@ -49,14 +49,29 @@ page-accept {
     font-size: 13px;
 	}
 
+	.radio-checked .radio-inner {
+    border-color: #ffffff;
+    width: 4px !important;
+    padding-bottom: 8px;
+    height: 4px !important;
+	}
+
 
 }
 
 .radioclass{
-	border: 1px solid black;
+	border: 1px solid gray;
   border-radius: 17px;
   height: 19px;
-  color: white;
+  color: white !important;
+  background-color: white;
+}
+
+.radioclass1{
+	border: 1px solid gray;
+  border-radius: 17px;
+  height: 19px;
+  color: white !important;
   background-color: #03a9f4;
 }
 

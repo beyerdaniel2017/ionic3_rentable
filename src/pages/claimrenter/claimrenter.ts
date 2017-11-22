@@ -25,6 +25,7 @@ export class ClaimrenterPage {
   claimowner=ClaimownerPage;
   otherprofile=OtherprofilePage;
   detail=Details;
+  active_flag:any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
 
@@ -35,11 +36,21 @@ export class ClaimrenterPage {
   	this.renter = {
       img: 'assets/img/profile-img.png', name: 'John', address:'Sydney Australia', rate:'4.5', rent_nuber: '10', owner_number: '20'
     }
-    this.agree=true;
+    this.active_flag=true;
+    this.agree="no";
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ClaimrenterPage');
+  }
+
+  radioChecked(){
+    if (this.agree=="no") {
+      this.active_flag=true;
+    }
+    else {
+      this.active_flag=false;
+    }
   }
 
 }

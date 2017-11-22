@@ -14,12 +14,13 @@ import { Details } from '../details/details';
   templateUrl: 'accept.html'
 })
 export class AcceptPage {
-
+  active_flag:any;
 	details=Details;
   agree:any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.agree="yes";
+    this.active_flag=true;
+    this.agree="no";
   }
 
   ionViewDidLoad() {
@@ -28,6 +29,15 @@ export class AcceptPage {
 
   godetail(){
     this.navCtrl.pop();
+  }
+
+  radioChecked(){
+    if (this.agree=="no") {
+      this.active_flag=true;
+    }
+    else {
+      this.active_flag=false;
+    }
   }
 
 

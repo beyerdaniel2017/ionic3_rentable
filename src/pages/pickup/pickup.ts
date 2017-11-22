@@ -21,19 +21,28 @@ export class PickupPage {
 	details=Details;
   agree:any;
   togglevalue1:any;
+  active_flag:any;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.agree="yes";
-    this.togglevalue1=true;
+    this.active_flag=true;
+    this.agree="no";
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PickupPage');
   }
 
-
-
   godetail(){
     this.navCtrl.pop();
+  }
+
+  radioChecked(){
+    if (this.agree=="no") {
+      this.active_flag=true;
+    }
+    else {
+      this.active_flag=false;
+    }
   }
 
 }

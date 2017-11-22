@@ -41,20 +41,20 @@
       <ion-checkbox color="secondary" [(ngModel)]="togglevalue"></ion-checkbox>
     </ion-col>
   </ion-row> -->
-  <ion-row radio-group *ngIf="!agreewith" [(ngModel)]="agree">
+  <ion-row radio-group [(ngModel)]="agree">
     <ion-col col-2>
     </ion-col>
     <ion-col col-2 >
       Yes
     </ion-col>
-    <ion-col col-2 >
-      <ion-radio value="yes" class="radioclass" checked="true"></ion-radio>
+      <ion-col col-2 >
+      <ion-radio (ionSelect)="radioChecked()" color="backwhite" value="yes"[ngClass]="(active_flag==false)?'radioclass1':'radioclass'" checked="true"></ion-radio>
     </ion-col>
     <ion-col col-2 >
       No
     </ion-col>
     <ion-col col-2 >
-      <ion-radio value="no" class="radioclass"></ion-radio>
+      <ion-radio (ionSelect)="radioChecked()" color="backwhite"  value="no" [ngClass]="(active_flag==false)?'radioclass':'radioclass1'"></ion-radio>
     </ion-col>
     <ion-col col-2>
     </ion-col>
