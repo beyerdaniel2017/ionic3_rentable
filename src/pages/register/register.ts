@@ -19,7 +19,7 @@ export class Register {
   signup = SignupPage;
   finishsign=FinishsignPage;
   digitcode:AbstractControl;
-
+  Usersignup:any;
   formgroup: FormGroup;
   phonenumber:any;
 
@@ -33,16 +33,28 @@ export class Register {
   	this.formgroup = formBuilder.group({
         digitcode: ['', Validators.compose([Validators.required, Validators.minLength(4) ])]
     });
-
+    this.Usersignup=[];
     this.digitcode=this.formgroup.controls['digitcode'];
     this.phonenumber=navParams.get("pnumber");
   }
 
   gosignup(){
-    this.Authprovider.smsverify(this.phonenumber,this.digitcode.value);
-    console.log(this.digitcode.value);
-    console.log(this.phonenumber);
-    this.navCtrl.setRoot(SignupPage);
+    this.Usersignup.phonenumber = this.phonenumber;
+    this.navCtrl.push(SignupPage,{
+          user: this.Usersignup
+        });
+    this.Authprovider.smsverify(this.phonenumber,this.digitcode.value).subscribe(data => {
+      let res = data.json().success;
+      console.log('hehe', res);
+      
+      if(!res)
+        alert('Please reenter your sms code');
+      else
+        this.navCtrl.push(SignupPage,{
+          user: this.Usersignup
+        });
+    });
+    
   }
 
 }

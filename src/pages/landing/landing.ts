@@ -33,7 +33,7 @@ export class LandingPage {
     public Authprovider: AuthenticateProvider
   ) {
     this.number=null;
-    this.countrycode="+44";
+    this.countrycode="+61";
     this.key=[];
     this.user=false;
     this.countries =
@@ -1031,13 +1031,36 @@ export class LandingPage {
   }
 
   dolanding(){
+//    this.navCtrl.push(Login);
     this.number=this.countrycode + this.phonenumber;
-    console.log(this.number);
-    this.return=this.Authprovider.Sendsms(this.number);
-    console.log(this.return.value + " return");
-    this.navCtrl.push(Register,{
-      pnumber: this.number
-    })
+    console.log(this.number + " number");
+    // this.return=this.Authprovider.Sendsms(this.number);
+
+    this.Authprovider.phoneverify(this.number).subscribe(data => {
+      let res = data.json().success,
+          email = data.json().email;
+
+      if(!res){
+        console.log(res + " eheeh");
+        this.Authprovider.Sendsms(this.number).subscribe(response => {
+          let result = response.json().success;
+          if(!result){
+            alert('Please reenter your sms code');
+          }
+          else
+            this.navCtrl.push(Register,{
+              pnumber: this.number
+            })
+        });
+
+      }
+      else {
+        console.log("hehehe--'", res);
+        this.navCtrl.push(Login,{
+          email: email
+        });
+       }
+    });
 
   }
 

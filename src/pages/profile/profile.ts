@@ -1,6 +1,7 @@
 import { Component , Directive ,ViewChild } from '@angular/core';
 import { Nav, NavController, NavParams } from 'ionic-angular';
 import { Keyboard } from 'ionic-native';
+import { AngularFireAuth } from 'angularfire2/auth';
 
 import { AddpaymentPage } from '../addpayment/addpayment';
 import { EditprofilePage } from '../editprofile/editprofile';
@@ -26,7 +27,7 @@ export class Profile {
   logout=LandingPage;
   mystats=MyStats;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public afAuth: AngularFireAuth) {
     this.profile ={
       img: 'assets/img/profile-img.png', name: 'John Doe', address:'Sydney Australia', rate:'4.5', rent_nuber: '10', owner_number: '20'
     }
@@ -45,6 +46,8 @@ export class Profile {
   }
 
   gologout(){
+    this.afAuth.auth.signOut();
+    localStorage.setItem("uid", "");
     this.navCtrl.setRoot(LandingPage);
   }
 

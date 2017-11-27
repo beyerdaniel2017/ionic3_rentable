@@ -3,12 +3,10 @@
 
   <ion-navbar class="profileheader"  hideBackButton="true" >
     <ion-row >
-      <ion-col col-1>
-      </ion-col>
-      <ion-col col-8 >
+      <ion-col col-9 >
       </ion-col>
       <ion-col col-3 class="nextbutton">
-      	<ion-label  [navPush]="postdetail">
+      	<ion-label  (click)="gopostdetail()">
       		Next
       	</ion-label>
       </ion-col>

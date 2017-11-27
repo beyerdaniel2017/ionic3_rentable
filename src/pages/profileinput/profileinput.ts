@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ProfileProvider } from '../../providers/payment/prifile';
 
 import { EditprofilePage } from '../editprofile/editprofile';
 
@@ -19,8 +20,11 @@ export class ProfileinputPage {
 
 	editprofile=EditprofilePage;
 	data:any;
+  formtype:any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public profileprovier: ProfileProvider) {
+    this.formtype=navParams.get("type");
+    this.data=navParams.get("data");
   }
 
   ionViewDidLoad() {
@@ -31,8 +35,11 @@ export class ProfileinputPage {
   	this.data="";
   }
 
-  update(){
-  	
+  save(){
+    this.profileprovier.ChangeProfile(this.formtype, this.data).subscribe(data =>{
+      console.log(data);
+    })
+  	this.navCtrl.popTo(EditprofilePage);
   }
 
 }

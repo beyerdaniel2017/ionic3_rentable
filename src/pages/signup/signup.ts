@@ -30,6 +30,7 @@ export class SignupPage {
   fullnameChanged: boolean = false;
   submitAttempt: boolean = false;
   loading: any;
+  Usersignup:any;
 
   constructor(
     public navCtrl: NavController,
@@ -45,10 +46,14 @@ export class SignupPage {
       password: ['', Validators.compose([Validators.maxLength(50),Validators.minLength(10), Validators.required])],
       confirmpassword: ['', Validators.compose([Validators.minLength(10), Validators.required,Validators.maxLength(50)])]
     });
+    this.Usersignup=navParams.get("user");
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SignupPagePage');
+    this.email=this.registerForm.controls['email'];
+    this.password=this.registerForm.controls['password'];
+    this.confirmpassword=this.registerForm.controls['confirmpassword'];
   }
 
   elementChanged(input){
@@ -61,7 +66,12 @@ export class SignupPage {
   }
 
   doRegister(){
-    this.navCtrl.setRoot(FinishsignPage);
+    this.Usersignup.email=this.email.value;
+    this.Usersignup.password=this.password.value;
+    console.log(this.Usersignup.phonenumber);
+    this.navCtrl.setRoot(FinishsignPage,{
+      user:this.Usersignup
+    });
     /*this.submitAttempt = true;
     if (!this.registerForm.valid){
       console.log(this.registerForm.value);

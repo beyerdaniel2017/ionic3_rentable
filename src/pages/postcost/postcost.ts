@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { Itemprovider } from '../../providers/payment/postitem';
 
 import { PostdetailPage } from '../postdetail/postdetail';
 import { AddPage } from '../add/add';
@@ -22,8 +23,15 @@ export class PostcostPage {
   addpage=AddPage;
   deliver:any;
   fee:any;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  itempost:any;
+  dailyprice:any;
+  weeklyprice:any;
+  fairprice:any;
+  distance:any;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public itemprovider: Itemprovider) {
     this.deliver=false;
+    this.itempost=navParams.get("itempost");
   }
 
   ionViewDidLoad() {
@@ -31,19 +39,19 @@ export class PostcostPage {
   }
 
   removefairprice(){
-
+    this.fairprice="";
   }
 
   removeweeklyprice(){
-
+    this.weeklyprice="";
   }
 
   removedailyprice(){
-
+    this.dailyprice="";
   }
 
   removefee(){
-  	
+    this.fee="";
   }
 
   backadd(){
@@ -51,7 +59,24 @@ export class PostcostPage {
   }
 
   backdetail(){
-    this.navCtrl.setRoot(PostdetailPage);
+    this.navCtrl.push(PostdetailPage);
+  }
+
+  Postitem(){
+    this.itemprovider.Itemsave
+    (
+      this.fairprice,
+      this.dailyprice,
+      this.weeklyprice,
+      this.fee,
+      this.distance,
+      this.distance,
+      this.deliver,
+      this.itempost.itemtitle,
+      this.itempost.category,
+      this.itempost.conditionmark,
+      this.itempost.conditiontitle
+    );
   }
 
 }

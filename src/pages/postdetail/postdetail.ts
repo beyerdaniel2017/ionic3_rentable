@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { NavController, NavParams, Navbar } from 'ionic-angular';
 
 import { PostcostPage } from '../postcost/postcost';
 import { AddPage } from '../add/add';
@@ -17,6 +17,7 @@ import { AddPage } from '../add/add';
   templateUrl: 'postdetail.html',
 })
 export class PostdetailPage {
+  @ViewChild(Navbar) navBar: Navbar;
 
 	postcost=PostcostPage;
 	addpage=AddPage;
@@ -28,6 +29,9 @@ export class PostdetailPage {
   titlenumber:any;
   conditionnumber:any;
   conditiontitle:any;
+  conditionmark:any;
+  Postitem:any;
+  category:any;
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
@@ -50,6 +54,8 @@ export class PostdetailPage {
     this.conditiontitle="";
     this.conditionnumber=200;
     this.goodcondition=[];
+    this.Postitem=[];
+    this.conditionmark=0;
     for (var i = 0; i < 5; ++i) {
       this.goodcondition[i]=false;
     }
@@ -59,21 +65,21 @@ export class PostdetailPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PostdetailPage');
+    this.navBar.backButtonClick = () => {
+      this.navCtrl.setRoot(AddPage);
+    };
   }
 
   myFunction(event){
     var target = event.target || event.srcElement || event.currentTarget;
-    console.log(event.srcElement + " event.srcElement");
     var parent = event.srcElement.parentElement;
-    console.log(parent + " parent");
     var preparent = parent.parentElement;
     var divparent = preparent.parentElement;
     var children = divparent.children;
-    console.log(preparent + " preparent");
     var count = children.length;
-    console.log(count + "count");
     for (var i = 0; i < count; ++i) {
       if(preparent==children[i]){
+        this.category=this.categorylist[i].value;
         var image=this.categorylist[i].active_img;
         console.log(children[i].getElementsByTagName('label')[0].getElementsByTagName('img')[0] + "children[i]");
         children[i].getElementsByTagName('label')[0].getElementsByTagName('img')[0].setAttribute("src", image);
@@ -110,10 +116,21 @@ export class PostdetailPage {
     for (var l = i+1; l <= 5; ++l) {
       this.goodcondition[l]=false;
     }
+    this.conditionmark=i;
   }
 
   goaddpage(){
     this.navCtrl.setRoot(AddPage);
+  }
+
+  gopostcost(){
+    this.Postitem.itemtitle=this.itemtitle;
+    this.Postitem.category=this.category;
+    this.Postitem.conditionmark=this.conditionmark;
+    this.Postitem.conditiontitle=this.conditiontitle;
+    this.navCtrl.push(PostcostPage,{
+      itempost: this.Postitem
+    });
   }
 
 }

@@ -25,8 +25,7 @@ export class AddPage {
   }
 
   gopostdetail(){
-    console.log('ionViewDidLoad AddPagePage');
-    this.navCtrl.setRoot(PostdetailPage)
+    this.navCtrl.push(PostdetailPage)
   }
 
   ionViewDidLoad() {

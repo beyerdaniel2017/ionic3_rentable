@@ -1,11 +1,9 @@
 import { Injectable, Inject } from '@angular/core';
-//import { HTTP } from '@ionic-native/http';
 import { Http,Headers } from '@angular/http';
-import { NavController, NavParams, AlertController } from 'ionic-angular';
 import 'rxjs/add/operator/map';
+import { NavController, NavParams, AlertController } from 'ionic-angular';
 import { AppSetting } from '../api_route';
 import firebase from 'firebase';
-import { Register } from '../../pages/register/register';
 
 @Injectable()
 export class AuthenticateProvider {
@@ -17,13 +15,29 @@ export class AuthenticateProvider {
     // code...
   }
   public Sendsms(smsnumber) {
-    return this.http.post(this.apiUrl+'sendsms', {'phoneNumber': smsnumber})
-    .subscribe(data => {console.log(data);})      
+    console.log(smsnumber);
+    return this.http.post(this.apiUrl+'service/sendsms', {'phoneNumber': smsnumber});
   }
 
   public smsverify(smsnumber, digitcode){
-    console.log("smsverify");
-    return this.http.post(this.apiUrl+'smsverify', {'phoneNumber': smsnumber, 'code':digitcode})
-    .subscribe(data => {console.log(data);})
+    return this.http.post(this.apiUrl+'service/smsverify', {'phoneNumber': smsnumber, 'code':digitcode});
+  }
+
+  public signup(Usersignup){
+    console.log("signup page");
+    console.log(Usersignup );
+    return this.http.post(this.apiUrl+'user/signup', {
+      email: Usersignup.email ,
+      phoneNumber: Usersignup.phonenumber ,
+      password: Usersignup.password,
+      firstName: Usersignup.firstname,
+      lastName:Usersignup.lastname ,
+      postalCode: Usersignup.postalcode,
+      deviceToken: ""
+    });
+  }
+
+  public phoneverify(phonenumber){
+    return this.http.post(this.apiUrl+'user/hasphone', {'phoneNumber': phonenumber});
   }
 }

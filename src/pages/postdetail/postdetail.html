@@ -8,12 +8,10 @@
 
   <ion-navbar class="profileheader" >
     <ion-row >
-    	<ion-col col-1>
-    	</ion-col>
-      <ion-col col-8 >
+      <ion-col col-9 >
       </ion-col>
-      <ion-col col-3 class="nextbutton">
-      	<ion-label [navPush]="postcost">
+      <ion-col col-3 (click)="gopostcost()" class="nextbutton">
+      	<ion-label >
       		Next
       	</ion-label>
       </ion-col>
@@ -74,8 +72,8 @@
 			CATEGORY
 		</ion-label>
     <div>
-      <div  class="radio-postimg grid-list" *ngFor="let item of categorylist" >
-        <input type="radio" name="radio-group" id="{{item.radionumber}}" class="input-hidden" />
+      <div  radio-group [(ngModel)]="category" class="radio-postimg grid-list" *ngFor="let item of categorylist " >
+        <input type="radio" name="radio-group"   id="{{item.radionumber}}" class="input-hidden" />
         <label (click)="myFunction($event)" for="{{item.radionumber}}" >
           <img class="categoryimage" src="{{item.inactive_img}}">
           <span class="categoryname">{{item.title}}</span>
@@ -87,10 +85,7 @@
       <img *ngIf="goodcondition[i]" (click)="changecondition(i)" class="starsize" src="assets/icon/star-red.png">
       <img *ngIf="!goodcondition[i]" (click)="changecondition(i)" class="starsize" src="assets/icon/star.png">
     </div>
-    <!-- <div *ngFor="let i of badcondition" class="conditionstar" >
-      <img class="starsize" src="assets/icon/star.png">
-    </div> -->
-	   <ion-item>
+    <ion-item>
       <p item-left class="helpstr">ITEM DETAILS</p>
       <p item-right class="helpstr">{{conditionnumber}}</p>
     </ion-item>

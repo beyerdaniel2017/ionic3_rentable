@@ -23,57 +23,57 @@
       </div>
     </div>
     <br>
-    <ion-item class="itempadding" (click)="focus()">
+    <ion-item class="itempadding" (click)="firstfocus()">
     	<div item-left>
     		<ion-label class="helpstring" >
           FIRST NAME
         </ion-label >
-        <ion-label class="profileinfo" >John</ion-label>
+        <ion-label class="profileinfo" >{{firstname}}</ion-label>
     	</div>
       <ion-icon  class="graycolor" name="ios-arrow-forward-outline" item-right ></ion-icon>
     </ion-item>
-    <ion-item class="itempadding" (click)="focus()">
+    <ion-item class="itempadding" (click)="lastfocus()">
     	<div item-left>
     		<ion-label class="helpstring">
           LAST NAME
         </ion-label >
-        <ion-label class="profileinfo" >Doe</ion-label>
+        <ion-label class="profileinfo" >{{lastname}}</ion-label>
     	</div>
       <ion-icon class="graycolor" name="ios-arrow-forward-outline" item-right ></ion-icon>
     </ion-item>
-    <ion-item class="itempadding" (click)="focus()">
+    <ion-item class="itempadding" (click)="mobilefocus()">
     	<div item-left>
     		<ion-label class="helpstring">
           MOBILE
         </ion-label >
-        <ion-label class="profileinfo" >0211234556</ion-label>
+        <ion-label class="profileinfo" >{{phonenumber}}</ion-label>
     	</div>
       <ion-icon class="graycolor" name="ios-arrow-forward-outline" item-right ></ion-icon>
     </ion-item>
-    <ion-item class="itempadding" (click)="focus()">
+    <ion-item class="itempadding" (click)="emailfocus()">
       <div item-left>
         <ion-label class="helpstring">
           EMAIL
         </ion-label >
-        <ion-label class="profileinfo" >john@example.com</ion-label>
+        <ion-label class="profileinfo" >{{email}}</ion-label>
       </div>
       <ion-icon class="graycolor" name="ios-arrow-forward-outline" item-right ></ion-icon>
     </ion-item>
-    <ion-item class="itempadding" (click)="focus()">
+    <ion-item class="itempadding" (click)="passwordfocus()">
     	<div item-left>
     		<ion-label class="helpstring">
           PASSWORD
         </ion-label >
-        <ion-label class="profileinfo" >.....</ion-label>
+        <ion-label class="profileinfo" >{{showpassword}}</ion-label>
     	</div>
       <ion-icon class="graycolor" name="ios-arrow-forward-outline" item-right ></ion-icon>
     </ion-item>
-    <ion-item class="itempadding" (click)="focus()" style="border-bottom: thin solid gainsboro;margin-bottom:40px">
+    <ion-item class="itempadding" (click)="postalfocus()" style="border-bottom: thin solid gainsboro;margin-bottom:40px">
     	<div item-left>
     		<ion-label class="helpstring">
           POSTAL CODE
         </ion-label >
-        <ion-label class="profileinfo" >53235</ion-label>
+        <ion-label class="profileinfo" >{{postalcode}}</ion-label>
     	</div>
       <ion-icon class="graycolor" name="ios-arrow-forward-outline" item-right ></ion-icon>
     </ion-item>

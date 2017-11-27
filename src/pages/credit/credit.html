@@ -6,7 +6,7 @@
 -->
 <ion-header>
 
-  <ion-navbar class="profileheader" >
+  <ion-navbar class="profileheader" hideBackButton="true">
     <ion-row >
       <ion-col col-1>
         <ion-icon [navPush]="addpayment" class="whiteicon" style="padding: 13px 0 0 10px;;" name="md-close"></ion-icon>
@@ -60,21 +60,21 @@
 	<ion-row class="borderbottom">
 		<ion-col col-5>
 			<ion-item color="none" no-padding>
-        <select (ionChange)="selectyear($event)" class="selectyear">
-					<option value="01" selected="true">2017</option>
-			    <option value="02">2018</option>
-			    <option value="03">2019</option>
-			    <option value="04">2020</option>
-			    <option value="05">2021</option>
-			    <option value="06">2022</option>
-			    <option value="07">2023</option>
-			    <option value="08">2024</option>
-			    <option value="09">2025</option>
-			    <option value="10">2026</option>
-			    <option value="11">2027</option>
-			    <option value="12">2028</option>
-			    <option value="13">2029</option>
-			    <option value="14">2030</option>
+        <select [(ngModel)]="expirydate" class="selectyear">
+					<option value="2017" selected="true">2017</option>
+			    <option value="2018">2018</option>
+			    <option value="2019">2019</option>
+			    <option value="2020">2020</option>
+			    <option value="2021">2021</option>
+			    <option value="2022">2022</option>
+			    <option value="2023">2023</option>
+			    <option value="2024">2024</option>
+			    <option value="2025">2025</option>
+			    <option value="2026">2026</option>
+			    <option value="2027">2027</option>
+			    <option value="2028">2028</option>
+			    <option value="2029">2029</option>
+			    <option value="2030">2030</option>
 			  </select>
        </ion-item>
 		</ion-col>
@@ -82,7 +82,7 @@
 			<ion-icon name="close" (click)="cleardate()"></ion-icon>
 		</ion-col>
 		<ion-col col-5>
-	    <ion-input type="{{type}}" name="password" ngModel #password="ngModel" required pattern=".{4,10}"></ion-input>
+	    <ion-input type="{{type}}" name="password" [(ngModel)]="password" required pattern=".{4,10}"></ion-input>
 	  </ion-col>
 		<ion-col col-1 style="text-align: center; font-size:3rem;">
 			<ion-icon *ngIf="!showPass" (click)="showPassword()" name="ios-eye-off-outline"></ion-icon>
@@ -92,20 +92,10 @@
 	<ion-label class="helpstr">
 		Country
 	</ion-label>
-	<select (ionChange)="selectcountry($event)" class="selectwidth">
-		<option value="01" selected="true">Australia</option>
-    <option value="02">France</option>
-    <option value="03" >Germany</option>
-    <option value="04">China</option>
-    <option value="05">Russia</option>
-    <option value="06">Spain</option>
-    <option value="07">Lebanon</option>
-    <option value="08">Denmark</option>
-    <option value="09">Italy</option>
-    <option value="10">Belgium</option>
-    <option value="11">Poland</option>
-    <option value="12">Hungary</option>
-  </select>
+	<ion-select class="selectwidth" [(ngModel)]="countryname">
+		 <ion-option *ngFor="let country of countries" [value]="country.name">{{country.name}}</ion-option>
+	
+  </ion-select>
   <button ion-button block class="savebutton" (click)="save()">SAVE</button>
 <script>
 $(document).ready(function(){

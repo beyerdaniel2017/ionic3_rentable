@@ -8,12 +8,10 @@
 
   <ion-navbar class="profileheader" >
     <ion-row >
-      <ion-col col-1>
-    	</ion-col>
-      <ion-col col-7 >
+      <ion-col col-8 >
       </ion-col>
-      <ion-col col-4 class="nextbutton">
-      	<ion-label [navPush]="postcost">
+      <ion-col col-4 (click)="Postitem()" class="nextbutton">
+      	<ion-label >
       		Publish
       	</ion-label>
       </ion-col>
@@ -120,11 +118,11 @@
           SET YOUR MAXIMUM DISTANCE
         </ion-col>
         <ion-col col-3 style="text-align: right;" class="labelhelp">
-          {{saturation}}km
+          {{distance}}km
         </ion-col>
       </ion-row>
       <ion-item>
-        <ion-range min="0" max="30"  [(ngModel)]="saturation" step="1"color="element">
+        <ion-range min="0" max="30"  [(ngModel)]="distance" step="1"color="element">
           <ion-icon small range-left name="ios-home-outline"></ion-icon>
           <ion-icon range-right name="ios-car"></ion-icon>
         </ion-range>

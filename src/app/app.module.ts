@@ -15,14 +15,17 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { NativePageTransitions } from '@ionic-native/native-page-transitions';
 import { AuthenticateProvider } from '../providers/authenticate/authenticate';
 import { AppSetting } from '../providers/api_route';
+import { PaymentProvider } from '../providers/payment/payment';
+import { ProfileProvider } from '../providers/payment/prifile';
+import { Itemprovider } from '../providers/payment/postitem';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDt_BaO5QxQo3mr8XaigDsoVnPtPn05ejg",
-  authDomain: "angular2firebase-e2368.firebaseapp.com",
-  databaseURL: "https://angular2firebase-e2368.firebaseio.com",
-  projectId: "angular2firebase-e2368",
-  storageBucket: "angular2firebase-e2368.appspot.com",
-  messagingSenderId: "678978519421"
+  apiKey: "AIzaSyDfySkoXoUcI9Ed39TNJwXnntSg8nKyt10",
+  authDomain: "rental-335fb.firebaseapp.com",
+  databaseURL: "https://rental-335fb.firebaseio.com",
+  projectId: "rental-335fb",
+  storageBucket: "rental-335fb.appspot.com",
+  messagingSenderId: "637150074544"
 };
 
 var APP_Pages = [];
@@ -60,7 +63,10 @@ var APP_Pages = [];
     NativePageTransitions,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthenticateProvider,
-    AppSetting
+    AppSetting,
+    PaymentProvider,
+    ProfileProvider,
+    Itemprovider
   ]
 })
 export class AppModule {}

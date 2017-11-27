@@ -6,9 +6,8 @@
 -->
 <ion-header>
 
-  <ion-toolbar class="profileheader"  style="text-align: left;">
-     <ion-icon [navPush]="editprofile" class="navetitle" name="md-close"></ion-icon>
-  </ion-toolbar>
+  <ion-navbar class="profileheader"  style="text-align: left;">
+  </ion-navbar>
 
 </ion-header>
 
@@ -16,7 +15,7 @@
 
 <ion-content  class="app-content">
   <ion-label class="helpstring" >
-      FIRST NAME
+      {{formtype}}
   </ion-label >
   <ion-row class="bottomborder">
     <ion-col col-10>
@@ -26,5 +25,5 @@
       <ion-icon class="graycolor" name="md-close"  item-right ></ion-icon>
     </ion-col>
   </ion-row>
-  <button ion-button block class="savebutton padding" [navPush]="editprofile">UPDATE</button>
+  <button ion-button block class="savebutton padding" (click)="save()">UPDATE</button>
 </ion-content>

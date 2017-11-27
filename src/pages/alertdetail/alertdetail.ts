@@ -57,9 +57,7 @@ export class AlertdetailPage {
 	}
 
 	ionViewDidLoad() {
-    console.log('ionViewDidLoad SearchPagePage');
     this.navBar.backButtonClick = () => {
-      ///here you can do wathever you want to replace the backbutton event
       this.navCtrl.setRoot(AlertsPage);
     };
   }

@@ -23,7 +23,7 @@ export class ChatdetailPage {
 	otherprofile=OtherprofilePage;
 	details=Details;
 	chat=ChatPage;
-  
+  showEmojiPicker:any;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   	 this.Chatdetail ={
       img: 'assets/img/11.png', ownerimage:'assets/img/profile-img.png', item_title:'house', price:'25'}
@@ -36,6 +36,14 @@ export class ChatdetailPage {
       ///here you can do wathever you want to replace the backbutton event
       this.navCtrl.setRoot(ChatPage);
     };
+  }
+
+  switchEmojiPicker(){
+
+  }
+
+  onFocus(){
+    
   }
 
 }
