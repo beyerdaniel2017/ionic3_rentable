@@ -30,15 +30,15 @@ export class Login {
 
 
   login() {
-    console.log(this.email);
-     this.afAuth.auth.signInWithEmailAndPassword(this.email, this.password).then(data => {
-       localStorage.clear();
-       localStorage.setItem('uid', data.uid);
-       this.navCtrl.setRoot(TabPage);
-     }, err => {
-       console.log('login Error =--', err);
-     })
-
+    this.navCtrl.setRoot(TabPage);
+    // console.log(this.email);
+    //  this.afAuth.auth.signInWithEmailAndPassword(this.email, this.password).then(data => {
+    //    localStorage.clear();
+    //    localStorage.setItem('uid', data.uid);
+    //    this.navCtrl.setRoot(TabPage);
+    //  }, err => {
+    //    console.log('login Error =--', err);
+    //  })
   }
 
   forgotPassword() {
