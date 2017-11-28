@@ -1,6 +1,9 @@
 import { Component,Renderer, ElementRef } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams,LoadingController, ToastController } from 'ionic-angular';
+import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
+import { Camera, CameraOptions } from '@ionic-native/camera';
 import { KeyboardDirective } from '../../directives/keyboard/keyboard';
+import { File } from '@ionic-native/file';
 import { ProfileProvider } from '../../providers/payment/prifile';
 
 import { Profile } from '../profile/profile';
@@ -30,7 +33,18 @@ export class EditprofilePage {
   type:any;
   showpassword:any;
   Profiledata:any;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public profileprovider: ProfileProvider) {
+  imageURI:any;
+  imageFileName:any;
+
+  constructor(
+      public navCtrl: NavController,
+      public navParams: NavParams,
+      public profileprovider: ProfileProvider,
+      private transfer: FileTransfer,
+      private camera: Camera,
+      public loadingCtrl: LoadingController,
+      public toastCtrl: ToastController
+    ) {
   	this.editprofile ={
       img: 'assets/img/profile-img.png', name: 'John Doe', address:'Sydney Australia', rate:'4.5', rent_nuber: '10', owner_number: '20'
     }
@@ -100,6 +114,42 @@ export class EditprofilePage {
     this.navCtrl.setRoot(ProfileinputPage,{
       type: "POSTAL CODE"
     })
+  }
+
+  presentToast(msg) {
+    let toast = this.toastCtrl.create({
+      message: msg,
+      duration: 3000,
+      position: 'bottom'
+    });
+
+    toast.onDidDismiss(() => {
+      console.log('Dismissed toast');
+    });
+
+    toast.present();
+  }
+
+
+  getImage() {
+    const options: CameraOptions = {
+      quality: 100,
+      destinationType: this.camera.DestinationType.FILE_URI,
+      sourceType: this.camera.PictureSourceType.PHOTOLIBRARY
+    }
+
+    this.camera.getPicture(options).then((imageData) => {
+      this.imageURI = imageData;
+    }, (err) => {
+      console.log(err);
+      this.presentToast(err);
+    });
+  }
+
+
+  updatephoto(){
+
+
   }
 
 }

@@ -1,7 +1,6 @@
 import { Injectable, Inject } from '@angular/core';
 import { Http,Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
-import { NavController, NavParams, AlertController } from 'ionic-angular';
 import { AppSetting } from '../api_route';
 import firebase from 'firebase';
 
@@ -33,7 +32,7 @@ export class AuthenticateProvider {
       firstName: Usersignup.firstname,
       lastName:Usersignup.lastname ,
       postalCode: Usersignup.postalcode,
-      deviceToken: ""
+      deviceToken:Usersignup.uuid
     });
   }
 

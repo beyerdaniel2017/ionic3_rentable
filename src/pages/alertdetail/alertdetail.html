@@ -111,7 +111,7 @@
   <ion-label class="liststyle">
     POSTED WITHIN
   </ion-label>
-  <form (submit)="doSubmit($event)" [formGroup]="postwithin">
+  <form  [formGroup]="postwithin">
     <ion-list radio-group formControlName="within">
       <ion-item>
         <ion-label>The last 24 hrs</ion-label>
@@ -134,7 +134,7 @@
   <ion-label class="liststyle">
     SORT BY
   </ion-label>
-  <form (submit)="dosort($event)" [formGroup]="langForm">
+  <form  [formGroup]="langForm">
     <ion-list radio-group formControlName="langs">
       <ion-item>
         <ion-label>Newest First</ion-label>
@@ -159,5 +159,5 @@
     </ion-list>
   </form>
 
-  <button ion-button block color="primary" class="defaultbutton" [navPush]="searchresult">Save Alert</button>
+  <button ion-button block color="primary" class="defaultbutton" (click)="alertsave()">Save Alert</button>
 </ion-content>

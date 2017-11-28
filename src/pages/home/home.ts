@@ -84,6 +84,7 @@ export class Home {
 
   ActiveLike(i){
     this.like[i] = !this.like[i];
+    
   }
 
   changecolor(){

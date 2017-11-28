@@ -5,6 +5,9 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { MyApp } from './app.component';
 import { HttpModule} from '@angular/http';
+import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
+import { File } from '@ionic-native/file';
+import { Camera } from '@ionic-native/camera';
 
 import { allPages } from '../pages/common/declerations';
 import { DirectivesModule } from '../directives/directives.module';
@@ -17,7 +20,8 @@ import { AuthenticateProvider } from '../providers/authenticate/authenticate';
 import { AppSetting } from '../providers/api_route';
 import { PaymentProvider } from '../providers/payment/payment';
 import { ProfileProvider } from '../providers/payment/prifile';
-import { Itemprovider } from '../providers/payment/postitem';
+import { Itemprovider } from '../providers/items/postitem';
+import { ItemsProvider } from '../providers/items/items';
 
 const firebaseConfig = {
   apiKey: "AIzaSyDfySkoXoUcI9Ed39TNJwXnntSg8nKyt10",
@@ -66,7 +70,13 @@ var APP_Pages = [];
     AppSetting,
     PaymentProvider,
     ProfileProvider,
-    Itemprovider
+    Itemprovider,
+    FileTransfer,
+//    FileUploadOptions,
+    FileTransferObject,
+    File,
+    Camera,
+    ItemsProvider
   ]
 })
 export class AppModule {}

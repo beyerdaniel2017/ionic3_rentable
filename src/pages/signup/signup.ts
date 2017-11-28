@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams,AlertController, LoadingController } from 'ionic-angular';
 import { FormBuilder, Validators,FormGroup } from '@angular/forms';
+import { Device } from '@ionic-native/device';
 
 import { FinishsignPage } from '../finishsign/finishsign';
 import { Register } from '../register/register';
@@ -31,6 +32,7 @@ export class SignupPage {
   submitAttempt: boolean = false;
   loading: any;
   Usersignup:any;
+  uuid:any;
 
   constructor(
     public navCtrl: NavController,
@@ -38,7 +40,8 @@ export class SignupPage {
     public Authprovider: AuthenticateProvider,
     public formBuilder: FormBuilder,
     public alertCtrl: AlertController,
-    public loadingCtrl: LoadingController
+    public loadingCtrl: LoadingController,
+    private device: Device
   ) {
     let EMAIL_REGEXP = /^[a-z0-9!#$%&'*+\/=?^_`{|}~.-]+@[a-z0-9]([a-z0-9-]*[a-z0-9])?(\.[a-z0-9]([a-z0-9-]*[a-z0-9])?)*$/i;
     this.registerForm = formBuilder.group({
@@ -68,36 +71,12 @@ export class SignupPage {
   doRegister(){
     this.Usersignup.email=this.email.value;
     this.Usersignup.password=this.password.value;
+    this.uuid=this.device.uuid;
     console.log(this.Usersignup.phonenumber);
     this.navCtrl.setRoot(FinishsignPage,{
       user:this.Usersignup
     });
-    /*this.submitAttempt = true;
-    if (!this.registerForm.valid){
-      console.log(this.registerForm.value);
-    } else {
-      this.Authprovider.register(this.registerForm.value.email, this.registerForm.value.password).then( Authprovider => {
-        this.navCtrl.setRoot(FinishsignPage);
-      }, error => {
-        this.loading.dismiss().then( () => {
-          let alert = this.alertCtrl.create({
-            message: error.message,
-            buttons: [
-              {
-                text: "Ok",
-                role: 'cancel'
-              }
-            ]
-          });
-          alert.present();
-        });
-      });
 
-      this.loading = this.loadingCtrl.create({
-        dismissOnPageChange: true,
-      });
-      this.loading.present();
-    }*/
   }
 
 }

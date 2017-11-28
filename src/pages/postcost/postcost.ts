@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { Itemprovider } from '../../providers/payment/postitem';
+import { Itemprovider } from '../../providers/items/postitem';
 
 import { PostdetailPage } from '../postdetail/postdetail';
 import { AddPage } from '../add/add';
@@ -70,13 +70,17 @@ export class PostcostPage {
       this.weeklyprice,
       this.fee,
       this.distance,
-      this.distance,
       this.deliver,
       this.itempost.itemtitle,
       this.itempost.category,
       this.itempost.conditionmark,
       this.itempost.conditiontitle
-    );
+    ).subscribe(data=>{
+
+    }, 
+    err =>{
+
+    });
   }
 
 }

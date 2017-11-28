@@ -75,10 +75,6 @@ export class AlertdetailPage {
 
   }
 
-  doSubmit(){
-
-  }
-
   number(){
     var n=this.alerttitle.length;
     this.titlenumber=50-n;
@@ -106,6 +102,11 @@ export class AlertdetailPage {
         children[i].getElementsByTagName('label')[0].getElementsByTagName('img')[0].setAttribute("src", inactiveimage);
       }
     }
+  }
+
+  alertsave(){
+    
+
   }
 
 }

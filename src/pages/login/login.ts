@@ -38,7 +38,7 @@ export class Login {
     //    this.navCtrl.setRoot(TabPage);
     //  }, err => {
     //    console.log('login Error =--', err);
-    //  })
+    //  });
   }
 
   forgotPassword() {

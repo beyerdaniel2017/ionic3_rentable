@@ -17,18 +17,29 @@ export class Itemprovider {
       dailyprice,
       weeklyprice,
       fee,
-      saturation,
       distance,
       deliver,
       itemtitle,
       category,
       conditionmark,
-      conditiontitle){
-    return this.http.post(this.apiUrl+'item/saveitem', {'itemdetail':fairprice});
+      itemdetails){
+    return this.http.post(this.apiUrl+'item/saveitem', 
+      {
+        fairprice: fairprice,
+        dailyprice: dailyprice,
+        weeklyprice: weeklyprice,
+        fee:fee,
+        distance:distance,
+        itemtitle: itemtitle,
+        category: category,
+        conditionmark: conditionmark,
+        itemdetails: itemdetails
+      });
   }
 
-  public Getprofile(){
-    return this.http.get(this.apiUrl+'user/getprofile');
+  public Alertsave(){
+    
   }
+
 
 }
