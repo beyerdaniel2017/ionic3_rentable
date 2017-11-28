@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { ProfileProvider } from '../../providers/payment/prifile';
+import { ProfileProvider } from '../../providers/payment/profile';
 
 import { EditprofilePage } from '../editprofile/editprofile';
 

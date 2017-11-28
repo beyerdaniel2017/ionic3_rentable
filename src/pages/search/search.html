@@ -26,7 +26,7 @@
       LOCATION
     </ion-label>
   </div>
-  <ion-row class="locationstyle">
+  <ion-row class="locationstyle" (click)="presentModal()">
     <ion-col col-1 class="locationicon">
       <img  src="assets/icon/location-place.png">
     </ion-col>
@@ -78,11 +78,11 @@
     <ion-col col-3>
     </ion-col>
     <ion-col col-3 style="text-align: right;">
-      {{saturation}}km
+      {{distance}}km
     </ion-col>
   </ion-row>
 	<ion-item class="pricestyle">
-    <ion-range min="0" max="30"  [(ngModel)]="saturation" step="1"color="element">
+    <ion-range min="0" max="30"  [(ngModel)]="distance" step="1"color="element">
       <img class="distancesize" range-left src="assets/icon/house.png">
       <img class="distancesize" range-right src="assets/icon/sports-small.png">
     </ion-range>
@@ -93,14 +93,14 @@
   <ion-row class="pricerange">
     <ion-col col-6 >
       <ion-item class="inputborder">
-        <ion-input style="padding:0 0 0 8px;" type="text" placeholder="From" ></ion-input>
+        <ion-input style="padding:0 0 0 8px;" type="text" placeholder="From" [(ngModel)]="fromprice"></ion-input>
         <ion-icon item-right class="graytext" name="arrow-forward"></ion-icon>
       </ion-item>
     </ion-col>
 
      <ion-col col-6 >
       <ion-item class="inputborder">
-        <ion-input  style="padding:0 0 0 8px;" type="text" placeholder="To" ></ion-input>
+        <ion-input  style="padding:0 0 0 8px;" type="text" placeholder="To" [(ngModel)]="toprice"></ion-input>
         <ion-icon item-right class="graytext" name="arrow-forward"></ion-icon>
       </ion-item>
     </ion-col>
@@ -108,8 +108,7 @@
 	<ion-label class="liststyle">
 		POSTED WITHIN
 	</ion-label>
-	<form (submit)="doSubmit($event)" [formGroup]="postwithin">
-    <ion-list radio-group formControlName="within">
+    <ion-list radio-group [(ngModel)]="within">
       <ion-item>
         <ion-label>The last 24 hrs</ion-label>
         <ion-radio value="24" ></ion-radio>
@@ -127,12 +126,10 @@
         <ion-radio value="all" checked="true"></ion-radio>
       </ion-item>
     </ion-list>
-  </form>
   <ion-label class="liststyle">
     SORT BY
   </ion-label>
-  <form (submit)="dosort($event)" [formGroup]="langForm">
-    <ion-list radio-group formControlName="langs">
+    <ion-list radio-group [(ngModel)]="langs">
       <ion-item>
         <ion-label>Newest First</ion-label>
         <ion-radio value="newset" checked="true"></ion-radio>
@@ -154,7 +151,6 @@
         <ion-radio value="hightolow"></ion-radio>
       </ion-item>
     </ion-list>
-  </form>
 
-  <button ion-button block color="primary" class="showbutton" [navPush]="searchresult">Show 245items</button>
+  <button ion-button block color="primary" class="showbutton" (click)="searchsave()">Show 245items</button>
 </ion-content>

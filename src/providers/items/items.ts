@@ -27,4 +27,13 @@ export class ItemsProvider {
     return this.http.post(this.apiUrl+'item/addfavourity', {item: itemnumber});
   }
 
+  public Alertsave(alerttitle, category, location, date, fromprice, toprice, distance, within, sortby){
+    return this.http.post(this.apiUrl+'item/alertsave', {alerttitle: alerttitle, category:category, location: location,date:date, fromprice:fromprice, toprice:toprice, distance:distance,within:within, sortby:sortby});
+    
+  }
+
+  public Searchsave(category, location, date, fromprice, toprice, distance, within, sortby){
+    return this.http.post(this.apiUrl+'item/searchsave', {category:category, location: location,date:date, fromprice:fromprice, toprice:toprice, distance:distance,within:within, sortby:sortby});
+  }
+
 }

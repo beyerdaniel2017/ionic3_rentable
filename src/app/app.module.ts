@@ -19,7 +19,7 @@ import { NativePageTransitions } from '@ionic-native/native-page-transitions';
 import { AuthenticateProvider } from '../providers/authenticate/authenticate';
 import { AppSetting } from '../providers/api_route';
 import { PaymentProvider } from '../providers/payment/payment';
-import { ProfileProvider } from '../providers/payment/prifile';
+import { ProfileProvider } from '../providers/payment/profile';
 import { Itemprovider } from '../providers/items/postitem';
 import { ItemsProvider } from '../providers/items/items';
 

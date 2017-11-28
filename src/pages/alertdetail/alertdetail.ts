@@ -1,5 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { NavController, NavParams, ModalController, Navbar } from 'ionic-angular';
+import { ItemsProvider } from '../../providers/items/items';
 
 import { FormGroup, FormControl } from '@angular/forms';
 import { MapModal } from '../modal-page/modal-page';
@@ -20,18 +21,21 @@ export class AlertdetailPage {
   alertlist:Array<any>;
 	map=MapModal;
 	datePeriod:any;
-  langs:any;
-  langForm:any;
   alert=AlertsPage;
-  deliversort:any;
-  postwithin:any;
   within:any;
   alerttitle:any;
   titlenumber:any;
   showfromprice: boolean = false;
   showtoprice: boolean=false;
+  category:any;
+  sortby:any;
+  pricefrom:any;
+  priceto:any;
+  distance:any;
+  location:any;
+  date:any;
 
-  constructor(public navCtrl: NavController, public modalCtrl: ModalController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public modalCtrl: ModalController, public navParams: NavParams, public itemprovider: ItemsProvider) {
   	this.alertlist = [
       {active_img: 'assets/icon/cat-nearyou-red.png', title: 'Nearby', inactive_img: 'assets/icon/cat-nearyou-grey.png', value:'nearby',radionumber:'alertradio1'},
       {active_img: 'assets/icon/cat-electronics-red.png', title: 'Electronics', inactive_img: 'assets/icon/cat-electronics-grey.png', value:'electronics',radionumber:'alertradio2'},
@@ -44,13 +48,6 @@ export class AlertdetailPage {
       {active_img: 'assets/icon/cat-tools-red.png', title: 'Tools and machines', inactive_img: 'assets/icon/cat-tools-grey.png', value:'tools',radionumber:'alertradio9'},
       {active_img: 'assets/icon/cat-party-red.png', title: 'Party and Events', inactive_img: 'assets/icon/cat-party-grey.png', value:'party',radionumber:'alertradio10'}
     ]
-
-  this.langForm = new FormGroup({
-      "langs": new FormControl({value: 'newset', disabled: false})
-    });
-    this.postwithin = new FormGroup({
-      "within": new FormControl({value: 'all', disabled: false})
-    });
 
     this.alerttitle="";
     this.titlenumber=50;
@@ -94,6 +91,7 @@ export class AlertdetailPage {
     for (var i = 0; i < count; ++i) {
       if(preparent==children[i]){
         var image=this.alertlist[i].active_img;
+        this.category=this.alertlist[i].value;
         console.log(children[i].getElementsByTagName('label')[0].getElementsByTagName('img')[0] + "children[i]");
         children[i].getElementsByTagName('label')[0].getElementsByTagName('img')[0].setAttribute("src", image);
       }
@@ -105,8 +103,8 @@ export class AlertdetailPage {
   }
 
   alertsave(){
-    
-
+    console.log(this.within);
+     this.itemprovider.Alertsave(this.alerttitle, this.category, this.location, this.date, this.fromprice, this.toprice, this.distance, this.within, this.sortby);
   }
 
 }

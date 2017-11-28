@@ -37,9 +37,4 @@ export class Itemprovider {
       });
   }
 
-  public Alertsave(){
-    
-  }
-
-
 }

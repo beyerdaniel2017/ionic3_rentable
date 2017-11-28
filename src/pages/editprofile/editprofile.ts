@@ -4,7 +4,7 @@ import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-nati
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { KeyboardDirective } from '../../directives/keyboard/keyboard';
 import { File } from '@ionic-native/file';
-import { ProfileProvider } from '../../providers/payment/prifile';
+import { ProfileProvider } from '../../providers/payment/profile';
 
 import { Profile } from '../profile/profile';
 import { ProfileinputPage } from '../profileinput/profileinput';
