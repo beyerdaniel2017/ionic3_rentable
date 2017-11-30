@@ -32,6 +32,6 @@
 			</p>
 		</ion-col>
 	</ion-row>
-	<ion-textarea rows="5" (ionChange)='number()' type="text" class="feedbackinput" [(ngModel)]="itemtitle" text-wrap></ion-textarea >
-	<button ion-button block color="secondary" class="defaultbutton" >SUBMIT</button>
+	<ion-textarea rows="5" (ionChange)='number()' type="text" class="feedbackinput" [(ngModel)]="feedbacktext" text-wrap></ion-textarea >
+	<button ion-button block color="secondary" class="defaultbutton" (click)="submit()" >SUBMIT</button>
 </ion-content>

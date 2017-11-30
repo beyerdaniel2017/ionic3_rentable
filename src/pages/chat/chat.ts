@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { ItemsProvider } from '../../providers/items/items';
 
 import { ChatdetailPage } from '../chatdetail/chatdetail';
 
@@ -19,7 +20,8 @@ export class ChatPage {
   rentlist: Array<any>;
 	chatdetails=ChatdetailPage;
   own_rent:string="own";
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public itemprovider: ItemsProvider) {
   	this.onelist =
   	[
   		{img: 'assets/img/11.png', title: 'John', item_title:'house', history:'2 days ago'},
@@ -37,6 +39,11 @@ export class ChatPage {
       {img: 'assets/img/22.png', title: 'Joseph', item_title:'pear', history:'7 days ago'},
       {img: 'assets/img/33.png', title: 'Joans', item_title:'TV', history:'8 days ago'}
     ]
+    this.itemprovider.Getchatitems(localStorage.getItem('uid')).subscribe(data =>{
+      console.log();
+    },err=>{
+      console.log();
+    })
 
   }
 

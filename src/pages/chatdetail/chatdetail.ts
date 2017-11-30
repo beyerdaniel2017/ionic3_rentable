@@ -24,10 +24,10 @@ export class ChatdetailPage {
 	details=Details;
 	chat=ChatPage;
   showEmojiPicker:any;
+  tabBarElement:any;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-  	 this.Chatdetail ={
-      img: 'assets/img/11.png', ownerimage:'assets/img/profile-img.png', item_title:'house', price:'25'}
-
+  	this.Chatdetail ={
+      img: 'assets/img/11.png', ownerimage:'assets/img/profile-img.png', item_title:'house', price:'25'};
   }
 
   ionViewDidLoad() {

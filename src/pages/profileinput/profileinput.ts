@@ -36,9 +36,9 @@ export class ProfileinputPage {
   }
 
   save(){
-    this.profileprovier.ChangeProfile(this.formtype, this.data).subscribe(data =>{
-      console.log(data);
-    })
+    // this.profileprovier.ChangeProfile(this.formtype, this.data).subscribe(data =>{
+    //   console.log(data);
+    // })
   	this.navCtrl.popTo(EditprofilePage);
   }
 

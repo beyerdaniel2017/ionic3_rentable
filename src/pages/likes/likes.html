@@ -29,7 +29,7 @@
         ${{item.price}}
       </ion-label>
       <img *ngIf="like[item.id]" class="cover_image" (click)="ActiveLike(item.id)" src="assets/icon/like.png">
-      <img *ngIf="!like[item.id]" class="cover_image" (click)="ActiveLike(item.id)" src="assets/icon/like-full.png">
+      <img *ngIf="!like[item.id]" class="cover_image" (click)="UnactiveLike(item.id)" src="assets/icon/like-full.png">
     </div>
   </ion-card>
 </ion-content>

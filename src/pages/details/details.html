@@ -109,7 +109,7 @@
         <span class="costsize">${{Product.total_cost}}</span>
         <ion-icon name="ios-help-outline" class="helpicon" style="margin-left: 40vw;"></ion-icon>
       </ion-label>
-      <button ion-button block [navPush]="rent" class="defaultbutton send">Send Rental Request</button>
+      <button ion-button block (click)="sendrental()" class="defaultbutton send">Send Rental Request</button>
       <ion-item style="color: black;">
         <ion-row align="center">
           <ion-col col-4>
@@ -132,7 +132,7 @@
       </ion-item>
       <ion-item >
         <ion-input  style="width: 80vw;" [(ngModel)]="messagetext" (ionChange)="number()" type="text" placeholder="input generate text"></ion-input>
-        <img item-right class="sendbutton" src="assets/icon/ico_send.png">
+        <img item-right class="sendbutton" (click)="sendmessage()" src="assets/icon/ico_send.png">
       </ion-item>
     </div>
     </ion-row>

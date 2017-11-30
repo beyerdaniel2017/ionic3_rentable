@@ -13,12 +13,65 @@ export class ProfileProvider {
     console.log('Hello PaymentProvider Provider');
   }
 
-  public ChangeProfile(profiletype, profilevalue){
-    return this.http.post(this.apiUrl+'user/updateprofile', {profiletype: profiletype});
+  public ChangeProfile(email, phonenumber, pasword, firstname, lastname, photourl, postalcode){
+    return this.http.post(this.apiUrl+'user/update', 
+      {
+        email: email,
+        emailVerified: "",
+        phoneNumber: phonenumber,
+        password: pasword,
+        firstName: firstname,
+        lastName: lastname,
+        photoURL: photourl,
+        postalCode: postalcode,
+        deviceToken: "...",
+      });
   }
 
-  public Getprofile(){
-    return this.http.get(this.apiUrl+'user/getprofile');
+  public Getprofile(uid){
+    console.log("uid  ",   uid );
+    return this.http.post(this.apiUrl+'user/single',{uid:uid});
+  }
+
+  public Appfeedback(rate, leavemessage){
+    console.log(" leavt", leavemessage);
+    return this.http.post(this.apiUrl + "profile/feedback", {'rate': rate, 'leavemessage': leavemessage});
+  }
+
+  public Aboutinfo(uid){
+    return this.http.post(this.apiUrl + "profile/about", {uid: uid});
+  }
+
+  public moneyindividual(uid){
+    return this.http.post(this.apiUrl + "profil/moneyindivide" , {uid: uid});
+  }
+
+  public moneyinmonth(uid){
+    return this.http.post(this.apiUrl + "profil/moneyinmonth" , {uid: uid});
+  }
+
+  public moneyinquratly(uid){
+    return this.http.post(this.apiUrl + "profil/moneyinquartly" , {uid: uid});
+  }
+
+  public moneyinyear(uid){
+    return this.http.post(this.apiUrl + "profil/moneyinyear" , {uid: uid});
+  }
+
+  public moneyoutindividual(uid){
+    return this.http.post(this.apiUrl + "profil/moneyoutindividual" , {uid: uid});
+  }
+
+  public moneyoutmonth(uid){
+    return this.http.post(this.apiUrl + "profil/moneyoutmonth" , {uid: uid});
+  }
+
+  public moneyoutquartly(uid){
+    return this.http.post(this.apiUrl + "profil/moneyoutquartly" , {uid: uid});
+  }
+
+  public moneyoutyear(uid){
+    return this.http.post(this.apiUrl + "profil/moneyoutyear" , {uid: uid});
   }
 
 }

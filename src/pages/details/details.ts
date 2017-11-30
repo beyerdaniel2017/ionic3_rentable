@@ -4,6 +4,7 @@ import { RentPage } from '../rent/rent';
 import { MapModal } from '../modal-page/modal-page';
 import { ShareModal } from '../share-modal/share-modal';
 import { Home } from '../home/home';
+import { ItemsProvider } from '../../providers/items/items';
 
 import { Geolocation} from 'ionic-native';
 import { AcceptPage } from '../accept/accept';
@@ -11,6 +12,7 @@ import { PickupPage } from '../pickup/pickup';
 import { ClaimrenterPage } from '../claimrenter/claimrenter';
 import { ClaimownerPage } from '../claimowner/claimowner';
 import { OtherprofilePage } from '../otherprofile/otherprofile';
+import { ChatdetailPage } from '../chatdetail/chatdetail';
 
 declare var google;
 
@@ -41,20 +43,38 @@ export class Details implements OnInit {
   retrun=AcceptPage;  //return process
   messagenumber:any;
   messagetext:any;
-
+  detailitem:any;
   goodcondition:number[] = [1, 2, 3];
   badcondition:number[] = [1, 2];
+  uid:any;
+  price:any;
+  date:any;
 
   @ViewChild('map') mapElement: ElementRef;
   map: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public myElement: ElementRef, public modalCtrl: ModalController, public zone:NgZone, public viewCtrl: ViewController)  {
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public myElement: ElementRef,
+    public modalCtrl: ModalController,
+    public zone:NgZone,
+    public viewCtrl: ViewController,
+    public itemprovider: ItemsProvider
+    )  {
     this.Product ={
       img: 'assets/img/11.png', ownerimage:'assets/img/profile-img.png', ownername: 'John', item_title:'house', price:'25', description:'this is good rentalable book please use this Thanks', selectdate:'', total_cost:'100'}
-
+    this.detailitem=navParams.get("itemid");
+    this.uid=localStorage.getItem('uid');
     this.ionViewLoaded();
     this.messagetext="";
     this.messagenumber=350;
+    this.itemprovider.Getitemdetail(this.uid, this.detailitem ).subscribe(data=>{
+      console.log(data);
+    }, 
+    err =>{
+      console.log(err);
+    })
   }
 
   ionViewLoaded(){
@@ -71,6 +91,21 @@ export class Details implements OnInit {
 
   backicon(){
     this.navCtrl.pop();
+  }
+
+  sendrental(){
+    this.navCtrl.push(RentPage);
+    this.itemprovider.SendRental(this.uid, this.detailitem, this.date, this.price ).subscribe(date =>{
+      console.log(date);
+    }, err =>{
+
+    });
+  }
+
+  sendmessage(){
+    this.navCtrl.push(ChatdetailPage,{
+      message:this.messagetext
+    });
   }
 
   addMarker(){

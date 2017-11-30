@@ -35,21 +35,34 @@ export class EditprofilePage {
   Profiledata:any;
   imageURI:any;
   imageFileName:any;
+  uuid:any;
 
   constructor(
-      public navCtrl: NavController,
-      public navParams: NavParams,
-      public profileprovider: ProfileProvider,
-      private transfer: FileTransfer,
-      private camera: Camera,
-      public loadingCtrl: LoadingController,
-      public toastCtrl: ToastController
-    ) {
-  	this.editprofile ={
-      img: 'assets/img/profile-img.png', name: 'John Doe', address:'Sydney Australia', rate:'4.5', rent_nuber: '10', owner_number: '20'
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public profileprovider: ProfileProvider,
+    private transfer: FileTransfer,
+    private camera: Camera,
+    public loadingCtrl: LoadingController,
+    public toastCtrl: ToastController
+  ) {
+	  this.editprofile ={
+    img: 'assets/img/profile-img.png', name: 'John Doe', address:'Sydney Australia', rate:'4.5', rent_nuber: '10', owner_number: '20'
     }
 
-    this.Profiledata=this.profileprovider.Getprofile();
+    this.uuid=localStorage.getItem('uid');
+    this.Profiledata=this.profileprovider.Getprofile(this.uuid).subscribe(data =>{
+      this.firstname=data.json().result.firstname;
+      this.lastname=data.json().result.lastname;
+      this.email=data.json().result.email;
+      this.phonenumber=data.json().result.phonenumber;
+      this.postalcode=data.json().result.postalcode;
+      this.password=data.json().result.password;
+      console.log("heeeeee", data.json().result);
+    },
+    err =>{
+      console.log(err);
+    });
 
     // this.type=navParams.get("type");
     // if(this.type=="FIRST NAME"){

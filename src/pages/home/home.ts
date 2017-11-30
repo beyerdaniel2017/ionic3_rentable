@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams, ModalController } from 'ionic-angular';
 import { List } from '../list/list';
 import { MapModal } from '../modal-page/modal-page';
+import { ItemsProvider } from '../../providers/items/items';
 
 import { Profile } from '../profile/profile';
 import { SearchPage } from '../search/search';
@@ -15,24 +16,33 @@ export class Home {
 
   expanded: Boolean;
   grid: Array<any>;
-  neargrid: Array<any>;
   categorygrid: Array<any>;
   categorylist:Array<any>;
   like: any;
-
-  hexColor: string = '#8d8d9b';
-
+  itemlist:any;
+  favouritlist:any;
+  searchtext:any;
+  itemid:any;
   profile=Profile;
   search=SearchPage;
   details=Details;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController, public itemprovider: ItemsProvider) {
+    console.log("it is constructor");
     this.expanded = true;
 
     this.like = [];
     for (var i = 0; i < 12; ++i) {
       this.like[i]=false;
     }
+    this.favouritlist=[];
+
+    this.itemprovider.Getfullitems(localStorage.getItem('uid')).subscribe(data=>{
+      console.log(data);
+      this.itemlist=data.json().result;
+    }, err =>{
+      console.log(err);
+    })
 
     this.categorylist = [
       {active_img: 'assets/icon/cat-nearyou.png', title: 'Nearby', inactive_img: 'assets/icon/cat-nearyou-grey.png', value:'nearby'},
@@ -47,20 +57,7 @@ export class Home {
       {active_img: 'assets/icon/cat-party.png', title: 'Party and Events', inactive_img: 'assets/icon/cat-party-grey.png', value:'party'},
       {active_img: 'assets/icon/cat-other.png', title: 'Other', inactive_img: 'assets/icon/cat-other-grey.png', value:'other'},
     ]
-    this.neargrid = [
-      {img: 'assets/img/01.png', title: 'apartment', icon: 'ios-home-outline'},
-      {img: 'assets/img/02.png', title: 'wedding hall', icon: 'ios-bowtie-outline'},
-      {img: 'assets/img/03.png', title: 'shop', icon: 'ios-shirt-outline'},
-      {img: 'assets/img/04.png', title: 'rent', icon: 'ios-headset-outline'},
-      {img: 'assets/img/01.png', title: 'apartment', icon: 'ios-home'},
-      {img: 'assets/img/02.png', title: 'wedding hall', icon: 'ios-bowtie'},
-      {img: 'assets/img/03.png', title: 'shop', icon: 'md-cart'},
-      {img: 'assets/img/04.png', title: 'rent', icon: 'md-headset'},
-      {img: 'assets/img/01.png', title: 'apartment', icon: 'ios-home'},
-      {img: 'assets/img/02.png', title: 'wedding hall', icon: 'ios-bowtie'},
-      {img: 'assets/img/03.png', title: 'shop', icon: 'md-cart'},
-      {img: 'assets/img/04.png', title: 'rent', icon: 'md-headset'}
-    ]
+    
     this.categorygrid = [
       {img: 'assets/img/01.png', price:'21',id:'0'},
       {img: 'assets/img/02.png', price:'56',id:'1'},
@@ -77,25 +74,41 @@ export class Home {
     ]
   }
 
+  ionViewDidLoad(){
+    console.log("it is last");
+  }
+
+  ionViewCanLeave() {
+    console.log("it is finish");
+
+  }
+
+  godetails(){
+    this.navCtrl.push(Details, {
+      itemid: this.itemid
+    });
+
+  }
+
   presentModal() {
     let modal = this.modalCtrl.create(MapModal);
     modal.present();
   }
 
   ActiveLike(i){
-    this.like[i] = !this.like[i];
-    
+    this.favouritlist[i]=true;
+    this.like[i] = false;
   }
 
-  changecolor(){
-    if(this.hexColor === '#ffffff') {
-      this.hexColor = '#8d8d9b'
-    } else {
-      this.hexColor = '#ffffff'
-    }
+  DeactiveLike(i){
+    this.favouritlist[i]=false;
+    this.like[i] = true;
   }
 
-  filterItems(){
+ 
+  filterItems(event){
+    console.log("input");
+    console.log(this.searchtext + "searchtext");
   }
 
   myFunction(event){

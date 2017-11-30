@@ -1,6 +1,6 @@
 import { Component,ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, Navbar } from 'ionic-angular';
-
+import { ItemsProvider } from '../../providers/items/items';
 import { Profile } from '../profile/profile';
 import { SearchPage } from '../search/search';
 import { Details } from '../details/details';
@@ -31,8 +31,21 @@ export class OpportunityPage {
   itemlist:Array<any>;
   oneopp:any;
   alert=AlertsPage;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.itemlist = [{img: 'assets/img/01.png', title: 'apartment', icon: 'ios-home-outline', price:'20'}, {img: 'assets/img/02.png', title: 'wedding hall', icon: 'ios-bowtie-outline',price:'22'}, {img: 'assets/img/03.png', title: 'shop', icon: 'ios-shirt-outline', price:'30'}, {img: 'assets/img/04.png', title: 'rent', icon: 'ios-headset-outline', price:'20'},{img: 'assets/img/01.png', title: 'apartment', icon: 'ios-home', price:'27'}, {img: 'assets/img/02.png', title: 'wedding hall', icon: 'ios-bowtie', price:'60'}, {img: 'assets/img/03.png', title: 'shop', icon: 'md-cart', price:'39'}, {img: 'assets/img/04.png', title: 'rent', icon: 'md-headset', price:'43'},{img: 'assets/img/01.png', title: 'apartment', icon: 'ios-home', price:'31'}, {img: 'assets/img/02.png', title: 'wedding hall', icon: 'ios-bowtie', price:'34'}, {img: 'assets/img/03.png', title: 'shop', icon: 'md-cart', price:'13'}, {img: 'assets/img/04.png', title: 'rent', icon: 'md-headset', price:'20'}]
+  constructor(public navCtrl: NavController, public navParams: NavParams, public itemprovider: ItemsProvider) {
+    this.itemlist = [
+      {img: 'assets/img/01.png', title: 'apartment', icon: 'ios-home-outline', price:'20'},
+      {img: 'assets/img/02.png', title: 'wedding hall', icon: 'ios-bowtie-outline',price:'22'},
+      {img: 'assets/img/03.png', title: 'shop', icon: 'ios-shirt-outline', price:'30'},
+      {img: 'assets/img/04.png', title: 'rent', icon: 'ios-headset-outline', price:'20'},
+      {img: 'assets/img/01.png', title: 'apartment', icon: 'ios-home', price:'27'},
+      {img: 'assets/img/02.png', title: 'wedding hall', icon: 'ios-bowtie', price:'60'},
+      {img: 'assets/img/03.png', title: 'shop', icon: 'md-cart', price:'39'},
+      {img: 'assets/img/04.png', title: 'rent', icon: 'md-headset', price:'43'},
+      {img: 'assets/img/01.png', title: 'apartment', icon: 'ios-home', price:'31'},
+      {img: 'assets/img/02.png', title: 'wedding hall', icon: 'ios-bowtie', price:'34'},
+      {img: 'assets/img/03.png', title: 'shop', icon: 'md-cart', price:'13'},
+      {img: 'assets/img/04.png', title: 'rent', icon: 'md-headset', price:'20'}
+    ]
     this.categorylist = [
       {active_img: 'assets/icon/cat-nearyou.png', title: 'Nearby', inactive_img: 'assets/icon/cat-nearyou-grey.png', value:'nearby'},
       {active_img: 'assets/icon/cat-electronics.png', title: 'Electronics', inactive_img: 'assets/icon/cat-electronics-grey.png', value:'electronics'},
@@ -47,7 +60,11 @@ export class OpportunityPage {
       {active_img: 'assets/icon/cat-other.png', title: 'Other', inactive_img: 'assets/icon/cat-other-grey.png', value:'other'},
     ]
     this.oneopp=false;
-
+    this.itemprovider.Getcurrentopputunity(localStorage.getItem('uid')).subscribe(data => {
+      console.log(data);
+    }, err =>{
+      console.log(err);
+    });
   }
 
   ionViewDidLoad() {
@@ -56,6 +73,7 @@ export class OpportunityPage {
       ///here you can do wathever you want to replace the backbutton event
       this.navCtrl.setRoot(AlertsPage);
     };
+
   }
 
    myFunction(event){

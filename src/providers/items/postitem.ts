@@ -4,7 +4,7 @@ import 'rxjs/add/operator/map';
 import { AppSetting } from '../api_route';
 
 @Injectable()
-export class Itemprovider {
+export class Postitemprovider {
 
   apiUrl = this.appSettings.getApiURL();
 
@@ -22,19 +22,24 @@ export class Itemprovider {
       itemtitle,
       category,
       conditionmark,
-      itemdetails){
-    return this.http.post(this.apiUrl+'item/saveitem', 
-      {
-        fairprice: fairprice,
-        dailyprice: dailyprice,
-        weeklyprice: weeklyprice,
-        fee:fee,
-        distance:distance,
-        itemtitle: itemtitle,
-        category: category,
-        conditionmark: conditionmark,
-        itemdetails: itemdetails
-      });
+      itemdetails
+    ){
+      return this.http.post(this.apiUrl+'item/saveitem', 
+        {
+          fairprice: fairprice,
+          dailyprice: dailyprice,
+          weeklyprice: weeklyprice,
+          fee:fee,
+          distance:distance,
+          itemtitle: itemtitle,
+          category: category,
+          conditionmark: conditionmark,
+          itemdetails: itemdetails
+        });
+    }
+
+  public rejectitem(rejectcondition, isremove){
+    return this.http.post(this.apiUrl + 'item/reject', {rejectcondtion: rejectcondition, isremove: isremove});
   }
 
 }

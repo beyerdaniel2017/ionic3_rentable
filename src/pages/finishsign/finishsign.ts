@@ -21,6 +21,8 @@ export class FinishsignPage {
   firstname:any;
   lastname:any;
   postalcode:any;
+  tabBarElement:any;
+
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -36,10 +38,23 @@ export class FinishsignPage {
     this.firstname=this.finishsignupform.controls['firstname'];
     this.lastname=this.finishsignupform.controls['lastname'];
     this.postalcode=this.finishsignupform.controls['lastname'];
+    this.tabBarElement = document.querySelector('.tabbar.show-tabbar');
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad FinishsignPagePage');
+  }
+
+  ionViewWillEnter() {
+    if(this.tabBarElement){
+      this.tabBarElement.style.display = 'none';
+    }
+  }
+ 
+  ionViewWillLeave() {
+    if(this.tabBarElement){
+      this.tabBarElement.style.display = 'flex';
+    }
   }
 
   finishsignup(){

@@ -1,17 +1,10 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { Itemprovider } from '../../providers/items/postitem';
+import { Postitemprovider } from '../../providers/items/postitem';
 
 import { PostdetailPage } from '../postdetail/postdetail';
 import { AddPage } from '../add/add';
 
-
-/**
- * Generated class for the PostcostPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
 
 @Component({
   selector: 'page-postcost',
@@ -29,7 +22,7 @@ export class PostcostPage {
   fairprice:any;
   distance:any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public itemprovider: Itemprovider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public postitemprovider: Postitemprovider) {
     this.deliver=false;
     this.itempost=navParams.get("itempost");
   }
@@ -63,7 +56,7 @@ export class PostcostPage {
   }
 
   Postitem(){
-    this.itemprovider.Itemsave
+    this.postitemprovider.Itemsave
     (
       this.fairprice,
       this.dailyprice,

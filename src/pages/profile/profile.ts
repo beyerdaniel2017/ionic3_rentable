@@ -28,6 +28,8 @@ export class Profile {
   mystats=MyStats;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public afAuth: AngularFireAuth) {
+    console.log("it is constructor");
+
     this.profile ={
       img: 'assets/img/profile-img.png', name: 'John Doe', address:'Sydney Australia', rate:'4.5', rent_nuber: '10', owner_number: '20'
     }

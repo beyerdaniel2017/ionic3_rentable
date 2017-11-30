@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-
+import { ProfileProvider } from '../../providers/payment/profile';
 import { Profile } from '../profile/profile';
 
 /*
@@ -27,9 +27,16 @@ export class MyStats {
   monthlylsit: Array<any>;
   quarterlylsit:Array<any>;
   yearlylsit:Array<any>;
+  moneyinidvidual:any;
+  moneyinmonth:any;
+  moneyinquartly:any;
+  moneyinyear:any;
+  moneyoutinidvidual:any;
+  moneyoutmonth:any;
+  moneyoutquartly:any;
+  moneyoutyear:any;
 
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public profileprovider: ProfileProvider) {
     this.individlist =
     [
       { title: 'Cool sizes 9 shoes', price:'10', history:'2 days ago'},
@@ -61,6 +68,49 @@ export class MyStats {
       { year: '2014', price:'2500'},
       { year: '2013', price:'3100'}
     ]
+
+    var uid=localStorage.getItem('uid');
+
+    this.profileprovider.moneyindividual(uid).subscribe(data =>{
+      console.log(data);
+    }, err =>{
+
+    });
+    this.profileprovider.moneyinmonth(uid).subscribe(data =>{
+      console.log(data);
+    }, err =>{
+
+    });
+    this.profileprovider.moneyinquratly(uid).subscribe(data =>{
+      console.log(data);
+    }, err =>{
+
+    });
+    this.profileprovider.moneyinyear(uid).subscribe(data =>{
+      console.log(data);
+    }, err =>{
+
+    });
+    this.profileprovider.moneyoutindividual(uid).subscribe(data =>{
+      console.log(data);
+    }, err =>{
+
+    });
+    this.profileprovider.moneyoutmonth(uid).subscribe(data =>{
+      console.log(data);
+    }, err =>{
+
+    });
+    this.profileprovider.moneyoutquartly(uid).subscribe(data =>{
+      console.log(data);
+    }, err =>{
+
+    });
+    this.profileprovider.moneyoutyear(uid).subscribe(data =>{
+      console.log(data);
+    }, err =>{
+
+    });
   }
 
   ionViewDidLoad() {

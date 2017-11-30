@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ProfileProvider } from '../../providers/payment/profile';
 
 import { Profile } from '../profile/profile';
 
@@ -22,9 +23,10 @@ export class FeedbackPage {
   goodcondition:any;
   condition:number[] = [0,1, 2, 3, 4];
   titlenumber:any;
-  itemtitle:any;
+  feedbacktext:any;
+  appfeedback:any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public profileprovider: ProfileProvider) {
 
 		this.goodcondition=[];
 	  for (var i = 0; i < 5; ++i) {
@@ -47,11 +49,20 @@ export class FeedbackPage {
     for (var l = i+1; l <= 5; ++l) {
       this.goodcondition[l]=false;
     }
+    this.appfeedback=i;
   }
 
   number(){
-    var n=this.itemtitle.length;
+    var n=this.feedbacktext.length;
     this.titlenumber=400-n;
+  }
+
+  submit(){
+    this.profileprovider.Appfeedback(this.appfeedback, this.feedbacktext).subscribe(data =>{
+      console.log(data);
+    }, err=> {
+      console.log(err);
+    });
   }
 
 }

@@ -22,6 +22,7 @@ export class Register {
   Usersignup:any;
   formgroup: FormGroup;
   phonenumber:any;
+  tabBarElement:any;
 
   constructor(
     public navCtrl: NavController,
@@ -36,13 +37,26 @@ export class Register {
     this.Usersignup=[];
     this.digitcode=this.formgroup.controls['digitcode'];
     this.phonenumber=navParams.get("pnumber");
+    this.tabBarElement = document.querySelector('.tabbar.show-tabbar');
+  }
+
+  ionViewWillEnter() {
+    if(this.tabBarElement){
+      this.tabBarElement.style.display = 'none';
+    }
+  }
+ 
+  ionViewWillLeave() {
+    if(this.tabBarElement){
+      this.tabBarElement.style.display = 'flex';
+    }
   }
 
   gosignup(){
     this.Usersignup.phonenumber = this.phonenumber;
-    this.navCtrl.push(SignupPage,{
-          user: this.Usersignup
-        });
+    // this.navCtrl.push(SignupPage,{
+    //       user: this.Usersignup
+    //     });
     this.Authprovider.smsverify(this.phonenumber,this.digitcode.value).subscribe(data => {
       let res = data.json().success;
       console.log('hehe', res);

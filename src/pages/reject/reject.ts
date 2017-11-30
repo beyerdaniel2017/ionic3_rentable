@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-
+import { Postitemprovider } from '../../providers/items/postitem';
 import { RentPage } from '../rent/rent';
 
 /*
@@ -20,8 +20,9 @@ export class RejectPage {
 	tracks: Array<{name: string, isChecked: boolean}> = [];
   rejectreason:Array<any>;
   rejectimage:Array<any>;
+  reject:any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public postitemprovider: Postitemprovider) {
     this.isremove=false;
     this.rejectreason = [{reason: 'Item is broken', icon: 'ios-bug-outline'}, {reason: 'I am away', icon: 'ios-plane-outline'}, {reason: 'Item is broken', icon: 'ios-plane-outline'}, {reason: 'I am away', icon: 'ios-plane-outline'}, {reason: 'I am away', icon: 'ios-plane-outline'}, {reason: 'I am away', icon: 'ios-plane-outline'}]
     this.rejectimage = [{img: 'assets/icon/reject-imaway.png', activeimg: 'assets/icon/reject-imaway-active.png'}, {img: 'assets/icon/reject-itembroken.png', activeimg: 'assets/icon/reject-itembroken-active.png'}, {img: 'assets/icon/reject-itemfixed.png', activeimg: 'assets/icon/reject-itemfixed-active.png'}, {img: 'assets/icon/reject-itemunavailable.png', activeimg: 'assets/icon/reject-itemunavailable-active.png'}]
@@ -30,10 +31,6 @@ export class RejectPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RejectPagePage');
-  }
-
-  toggle(){
-
   }
 
   myFunction(event){
@@ -50,6 +47,7 @@ export class RejectPage {
     for (var i = 0; i < count; ++i) {
       if(parent==children[i]){
         var image=this.rejectimage[i].activeimg;
+        this.reject=this.rejectreason[i].reason;
         console.log(children[i]);
         console.log(i+ "i");
         children[i].getElementsByTagName('img')[0].setAttribute("src", image);
@@ -65,6 +63,12 @@ export class RejectPage {
 
   gorequest(){
     this.navCtrl.pop();
+  }
+
+  Rejectsubmit(){
+    this.postitemprovider.rejectitem(this.isremove, this.reject).subscribe(data=>{
+      console.log(data);
+    })
   }
 
 }

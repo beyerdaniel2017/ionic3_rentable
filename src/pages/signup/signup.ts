@@ -8,12 +8,6 @@ import { Register } from '../register/register';
 
 import { AuthenticateProvider } from '../../providers/authenticate/authenticate';
 
-/*
-  Generated class for the SignupPage page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'page-signup',
   templateUrl: 'signup.html'
@@ -33,6 +27,7 @@ export class SignupPage {
   loading: any;
   Usersignup:any;
   uuid:any;
+  tabBarElement:any;
 
   constructor(
     public navCtrl: NavController,
@@ -50,6 +45,8 @@ export class SignupPage {
       confirmpassword: ['', Validators.compose([Validators.minLength(10), Validators.required,Validators.maxLength(50)])]
     });
     this.Usersignup=navParams.get("user");
+    this.tabBarElement = document.querySelector('.tabbar.show-tabbar');
+
   }
 
   ionViewDidLoad() {
@@ -57,6 +54,18 @@ export class SignupPage {
     this.email=this.registerForm.controls['email'];
     this.password=this.registerForm.controls['password'];
     this.confirmpassword=this.registerForm.controls['confirmpassword'];
+  }
+
+  ionViewWillEnter() {
+    if(this.tabBarElement){
+      this.tabBarElement.style.display = 'none';
+    }
+  }
+ 
+  ionViewWillLeave() {
+    if(this.tabBarElement){
+      this.tabBarElement.style.display = 'flex';
+    }
   }
 
   elementChanged(input){
@@ -72,6 +81,7 @@ export class SignupPage {
     this.Usersignup.email=this.email.value;
     this.Usersignup.password=this.password.value;
     this.uuid=this.device.uuid;
+    console.log('device token',this.uuid);
     console.log(this.Usersignup.phonenumber);
     this.navCtrl.setRoot(FinishsignPage,{
       user:this.Usersignup

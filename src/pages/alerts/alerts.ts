@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { NativePageTransitions, NativeTransitionOptions } from '@ionic-native/native-page-transitions';
-
+import { ItemsProvider } from '../../providers/items/items';
 
 import { AlertdetailPage } from '../alertdetail/alertdetail';
 import { OpportunityPage } from '../opportunity/opportunity';
@@ -26,7 +26,12 @@ export class AlertsPage {
   alert_opportunity:String;
   alertview:any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,private nativePageTransitions: NativePageTransitions) {
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    private nativePageTransitions: NativePageTransitions,
+    public itemprovider:ItemsProvider 
+  ) {
   	this.list =
   	[
   		{alertname: 'John', history:'24', startprice:'20',lastprice:'30', distance: '10', startduration: 'July 1', lastduration:'July 10'},
@@ -35,6 +40,7 @@ export class AlertsPage {
   	]
     this.alert_opportunity="alert";
     this.alertview=true;
+    console.log("constructer");
   }
 
   ionViewDidLoad() {

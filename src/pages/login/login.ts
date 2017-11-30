@@ -19,15 +19,27 @@ export class Login {
   name:String;
   password:any;
   email:any;
+  tabBarElement:any;
 
   constructor(public navCtrl: NavController, public alertCtrl: AlertController,public navParams:NavParams, public afAuth: AngularFireAuth) {
     this.expanded = true;
     this.name="Matias";
+    this.tabBarElement = document.querySelector('.tabbar.show-tabbar');
     this.email=navParams.get("email");
     console.log(this.email + " email");
   }
 
-
+  ionViewWillEnter() {
+    if(this.tabBarElement){
+      this.tabBarElement.style.display = 'none';
+    }
+  }
+ 
+  ionViewWillLeave() {
+    if(this.tabBarElement){
+      this.tabBarElement.style.display = 'flex';
+    }
+  }
 
   login() {
     this.navCtrl.setRoot(TabPage);

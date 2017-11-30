@@ -8,7 +8,7 @@
       </ion-col>
       <ion-col class="icon-col" col-10>
       <!--   <ion-searchbar  class="searchbar" placeholder="Find items near you"></ion-searchbar> -->
-      <ion-searchbar class="searchbar" placeholder="Find items near you" (ionInput)="filterItems($event)"></ion-searchbar>
+      <ion-searchbar class="searchbar" placeholder="Find items near you" [(ngModel)]="searchtext" (ionInput)="filterItems($event)"></ion-searchbar>
       </ion-col>
       <ion-col class="icon-col" col-1>
         <img src="assets/icon/filter.png" style="margin-top: 10px;" [navPush]="search">
@@ -28,11 +28,11 @@
   </ion-scroll>
   <ion-card  class="grid-list backcolor" *ngFor="let item of categorygrid">
     <div class="image-item" no-lines>
-      <img [navPush]="details" class="wardrobe" src="{{item.img}}" />
+      <img (click)="godetails()" class="wardrobe" src="{{item.img}}" />
       <ion-label class="cover_1" >
         ${{item.price}}
       </ion-label>
-      <img *ngIf="!like[item.id]" class="cover_image" (click)="ActiveLike(item.id)" src="assets/icon/like.png">
+      <img *ngIf="!like[item.id]" class="cover_image" (click)="DeactiveLike(item.id)" src="assets/icon/like.png">
       <img *ngIf="like[item.id]" class="cover_image" (click)="ActiveLike(item.id)" src="assets/icon/like-full.png">
     </div>
   </ion-card>

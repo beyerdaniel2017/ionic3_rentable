@@ -26,12 +26,15 @@ export class LandingPage {
   key:any;
   countries:any;
   return:any;
+  tabBarElement:any;
+
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     public alertCtrl: AlertController,
     public Authprovider: AuthenticateProvider
   ) {
+    this.tabBarElement = document.querySelector('.tabbar.show-tabbar');
     this.number=null;
     this.countrycode="+61";
     this.key=[];
@@ -1010,6 +1013,18 @@ export class LandingPage {
     ]
   }
 
+  ionViewWillEnter() {
+    if(this.tabBarElement){
+      this.tabBarElement.style.display = 'none';
+    }
+  }
+ 
+  ionViewWillLeave() {
+    if(this.tabBarElement){
+      this.tabBarElement.style.display = 'flex';
+    }
+  }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad LandingPagePage');
     this.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container');
@@ -1032,12 +1047,11 @@ export class LandingPage {
 
   dolanding(){
     this.navCtrl.push(Login);
-    // this.number=this.countrycode + this.phonenumber;
-    // console.log(this.number + " number");
+    this.number=this.countrycode + this.phonenumber;
+    console.log(this.number + " number");
     // this.Authprovider.phoneverify(this.number).subscribe(data => {
     //   let res = data.json().success,
     //       email = data.json().email;
-
     //   if(!res){
     //     console.log(res + " eheeh");
     //     this.Authprovider.Sendsms(this.number).subscribe(response => {

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { ItemsProvider } from '../../providers/items/items';
 
 import { Likes } from '../likes/likes';      //favourites screen
 import { Details } from '../details/details';
@@ -28,7 +29,7 @@ export class Myrent {
   favourites=Likes;
   details=Details;
   
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public itemprovider: ItemsProvider) {
 
     this.showdeleteicon=true;
 
@@ -41,6 +42,30 @@ export class Myrent {
     for (var i = 0; i < 4; ++i) {
       this.own_like[i]=false;
     }
+
+    this.itemprovider.Getownavailable(localStorage.getItem('uid')).subscribe(data=>{
+      console.log(data.json().result);  
+    }, err=>{
+      console.log(err);
+    });
+
+    this.itemprovider.Getownrent(localStorage.getItem('uid')).subscribe(data=>{
+      console.log(data.json().result);  
+    }, err=>{
+      console.log(err);
+    });
+
+    this.itemprovider.Getrentcurrent(localStorage.getItem('uid')).subscribe(data=>{
+      console.log(data.json().result);  
+    }, err=>{
+      console.log(err);
+    });
+
+    this.itemprovider.Getrentcurrent(localStorage.getItem('uid')).subscribe(data=>{
+      console.log(data.json().result);  
+    }, err=>{
+      console.log(err);
+    });
 
     this.own_avaiablelist =
     [
@@ -79,11 +104,9 @@ export class Myrent {
   showdelete(){
     if (this.own_rent=="own") {
       if (this.isavailable=="available") {
-        console.log("own_available");
         this.showdeleteicon=true;
       }
       if(this.isavailable=="rented"){
-        console.log("own_history");
         this.showdeleteicon=false;
       }
     }

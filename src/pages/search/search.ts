@@ -63,8 +63,16 @@ export class SearchPage {
     modal.present();
   }
 
-  wifiApSelected(){
-
+  reset(){
+    this.category="";
+    this.distance=0;
+    this.fromprice=0;
+    this.toprice=0;
+    this.location="";
+    this.date="";
+    this.within="all";
+    this.langs="hightolow";
+    console.log("reset");
   }
 
   myFunction(event){
