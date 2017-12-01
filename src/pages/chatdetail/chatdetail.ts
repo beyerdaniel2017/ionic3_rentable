@@ -25,9 +25,12 @@ export class ChatdetailPage {
 	chat=ChatPage;
   showEmojiPicker:any;
   tabBarElement:any;
+  uid:any;
+  interlocutor:string;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   	this.Chatdetail ={
       img: 'assets/img/11.png', ownerimage:'assets/img/profile-img.png', item_title:'house', price:'25'};
+    var uid = this.navParams.get('uid');
   }
 
   ionViewDidLoad() {

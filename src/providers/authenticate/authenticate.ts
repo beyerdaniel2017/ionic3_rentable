@@ -3,13 +3,14 @@ import { Http,Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { AppSetting } from '../api_route';
 import firebase from 'firebase';
+import { Storage } from '@ionic/storage';
 
 @Injectable()
 export class AuthenticateProvider {
 
   apiUrl = this.appSettings.getApiURL();
   
-  constructor(public http: Http, public appSettings: AppSetting) {
+  constructor(public http: Http, public appSettings: AppSetting, public local: Storage) {
     this.http = http;
     // code...
   }

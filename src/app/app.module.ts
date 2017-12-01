@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { MyApp } from './app.component';
 import { HttpModule} from '@angular/http';
 import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
@@ -23,6 +24,7 @@ import { PaymentProvider } from '../providers/payment/payment';
 import { ProfileProvider } from '../providers/payment/profile';
 import { Postitemprovider } from '../providers/items/postitem';
 import { ItemsProvider } from '../providers/items/items';
+import { ChatProvider } from '../providers/chat/chat';
 
 const firebaseConfig = {
   apiKey: "AIzaSyDfySkoXoUcI9Ed39TNJwXnntSg8nKyt10",
@@ -50,6 +52,7 @@ var APP_Pages = [];
     ValidatorsModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
+    AngularFireDatabaseModule,
      IonicModule.forRoot(MyApp, {
       backButtonText: '',
       pageTransition: '',
@@ -78,7 +81,8 @@ var APP_Pages = [];
     File,
     Camera,
     Device,
-    ItemsProvider
+    ItemsProvider,
+    ChatProvider
   ]
 })
 export class AppModule {}
