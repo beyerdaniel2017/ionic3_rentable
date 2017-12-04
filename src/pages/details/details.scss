@@ -58,15 +58,7 @@ page-details {
     margin:0px !important;
     text-align:center;
   }
-  .cover_1 {
-    z-index: 1;
-    position: absolute;
-    top: 2vh;
-    padding:0px !important;
-    margin:0px !important;
-    font-size: 2rem;
-    color: white;
-  }
+
   .cover_header0{
     z-index: 1;
     position: absolute;
@@ -77,6 +69,7 @@ page-details {
     font-size: 2rem;
     color:white;
   }
+
   .cover_header1 {
     z-index: 1;
     position: absolute;
@@ -97,6 +90,17 @@ page-details {
     font-size: 2rem;
     color:white
   }
+
+  .cover_1 {
+    z-index: 1;
+    position: absolute;
+    top: 2vh;
+    padding:0px !important;
+    margin:0px !important;
+    font-size: 2rem;
+    color: white;
+  }
+
   .cover_2 {
     z-index: 1;
     position: absolute;
