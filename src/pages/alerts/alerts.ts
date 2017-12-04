@@ -39,6 +39,16 @@ export class AlertsPage {
 			{alertname: 'name 3', history:'24',startprice:'24',lastprice:'32', distance: '30', startduration: 'July 14', lastduration:'July 23'},
   	]
     this.alert_opportunity="alert";
+    this.itemprovider.Getalerthistory(localStorage.getItem('uid')).subscribe(data=>{
+
+    }, err =>{
+
+    });
+    this.itemprovider.Getoppotunityhistory(localStorage.getItem('uid')).subscribe(data=>{
+
+    }, err =>{
+
+    });
     this.alertview=true;
     console.log("constructer");
   }

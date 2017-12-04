@@ -14,7 +14,6 @@ import { Register } from '../register/register';
   providers: [AuthenticateProvider]
 })
 export class LandingPage {
-  public recaptchaVerifier:firebase.auth.RecaptchaVerifier;
 
   login=Login;
   register=Register;
@@ -1027,7 +1026,6 @@ export class LandingPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LandingPagePage');
-    this.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container');
 
   }
 
