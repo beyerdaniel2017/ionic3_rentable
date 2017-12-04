@@ -10,29 +10,33 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { MenuPage } from '../menu/menu';
+import { SignupPage } from '../signup/signup';
+import { Register } from '../register/register';
 /*
   Generated class for the FinishsignPage page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 */
-var FinishsignPage = (function () {
+var FinishsignPage = /** @class */ (function () {
     function FinishsignPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.home = MenuPage;
+        this.signup = SignupPage;
+        this.register = Register;
     }
     FinishsignPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad FinishsignPagePage');
     };
+    FinishsignPage = __decorate([
+        Component({
+            selector: 'page-finishsign',
+            templateUrl: 'finishsign.html'
+        }),
+        __metadata("design:paramtypes", [NavController, NavParams])
+    ], FinishsignPage);
     return FinishsignPage;
 }());
-FinishsignPage = __decorate([
-    Component({
-        selector: 'page-finishsign',
-        templateUrl: 'finishsign.html'
-    }),
-    __metadata("design:paramtypes", [NavController, NavParams])
-], FinishsignPage);
 export { FinishsignPage };
 //# sourceMappingURL=finishsign.js.map

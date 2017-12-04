@@ -1,7 +1,11 @@
 page-alerts {
+
+
 	.segment_info{
-    column-width: 80vw;
     width: 100% !important;
+    min-height: 44px !important;
+    height: 44px !important;
+    padding-top: 0 !important;
   }
   .more-det{
     .label-md{
@@ -23,7 +27,6 @@ page-alerts {
     line-height: 2.5rem;
     font-size: 1.9rem;
     column-width: 50vw;
-    right: 10vw;
   }
 
   .segment-ios .segment-button.segment-activated{
@@ -47,18 +50,29 @@ page-alerts {
   	color:gray;
   }
 
+  .alerttitle{
+    font-size:20px !important;
+    padding-bottom: 30px;
+    &.alertwidth{
+      max-width: 80px;
+      margin: 0 20px !important;
+    }
+     &.opportunitywidth{
+      max-width: 130px;
+    }
+  }
+
   .card-ios {
     padding: 5vw;
     border-radius: 2px;
     width: calc(100% );
-    font-size: 1.4rem;
     background: #2e343e;
     -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 	}
 
   .grid-list{
-    width: 45vw;
+    width: 42vw;
     float: left;
     padding-bottom: 0;
     padding:0px !important;
@@ -88,6 +102,14 @@ page-alerts {
 
  .item-ios {
     padding-left: 0px;
+    padding-right:0px;
+    p {
+      font-size:1.2rem
+    }
+  }
+
+  .label-ios {
+    margin: 11px 0;
   }
 
   .blackcolor{
@@ -105,6 +127,7 @@ page-alerts {
   	color: black;
     font-size: 2rem;
     padding-top: 15px;
+    font-weight:600;
     padding-bottom: 4px;
   }
 
@@ -115,23 +138,28 @@ page-alerts {
     margin-right: 8px;
   }
 
+  .categoryimage{
+    margin: 7px 0 0 5px;
+    height: 17px;
+    width: auto;
+    &.data{
+      margin: 7px 0 0 8px;
+    }
+    &.dollar{
+      margin:7px 0 0 12px
+    }
+  }
+
 }
 
 .helpfont{
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
-.categoryimage{
-  margin: 7px 0 0 5px;
-  height: 19px;
-  width: auto;
-}
-.categoryimage.dollar{
-  margin:7px 0 0 10px
-}
+
 
 .imageblackborder{
-  border:1px solid black;
+  border:1px solid gainsboro;
   border-radius: 50%;
   width: 35px;
   height:35px;

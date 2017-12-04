@@ -16,21 +16,43 @@ page-credit {
   }
 
   .selectwidth{
-  	width:85vw;
-  	color: #000000;
-  	border-top:0;
-  	border-left:0;
-  	border-right:0;
-  	border-bottom: thin solid #000000;
-  	border-color: $gray;
+  	min-width: 80vw !important;
+    color: #000000;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: thin solid gainsboro;
+    border-color: #B3B2B3;
+    margin-bottom: 40px;
+    font-size: 18px;
+    position: relative;
+  }
+
+  .mastersize{
+    width:50px;
+  }
+
+  .selectyear{
+    width:35vw;
+    color: #000000;
+    border:0;
+    font-size: 18px;
+  }
+
+  .helpstr {
+    font-size: 1.1rem;
+    color: gray;
+    margin-top: 23px;
+    margin-bottom: 5px;
   }
 
   .borderbottom{
   	border-top:0;
   	border-left:0;
   	border-right:0;
-  	border-bottom: thin solid #000000;
+  	border-bottom: thin solid gainsboro;
   	border-color: $gray;
+    font-size:18px;
   }
 
 
@@ -112,7 +134,7 @@ page-credit {
     text-align:center;
   }
   ion-icon{
-  	font-size:2rem;
+  	font-size:2.7rem;
   }
 
   .cover {

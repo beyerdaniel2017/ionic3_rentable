@@ -1,29 +1,26 @@
 
-
-
 <ion-content class="appcontent">
 
- 	<div class="Landingpage">
+  <div class="Landingpage">
     <div id="recaptcha-container"></div>
     <p class="apptitle">RENTABLE</p>
-	  <div class="formContainer">
+    <div class="formContainer">
       <form class="landingform">
         <ion-list >
+          <ion-item no-margin  style="border: 0;" >
+            <ion-select id="postal" style="margin-left:-1000px; " (ionchange)="coderesult()"  [(ngModel)]="countrycode" [ngModelOptions]="{standalone: true}">
+              <ion-option  *ngFor="let key of countries" [value]="key.dial_code">{{key.dial_code}}: {{key.name}}</ion-option>
+            </ion-select>
+          </ion-item>
           <p class="helpstring">ENTER YOUR MOBILE NUMBER</p>
           <ion-item no-padding style="border: 0px;">
-          	<ion-select (ionChange)="selectcode($event)" class="grayborder">
-					    <ion-option value="972" selected>+61</ion-option>
-					    <ion-option value="33">+32</ion-option>
-					    <ion-option value="49">+49</ion-option>
-					    <ion-option value="34">+34</ion-option>
-					    <ion-option value="44">+44</ion-option>
-					    <ion-option value="40">+40</ion-option>
-  					</ion-select>
-            <ion-input type="number" [(ngModel)]="number" [ngModelOptions]="{standalone: true}" class="phoncode"></ion-input>
+            <ion-input class="grayborder width" text-center (click)="selectcode()" value="{{countrycode}}">
+            </ion-input>
+            <ion-input type="number" (ionChange)='numberfill()' [(ngModel)]="phonenumber" [ngModelOptions]="{standalone: true}" class="phoncode" placeholder="12312313"></ion-input>
           </ion-item>
         </ion-list>
-        <button ion-button class="continubutton" (click)="dolanding()">CONTINUE</button>
+        <button ion-button id="button" class="continubutton" (click)="dolanding()">CONTINUE</button>
       </form>
-	  </div>
+    </div>
   </div>
 </ion-content>

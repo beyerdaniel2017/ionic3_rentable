@@ -13,7 +13,7 @@ import firebase from 'firebase';
 import { Login } from '../login/login';
 import { Register } from '../register/register';
 import { AuthenticateProvider } from '../../providers/authenticate/authenticate';
-var LandingPage = (function () {
+var LandingPage = /** @class */ (function () {
     function LandingPage(navCtrl, navParams, alertCtrl, Authprovider) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
@@ -98,18 +98,18 @@ var LandingPage = (function () {
       this.navCtrl.setRoot(Register);
     });*/
     };
+    LandingPage = __decorate([
+        Component({
+            selector: 'page-landing',
+            templateUrl: 'landing.html',
+            providers: [AuthenticateProvider]
+        }),
+        __metadata("design:paramtypes", [NavController,
+            NavParams,
+            AlertController,
+            AuthenticateProvider])
+    ], LandingPage);
     return LandingPage;
 }());
-LandingPage = __decorate([
-    Component({
-        selector: 'page-landing',
-        templateUrl: 'landing.html',
-        providers: [AuthenticateProvider]
-    }),
-    __metadata("design:paramtypes", [NavController,
-        NavParams,
-        AlertController,
-        AuthenticateProvider])
-], LandingPage);
 export { LandingPage };
 //# sourceMappingURL=landing.js.map

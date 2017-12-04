@@ -17,7 +17,7 @@ import { Details } from '../details/details';
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 */
-var ChatdetailPage = (function () {
+var ChatdetailPage = /** @class */ (function () {
     function ChatdetailPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
@@ -30,14 +30,14 @@ var ChatdetailPage = (function () {
     ChatdetailPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad ChatdetailPagePage');
     };
+    ChatdetailPage = __decorate([
+        Component({
+            selector: 'page-chatdetail',
+            templateUrl: 'chatdetail.html'
+        }),
+        __metadata("design:paramtypes", [NavController, NavParams])
+    ], ChatdetailPage);
     return ChatdetailPage;
 }());
-ChatdetailPage = __decorate([
-    Component({
-        selector: 'page-chatdetail',
-        templateUrl: 'chatdetail.html'
-    }),
-    __metadata("design:paramtypes", [NavController, NavParams])
-], ChatdetailPage);
 export { ChatdetailPage };
 //# sourceMappingURL=chatdetail.js.map

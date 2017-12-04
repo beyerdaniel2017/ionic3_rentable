@@ -9,19 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-var About = (function () {
+import { Profile } from '../profile/profile';
+var About = /** @class */ (function () {
     function About(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.profile = Profile;
     }
+    About = __decorate([
+        Component({
+            selector: 'page-about',
+            templateUrl: 'about.html'
+        }),
+        __metadata("design:paramtypes", [NavController, NavParams])
+    ], About);
     return About;
 }());
-About = __decorate([
-    Component({
-        selector: 'page-about',
-        templateUrl: 'about.html'
-    }),
-    __metadata("design:paramtypes", [NavController, NavParams])
-], About);
 export { About };
 //# sourceMappingURL=about.js.map

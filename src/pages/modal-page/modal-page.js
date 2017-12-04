@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { NavController, NavParams, ViewController, ModalController } from 'ionic-angular';
 import { Geolocation } from 'ionic-native';
-var MapModal = (function () {
+var MapModal = /** @class */ (function () {
     function MapModal(navCtrl, navParams, modalCtrl, viewCtrl) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
@@ -60,18 +60,18 @@ var MapModal = (function () {
         this.loadMap();
         console.log('ionViewDidLoad ModalPagePage');
     };
+    __decorate([
+        ViewChild('map'),
+        __metadata("design:type", ElementRef)
+    ], MapModal.prototype, "mapElement", void 0);
+    MapModal = __decorate([
+        Component({
+            selector: 'page-modal-page',
+            templateUrl: 'modal-page.html'
+        }),
+        __metadata("design:paramtypes", [NavController, NavParams, ModalController, ViewController])
+    ], MapModal);
     return MapModal;
 }());
-__decorate([
-    ViewChild('map'),
-    __metadata("design:type", ElementRef)
-], MapModal.prototype, "mapElement", void 0);
-MapModal = __decorate([
-    Component({
-        selector: 'page-modal-page',
-        templateUrl: 'modal-page.html'
-    }),
-    __metadata("design:paramtypes", [NavController, NavParams, ModalController, ViewController])
-], MapModal);
 export { MapModal };
 //# sourceMappingURL=modal-page.js.map

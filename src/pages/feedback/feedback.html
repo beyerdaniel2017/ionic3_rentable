@@ -6,14 +6,7 @@
 -->
 <ion-header>
 
-  <ion-navbar color="navbarcolor"  hideBackButton="true">
-    <ion-row class="navetitle">
-      <ion-col [navPush]="profile" col-3>
-        Do it later
-      </ion-col>
-      <ion-col col-10>
-      </ion-col>
-    </ion-row>
+  <ion-navbar  class="profileheader">
   </ion-navbar>
 
 </ion-header>
@@ -22,11 +15,23 @@
 <ion-content padding class="app-content">
 	<div text-center style="margin:4vh 0 8vh;">
 		<h3 style="font-weight: bold;" >Leave Feedback</h3>
-		<img src="assets/icon/star.png"><img src="assets/icon/star.png"><img src="assets/icon/star.png"><img src="assets/icon/star.png"><img src="assets/icon/star.png">
+		<div *ngFor="let i of condition" class="conditionstar">
+      <img *ngIf="goodcondition[i]" (click)="changecondition(i)" class="starsize" src="assets/icon/star-red.png">
+      <img *ngIf="!goodcondition[i]" (click)="changecondition(i)" class="starsize" src="assets/icon/star.png">
+    </div>
 	</div>
-	<ion-label style="color: gray;">
-		LEAVE A COMMENT BELOW
-	</ion-label>
-	<ion-input class="feedbackinput" type="text" ></ion-input>
-	<button ion-button block color="secondary" class="defaultbutton" >SUBMIT</button>
+	<ion-row>
+		<ion-col col-10>
+			<p class="commentstyle">
+				LEAVE A COMMENT BELOW
+			</p>
+		</ion-col>
+		<ion-col col-2>
+			<p  class="commentstyle" style="text-align: right;">
+				{{titlenumber}}
+			</p>
+		</ion-col>
+	</ion-row>
+	<ion-textarea rows="5" (ionChange)='number()' type="text" class="feedbackinput" [(ngModel)]="feedbacktext" text-wrap></ion-textarea >
+	<button ion-button block color="secondary" class="defaultbutton" (click)="submit()" >SUBMIT</button>
 </ion-content>

@@ -23,7 +23,7 @@ import { ContactPage } from '../contact/contact';
 import { PaymentsPage } from '../payments/payments';
 import { TcPage } from '../tc/tc';
 import { LandingPage } from '../landing/landing';
-import { MyitemPage } from '../myitem/myitem';
+import { MyStats } from '../myitem/myitem';
 import { AlertdetailPage } from '../alertdetail/alertdetail';
 import { ChatdetailPage } from '../chatdetail/chatdetail';
 import { SearchPage } from '../search/search';
@@ -40,7 +40,11 @@ import { FinishsignPage } from '../finishsign/finishsign';
 import { PostcostPage } from '../postcost/postcost';
 import { PostdetailPage } from '../postdetail/postdetail';
 import { FeedbackPage } from '../feedback/feedback';
-
+import { ProfileinputPage } from '../profileinput/profileinput';
+import { ClaimrenterPage } from '../claimrenter/claimrenter';
+import { ClaimownerPage } from '../claimowner/claimowner';
+import { PickupPage } from '../pickup/pickup';
+import { OpportunityPage } from '../opportunity/opportunity';
 
 import { AuthenticateProvider } from '../../providers/authenticate/authenticate';
 
@@ -70,7 +74,7 @@ export const allPages = {
 	PaymentsPage,
 	TcPage,
 	LandingPage,
-	MyitemPage,
+	MyStats,
 	AlertdetailPage,
 	ChatdetailPage,
 	SearchPage,
@@ -86,5 +90,10 @@ export const allPages = {
 	FinishsignPage,
 	PostcostPage,
 	PostdetailPage,
-	FeedbackPage
+	FeedbackPage,
+	ProfileinputPage,
+	ClaimownerPage,
+	ClaimrenterPage,
+	PickupPage,
+	OpportunityPage
 };

@@ -19,7 +19,7 @@ import firebase from 'firebase';
   See https://angular.io/docs/ts/latest/guide/dependency-injection.html
   for more info on providers and Angular DI.
 */
-var AuthenticateProvider = (function () {
+var AuthenticateProvider = /** @class */ (function () {
     function AuthenticateProvider(http, navCtrl) {
         this.http = http;
         this.navCtrl = navCtrl;
@@ -92,12 +92,12 @@ var AuthenticateProvider = (function () {
             _this.userData.child(newUser.uid).set({ email: email });
         });
     };
+    AuthenticateProvider = __decorate([
+        Injectable(),
+        __metadata("design:paramtypes", [Http,
+            NavController])
+    ], AuthenticateProvider);
     return AuthenticateProvider;
 }());
-AuthenticateProvider = __decorate([
-    Injectable(),
-    __metadata("design:paramtypes", [Http,
-        NavController])
-], AuthenticateProvider);
 export { AuthenticateProvider };
 //# sourceMappingURL=authenticate.js.map

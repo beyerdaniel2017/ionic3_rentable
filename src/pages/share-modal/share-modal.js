@@ -16,7 +16,7 @@ import { SocialSharing } from 'ionic-native';
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 */
-var ShareModal = (function () {
+var ShareModal = /** @class */ (function () {
     function ShareModal(navCtrl, navParams, platform, modalCtrl, viewCtrl) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
@@ -104,15 +104,15 @@ var ShareModal = (function () {
     ShareModal.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad ShareModalPage');
     };
+    ShareModal = __decorate([
+        Component({
+            selector: 'page-share-modal',
+            templateUrl: 'share-modal.html'
+        }),
+        __metadata("design:paramtypes", [NavController, NavParams,
+            Platform, ModalController, ViewController])
+    ], ShareModal);
     return ShareModal;
 }());
-ShareModal = __decorate([
-    Component({
-        selector: 'page-share-modal',
-        templateUrl: 'share-modal.html'
-    }),
-    __metadata("design:paramtypes", [NavController, NavParams,
-        Platform, ModalController, ViewController])
-], ShareModal);
 export { ShareModal };
 //# sourceMappingURL=share-modal.js.map

@@ -16,31 +16,40 @@ import { ChatdetailPage } from '../chatdetail/chatdetail';
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 */
-var ChatPage = (function () {
+var ChatPage = /** @class */ (function () {
     function ChatPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.chatdetails = ChatdetailPage;
-        this.list =
+        this.own_rent = "own";
+        this.onelist =
             [
                 { img: 'assets/img/11.png', title: 'John', item_title: 'house', history: '2 days ago' },
                 { img: 'assets/img/22.png', title: 'sizza', item_title: 'apple', history: '3 days ago' },
-                { img: 'assets/img/33.png', title: 'jonathan', item_title: 'nut', history: '4 days ago' },
+                { img: 'assets/img/33.png', title: 'jonathan', item_title: 'nut', history: '3 days ago' },
                 { img: 'assets/img/11.png', title: 'Josh', item_title: 'pear', history: '5 days ago' },
-                { img: 'assets/img/11.png', title: 'Joseph', item_title: 'TV', history: '2 days ago' }
+                { img: 'assets/img/11.png', title: 'Joseph', item_title: 'TV', history: '9 days ago' }
+            ];
+        this.rentlist =
+            [
+                { img: 'assets/img/22.png', title: 'John', item_title: 'house', history: '2 days ago' },
+                { img: 'assets/img/33.png', title: 'Jane', item_title: 'apple', history: '4 days ago' },
+                { img: 'assets/img/11.png', title: 'Eric', item_title: 'nut', history: '6 days ago' },
+                { img: 'assets/img/22.png', title: 'Joseph', item_title: 'pear', history: '7 days ago' },
+                { img: 'assets/img/33.png', title: 'Joans', item_title: 'TV', history: '8 days ago' }
             ];
     }
     ChatPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad ChatPagePage');
     };
+    ChatPage = __decorate([
+        Component({
+            selector: 'page-chat',
+            templateUrl: 'chat.html'
+        }),
+        __metadata("design:paramtypes", [NavController, NavParams])
+    ], ChatPage);
     return ChatPage;
 }());
-ChatPage = __decorate([
-    Component({
-        selector: 'page-chat',
-        templateUrl: 'chat.html'
-    }),
-    __metadata("design:paramtypes", [NavController, NavParams])
-], ChatPage);
 export { ChatPage };
 //# sourceMappingURL=chat.js.map

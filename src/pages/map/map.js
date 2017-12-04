@@ -15,7 +15,7 @@ import { NavController, NavParams } from 'ionic-angular';
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 */
-var MapPage = (function () {
+var MapPage = /** @class */ (function () {
     function MapPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
@@ -23,14 +23,14 @@ var MapPage = (function () {
     MapPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad MapPagePage');
     };
+    MapPage = __decorate([
+        Component({
+            selector: 'page-map',
+            templateUrl: 'map.html'
+        }),
+        __metadata("design:paramtypes", [NavController, NavParams])
+    ], MapPage);
     return MapPage;
 }());
-MapPage = __decorate([
-    Component({
-        selector: 'page-map',
-        templateUrl: 'map.html'
-    }),
-    __metadata("design:paramtypes", [NavController, NavParams])
-], MapPage);
 export { MapPage };
 //# sourceMappingURL=map.js.map

@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-
+import { NativePageTransitions, NativeTransitionOptions } from '@ionic-native/native-page-transitions';
+import { ItemsProvider } from '../../providers/items/items';
 
 import { AlertdetailPage } from '../alertdetail/alertdetail';
+import { OpportunityPage } from '../opportunity/opportunity';
+
 
 /*
   Generated class for the AlertsPage page.
@@ -18,10 +21,17 @@ export class AlertsPage {
 
 	list: Array<any>;
 	alertdetail=AlertdetailPage;
+  opportunity=OpportunityPage;
   alertlist:Array<any>;
   alert_opportunity:String;
+  alertview:any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    private nativePageTransitions: NativePageTransitions,
+    public itemprovider:ItemsProvider 
+  ) {
   	this.list =
   	[
   		{alertname: 'John', history:'24', startprice:'20',lastprice:'30', distance: '10', startduration: 'July 1', lastduration:'July 10'},
@@ -29,10 +39,37 @@ export class AlertsPage {
 			{alertname: 'name 3', history:'24',startprice:'24',lastprice:'32', distance: '30', startduration: 'July 14', lastduration:'July 23'},
   	]
     this.alert_opportunity="alert";
+    this.itemprovider.Getalerthistory(localStorage.getItem('uid')).subscribe(data=>{
+
+    }, err =>{
+
+    });
+    this.itemprovider.Getoppotunityhistory(localStorage.getItem('uid')).subscribe(data=>{
+
+    }, err =>{
+
+    });
+    this.alertview=true;
+    console.log("constructer");
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AlertsPagePage');
+  }
+
+  goalertview(){
+    this.navCtrl.setRoot(AlertdetailPage);
+  }
+
+  goopportunityview(){
+    this.navCtrl.setRoot(OpportunityPage);
+  }
+
+  showalert(){
+    if(this.alert_opportunity=="alert"){
+      this.alertview=true;
+    }
+    else this.alertview=false;
   }
 
 }

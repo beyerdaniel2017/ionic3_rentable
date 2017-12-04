@@ -10,20 +10,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { About } from '../about/about';
-var Setting = (function () {
+var Setting = /** @class */ (function () {
     function Setting(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.about = About;
     }
+    Setting = __decorate([
+        Component({
+            selector: 'page-setting',
+            templateUrl: 'setting.html'
+        }),
+        __metadata("design:paramtypes", [NavController, NavParams])
+    ], Setting);
     return Setting;
 }());
-Setting = __decorate([
-    Component({
-        selector: 'page-setting',
-        templateUrl: 'setting.html'
-    }),
-    __metadata("design:paramtypes", [NavController, NavParams])
-], Setting);
 export { Setting };
 //# sourceMappingURL=setting.js.map

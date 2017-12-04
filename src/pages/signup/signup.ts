@@ -1,18 +1,13 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams,AlertController, LoadingController } from 'ionic-angular';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, Validators,FormGroup } from '@angular/forms';
+import { Device } from '@ionic-native/device';
 
 import { FinishsignPage } from '../finishsign/finishsign';
 import { Register } from '../register/register';
 
 import { AuthenticateProvider } from '../../providers/authenticate/authenticate';
 
-/*
-  Generated class for the SignupPage page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'page-signup',
   templateUrl: 'signup.html'
@@ -23,12 +18,16 @@ export class SignupPage {
   register=Register;
   email: any;
   password: any;
-  public registerForm;
+  confirmpassword:any;
+  registerForm:FormGroup;
   emailChanged: boolean = false;
   passwordChanged: boolean = false;
   fullnameChanged: boolean = false;
   submitAttempt: boolean = false;
   loading: any;
+  Usersignup:any;
+  uuid:any;
+  tabBarElement:any;
 
   constructor(
     public navCtrl: NavController,
@@ -36,17 +35,37 @@ export class SignupPage {
     public Authprovider: AuthenticateProvider,
     public formBuilder: FormBuilder,
     public alertCtrl: AlertController,
-    public loadingCtrl: LoadingController
+    public loadingCtrl: LoadingController,
+    private device: Device
   ) {
     let EMAIL_REGEXP = /^[a-z0-9!#$%&'*+\/=?^_`{|}~.-]+@[a-z0-9]([a-z0-9-]*[a-z0-9])?(\.[a-z0-9]([a-z0-9-]*[a-z0-9])?)*$/i;
     this.registerForm = formBuilder.group({
-      email: ['', Validators.compose([Validators.required, Validators.pattern(EMAIL_REGEXP)])],
-      password: ['', Validators.compose([Validators.minLength(6), Validators.required])]
+      email: ['', Validators.compose([Validators.required, Validators.pattern(EMAIL_REGEXP),Validators.maxLength(80)])],
+      password: ['', Validators.compose([Validators.maxLength(50),Validators.minLength(10), Validators.required])],
+      confirmpassword: ['', Validators.compose([Validators.minLength(10), Validators.required,Validators.maxLength(50)])]
     });
+    this.Usersignup=navParams.get("user");
+    this.tabBarElement = document.querySelector('.tabbar.show-tabbar');
+
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SignupPagePage');
+    this.email=this.registerForm.controls['email'];
+    this.password=this.registerForm.controls['password'];
+    this.confirmpassword=this.registerForm.controls['confirmpassword'];
+  }
+
+  ionViewWillEnter() {
+    if(this.tabBarElement){
+      this.tabBarElement.style.display = 'none';
+    }
+  }
+ 
+  ionViewWillLeave() {
+    if(this.tabBarElement){
+      this.tabBarElement.style.display = 'flex';
+    }
   }
 
   elementChanged(input){
@@ -59,33 +78,15 @@ export class SignupPage {
   }
 
   doRegister(){
-    this.submitAttempt = true;
-    this.navCtrl.setRoot(FinishsignPage);
-    if (!this.registerForm.valid){
-      console.log(this.registerForm.value);
-    } else {
-      this.Authprovider.register(this.registerForm.value.email, this.registerForm.value.password).then( Authprovider => {
-        this.navCtrl.setRoot(FinishsignPage);
-      }, error => {
-        this.loading.dismiss().then( () => {
-          let alert = this.alertCtrl.create({
-            message: error.message,
-            buttons: [
-              {
-                text: "Ok",
-                role: 'cancel'
-              }
-            ]
-          });
-          alert.present();
-        });
-      });
+    this.Usersignup.email=this.email.value;
+    this.Usersignup.password=this.password.value;
+    this.uuid=this.device.uuid;
+    console.log('device token',this.uuid);
+    console.log(this.Usersignup.phonenumber);
+    this.navCtrl.setRoot(FinishsignPage,{
+      user:this.Usersignup
+    });
 
-      this.loading = this.loadingCtrl.create({
-        dismissOnPageChange: true,
-      });
-      this.loading.present();
-    }
   }
 
 }

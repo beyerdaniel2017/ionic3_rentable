@@ -15,7 +15,7 @@ import { NavController, NavParams } from 'ionic-angular';
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 */
-var TcPage = (function () {
+var TcPage = /** @class */ (function () {
     function TcPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
@@ -23,14 +23,14 @@ var TcPage = (function () {
     TcPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad TcPagePage');
     };
+    TcPage = __decorate([
+        Component({
+            selector: 'page-tc',
+            templateUrl: 'tc.html'
+        }),
+        __metadata("design:paramtypes", [NavController, NavParams])
+    ], TcPage);
     return TcPage;
 }());
-TcPage = __decorate([
-    Component({
-        selector: 'page-tc',
-        templateUrl: 'tc.html'
-    }),
-    __metadata("design:paramtypes", [NavController, NavParams])
-], TcPage);
 export { TcPage };
 //# sourceMappingURL=tc.js.map

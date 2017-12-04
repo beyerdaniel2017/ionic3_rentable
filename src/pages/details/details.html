@@ -1,49 +1,37 @@
-
-<!-- <ion-header [ngClass]="{'colorOfHeader': detect_position()}">
-  <ion-navbar >
-    <ion-row>
-      <ion-col col-8>
-      </ion-col>
-      <ion-col col-2>
-        <ion-icon name="md-return-right" class="icon_size"></ion-icon>
-      </ion-col>
-      <ion-col col-2>
-        <ion-icon name="md-heart" class="icon_size" (click)="ActiveLike()" [ngClass]="{'activeColor':like}"></ion-icon>
-      </ion-col>
-    </ion-row>
-  </ion-navbar>
-</ion-header>
- -->
-
-<ion-content #contentRef (ionScroll)="scrollingFun($event)">
-  <ion-slides  loop="true" speed="3000">
-    <ion-slide >
-      <img src="assets/img/01.png">
-    </ion-slide>
-    <ion-slide >
-      <img src="assets/img/02.png">
-    </ion-slide>
-    <ion-slide >
-      <img src="assets/img/03.png">
-    </ion-slide>
-  </ion-slides>
-  <div style="z-index: 0; position: relative;">
-    <img src="{{Product.img}}" style="display: inline-block; height: 50vh; width: 100vw">
-    <ion-icon name="ios-arrow-back" class="cover_header0" [navPush]="home"></ion-icon>
+<ion-content >
+  <div class="home" >
+    <div class="backoverlay">
+    </div>
+    <ion-slides style="display: inline-block; height: 50vh; width: 100vw; margin-bottom: -4px;border: 0;"  loop="true" speed="3000">
+      <ion-slide >
+        <img src="assets/img/01.png">
+      </ion-slide>
+      <ion-slide >
+        <img src="assets/img/02.png">
+      </ion-slide>
+      <ion-slide >
+        <img src="assets/img/03.png">
+      </ion-slide>
+    </ion-slides>
+    <ion-icon name="ios-arrow-back" class="cover_header0" (click)="backicon()"></ion-icon>
     <ion-icon name="shareicon" class="cover_header1"></ion-icon>
-    <ion-icon name="ios-heart-outline" class="cover_header2" (click)="ActiveLike()" [ngClass]="{'activeColor':like}"></ion-icon>
+    <img ng-click="nextSlide()" class="cover_header2" src="assets/icon/like.png">
   </div>
   <ion-row style="margin-top: -4rem;" no-padding>
     <ion-col col-3 align="right">
-      <img src="{{Product.ownerimage}}" class="profileimg">
+      <img [navPush]="otherprofile" src="{{Product.ownerimage}}" class="profileimg">
     </ion-col>
-    <ion-col col-2>
-      <p class="cover_1">
+    <ion-col col-6 style="padding-top: 10px;">
+      <p class="cover_name">
         {{Product.ownername}}
       </p>
-      <img class="cover_2" src="assets/icon/star.png">
-    </ion-col>
-    <ion-col col-4>
+      <div>
+        <img class="returnstarsize" src="assets/icon/star-red.png">
+        <img class="returnstarsize" src="assets/icon/star-red.png">
+        <img class="returnstarsize" src="assets/icon/star-red.png">
+        <img class="returnstarsize" src="assets/icon/star-red.png">
+        <img class="returnstarsize" src="assets/icon/star.png">
+      </div>
     </ion-col>
     <ion-col col-3 class="wardrobe">
       <img src="assets/icon/CTA-bounds.png" style="width:8rem;left: 1.4rem;">
@@ -57,10 +45,19 @@
   </ion-row>
   <div style="padding-bottom: 5rem;" padding>
     <h4 >
-      Pretty Cool Size
+      Pretty Cool Size 9 shoes
     </h4>
-    <ion-row>
-      <ion-col col-6>
+
+    <div style="opacity: 0.7;">
+      <img class="returnstarsize" src="assets/icon/star-red.png">
+      <img class="returnstarsize" src="assets/icon/star-red.png">
+      <img class="returnstarsize" src="assets/icon/star-red.png">
+      <img class="returnstarsize" src="assets/icon/star.png">
+      <img class="returnstarsize" src="assets/icon/star.png">
+      <span style="margin-left:15px;">Item Condition = GOOD</span>
+    </div>
+    <ion-row class="border" >
+      <ion-col class="graycolor" col-6>
         <ion-label>
           DESCRIPTION
         </ion-label>
@@ -71,14 +68,16 @@
         <ion-icon *ngIf="!descriptionstatus" name="md-add" (click)="stopPlayback()"></ion-icon>
         <ion-icon *ngIf="descriptionstatus"  name="md-remove" (click)="itemSelected()"></ion-icon>
       </ion-col>
+      <ion-row>
+        <ion-item *ngIf="descriptionstatus">
+          <ion-label class="graycolor"  text-wrap>
+            {{Product.description}}
+          </ion-label>
+        </ion-item>
+      </ion-row>
     </ion-row>
-    <ion-item *ngIf="descriptionstatus">
-      <ion-label align="center">
-        {{Product.description}}
-      </ion-label>
-    </ion-item>
-    <ion-row>
-      <ion-col col-6>
+    <ion-row class="bottomborder">
+      <ion-col class="graycolor" col-6>
         <ion-label>
           RENTAL DETAILS
         </ion-label>
@@ -89,41 +88,58 @@
         <ion-icon *ngIf="!rentalstatus" name="md-add" (click)="rentalshow()"></ion-icon>
         <ion-icon *ngIf="rentalstatus"  name="md-remove" (click)="rentalhide()"></ion-icon>
       </ion-col>
-    </ion-row>
-    <div *ngIf="rentalstatus">
+          <div *ngIf="rentalstatus" >
       <ion-label>
         DATES
       </ion-label>
-      <ion-item color="none" no-padding>
-        <ion-datetime displayFormat="DD MMM YYYY" placeholder="01 Jan 2017" [(ngModel)]="myDate"><ion-icon name="md-calendar" color="secondary"></ion-icon></ion-datetime>
-      </ion-item>
-      <ion-label >
-        Total Rental Cost - ${{Product.total_cost}}
+      <ion-row class="locationstyle">
+        <ion-col col-1  >
+          <img class="locationicon" src="assets/icon/calendar_red.png">
+        </ion-col>
+        <ion-col col-6 class="middletext ">
+          Select Dates
+        </ion-col>
+        <ion-col col-4>
+        </ion-col>
+        <ion-col col-1 class="rightposition middletext">
+          <ion-icon name="ios-arrow-forward-outline"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-label  style="padding-bottom: 10px;" class="bottomborder">
+        <span > Total Rental Cost:</span>
+        <span class="costsize">${{Product.total_cost}}</span>
+        <ion-icon name="ios-help-outline" class="helpicon" style="margin-left: 40vw;"></ion-icon>
       </ion-label>
-      <button ion-button block [navPush]="rent" color="secondary" class="defaultbutton">Send Rental Request</button>
+      <button ion-button block (click)="sendrental()" class="defaultbutton send">Send Rental Request</button>
       <ion-item style="color: black;">
         <ion-row align="center">
           <ion-col col-4>
-            <ion-icon class="icon_size" name="ios-backspace"></ion-icon>
+            <img [navPush]="pickup" class="pickborder" src="assets/icon/pickup.png">
+            <p>Pick Up</p>
           </ion-col>
           <ion-col col-4>
-            <ion-icon [navPush]="retrun" class="icon_size" name="ios-return-left"></ion-icon>
+            <img [navPush]="retrun" class="sendborder" src="assets/icon/back-arrow.png">
+            <p>Return</p>
           </ion-col>
           <ion-col col-4>
-            <ion-icon class="icon_size" name="md-close"></ion-icon>
+            <img [navPush]="claim" class="sendborder" src="assets/icon/cancel.png">
+            <p>Cancel</p>
           </ion-col>
         </ion-row>
       </ion-item>
-      <ion-label>
-        Message
-      </ion-label>
-      <ion-item>
-        <ion-input item-left type="text" placeholder="input generate text"></ion-input>
-        <button item-right padding="10vh" color="primary">Send</button>
+      <ion-item class="bottomborder">
+        <p item-left class="helpstr">SEND MESSAGE</p>
+        <p item-right class="helpstr">{{messagenumber}}</p>
+      </ion-item>
+      <ion-item >
+        <ion-input  style="width: 80vw;" [(ngModel)]="messagetext" (ionChange)="number()" type="text" placeholder="input generate text"></ion-input>
+        <img item-right class="sendbutton" (click)="sendmessage()" src="assets/icon/ico_send.png">
       </ion-item>
     </div>
+    </ion-row>
+
     <ion-row>
-      <ion-col col-4>
+      <ion-col class="graycolor" col-4>
         <ion-label>
           LOCATION
         </ion-label>
@@ -142,150 +158,6 @@
     </div>
   </div>
 </ion-content>
-<!--<div class="det-head">
-        <div class="user-action">
-          <ion-icon name="md-heart" (click)="ActiveLike()" [ngClass]="{'activeColor':like}"></ion-icon>
-          <ion-icon name="md-share" (click)="presentShare()"></ion-icon>
-        </div>
-        <ion-grid class="det-info" padding>
-          <ion-row>
-            <ion-col col-8 style="border-right:1px solid white">
-              <h3 color="light" no-margin>Stylish house</h3>
-              <div class="stars">
-                <ion-icon name="md-star"></ion-icon>
-                <ion-icon name="md-star"></ion-icon>
-                <ion-icon name="md-star"></ion-icon>
-                <ion-icon name="md-star"></ion-icon>
-                <ion-icon name="md-star-half"></ion-icon>
-                <p color="light">4.6</p>
-              </div>
-              <p color="graylight" no-margin>Paradeplein, 2018 Antwerp, Belgium</p>
-              <ion-grid class="grid-info" no-padding>
-                <ion-row>
-                  <ion-col text-center col-4>
-                    <img src="assets/img/bedroom.png" />
-                    <p color="graylight" no-margin>3bedroom</p>
-                  </ion-col>
-                  <ion-col text-center color="light" col-4>
-                    <img src="assets/img/baths.png" />
-                    <p color="graylight" no-margin>3baths</p>
-                  </ion-col>
-                  <ion-col text-center color="light" col-4>
-                    <img src="assets/img/sq.png" />
-                    <p color="graylight" no-margin>1000sq ft</p>
-                  </ion-col>
-                </ion-row>
-              </ion-grid>
-            </ion-col>
-            <ion-col col-4>
-              <div class="rent-info" text-center>
-                <h3 color="light" no-margin>FOR RENT</h3>
-                <h3 color="primary" class="bold" no-margin>$3,100</h3>
-              </div>
-            </ion-col>
-          </ion-row>
-          <button class="scroll-btn" (click)="goto();"><ion-icon name="ios-arrow-down" color="light"></ion-icon></button>
-        </ion-grid>
-        </div>
-
-        <div class="more-details" padding>
-
-          <ion-card text-left>
-              <ion-card-content>
-                <ion-card-title color="light" no-padding>
-                  Stylish house
-                </ion-card-title>
-                <div class="stars">
-                  <ion-icon md="md-star"></ion-icon>
-                  <ion-icon md="md-star"></ion-icon>
-                  <ion-icon md="md-star"></ion-icon>
-                  <ion-icon md="md-star"></ion-icon>
-                  <ion-icon md="md-star-half"></ion-icon>
-                  <p color="light">4.6 (45)</p>
-                </div>
-               <p color="graylight" no-margin>Paradeplein, 2018 Antwerp, Belgium</p>
-              </ion-card-content>
-
-              <ion-card-content>     
-                <h3 color="light">Description</h3>
-                <p color="graytext">Spectacular gated custom-built, with private front and rear 
-                entrances, 4-bedroom/3 1/2-bath (all single story with the 
-                exception of a remote oversized bedroom/office and 
-                bathroom on the second floor), spacious rear duplex, 
-                private home with a secluded backyard in upscale Ladera 
-                Heights area (near Slauson and La Cienega), within walking 
-                distance of Ladera Shopping Center, minutes from both 
-                the 405 and 10 freeways, LAX, Downtown Los Angeles. </p>
-              </ion-card-content>
-
-              <ion-card-content>        
-                <aside>
-                  <ion-grid class="grid-info" no-margin no-padding>
-                    <ion-row>
-                      <ion-col text-center col-3>
-                        <img src="assets/img/bedroom.png" />
-                        <p color="graylight" no-margin>3bedroom</p>
-                      </ion-col>
-                      <ion-col text-center color="light" col-3>
-                        <img src="assets/img/baths.png" />
-                        <p color="graylight" no-margin>3baths</p>
-                      </ion-col>
-                      <ion-col text-center color="light" col-3>
-                        <img src="assets/img/sq.png" />
-                        <p color="graylight" no-margin>1000sq ft</p>
-                      </ion-col>
-                      <ion-col text-center class="more-advantage" col-3>
-                        <ion-icon name="ios-more" color="light"></ion-icon>
-                      </ion-col>
-                    </ion-row>
-                  </ion-grid>
-                </aside>
-              </ion-card-content>
-
-            <ion-card-content>       
-                <aside class="images" margin-bottom>
-                  <h3 color="light">Images</h3>
-                  <ion-grid no-padding>
-                    <ion-row>
-                      <ion-col col-3>
-                        <img src="assets/img/img1.png" />
-                      </ion-col>
-                      <ion-col col-3>
-                        <img src="assets/img/img2.png" />
-                      </ion-col>
-                      <ion-col col-3>
-                        <img src="assets/img/img3.png" />
-                      </ion-col>
-                      <ion-col col-3>
-                        <img src="assets/img/img4.png" />
-                      </ion-col>
-                    </ion-row>
-                  </ion-grid>
-                </aside>
-              </ion-card-content>
-            </ion-card>
-        </div>
-
-          <ion-fab *ngIf="showFooter" right bottom>
-            <button (click)="presentModal()" ion-fab mini><ion-icon name="md-map" class="map-icon"></ion-icon></button>
-          </ion-fab>
-          </ion-content>
-
-          <ion-footer class="detFooter">
-            <ion-grid no-padding>
-              <ion-row text-center>
-                <ion-col col-4>
-                  <ion-icon name="md-call" color="light"></ion-icon>
-                </ion-col>
-                <ion-col col-4 class="min-btn">
-                  <ion-icon name="md-mail" color="light"></ion-icon>
-                </ion-col>
-                <ion-col col-4>
-                  <p [navPush]="rentPage" color="light" no-margin>RENT</p>
-                </ion-col>
-              </ion-row>
-  </ion-grid> -->
-
 
 <ion-footer class="detFooter">
 </ion-footer>

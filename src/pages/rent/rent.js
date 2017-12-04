@@ -11,16 +11,20 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { Home } from '../home/home';
 import { RejectPage } from '../reject/reject';
+import { AcceptPage } from '../accept/accept';
 import { OtherprofilePage } from '../otherprofile/otherprofile';
 import { Details } from '../details/details';
-var RentPage = (function () {
+var RentPage = /** @class */ (function () {
     function RentPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.home = Home;
+        this.accept = AcceptPage;
         this.rentreject = RejectPage;
         this.otherprofile = OtherprofilePage;
         this.detail = Details;
+        this.goodcondition = [1, 2, 3, 4];
+        this.badcondition = [1];
         this.Product = {
             img: 'assets/img/11.png', ownerimage: 'assets/img/profile-img.png', ownername: 'John', item_title: 'house', price: '25', description: 'this is good rentalable book', selectdate: '19/7/2017', total_cost: '100'
         };
@@ -28,14 +32,14 @@ var RentPage = (function () {
             img: 'assets/img/profile-img.png', name: 'John', address: 'Sydney Australia', rate: '4.5', rent_nuber: '10', owner_number: '20'
         };
     }
+    RentPage = __decorate([
+        Component({
+            selector: 'page-rent',
+            templateUrl: 'rent.html'
+        }),
+        __metadata("design:paramtypes", [NavController, NavParams])
+    ], RentPage);
     return RentPage;
 }());
-RentPage = __decorate([
-    Component({
-        selector: 'page-rent',
-        templateUrl: 'rent.html'
-    }),
-    __metadata("design:paramtypes", [NavController, NavParams])
-], RentPage);
 export { RentPage };
 //# sourceMappingURL=rent.js.map
