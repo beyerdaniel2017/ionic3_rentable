@@ -51,4 +51,8 @@ export class ChatPage {
     console.log('ionViewDidLoad ChatPagePage');
   }
 
+  delete(){
+    
+  }
+
 }

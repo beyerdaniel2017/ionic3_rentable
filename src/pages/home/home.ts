@@ -84,6 +84,7 @@ export class Home {
   }
 
   godetails(){
+    
     this.navCtrl.push(Details, {
       itemid: this.itemid
     });

@@ -144,15 +144,19 @@ export class EditprofilePage {
   }
 
 
-  getImage() {
+  updatephoto() {
+    console.log("browser");
     const options: CameraOptions = {
       quality: 100,
       destinationType: this.camera.DestinationType.FILE_URI,
       sourceType: this.camera.PictureSourceType.PHOTOLIBRARY
+      encodingType: this.camera.EncodingType.JPEG,
+      mediaType: this.camera.MediaType.PICTURE,
     }
 
     this.camera.getPicture(options).then((imageData) => {
       this.imageURI = imageData;
+      console.log(this.imageURI);
     }, (err) => {
       console.log(err);
       this.presentToast(err);
@@ -160,9 +164,6 @@ export class EditprofilePage {
   }
 
 
-  updatephoto(){
-
-
-  }
+ 
 
 }

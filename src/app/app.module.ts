@@ -10,6 +10,8 @@ import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-nati
 import { File } from '@ionic-native/file';
 import { Camera } from '@ionic-native/camera';
 import { Device } from '@ionic-native/device';
+import { ImagePicker } from '@ionic-native/image-picker';
+import { IonicStorageModule } from '@ionic/storage';
 
 import { allPages } from '../pages/common/declerations';
 import { DirectivesModule } from '../directives/directives.module';
@@ -53,6 +55,7 @@ var APP_Pages = [];
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
     AngularFireDatabaseModule,
+    IonicStorageModule.forRoot(),
      IonicModule.forRoot(MyApp, {
       backButtonText: '',
       pageTransition: '',
@@ -82,6 +85,7 @@ var APP_Pages = [];
     Camera,
     Device,
     ItemsProvider,
+    ImagePicker,
     ChatProvider
   ]
 })
