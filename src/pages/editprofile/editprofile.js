@@ -10,13 +10,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { Profile } from '../profile/profile';
+import { ProfileinputPage } from '../profileinput/profileinput';
 /*
   Generated class for the EditprofilePage page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 */
-var EditprofilePage = (function () {
+var EditprofilePage = /** @class */ (function () {
     function EditprofilePage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
@@ -28,14 +29,18 @@ var EditprofilePage = (function () {
     EditprofilePage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad EditprofilePagePage');
     };
+    EditprofilePage.prototype.focus = function () {
+        console.log('ionViewDidLoad EditprofilePagePage');
+        this.navCtrl.setRoot(ProfileinputPage);
+    };
+    EditprofilePage = __decorate([
+        Component({
+            selector: 'page-editprofile',
+            templateUrl: 'editprofile.html'
+        }),
+        __metadata("design:paramtypes", [NavController, NavParams])
+    ], EditprofilePage);
     return EditprofilePage;
 }());
-EditprofilePage = __decorate([
-    Component({
-        selector: 'page-editprofile',
-        templateUrl: 'editprofile.html'
-    }),
-    __metadata("design:paramtypes", [NavController, NavParams])
-], EditprofilePage);
 export { EditprofilePage };
 //# sourceMappingURL=editprofile.js.map

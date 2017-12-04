@@ -28,12 +28,6 @@ export interface PageInterface {
 export class MenuPage {
 
 	rootPage=TabPage;
- /* home=Home;
-  about=About;
-  tc=TcPage;
-  payments=PaymentsPage;
-  contact=ContactPage;
-  profile=Profile;*/
 
 	@ViewChild(Nav) nav:Nav;
 

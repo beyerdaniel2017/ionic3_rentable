@@ -9,28 +9,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { AddpaymentPage } from '../addpayment/addpayment';
 /*
   Generated class for the PaypalPage page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 */
-var PaypalPage = (function () {
+var PaypalPage = /** @class */ (function () {
     function PaypalPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.addpayment = AddpaymentPage;
     }
     PaypalPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad PaypalPagePage');
     };
+    PaypalPage = __decorate([
+        Component({
+            selector: 'page-paypal',
+            templateUrl: 'paypal.html'
+        }),
+        __metadata("design:paramtypes", [NavController, NavParams])
+    ], PaypalPage);
     return PaypalPage;
 }());
-PaypalPage = __decorate([
-    Component({
-        selector: 'page-paypal',
-        templateUrl: 'paypal.html'
-    }),
-    __metadata("design:paramtypes", [NavController, NavParams])
-], PaypalPage);
 export { PaypalPage };
 //# sourceMappingURL=paypal.js.map

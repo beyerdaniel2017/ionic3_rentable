@@ -15,7 +15,7 @@ import { NavController, NavParams } from 'ionic-angular';
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 */
-var ContactPage = (function () {
+var ContactPage = /** @class */ (function () {
     function ContactPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
@@ -23,14 +23,14 @@ var ContactPage = (function () {
     ContactPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad ContactPagePage');
     };
+    ContactPage = __decorate([
+        Component({
+            selector: 'page-contact',
+            templateUrl: 'contact.html'
+        }),
+        __metadata("design:paramtypes", [NavController, NavParams])
+    ], ContactPage);
     return ContactPage;
 }());
-ContactPage = __decorate([
-    Component({
-        selector: 'page-contact',
-        templateUrl: 'contact.html'
-    }),
-    __metadata("design:paramtypes", [NavController, NavParams])
-], ContactPage);
 export { ContactPage };
 //# sourceMappingURL=contact.js.map

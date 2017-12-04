@@ -16,7 +16,7 @@ import { RentPage } from '../rent/rent';
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 */
-var OtherprofilePage = (function () {
+var OtherprofilePage = /** @class */ (function () {
     function OtherprofilePage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
@@ -47,14 +47,14 @@ var OtherprofilePage = (function () {
         console.log('ionViewDidLoad OtherprofilePagePage');
         this.isavailable = "available";
     };
+    OtherprofilePage = __decorate([
+        Component({
+            selector: 'page-otherprofile',
+            templateUrl: 'otherprofile.html'
+        }),
+        __metadata("design:paramtypes", [NavController, NavParams])
+    ], OtherprofilePage);
     return OtherprofilePage;
 }());
-OtherprofilePage = __decorate([
-    Component({
-        selector: 'page-otherprofile',
-        templateUrl: 'otherprofile.html'
-    }),
-    __metadata("design:paramtypes", [NavController, NavParams])
-], OtherprofilePage);
 export { OtherprofilePage };
 //# sourceMappingURL=otherprofile.js.map

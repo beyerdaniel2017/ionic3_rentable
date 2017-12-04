@@ -89,7 +89,7 @@ $colors: (
 // --------------------------------------------------
 // Windows only Sass variables can go here
 
-$background-color: color($colors , dark);
+$background-color: color($colors , light);
 
 $button-md-height: 3.4rem;
 $button-md-text-transform: capitalize;

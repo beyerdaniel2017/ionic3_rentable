@@ -5,125 +5,155 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
-  <ion-navbar color="navbarcolor">
-    <div style="align:right;"><button item-right>Reset</button></div>
+  <ion-navbar class="profileheader" >
+    <h4 class="size">Create Alert</h4>
   </ion-navbar>
 </ion-header>
 
+<ion-content class="app-content paddingbottom" >
+  <ion-item>
+    <p item-left class="helpstr">Alert Name</p>
+    <p item-right class="helpstr">{{titlenumber}}</p>
+  </ion-item>
+  <ion-row class="bottomborder">
+    <ion-col col-11>
+      <ion-input (ionChange)='number()' type="text" value="Predtty cool size" [(ngModel)]="alerttitle"></ion-input>
+    </ion-col>
+    <ion-col col-1>
+      <ion-icon name="md-close" class="graycolor"></ion-icon>
+    </ion-col>
+  </ion-row>
+  <div class="borderstyle datestyle">
+    <ion-label >
+      LOCATION
+    </ion-label>
+  </div>
+  <ion-row class="locationstyle" (click)="presentModal()">
+    <ion-col col-1 class="locationicon">
+      <img  src="assets/icon/location-place.png">
+    </ion-col>
+    <ion-col col-6 class="middletext">
+      Change Location
+    </ion-col>
+    <ion-col col-4>
+    </ion-col>
+    <ion-col col-1 class="rightposition middletext">
+      <ion-icon name="ios-arrow-forward-outline"></ion-icon>
+    </ion-col>
+  </ion-row>
+  <ion-label class="categorytitle">
+    CATEGORIES
+  </ion-label>
+  <div>
+    <div class="radio-alertimg grid-list" *ngFor="let item of alertlist" >
+      <input type="radio" name="radio-group" id="{{item.radionumber}}" class="input-hidden" />
+      <label (click)="myFunction($event)" for="{{item.radionumber}}" >
+        <img class="categoryimage" src="{{item.inactive_img}}">
+        <span class="categoryname">{{item.title}}</span>
+      </label>
+    </div>
+  </div>
+  <div class="borderstyle datestyle">
+    <ion-label >
+      DATES
+    </ion-label>
+  </div>
+  <ion-row class="locationstyle">
+    <ion-col col-1 class="locationicon">
+      <img  src="assets/icon/calendar_red.png">
+    </ion-col>
+    <ion-col col-6 class="middletext">
+      Select Dates
+    </ion-col>
+    <ion-col col-4>
+    </ion-col>
+    <ion-col col-1 class="rightposition middletext">
+      <ion-icon name="ios-arrow-forward-outline"></ion-icon>
+    </ion-col>
+  </ion-row>
+  <!--   <ion-item class="wardrobe">
+      <ion-datetime [(ngModel)]="myDate"></ion-datetime>
+    </ion-item> -->
+  <ion-row >
+    <ion-col col-6>
+       <ion-label no-padding no-margin >
+         DISTANCE
+       </ion-label>
+    </ion-col>
+    <ion-col col-3>
+    </ion-col>
+    <ion-col col-3 style="text-align: right;">
+      {{distance}}km
+    </ion-col>
+  </ion-row>
+  <ion-item class="pricestyle">
+    <ion-range min="0" max="30"  [(ngModel)]="distance" step="1"color="element">
+      <img class="distancesize" range-left src="assets/icon/house.png">
+      <img class="distancesize" range-right src="assets/icon/sports-small.png">
+    </ion-range>
+  </ion-item>
+  <ion-label class="categorytitle">
+    PRICE
+  </ion-label>
+  <ion-row class="pricerange">
+    <ion-col col-6 >
+      <ion-item class="inputborder">
+        <ion-input style="padding:0 0 0 8px;" type="text" placeholder="From" [(ngModel)]="pricefrom"></ion-input>
+      </ion-item>
+    </ion-col>
 
-<ion-content padding>
-	<ion-card>
-	  <ion-card-header >
-	    <ion-input type="text" value="" style="align:center;" color="secondary" placeholder="Set your alert name"></ion-input>
-	  </ion-card-header>
-	  <ion-card-content>
-	    <ion-item>
-	    	<div><p>Location</p></div>
-				<button (click)="presentModal()">Change Location</button>
-			</ion-item>
-				<ion-label>
-					<p>Categories</p>
-				</ion-label>
-			  <ion-list *ngFor="let item of categorylist">
-			    <div class="col">
-	          <label class="item item-icon-left item-radio" style="border: none">
-	            <input type="radio" name="group" >
-	              {{item.title}}
-	            <ion-icon [name]="item.icon"></ion-icon>
-	          </label>
-	        </div>
-			  </ion-list>
-			<ion-item>
-				<ion-label>
-					Select Dates
-				</ion-label>
-				<ion-row>
-					<ion-col class="icon-col" col-1>
-		          <ion-icon name="md-calendar" color="secondary"></ion-icon>
-		      </ion-col>
-		      <ion-col col-5>
-						<ion-item color="none" no-padding>
-		          <ion-datetime displayFormat="DD MMM YYYY" placeholder="01 Jan 2017" [(ngModel)]="myDate"></ion-datetime>
-		        </ion-item>
-		      </ion-col>
-		    </ion-row>
-			</ion-item>
-			<ion-item >
-				<ion-label >
-					Distance{{saturation}}
-				</ion-label>
-		    <ion-range min="0" max="1000" [(ngModel)]="saturation" step="100"color="secondary">
-		      <ion-icon small range-left name="ios-home"></ion-icon>
-					<ion-icon range-right name="ios-car"></ion-icon>
-		    </ion-range>
-		  </ion-item>
-		  <ion-item>
-		  	<ion-label item-start>
-		  		Price Range
-		  	</ion-label>
-		  </ion-item>
-		  <ion-item >
-	  		<ion-select item-left (ionChange)="fromprice($event)">
-	        <ion-option value="01">0</ion-option>
-	        <ion-option value="02">5</ion-option>
-	        <ion-option value="03" selected="true">10</ion-option>
-	        <ion-option value="04">50</ion-option>
-	        <ion-option value="05">100</ion-option>
-	        <ion-option value="06">200</ion-option>
-	        <ion-option value="07">500</ion-option>
-	        <ion-option value="08">1000</ion-option>
-	        <ion-option value="09">2000</ion-option>
-	        <ion-option value="10">5000</ion-option>
-	        <ion-option value="11">10000</ion-option>
-	        <ion-option value="12">50000</ion-option>
-	      </ion-select>
-					<!-- 	      <ion-select item-right (ionChange)="toprice($event)">
-					 -->
-			  <ion-select item-right (ionChange)="toprice($event)">
- 	        <ion-option value="01">0</ion-option>
-	        <ion-option value="02">5</ion-option>
-	        <ion-option value="03" >10</ion-option>
-	        <ion-option value="04">50</ion-option>
-	        <ion-option value="05" selected="true">100</ion-option>
-	        <ion-option value="06">200</ion-option>
-	        <ion-option value="07">500</ion-option>
-	        <ion-option value="08">1000</ion-option>
-	        <ion-option value="09">2000</ion-option>
-	        <ion-option value="10" >5000</ion-option>
-	        <ion-option value="11">10000</ion-option>
-	        <ion-option value="12">50000</ion-option>
-	      </ion-select>
-		  </ion-item>
-		  <ion-item>
-		  	<ion-label>
-		  		Posted Within
-		  	</ion-label>
-	  	</ion-item>
-	  	<form (submit)="doSubmit($event)" [formGroup]="langForm">
-		    <ion-list radio-group formControlName="langs">
-		      <ion-item>
-		        <ion-label>The last 24 hrs</ion-label>
-		        <ion-radio value="24" checked="true"></ion-radio>
-		      </ion-item>
-		      <ion-item>
-		        <ion-label>The last 7 days</ion-label>
-		        <ion-radio value="7"></ion-radio>
-		      </ion-item>
-		      <ion-item>
-		        <ion-label>The last 30 days</ion-label>
-		        <ion-radio value="30"></ion-radio>
-		      </ion-item>
-		      <ion-item>
-		        <ion-label>Show all</ion-label>
-		        <ion-radio value="all"></ion-radio>
-		      </ion-item>
-		    </ion-list>
-		  </form>
-		  <ion-item>
-		  	<button>Search</button>
-		  </ion-item>
+     <ion-col col-6 >
+      <ion-item class="inputborder">
+        <ion-input  style="padding:0 0 0 8px;" type="text" placeholder="To" [(ngModel)]="priceto" ></ion-input>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-label class="liststyle">
+    POSTED WITHIN
+  </ion-label>
+  <ion-list radio-group [(ngModel)]="within">
+    <ion-item>
+      <ion-label>The last 24 hrs</ion-label>
+      <ion-radio value="24" ></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>The last 7 days</ion-label>
+      <ion-radio value="7"></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>The last 30 days</ion-label>
+      <ion-radio value="30"></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>Show all</ion-label>
+      <ion-radio value="all" checked="true"></ion-radio>
+    </ion-item>
+  </ion-list>
+  <ion-label class="liststyle">
+    SORT BY
+  </ion-label>
+  <ion-list radio-group [(ngModel)]="sortby">
+    <ion-item>
+      <ion-label>Newest First</ion-label>
+      <ion-radio value="newset" checked="true"></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>Closest First</ion-label>
+      <ion-radio value="closest"></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>Delivery First</ion-label>
+      <ion-radio value="delivery"></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>Price: low to high</ion-label>
+      <ion-radio value="lowtohigh"></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>Price: high to low</ion-label>
+      <ion-radio value="hightolow"></ion-radio>
+    </ion-item>
+  </ion-list>
 
- 	  </ion-card-content>
-	</ion-card>
+  <button ion-button block color="primary" class="defaultbutton" (click)="alertsave()">Save Alert</button>
 </ion-content>

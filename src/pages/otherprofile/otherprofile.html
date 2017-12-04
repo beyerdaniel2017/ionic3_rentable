@@ -6,14 +6,12 @@
 -->
 
 
-<ion-content class="app-content">
+<ion-content no-padding class="app-content">
   <ion-row class="profileheader">
-    <ion-col col-2>
-      <ion-icon class="icon_size" [navPush]="rent" name="ios-arrow-back-outline"></ion-icon>
+    <ion-col col-1>
+      <ion-icon class="whiteicon" [navPush]="rent" name="ios-arrow-back-outline"></ion-icon>
     </ion-col>
-    <ion-col col-8>
-    </ion-col>
-    <ion-col col-2>
+    <ion-col col-11>
     </ion-col>
   </ion-row>
   <div >
@@ -26,17 +24,17 @@
         {{otherprofile.address}}
       </ion-label>
       <ion-label >
-        <ion-icon name="ios-star" style="color: #f55349;"></ion-icon>
-        <ion-icon name="ios-star" style="color: #f55349;"></ion-icon>
-        <ion-icon name="ios-star" style="color: #f55349;"></ion-icon>
-        <ion-icon name="ios-star" style="color: #f55349;"></ion-icon>
-        <ion-icon name="ios-star-outline" style="color: #f55349;"></ion-icon>
+        <img class="starsize" src="assets/icon/star-red.png">
+        <img class="starsize" src="assets/icon/star-red.png">
+        <img class="starsize" src="assets/icon/star-red.png">
+        <img class="starsize" src="assets/icon/star-red.png">
+        <img class="starsize" src="assets/icon/star.png">
       </ion-label>
     </div>
 
   	<ion-card>
-  	  <ion-card-header>
-        <ion-row style="color: white;height: 5rem; margin-bottom: 10px;">
+  	  <ion-card-header class="postitemdiv">
+        <ion-row >
           <ion-col col-4>
           </ion-col>
           <ion-col col-4 no-padding>
@@ -55,40 +53,25 @@
   	  </ion-card-header>
 
   	  <ion-card-content [ngSwitch]="isavailable" no-padding>
-       <!--  <div  *ngSwitchCase="'available'">
-          <ion-list class="grid-list" *ngFor="let item of avaiablelist" >
-            <ion-item class="image-item" no-lines no-padding>
-              <img class="wardrobe" src="{{item.img}}" />
-              <div class="cover_1" item-right>
-              	<ion-icon name="md-heart" align=right></ion-icon>
-  	           	<p color="darken" >{{item.favourity}}</p>
-  	            <ion-icon name="ios-eye"></ion-icon>
-  	            <p color="darken" >{{item.view}}</p>
-              </div>
-            </ion-item>
-          </ion-list>
-        </div> -->
-        <div  *ngSwitchCase="'available'" style="color: white;">
-          <ion-list class="grid-list" *ngFor="let item of avaiablelist">
-            <div class="image-item" no-lines no-padding>
-              <img class="wardrobe" src="{{item.img}}" />
+        <div  *ngSwitchCase="'available'" >
+          <ion-list class="grid-list backcolor" *ngFor="let item of avaiablelist">
+            <div class="image-item"  no-lines no-padding>
+              <img class="wardrobe" [navPush]="productdetail" src="{{item.img}}" />
               <ion-icon name="ios-eye-outline" class="cover_2"><p class="info">{{item.view}}</p></ion-icon>
-              <ion-icon name="md-heart-outline" class="cover_4"><p class="info">{{item.favourity}}</p></ion-icon>
+              <img *ngIf="!like[item.id]" class="cover_image" (click)="ActiveLike(item.id)" src="assets/icon/like.png">
+              <img *ngIf="like[item.id]" class="cover_image" (click)="ActiveLike(item.id)" src="assets/icon/like-full.png">
             </div>
           </ion-list>
         </div>
 
         <div  *ngSwitchCase="'post'">
-          <ion-list class="grid-list"  *ngFor="let item of postlist" no-margin>
-            <ion-item class="image-item" no-lines no-padding>
-              <img class="wardrobe" src="{{item.img}}" />
-              <div class="cover_1" item-right>
-              	<ion-icon name="md-heart" align=right></ion-icon>
-  	           	<p color="darken" >{{item.favourity}}</p>
-  	            <ion-icon name="ios-eye"></ion-icon>
-  	            <p color="darken" >{{item.view}}</p>
-              </div>
-            </ion-item>
+          <ion-list class="grid-list backcolor"  *ngFor="let item of postlist">
+            <div class="image-item"  no-lines no-padding>
+              <img class="wardrobe" [navPush]="productdetail" src="{{item.img}}" />
+              <ion-icon name="ios-eye-outline" class="cover_2"><p class="info">{{item.view}}</p></ion-icon>
+              <img *ngIf="!like[item.id]" class="cover_image" (click)="ActiveLike(item.id)" src="assets/icon/like.png">
+              <img *ngIf="like[item.id]" class="cover_image" (click)="ActiveLike(item.id)" src="assets/icon/like-full.png">
+            </div>
           </ion-list>
         </div>
       </ion-card-content>

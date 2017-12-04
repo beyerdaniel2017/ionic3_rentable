@@ -16,6 +16,15 @@
       margin:auto;
       display:block;
     }
+    &.landingform{
+      &>button:disabled{
+        background-color:gray;
+        color:black;
+      }
+    }
+  }
+  .grayborder.width{
+    max-width:15vw !important;
   }
 }
 .apptitle{
@@ -34,7 +43,7 @@
 }
 
 .helpstring{
-  font-size:1.4rem;
+  font-size:1.3rem;
   color:gray;
   text-align: left;
 }

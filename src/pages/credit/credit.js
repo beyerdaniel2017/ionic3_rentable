@@ -16,13 +16,14 @@ import { AddpaymentPage } from '../addpayment/addpayment';
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 */
-var CreditPage = (function () {
+var CreditPage = /** @class */ (function () {
     function CreditPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.type = 'password';
         this.showPass = false;
         this.addpayment = AddpaymentPage;
+        this.iscard = false;
     }
     CreditPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad CreditPagePage');
@@ -38,6 +39,15 @@ var CreditPage = (function () {
     };
     CreditPage.prototype.fromprice = function () {
     };
+    CreditPage.prototype.f = function () {
+        console.log(this.cardnumber + "cardnumber");
+        if (this.cardnumber == "4") {
+            this.iscard = true;
+        }
+        if (this.cardnumber == "51" || this.cardnumber == "55") {
+            this.iscard = false;
+        }
+    };
     CreditPage.prototype.removename = function () {
         this.name = "";
     };
@@ -50,14 +60,14 @@ var CreditPage = (function () {
     };
     CreditPage.prototype.toggleShow = function () {
     };
+    CreditPage = __decorate([
+        Component({
+            selector: 'page-credit',
+            templateUrl: 'credit.html',
+        }),
+        __metadata("design:paramtypes", [NavController, NavParams])
+    ], CreditPage);
     return CreditPage;
 }());
-CreditPage = __decorate([
-    Component({
-        selector: 'page-credit',
-        templateUrl: 'credit.html',
-    }),
-    __metadata("design:paramtypes", [NavController, NavParams])
-], CreditPage);
 export { CreditPage };
 //# sourceMappingURL=credit.js.map

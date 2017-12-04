@@ -10,20 +10,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { SignupPage } from '../signup/signup';
-var Register = (function () {
+import { FinishsignPage } from '../finishsign/finishsign';
+var Register = /** @class */ (function () {
     function Register(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.home = SignupPage;
+        this.signup = SignupPage;
+        this.finishsign = FinishsignPage;
     }
+    Register = __decorate([
+        Component({
+            selector: 'page-register',
+            templateUrl: 'register.html'
+        }),
+        __metadata("design:paramtypes", [NavController, NavParams])
+    ], Register);
     return Register;
 }());
-Register = __decorate([
-    Component({
-        selector: 'page-register',
-        templateUrl: 'register.html'
-    }),
-    __metadata("design:paramtypes", [NavController, NavParams])
-], Register);
 export { Register };
 //# sourceMappingURL=register.js.map

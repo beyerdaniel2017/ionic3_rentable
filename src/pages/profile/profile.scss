@@ -1,12 +1,6 @@
 page-profile {
-  .app-content{
-    background-color:white;
-    .scroll-content{
-    }
-  }
-  .bottomborder{
-    border-bottom: 0.5px groove;
-  }
+
+
   ion-item{
     ion-icon{
       color: grey;
@@ -73,21 +67,39 @@ page-profile {
     opacity: 1;
   }
 
-  
   .label_top.font{
     font-size:2rem;
     font-weight:bold;
   }
 
+  .label_top.color{
+    color:gray;
+  }
+
+  .bottomborder.subtitle{
+    margin-top: 35px;
+  }
+
+  .bottomborder.subpadding{
+    margin-top: 7px;
+    margin-bottom:7px;
+    padding-left:20px;
+  }
+
   .helpfont{
     color:black;
-    font-size:1.5rem;
-    font-weight:bold;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 35px;
+    padding-left: 12px;
   }
 
   .helpfont.padding{
-    padding-left: 16px;
+    padding-bottom:15px;
   }
+  .list-ios {
+    margin: -1px 0 55px;
+}
 
   .ion-ios-addpay-outline,
   .ion-ios-addpay,.ion-md-addpay,.ion-md-addpay-outline {
@@ -98,7 +110,40 @@ page-profile {
 
 .profileheader{
   text-align: center;
+  padding:20px 1rem 0 1rem !important;
   background-image: url(../assets/icon/navbar.png);
-  padding-top: 1.4rem;
+  background-repeat: no-repeat;
+  background-size:cover;
+  height: 66px;
+  color:white;
 }
 
+.bar-button-default-ios {
+  color: white;
+  background-color: transparent;
+}
+
+.profileheader1{
+  text-align: center;
+  color:white;
+  padding: 25px 1rem 0 5px !important;
+  background-image: url(../assets/icon/navbar.png);
+  background-repeat: no-repeat;
+  background-size:cover;
+  height: 66px;
+}
+
+ion-header{
+  ion-navbar{
+    div.toolbar-background{
+     background-image: url(../assets/icon/navbar.png);
+     background-repeat: no-repeat;
+     background-size:cover;
+     text-align: center;
+    }
+  }
+}
+
+.profileheader.topheight{
+    padding-top:20px;
+  }

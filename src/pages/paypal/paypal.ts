@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
+import { AddpaymentPage } from '../addpayment/addpayment';
+
+
 /*
   Generated class for the PaypalPage page.
 
@@ -12,6 +15,8 @@ import { NavController, NavParams } from 'ionic-angular';
   templateUrl: 'paypal.html'
 })
 export class PaypalPage {
+
+	addpayment=AddpaymentPage;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {}
 

@@ -3,9 +3,12 @@ page-feedback {
 		margin: 10px 7px;
 	}
 
-	.feedbackinput{
-		border: thin solid gainsboro;
-    margin-bottom: 5rem;
-    height: 23vh;
-	}
+}
+
+.feedbackinput{
+  border: thin solid gainsboro;
+  margin-bottom: 3rem;
+  height: 23vh;
+  font-size: 20px;
+  text-align:left;
 }

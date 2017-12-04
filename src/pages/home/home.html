@@ -1,13 +1,14 @@
 
 <ion-header >
 
-  <ion-toolbar color="navbarcolor" >
-    <ion-row class="headerheight">
+  <ion-toolbar no-padding   >
+    <ion-row class="profileheader" >
       <ion-col  col-1 class="icon-col">
         <img src="assets/icon/avatar.png" style="margin-top: 10px;" [navPush]="profile">
       </ion-col>
       <ion-col class="icon-col" col-10>
-        <ion-searchbar  class="searchbar" placeholder="Find items near you"></ion-searchbar>
+      <!--   <ion-searchbar  class="searchbar" placeholder="Find items near you"></ion-searchbar> -->
+      <ion-searchbar class="searchbar" placeholder="Find items near you" [(ngModel)]="searchtext" (ionInput)="filterItems($event)"></ion-searchbar>
       </ion-col>
       <ion-col class="icon-col" col-1>
         <img src="assets/icon/filter.png" style="margin-top: 10px;" [navPush]="search">
@@ -16,65 +17,24 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-scroll scrollX="true" class="categorystyle" >
-    <div *ngFor="let item of categorylist" style="display: inline-block; width: 25vw; text-align: center;" >
-      <ion-icon name="{{item.icon}}" class="category_size"></ion-icon>
-      <div > {{item.title}} </div>
-    </div>
+<ion-content no-padding class="app-content "  >
+  <ion-scroll  scrollX="true" class="categorystyle" >
+    <ion-segment [(ngModel)]="timeline" style="justify-content: left;">
+      <ion-segment-button class="segmenthover" *ngFor="let item of categorylist" (click)="myFunction($event)"  value="{{item.value}}" >
+        <img src="{{item.inactive_img}}" class="categoryimg">
+        <p class="categoryfont">{{item.title}}</p>
+      </ion-segment-button>
+    </ion-segment>
   </ion-scroll>
-  <ion-card class="grid-list" *ngFor="let item of categorygrid, let i = $index">
+  <ion-card  class="grid-list backcolor" *ngFor="let item of categorygrid">
     <div class="image-item" no-lines>
-      <img [navPush]="details" class="wardrobe" src="{{item.img}}" />
+      <img (click)="godetails()" class="wardrobe" src="{{item.img}}" />
       <ion-label class="cover_1" >
         ${{item.price}}
       </ion-label>
-      <ion-icon name="md-heart" class="cover_2" (click)="ActiveLike()" [ngClass]="{'activeColor':like}" ></ion-icon>
+      <img *ngIf="!like[item.id]" class="cover_image" (click)="DeactiveLike(item.id)" src="assets/icon/like.png">
+      <img *ngIf="like[item.id]" class="cover_image" (click)="ActiveLike(item.id)" src="assets/icon/like-full.png">
     </div>
   </ion-card>
-
- <!-- <ion-item>
-      <div item-left>Near you now</div>
-      <button item-right [navPush]="list">see all<ion-icon name="ios-arrow-forward"></ion-icon></button>
-    </ion-item>
-    <ion-scroll scrollX="true" style="overflow: scroll; white-space: nowrap; height: 23vh;" >
-      <div *ngFor="let item of neargrid" style="display: inline-block;white-space: nowrap; " class="workContentContainer">
-        <img [navPush]="details" src="{{item.img}}" style="margin: 0.5vh; display: inline-block; height: 17vh;">
-        <div> {{item.title}} </div>
-      </div>
-    </ion-scroll>
-  </ion-card-content>
-  <ion-card-content>
-    <ion-item>
-      <div item-left>Category Name</div>
-      <button [navPush]="list" item-right>see all<ion-icon name="ios-arrow-forward"></ion-icon></button>
-    </ion-item>
-    <ion-scroll scrollX="true" style="overflow: scroll;white-space: nowrap; height: 23vh" >
-      <div *ngFor="let item of categorygrid" style="display: inline-block;white-space: nowrap; " class="workContentContainer">
-        <img [navPush]="details" src="{{item.img}}" style="margin: 0.5vh; display: inline-block; height: 17vh;">
-        <div> {{item.title}} </div>
-      </div>
-    </ion-scroll> -->
-
-    <!-- origin code -->
-  <!-- <ion-scroll scrollX="true">
-
-    <ion-card class="grid-list" *ngFor="let item of grid" [navPush]="list">
-      <img src="{{item.img}}"/>
-      <ion-item color="light" class="bold">
-        {{item.title}}
-        <ion-icon name="{{item.icon}}" item-right></ion-icon>
-      </ion-item>
-    </ion-card>
-
-    <ion-card class="grid-list" *ngFor="let item of grid" [navPush]="list">
-      <img src="{{item.img}}"/>
-      <ion-item color="light" class="bold">
-        {{item.title}}
-        <ion-icon name="{{item.icon}}" item-right></ion-icon>
-      </ion-item>
-    </ion-card>
-
-  </ion-scroll> -->
 
 </ion-content>

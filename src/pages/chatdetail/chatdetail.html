@@ -6,8 +6,9 @@
 -->
 <ion-header>
 
-  <ion-navbar color="navbarcolor">
+  <ion-navbar  class="profileheader" >
     <ion-row>
+
     	<ion-col col-2>
     		<img src="{{Chatdetail.img}}" [navPush]="details" class="itemimage">
     	</ion-col>
@@ -22,7 +23,7 @@
 	    <ion-col col-4>
 	    </ion-col>
 	    <ion-col col-2>
-	    	<img [navPush]="profile"  item-right src="{{Chatdetail.ownerimage}}" class="profileimage">
+	    	<img [navPush]="otherprofile"  item-right src="{{Chatdetail.ownerimage}}" class="profileimage">
 	    </ion-col>
     </ion-row>
   </ion-navbar>
@@ -30,10 +31,41 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
+
+  <div class="message-wrap">
+
+    <div *ngFor="let msg of chats"
+         class="message"
+         [class.left]=" msg.userId === toUser.id "
+         [class.right]=" msg.userId === user.id ">
+      <div class="msg-detail" text-wrap>
+        <div class="msg-content">
+          <span class="triangle"></span>
+          <p class="line-breaker ">{{msg.message}}</p>
+        </div>
+        <div class="msg-info">
+          <p>{{msg.time | date:"dd/yyyy/HH:mm"}}</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
 
 </ion-content>
 
-<ion-footer>
-
+<ion-footer no-border [style.height]="showEmojiPicker ? '255px' : '55px'">
+  <ion-grid class="input-wrap">
+    <ion-row color="secondary">
+      <ion-col col-10>
+        <ion-input type="text" placeholder="Enter message" [(ngModel)]="message"></ion-input>
+      </ion-col>
+      <ion-col col-2>
+        <button ion-button clear icon-only item-right (click)="sendMsg()">
+            <ion-icon color="secondary" name="md-send"  md="md-send"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+<!--   <emoji-picker *ngIf="showEmojiPicker" [(ngModel)]="editorMsg"></emoji-picker> -->
 </ion-footer>

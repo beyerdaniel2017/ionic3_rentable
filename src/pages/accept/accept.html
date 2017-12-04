@@ -6,41 +6,59 @@
 -->
 <ion-header>
 
-  <ion-navbar color="navbarcolor">
-   
+  <ion-navbar class="profileheader"  hideBackButton="true" style="text-align: left;" >
+  	 <ion-icon (click)="godetail()"  class="headertitle" name="md-close"></ion-icon>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding align="center">
-	<br>
-	<h3 center>
+<ion-content padding align="center" class="addcontent">
+	<p class="returntitle">
 		Returning your Item
-	</h3><br>
-	<p>Is the production in same condition as it was when rented?</p>
-	<ion-row >
-		<ion-col col-3 >
+	</p>
+	<P class="helptext suggest">We suggest you and the owner agree on the condition of the item being returned before completing the below</P>
+	<p class="helptext condition">IS THE ITEM IN THE SAME CONDITION AS WHEN YOU RENTED IT?</p>
+	<ion-label *ngIf="agree=='yes'" >
+    <img class="returnstarsize" src="assets/icon/star-red.png">
+    <img class="returnstarsize" src="assets/icon/star-red.png">
+    <img class="returnstarsize" src="assets/icon/star-red.png">
+    <img class="returnstarsize" src="assets/icon/star-red.png">
+    <img class="returnstarsize" src="assets/icon/star.png">
+  </ion-label>
+	<ion-label *ngIf="agree=='no'" >
+    <img class="returnstarsize" src="assets/icon/star-grey.png">
+    <img class="returnstarsize" src="assets/icon/star-grey.png">
+    <img class="returnstarsize" src="assets/icon/star-grey.png">
+    <img class="returnstarsize" src="assets/icon/star-grey.png">
+    <img class="returnstarsize" src="assets/icon/star-grey-outline.png">
+  </ion-label>
+  <p class="goodstyle">VERY GOOD</p>
+	<ion-row radio-group *ngIf="!agreewith" [(ngModel)]="agree">
+		<ion-col col-2>
+		</ion-col>
+		<ion-col col-2 >
 			Yes
 		</ion-col>
-  	<ion-col col-3 >
-			<ion-toggle  [(ngModel)]="yes" color="secondary"></ion-toggle>
+  		<ion-col col-2 >
+			<ion-radio (ionSelect)="radioChecked()" color="backwhite" value="yes"[ngClass]="(active_flag==false)?'radioclass1':'radioclass'" checked="true"></ion-radio>
 		</ion-col>
-		<ion-col col-3 >
+		<ion-col col-2 >
 			No
 		</ion-col>
-		<ion-col col-3 >
-			<ion-toggle  [(ngModel)]="!yes" color="secondary"></ion-toggle>
+		<ion-col col-2 >
+			<ion-radio (ionSelect)="radioChecked()" color="backwhite"  value="no" [ngClass]="(active_flag==false)?'radioclass':'radioclass1'"></ion-radio>
+		</ion-col>
+		<ion-col col-2>
 		</ion-col>
 	</ion-row>
-	<ion-item no-lines>
-		<ion-label >
-			Select the items conditions{{saturation}}
-		</ion-label>
-    <ion-range min="0" max="1000" [(ngModel)]="saturation" step="100"color="secondary">
-      <ion-icon small range-left name="ios-close"></ion-icon>
-			<ion-icon range-right name="ios-checkmark"></ion-icon>
-    </ion-range>
-  </ion-item><br>
-  <button ion-button>Submit</button>
+	<ion-label class="commentstyle">
+		LEAVE A COMMENT BELOW
+	</ion-label>
+	<ion-textarea rows="5" type="text" class="feedbackinput" text-wrap></ion-textarea >
+	<ion-item class="toggleheight">
+		<ion-toggle item-left [(ngModel)]="agreewith" color="secondary"></ion-toggle>
+		<p item-right class="helptext agree">BOTH PARTIES WERE UNABLE TO AGREE ON THE ITEM CONDITION</p>
+	</ion-item>
+  <button ion-button block color="secondary" class="defaultbutton paddingbottom" >SUBMIT</button>
 </ion-content>

@@ -24,6 +24,92 @@ page-details {
       margin: 5px 0 4px 7px;
     }
   }
+
+  .backoverlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 19vh;
+    width: 100vw;
+    background-image: url(../assets/icon/image-overlay.png);
+    background-size: cover;
+    z-index: 4;
+  }
+
+  .locationstyle{
+    border-bottom: 1px solid #c6c6c7;
+    margin-bottom: 35px;
+  }
+
+  .locationicon{
+    height: 22px;
+    width: auto;
+  }
+
+  .swiper-slide img {
+    width: 100vw;
+    height: 50vh;
+  }
+
+  .border{
+    border-bottom: thin solid gainsboro;
+    border-top: thin solid gainsboro;
+    margin-top: 10px;
+  }
+
+  .sendbutton{
+    height: 20px;
+    padding: 0px;
+  }
+
+  .defaultbutton.send{
+    background-color: #599edb;
+    margin-top: 33px;
+    margin-bottom: 15px;
+  }
+
+  .bottomborder.padding{
+    padding-bottom:12px;
+    margin: 20px 10px 0 10px;
+  }
+
+  .sendborder{
+    border: thin solid gainsboro;
+    padding: 7px;
+    height: 33px;
+    width: 33px;
+    border-radius: 50%;
+  }
+
+  .pickborder{
+    border: thin solid gainsboro;
+    padding: 9px 5px;
+    height: 33px;
+    width: 33px;
+    border-radius: 50%;
+  }
+
+   .rightposition{
+    right:-1rem;
+  }
+
+  .middletext{
+    margin-top:6px;
+  }
+ 
+
+
+  .my-overlay {
+    position: relative;
+    display: inline-block;
+    height: 60vw;
+    width: 70vw;
+    margin: 15vw;
+    background: rgba(0,0,0,0.7);
+    top: 0;
+    left: 0;
+  }
+
   .card-md{
     box-shadow: none;
   }
@@ -58,6 +144,13 @@ page-details {
     margin:0px !important;
     text-align:center;
   }
+
+  .cover_name{
+    padding: 0px 0 6px 8px !important;
+    margin: 0px !important;
+    font-size: 2rem;
+    color: white;
+  }
   .cover_1 {
     z-index: 1;
     position: absolute;
@@ -68,33 +161,33 @@ page-details {
     color: white;
   }
   .cover_header0{
-    z-index: 1;
+    z-index: 10;
     position: absolute;
-    top:2rem;
+    top:2.5rem;
     left:4vw;
     padding:0px !important;
     margin:0px !important;
-    font-size: 2rem;
+    font-size:28px;
     color:white;
   }
   .cover_header1 {
-    z-index: 1;
+    z-index: 10;
     position: absolute;
-    top:2rem;
+    top:2.5rem;
     right:12vw;
     padding:0px !important;
     margin:0px !important;
-    font-size: 2rem;
+    font-size: 28px;
     color:white;
   }
   .cover_header2 {
-    z-index: 1;
+    z-index: 10;
     position: absolute;
-    top:2rem;
+    top:2.5rem;
     right:4vw;
     padding:0px !important;
     margin:0px !important;
-    font-size: 2rem;
+    height: 20px;
     color:white
   }
   .cover_2 {
@@ -107,18 +200,32 @@ page-details {
     color: white;
     height:2rem;
   }
+
+  .home{
+    left:0; top:0;
+    width:100%; height:10%;
+    display:inline-block;
+    z-index: 0;
+    position: relative;
+  }
+
   .content-ios{
     background-color:white;
   }
 
   .ion-ios-shareicon-outline,
   .ion-ios-shareicon,.ion-md-shareicon,.ion-md-shareicon-outline {
-    width: 13px !important;
+    width: 15px !important;
     content: url(../assets/icon/Share.png);
   }
 
   .add_remove{
     font-size:1.6rem;
+  }
+
+  .costsize{
+    font-weight: 600;
+    font-size:18px;
   }
 
 }
@@ -135,7 +242,7 @@ page-details {
 }
 
 .activeColor{
-  color: color($colors , secondary) !important;
+  color: white;
 }
 .icon_size{
   font-size: 2em;
@@ -145,7 +252,7 @@ page-details {
 
 .whiteicon{
   color:white;
-  font-size: 2em;
+  font-size: 28px;
   align: center;
 }
 

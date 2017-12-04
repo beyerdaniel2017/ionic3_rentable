@@ -13,13 +13,21 @@ import { Keyboard } from 'ionic-native';
 import { AddpaymentPage } from '../addpayment/addpayment';
 import { EditprofilePage } from '../editprofile/editprofile';
 import { Home } from '../home/home';
-var Profile = (function () {
+import { About } from '../about/about';
+import { FeedbackPage } from '../feedback/feedback';
+import { LandingPage } from '../landing/landing';
+import { MyStats } from '../myitem/myitem';
+var Profile = /** @class */ (function () {
     function Profile(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.addpayment = AddpaymentPage;
         this.editprofile = EditprofilePage;
         this.home = Home;
+        this.about = About;
+        this.feedback = FeedbackPage;
+        this.logout = LandingPage;
+        this.mystats = MyStats;
         this.profile = {
             img: 'assets/img/profile-img.png', name: 'John Doe', address: 'Sydney Australia', rate: '4.5', rent_nuber: '10', owner_number: '20'
         };
@@ -31,14 +39,14 @@ var Profile = (function () {
             Keyboard.show(); // Android Mobiles
         }
     };
+    Profile = __decorate([
+        Component({
+            selector: 'page-profile',
+            templateUrl: 'profile.html'
+        }),
+        __metadata("design:paramtypes", [NavController, NavParams])
+    ], Profile);
     return Profile;
 }());
-Profile = __decorate([
-    Component({
-        selector: 'page-profile',
-        templateUrl: 'profile.html'
-    }),
-    __metadata("design:paramtypes", [NavController, NavParams])
-], Profile);
 export { Profile };
 //# sourceMappingURL=profile.js.map

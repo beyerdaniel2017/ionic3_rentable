@@ -1,13 +1,4 @@
 page-otherprofile {
-  .app-content{
-    background-color: white;
-    .scroll-content{
-    }
-    .content-bg{
-        height: 100%;
-        overflow-y: scroll;
-    }
-  }
 
   .label-ios {
     margin: 0px;
@@ -17,6 +8,7 @@ page-otherprofile {
 		position: relative;
 		width:50vw;
 		height:50vw;
+    border: thin white groove;
 	}
 
   .list-ios .item[no-lines] .item-inner {
@@ -32,6 +24,17 @@ page-otherprofile {
         color:white;
       }
     }
+  }
+
+  .cover_image{
+    z-index: 1;
+    position: absolute;
+    right:2vw;
+    top: 3.5vw;
+    padding:0px !important;
+    margin:0px !important;
+    height: 2.2rem;
+    width:auto;
   }
   .segment-ios .segment-button{
     border:0px;
@@ -95,11 +98,6 @@ page-otherprofile {
     width: calc(100% );
   }
 
-  /* .profileheader{
-    text-align: center;
-    background-image: url(../assets/icon/navbar.png);
-  } */
-
   .profileimg{
     width: 120px;
     height: 120px;
@@ -117,6 +115,9 @@ page-otherprofile {
 
   .card-header-ios {
     padding: 0px;
+    font-size: 1rem;
+    font-weight: 500;
+    height: 50px;
   }
 
   .info{
@@ -131,11 +132,11 @@ page-otherprofile {
 
   .titleheight {
     margin-top: 0.5rem;
-    font-size: 3rem;
+    font-size: 3rem !important;
   }
 
   .titlefont {
-    font-size: 1.3rem;
+    font-size: 1rem;
     margin-top: -0.5rem;
   }
 
@@ -144,7 +145,7 @@ page-otherprofile {
   }
 
   .profilename{
-    font-weight:500;
+    font-weight:600;
     margin: 5px;
     font-size:2.3rem;
   }
@@ -166,12 +167,3 @@ page-otherprofile {
   }
 }
 
-.app-content{
-  background-color: white;
-  .scroll-content{
-  }
-  .content-bg{
-      height: 100%;
-      overflow-y: scroll;
-  }
-}

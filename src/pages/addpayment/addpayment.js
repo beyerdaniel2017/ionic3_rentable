@@ -11,30 +11,32 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { PaypalPage } from '../paypal/paypal';
 import { CreditPage } from '../credit/credit';
+import { Profile } from '../profile/profile';
 /*
   Generated class for the AddpaymentPage page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 */
-var AddpaymentPage = (function () {
+var AddpaymentPage = /** @class */ (function () {
     function AddpaymentPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.credit = CreditPage;
         this.paypal = PaypalPage;
+        this.profile = Profile;
     }
     AddpaymentPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad AddpaymentPagePage');
     };
+    AddpaymentPage = __decorate([
+        Component({
+            selector: 'page-addpayment',
+            templateUrl: 'addpayment.html'
+        }),
+        __metadata("design:paramtypes", [NavController, NavParams])
+    ], AddpaymentPage);
     return AddpaymentPage;
 }());
-AddpaymentPage = __decorate([
-    Component({
-        selector: 'page-addpayment',
-        templateUrl: 'addpayment.html'
-    }),
-    __metadata("design:paramtypes", [NavController, NavParams])
-], AddpaymentPage);
 export { AddpaymentPage };
 //# sourceMappingURL=addpayment.js.map
