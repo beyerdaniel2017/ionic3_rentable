@@ -25,6 +25,7 @@
     "@ionic-native/core": "4.2.0",
     "@ionic-native/device": "^4.4.2",
     "@ionic-native/diagnostic": "^4.2.1",
+    "@ionic-native/image-picker": "^4.2.1",
     "@ionic-native/file": "^4.4.2",
     "@ionic-native/file-path": "^4.4.2",
     "@ionic-native/file-transfer": "^4.4.2",
