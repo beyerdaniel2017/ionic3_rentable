@@ -32,7 +32,7 @@
     "@ionic-native/keyboard": "^4.2.1",
     "@ionic-native/native-page-transitions": "^4.4.0",
     "@ionic-native/splash-screen": "^4.2.0",
-    "@ionic-native/status-bar": "^3.12.1",
+    "@ionic-native/status-bar": "^4.4.2",
     "@ionic/storage": "^2.0.1",
     "aios": "0.1.5",
     "ajv": "^5.2.2",
